@@ -84,7 +84,7 @@ class PPO:
 
         self.V_loss_2 = nn.MSELoss()
 
-    def update(self, memories, n_tasks, g_pool):
+    def update(self, memories, n_tasks, g_pool, return_all_losses=False):
 
         vloss_coef = configs.vloss_coef
         ploss_coef = configs.ploss_coef
@@ -152,6 +152,10 @@ class PPO:
         self.policy_old.load_state_dict(self.policy.state_dict())
         if configs.decayflag:
             self.scheduler.step()
+            
+        if return_all_losses:
+             return loss_sum.mean().item(), vloss_sum.mean().item(), p_loss.mean().item(), ent_loss.mean().item()
+    
         return loss_sum.mean().item(), vloss_sum.mean().item()
 
 
