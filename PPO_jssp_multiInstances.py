@@ -146,6 +146,9 @@ class PPO:
                 vloss_sum += v_loss
             self.optimizer.zero_grad()
             loss_sum.mean().backward()
+            #for param in self.policy.parameters():
+                #if param.grad is not None:
+                    #print(f"Grad norm: {param.grad.norm().item()}")
             self.optimizer.step()
 
         # Copy new weights into old policy:
