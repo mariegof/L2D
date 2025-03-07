@@ -15,11 +15,17 @@ def validate(vali_set, model):
                              batch_size=torch.Size([1, env.number_of_tasks, env.number_of_tasks]),
                              n_nodes=env.number_of_tasks,
                              device=device)
-    make_spans = []
+    # Metrics to track
+    makespans = []
+    reward_derived = []
+    improvement_pct = []
+    
     # rollout using model
     for data in vali_set:
         adj, fea, candidate, mask = env.reset(data)
-        rewards = - env.initQuality
+        initial_estimate = env.LBs.max()  # Initial makespan estimate
+        total_reward = - env.initQuality  # Cumulative reward
+        
         while True:
             fea_tensor = torch.from_numpy(np.copy(fea)).to(device)
             adj_tensor = torch.from_numpy(np.copy(adj)).to(device).to_sparse()
@@ -35,12 +41,26 @@ def validate(vali_set, model):
             # action = sample_select_action(pi, candidate)
             action = greedy_select_action(pi, candidate)
             adj, fea, reward, done, candidate, mask = env.step(action.item())
-            rewards += reward
+            total_reward += reward
             if done:
                 break
-        make_spans.append(rewards - env.posRewards)
+        
+        # Calculate final metrics
+        final_makespan = env.LBs.max()
+        reward_based_metric = total_reward - env.posRewards
+        percent_improvement = ((initial_estimate - final_makespan) / initial_estimate) * 100
+        
+        # Store all metrics
+        makespans.append(final_makespan)
+        reward_derived.append(reward_based_metric)
+        improvement_pct.append(percent_improvement)
+        
         # print(rewards - env.posRewards)
-    return np.array(make_spans)
+    return {
+        'makespan': np.array(makespans),
+        'reward_derived': np.array(reward_derived),
+        'improvement_pct': np.array(improvement_pct)
+    }
 
 
 if __name__ == '__main__':
