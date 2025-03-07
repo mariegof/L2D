@@ -13,6 +13,9 @@ from mb_agg import g_pool_cal
 from agent_utils import select_action, greedy_select_action
 from uniform_instance_gen import uni_instance_gen
 from Params import configs
+from validation import validate
+
+device = torch.device(configs.device)
 
 # Configuration parameters - modify these directly instead of using command-line arguments
 CONFIG = {
@@ -32,6 +35,13 @@ CONFIG = {
     },
     "output_dir": "./paper_experiments"  # Directory for saving all results
 }
+
+# Get configuration parameters
+n_j = CONFIG["training"]["n_j"]
+n_m = CONFIG["training"]["n_m"]
+n_episodes = CONFIG["training"]["n_episodes"]
+save_every = CONFIG["training"]["save_every"]
+log_every = CONFIG["training"]["log_every"]
 
 def setup_directories():
     """Create necessary directories for output."""
@@ -58,37 +68,40 @@ def train_l2d():
     print(f"TRAINING L2D ON {CONFIG['training']['n_j']}x{CONFIG['training']['n_m']} INSTANCES")
     print(f"{'='*50}")
     
-    # Get configuration parameters
-    n_j = CONFIG["training"]["n_j"]
-    n_m = CONFIG["training"]["n_m"]
-    n_episodes = CONFIG["training"]["n_episodes"]
-    save_every = CONFIG["training"]["save_every"]
-    log_every = CONFIG["training"]["log_every"]
-    
     # Setup directories
-    models_dir, figures_dir, _ = setup_directories()
+    models_dir, figures_dir, results_dir = setup_directories()
     
-    # Initialize environment and PPO agent
-    env = SJSSP(n_j=n_j, n_m=n_m)
+    data_generator = uni_instance_gen
+    
+    # Initialize environments
+    envs = [SJSSP(n_j=n_j, n_m=n_m) for _ in range(configs.num_envs)]
+    
+    # Load validation data
+    dataLoaded = np.load('./DataGen/generatedData' + str(n_j) + '_' + str(n_m) + '_Seed' + str(configs.np_seed_validation) + '.npy')
+    vali_data = []
+    for i in range(dataLoaded.shape[0]):
+        vali_data.append((dataLoaded[i][0], dataLoaded[i][1]))
+        
+    torch.manual_seed(configs.torch_seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(configs.torch_seed)
+    np.random.seed(configs.np_seed_train)
+    
+    memories = [Memory() for _ in range(configs.num_envs)]
     
     # Initialize PPO agent
-    ppo = PPO(
-        lr=configs.lr,
-        gamma=configs.gamma,
-        k_epochs=configs.k_epochs,
-        eps_clip=configs.eps_clip,
-        n_j=n_j,
-        n_m=n_m,
-        num_layers=configs.num_layers,
-        neighbor_pooling_type=configs.neighbor_pooling_type,
-        input_dim=configs.input_dim,
-        hidden_dim=configs.hidden_dim,
-        num_mlp_layers_feature_extract=configs.num_mlp_layers_feature_extract,
-        num_mlp_layers_actor=configs.num_mlp_layers_actor,
-        hidden_dim_actor=configs.hidden_dim_actor,
-        num_mlp_layers_critic=configs.num_mlp_layers_critic,
-        hidden_dim_critic=configs.hidden_dim_critic
-    )
+    ppo = PPO(configs.lr, configs.gamma, configs.k_epochs, configs.eps_clip,
+              n_j=n_j,
+              n_m=n_m,
+              num_layers=configs.num_layers,
+              neighbor_pooling_type=configs.neighbor_pooling_type,
+              input_dim=configs.input_dim,
+              hidden_dim=configs.hidden_dim,
+              num_mlp_layers_feature_extract=configs.num_mlp_layers_feature_extract,
+              num_mlp_layers_actor=configs.num_mlp_layers_actor,
+              hidden_dim_actor=configs.hidden_dim_actor,
+              num_mlp_layers_critic=configs.num_mlp_layers_critic,
+              hidden_dim_critic=configs.hidden_dim_critic)
     
     # Calculate graph pooling setup
     g_pool_step = g_pool_cal(
@@ -100,8 +113,12 @@ def train_l2d():
     
     # For tracking training progress
     rewards_history = []
-    loss_history = []
     makespans_history = []
+    loss_history = []
+    validation_history = []
+    
+    # For saving best model
+    best_makespan = float('inf')
     
     # Training loop
     start_time = time.time()
@@ -110,102 +127,130 @@ def train_l2d():
     for episode in range(n_episodes):
         episode_start = time.time()
         
-        # Generate random instance
-        instance_data = uni_instance_gen(n_j=n_j, n_m=n_m, low=configs.low, high=configs.high)
+        # Reset all environments with new instances
+        ep_rewards = [0 for _ in range(configs.num_envs)]
+        makespans = [0 for _ in range(configs.num_envs)]
+        adj_envs, fea_envs, candidate_envs, mask_envs = [], [], [], []
         
-        # Reset environment
-        adj, fea, candidate, mask = env.reset(instance_data)
-        
-        # Initialize memory
-        memory = Memory()
-        
-        # Run episode
-        ep_reward = -env.initQuality
-        
-        while not env.done():
-            # Prepare tensors
-            fea_tensor = torch.from_numpy(np.copy(fea)).to(torch.device("cpu"))
-            adj_tensor = torch.from_numpy(np.copy(adj)).to(torch.device("cpu")).to_sparse()
-            candidate_tensor = torch.from_numpy(np.copy(candidate)).to(torch.device("cpu"))
-            mask_tensor = torch.from_numpy(np.copy(mask)).to(torch.device("cpu"))
+        for i, env in enumerate(envs):
+            adj, fea, candidate, mask = env.reset(data_generator(n_j=n_j, n_m=n_m, low=configs.low, high=configs.high))
+            adj_envs.append(adj)
+            fea_envs.append(fea)
+            candidate_envs.append(candidate)
+            mask_envs.append(mask)
+            ep_rewards[i] = - env.initQuality
+        # rollout the env
+        while True:
+            fea_tensor_envs = [torch.from_numpy(np.copy(fea)).to(device) for fea in fea_envs]
+            adj_tensor_envs = [torch.from_numpy(np.copy(adj)).to(device).to_sparse() for adj in adj_envs]
+            candidate_tensor_envs = [torch.from_numpy(np.copy(candidate)).to(device) for candidate in candidate_envs]
+            mask_tensor_envs = [torch.from_numpy(np.copy(mask)).to(device) for mask in mask_envs]
             
-            # Get action from policy
             with torch.no_grad():
-                pi, _ = ppo.policy_old(
-                    x=fea_tensor,
-                    graph_pool=g_pool_step,
-                    padded_nei=None,
-                    adj=adj_tensor,
-                    candidate=candidate_tensor.unsqueeze(0),
-                    mask=mask_tensor.unsqueeze(0)
-                )
+                action_envs = []
+                a_idx_envs = []
+                for i in range(configs.num_envs):
+                    pi, _ = ppo.policy_old(x=fea_tensor_envs[i],
+                                           graph_pool=g_pool_step,
+                                           padded_nei=None,
+                                           adj=adj_tensor_envs[i],
+                                           candidate=candidate_tensor_envs[i].unsqueeze(0),
+                                           mask=mask_tensor_envs[i].unsqueeze(0))
+                    action, a_idx = select_action(pi, candidate_envs[i], memories[i])
+                    action_envs.append(action)
+                    a_idx_envs.append(a_idx)
             
-            # Select action
-            action, a_idx = select_action(pi, candidate, memory)
+            adj_envs = []
+            fea_envs = []
+            candidate_envs = []
+            mask_envs = []
+            # Saving episode data
+            for i in range(configs.num_envs):
+                memories[i].adj_mb.append(adj_tensor_envs[i])
+                memories[i].fea_mb.append(fea_tensor_envs[i])
+                memories[i].candidate_mb.append(candidate_tensor_envs[i])
+                memories[i].mask_mb.append(mask_tensor_envs[i])
+                memories[i].a_mb.append(a_idx_envs[i])
+
+                adj, fea, reward, done, candidate, mask = envs[i].step(action_envs[i].item())
+                adj_envs.append(adj)
+                fea_envs.append(fea)
+                candidate_envs.append(candidate)
+                mask_envs.append(mask)
+                ep_rewards[i] += reward
+                memories[i].r_mb.append(reward)
+                memories[i].done_mb.append(done)
+            if envs[0].done():
+                break
+        for i in range(configs.num_envs):
+            ep_rewards[i] -= envs[i].posRewards
+            makespans[i] = envs[i].LBs.max()  # Get actual makespan directly
             
-            # Store state in memory
-            memory.adj_mb.append(adj_tensor)
-            memory.fea_mb.append(fea_tensor)
-            memory.candidate_mb.append(candidate_tensor)
-            memory.mask_mb.append(mask_tensor)
-            memory.a_mb.append(a_idx)
+        # Update policy using PPO
+        loss, v_loss = ppo.update(memories, n_j * n_m, configs.graph_pool_type)
+        for memory in memories:
+            memory.clear_memory()
             
-            # Take action in environment
-            adj, fea, reward, done, candidate, mask = env.step(action.item())
-            
-            # Store reward and done signal
-            memory.r_mb.append(reward)
-            memory.done_mb.append(done)
-            
-            # Update episode reward
-            ep_reward += reward
-        
-        # Get final makespan
-        makespan = env.LBs.max()
-        
-        # Subtract positive rewards
-        ep_reward -= env.posRewards
-        
-        # Update policy
-        loss, v_loss = ppo.update([memory], n_j * n_m, configs.graph_pool_type)
-        memory.clear_memory()
-        
         # Save history
-        rewards_history.append(ep_reward)
+        mean_reward = sum(ep_rewards) / len(ep_rewards)
+        mean_makespan = sum(makespans) / len(makespans)
+        rewards_history.append(mean_reward)
+        makespans_history.append(mean_makespan)
         loss_history.append(loss)
-        makespans_history.append(makespan)
         
-        # Log progress
-        episode_time = time.time() - episode_start
-        
+        # Run validation
         if (episode + 1) % log_every == 0:
             elapsed = time.time() - start_time
+            
+            # Run validation with enhanced function
+            validation_results = validate(vali_data, ppo.policy)
+            validation_history.append(validation_results['makespan'].mean())
+            
+            # Calculate moving averages for reporting
             avg_reward = np.mean(rewards_history[-100:]) if len(rewards_history) >= 100 else np.mean(rewards_history)
             avg_makespan = np.mean(makespans_history[-100:]) if len(makespans_history) >= 100 else np.mean(makespans_history)
             
-            print(f"Episode {episode+1}/{n_episodes} | Reward: {ep_reward:.2f} | "
-                  f"Makespan: {makespan:.2f} | Loss: {loss:.6f}")
+            # Print comprehensive metrics
+            print(f"Episode {episode+1}/{n_episodes} | Reward: {mean_reward:.2f} | "
+                  f"Makespan: {mean_makespan:.2f} | Loss: {loss:.6f}")
             print(f"Avg(100): Reward={avg_reward:.2f}, Makespan={avg_makespan:.2f} | "
-                  f"Episode time: {episode_time:.2f}s | Total time: {elapsed:.2f}s")
+                  f"Episode time: {time.time()-episode_start:.2f}s | Total time: {elapsed:.2f}s")
+            print(f"Validation Makespan: {validation_results['makespan'].mean():.2f} | "
+                  f"Original Metric: {validation_results['reward_derived'].mean():.2f} | "
+                  f"Improvement: {validation_results['improvement_pct'].mean():.2f}%")
             
-            # Save training stats
+            # Save training statistics
             np.savez(
-                os.path.join(CONFIG["output_dir"], "training_stats.npz"),
-                rewards=rewards_history,
-                losses=loss_history,
-                makespans=makespans_history
+                os.path.join(results_dir, "training_stats.npz"),
+                rewards=np.array(rewards_history),
+                makespans=np.array(makespans_history),
+                losses=np.array(loss_history),
+                validation=np.array(validation_history),
+                validation_full=validation_results
             )
             
-            # Plot learning curves (once we have enough data)
-            if len(rewards_history) >= 100:
-                plot_learning_curves(rewards_history, loss_history, makespans_history, figures_dir)
-        
-        # Save model checkpoint
-        if (episode + 1) % save_every == 0 or episode == n_episodes - 1:
-            model_path = os.path.join(models_dir, f"l2d_{n_j}x{n_m}_episode_{episode+1}.pth")
+            # Plot learning curves
+            plot_learning_curves(
+                rewards=rewards_history, 
+                losses=loss_history, 
+                makespans=makespans_history, 
+                figures_dir=figures_dir,
+                validation_history=validation_history,
+            )
+            
+            # Use actual makespan for model saving decisions
+            if validation_results['makespan'].mean() < best_makespan:
+                best_model_path = os.path.join(models_dir, f"l2d_makespan_{n_j}x{n_m}_best.pth")
+                torch.save(ppo.policy.state_dict(), best_model_path)
+                print(f"New best model saved! Makespan: {validation_results['makespan'].mean():.2f}")
+                best_makespan = validation_results['makespan'].mean()
+                
+        # Save regular checkpoint
+        if (episode + 1) % save_every == 0:
+            model_path = os.path.join(models_dir, f"l2d_makespan_{n_j}x{n_m}_episode_{episode+1}.pth")
             torch.save(ppo.policy.state_dict(), model_path)
             print(f"Model checkpoint saved to {model_path}")
-    
+        
     # Training complete
     total_time = time.time() - start_time
     hours, remainder = divmod(total_time, 3600)
@@ -214,32 +259,96 @@ def train_l2d():
     print(f"\nTraining completed in {int(hours)}h {int(minutes)}m {seconds:.2f}s")
     
     # Save final model
-    final_model_path = os.path.join(models_dir, f"l2d_{n_j}x{n_m}_final.pth")
+    final_model_path = os.path.join(models_dir, f"l2d_makespan_{n_j}x{n_m}_final.pth")
     torch.save(ppo.policy.state_dict(), final_model_path)
     print(f"Final model saved to {final_model_path}")
     
     return ppo.policy, final_model_path
 
-def plot_learning_curves(rewards, losses, makespans, figures_dir):
-    """Plot and save training curves."""
-    # Calculate moving averages for smoother visualization
-    window = 100
+def plot_learning_curves(rewards, losses, makespans, figures_dir, validation_history=None):
+    """
+    Plot and save comprehensive training curves for makespan objective with training vs validation comparisons.
     
-    # Calculate moving averages
+    Args:
+        rewards: List of training rewards
+        losses: List of training losses
+        makespans: List of training makespans
+        figures_dir: Directory to save figures
+        validation_history: List of historical validation makespan means (one value per validation)
+        log_every: Number of episodes between validation checks (for x-axis alignment)
+    """
+    window = 100  # For smoothing
+    
+    # Data validation and debug info
+    print(f"Data lengths - Rewards: {len(rewards)}, Losses: {len(losses)}, Makespans: {len(makespans)}")
+    if validation_history is not None:
+        print(f"Validation history length: {len(validation_history)}")
+        print(f"First few validation values: {validation_history[:5]}")
+        print(f"Last few validation values: {validation_history[-5:]} (smaller is better)")
+    
+    # Calculate moving averages for smoothing
     reward_avg = [np.mean(rewards[max(0, i-window):i+1]) for i in range(len(rewards))]
     makespan_avg = [np.mean(makespans[max(0, i-window):i+1]) for i in range(len(makespans))]
+    loss_avg = [np.mean(losses[max(0, i-window):i+1]) for i in range(len(losses))]
     
-    # Plot smoothed rewards
-    plt.figure(figsize=(10, 6))
-    plt.plot(reward_avg)
-    plt.title(f'Rewards During Training ({window}-episode Moving Average)')
+    episodes = list(range(len(makespans)))
+    
+    # 1. Main objective comparison plot (Training vs Validation)
+    plt.figure(figsize=(12, 6))
+    plt.plot(episodes, makespans, 'b-', alpha=0.2, label='Training (per episode)')
+    plt.plot(episodes, makespan_avg, 'b-', linewidth=2, label='Training (smoothed)')
+    
+    # Plot validation history with proper x-axis alignment
+    if validation_history is not None and len(validation_history) > 0:
+        # Generate proper x-positions based on logging interval
+        val_episodes = [(i+1) * log_every for i in range(len(validation_history))]
+        
+        # Plot the validation history
+        plt.plot(val_episodes, validation_history, 'r-o', linewidth=2, label='Validation')
+        
+        # Add best training and validation lines
+        best_training = min(makespan_avg)
+        best_validation = min(validation_history)
+        plt.axhline(y=best_training, color='b', linestyle='--', alpha=0.5, 
+                    label=f'Best training: {best_training:.0f}')
+        plt.axhline(y=best_validation, color='r', linestyle='--', alpha=0.5, 
+                    label=f'Best validation: {best_validation:.0f}')
+    
+    plt.title('Makespan Comparison: Training vs Validation')
     plt.xlabel('Episode')
-    plt.ylabel('Average Reward')
+    plt.ylabel('Makespan')
+    plt.legend(loc='upper right')
     plt.grid(alpha=0.3)
-    plt.savefig(os.path.join(figures_dir, "rewards_smoothed.png"))
+    plt.savefig(os.path.join(figures_dir, "makespan_comparison.png"))
     plt.close()
     
-    # Plot smoothed makespans
+    # 2. Loss plot (Training only)
+    plt.figure(figsize=(12, 6))
+    plt.plot(episodes, losses, 'g-', alpha=0.2, label='Training (per episode)')
+    plt.plot(episodes, loss_avg, 'g-', linewidth=2, label='Training (smoothed)')
+    
+    plt.title('Loss During Training')
+    plt.xlabel('Episode')
+    plt.ylabel('Loss')
+    plt.legend(loc='upper right')
+    plt.grid(alpha=0.3)
+    plt.savefig(os.path.join(figures_dir, "loss_comparison.png"))
+    plt.close()
+    
+    # 3. Reward plot (Training only)
+    plt.figure(figsize=(12, 6))
+    plt.plot(episodes, rewards, 'm-', alpha=0.2, label='Training (per episode)')
+    plt.plot(episodes, reward_avg, 'm-', linewidth=2, label='Training (smoothed)')
+    
+    plt.title('Reward During Training')
+    plt.xlabel('Episode')
+    plt.ylabel('Reward')
+    plt.legend(loc='upper right')
+    plt.grid(alpha=0.3)
+    plt.savefig(os.path.join(figures_dir, "reward_comparison.png"))
+    plt.close()
+    
+    # 4. Smoothed makespans plot
     plt.figure(figsize=(10, 6))
     plt.plot(makespan_avg)
     plt.title(f'Makespan During Training ({window}-episode Moving Average)')
@@ -248,6 +357,52 @@ def plot_learning_curves(rewards, losses, makespans, figures_dir):
     plt.grid(alpha=0.3)
     plt.savefig(os.path.join(figures_dir, "makespans_smoothed.png"))
     plt.close()
+    
+    # 5. Raw makespans (last 1000 episodes for detail)
+    plt.figure(figsize=(10, 6))
+    if len(makespans) > 1000:
+        plt.plot(episodes[-1000:], makespans[-1000:])
+        plt.title('Makespan (Last 1000 Episodes)')
+    else:
+        plt.plot(episodes, makespans)
+        plt.title('Makespan (All Episodes)')
+    plt.xlabel('Episode')
+    plt.ylabel('Makespan')
+    plt.grid(alpha=0.3)
+    plt.savefig(os.path.join(figures_dir, "makespans_raw.png"))
+    plt.close()
+    
+    # 6. Validation progress curve
+    if validation_history is not None and len(validation_history) > 0:
+        plt.figure(figsize=(10, 6))
+        val_episodes = [(i+1) * log_every for i in range(len(validation_history))]
+        plt.plot(val_episodes, validation_history, 'r-o')
+        
+        # Add horizontal line for best validation
+        best_val = min(validation_history)
+        best_idx = validation_history.index(best_val)
+        plt.axhline(y=best_val, color='g', linestyle='--', 
+                    label=f'Best: {best_val:.1f} at episode {(best_idx+1)*log_every}')
+        
+        plt.title('Validation Makespan During Training')
+        plt.xlabel('Validation Check (Episode)')
+        plt.ylabel('Makespan')
+        plt.legend()
+        plt.grid(alpha=0.3)
+        plt.savefig(os.path.join(figures_dir, "validation_curve.png"))
+        plt.close()
+        
+        # 7. Zoomed validation curve (last 20 validations)
+        if len(validation_history) > 10:
+            plt.figure(figsize=(10, 6))
+            last_n = min(20, len(validation_history))
+            plt.plot(val_episodes[-last_n:], validation_history[-last_n:], 'r-o')
+            plt.title(f'Recent Validation Makespan (Last {last_n} Checks)')
+            plt.xlabel('Validation Check (Episode)')
+            plt.ylabel('Makespan')
+            plt.grid(alpha=0.3)
+            plt.savefig(os.path.join(figures_dir, "recent_validation_curve.png"))
+            plt.close()
 
 def test_l2d(env, instance, policy):
     """Apply trained L2D policy to an instance."""
