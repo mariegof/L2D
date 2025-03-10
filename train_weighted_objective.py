@@ -22,9 +22,9 @@ from WS.utils import setup_directories
 CONFIG = {
     "training": {
         "enabled": True,
-        "max_updates": 100,     # Number of episodes for training
+        "max_updates": 10000,     # Number of episodes for training
         "save_every": 1000,      # Save model checkpoints every N episodes
-        "log_every": 1,        # Log training statistics every N episodes
+        "log_every": 100,        # Log training statistics every N episodes
         'wspt_guidance_duration': 0
     },
     "validation": {
@@ -174,6 +174,10 @@ def train_l2d_multi_env():
                         # Blend policy with WSPT
                         pi_numpy = pi.detach().cpu().numpy().squeeze()
                         pi_final = (1 - wspt_influence) * pi_numpy + wspt_influence * wspt_values
+                        # Fix: Ensure non-negative values and proper normalization
+                        pi_final = np.maximum(pi_final, 0)  # Clip negative values to zero
+                        if pi_final.sum() > 0:
+                            pi_final = pi_final / pi_final.sum()  # Re-normalize
                         pi = torch.tensor(pi_final).unsqueeze(0).to(torch.device(configs.device))
                     
                     action, a_idx = select_action(pi, candidate_envs[i], memories[i])
@@ -271,7 +275,7 @@ def train_l2d_multi_env():
             if validation_weighted_sum_mean < best_weighted_sum:
                 best_model_path = os.path.join(models_dir, f"l2d_weighted_{n_j}x{n_m}_best.pth")
                 torch.save(ppo.policy.state_dict(), best_model_path)
-                print(f"New best model saved! Weighted sum: {-validation_weighted_sum_mean:.2f}")
+                print(f"New best model saved! Weighted sum: {validation_weighted_sum_mean:.2f}")
                 best_weighted_sum = validation_weighted_sum_mean
                 best_episode = episode + 1  # Store the episode number of best performance
         
