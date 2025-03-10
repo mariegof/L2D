@@ -21,7 +21,7 @@ parser.add_argument('--wkr_normalize_coef', type=int, default=100, help='Normali
 parser.add_argument('--num_layers', type=int, default=2, help='No. of layers of feature extraction GNN including input layer')
 parser.add_argument('--neighbor_pooling_type', type=str, default='sum', help='neighbour pooling type')
 parser.add_argument('--graph_pool_type', type=str, default='average', help='graph pooling type')
-parser.add_argument('--input_dim', type=int, default=5, help='number of dimension of raw node features')
+parser.add_argument('--input_dim', type=int, default=7, help='number of dimension of raw node features')
 parser.add_argument('--hidden_dim', type=int, default=256, help='hidden dim of MLP in fea extract GNN')
 parser.add_argument('--num_mlp_layers_feature_extract', type=int, default=2, help='No. of layers of MLP in fea extract GNN')
 parser.add_argument('--num_mlp_layers_actor', type=int, default=2, help='No. of layers in actor MLP')
@@ -29,7 +29,7 @@ parser.add_argument('--hidden_dim_actor', type=int, default=32, help='hidden dim
 parser.add_argument('--num_mlp_layers_critic', type=int, default=2, help='No. of layers in critic MLP')
 parser.add_argument('--hidden_dim_critic', type=int, default=32, help='hidden dim of MLP in critic')
 # args for PPO
-parser.add_argument('--num_envs', type=int, default=4, help='No. of envs for training')
+parser.add_argument('--num_envs', type=int, default=8, help='No. of envs for training')
 parser.add_argument('--max_updates', type=int, default=1000, help='No. of episodes of each env for training')
 parser.add_argument('--lr', type=float, default=0.0005, help='lr')
 parser.add_argument('--decayflag', type=bool, default=True, help='lr decayflag')

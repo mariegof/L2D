@@ -54,10 +54,6 @@ class SJSSP(gym.Env, EzPickle):
 
     @override
     def step(self, action):
-        # Calculate current weighted sum estimate for reward
-        current_weighted_sum = self._calculate_weighted_sum_estimate()
-        #print(f"Before action {action}: weighted_sum = {current_weighted_sum}")
-        
         # action is a int 0 - 224 for 15x15 for example
         # redundant action makes no effect
         if action not in self.partial_sol_sequeence:
@@ -97,13 +93,12 @@ class SJSSP(gym.Env, EzPickle):
             self.adj[succd, action] = 1
             if flag and precd != action and succd != action:  # Remove the old arc when a new operation inserts between two operations
                 self.adj[succd, precd] = 0
-
-        # Calculate new weighted sum estimate
-        new_weighted_sum = self._calculate_weighted_sum_estimate()
-        #print(f"After action {action}: weighted_sum = {new_weighted_sum}")
+                
+        # Build features based on enabled feature set
+        fea = self._build_features()
         
         # Reward is the improvement in quality measure
-        reward = current_weighted_sum - new_weighted_sum
+        reward = - (self._calculate_weighted_sum_estimate() - self.previous_weighted_sum)
         #print(f"Reward: {reward} (current - new = {current_weighted_sum} - {new_weighted_sum})")
         
         # Add small positive reward when needed
@@ -113,9 +108,7 @@ class SJSSP(gym.Env, EzPickle):
             #print(f"Reward after rewardscale: {reward} (current - new = {current_weighted_sum} - {new_weighted_sum})")
             
         self.max_endTime = self.LBs.max()
-
-        # Build features based on enabled feature set
-        fea = self._build_features()
+        self.previous_weighted_sum = self._calculate_weighted_sum_estimate()  # Update for next step
 
         return self.adj, fea, reward, self.done(), self.omega, self.mask
 
@@ -149,17 +142,11 @@ class SJSSP(gym.Env, EzPickle):
         self.adj = self_as_nei + conj_nei_up_stream
 
         # Initialize features
-        self.LBs = np.cumsum(self.dur, axis=1, dtype=np.single)
-        
-        # Calculate initial weighted sum estimate for initQuality
-        self.temp1 = np.zeros_like(self.dur, dtype=np.single)
-        init_weighted_sum = 0
-        for j in range(self.number_of_jobs):
-            init_weighted_sum += self.weights[j] * self.LBs[j, self.number_of_machines - 1]
-            
+        self.LBs = np.cumsum(self.dur, axis=1, dtype=np.single) 
         # Set initQuality to weighted sum rather than makespan
-        self.initQuality = init_weighted_sum if not configs.init_quality_flag else 0
+        self.initQuality = self._calculate_weighted_sum_estimate() if not configs.init_quality_flag else 0
         self.max_endTime = self.LBs.max()  # Keep this for compatibility
+        self.previous_weighted_sum = self.initQuality
         self.finished_mark = np.zeros_like(self.m, dtype=np.single)
         
         # Calculate WSPT priority for each operation
@@ -167,9 +154,6 @@ class SJSSP(gym.Env, EzPickle):
         for j in range(self.number_of_jobs):
             for m in range(self.number_of_machines):
                 self.weighted_priorities[j, m] = self.weights[j] / self.dur[j, m]
-
-        # Build features based on enabled feature set
-        fea = self._build_features()
         
         # initialize feasible omega
         self.omega = self.first_col.astype(np.int64)
@@ -183,6 +167,9 @@ class SJSSP(gym.Env, EzPickle):
         self.opIDsOnMchs = -self.number_of_jobs * np.ones_like(self.dur.transpose(), dtype=np.int32)
 
         self.temp1 = np.zeros_like(self.dur, dtype=np.single)
+        
+        # Build features based on enabled feature set
+        fea = self._build_features()
 
         return self.adj, fea, self.omega, self.mask
     
@@ -264,7 +251,7 @@ class SJSSP(gym.Env, EzPickle):
         if self.available_features['time_elapsed']:
             # Use current maximum end time as a proxy for elapsed time
             curr_time = np.max(self.temp1) if np.max(self.temp1) > 0 else 0
-            time_feature = np.ones((self.number_of_tasks, 1)) * (curr_time / configs.high)
+            time_feature = np.ones((self.number_of_tasks, 1), dtype=np.float32) * (curr_time / configs.high)
             features.append(time_feature)
         
         # Number of operations needing each machine
