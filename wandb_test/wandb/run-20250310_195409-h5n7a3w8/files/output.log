@@ -1,0 +1,11 @@
+
+==================================================
+TRAINING L2D FOR WEIGHTED SUM OBJECTIVE (6x6)
+==================================================
+Starting training for 1000 episodes with 16 environments...
+Traceback (most recent call last):
+  File "sweep_config.py", line 132, in train_agent
+    return train_l2d_multi_env(run.config)
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb_test/run_exp.py", line 212, in train_l2d_multi_env
+    action, a_idx = select_action(pi, candidate_envs[i], memories[i])
+IndexError: list index out of range

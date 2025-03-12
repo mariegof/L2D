@@ -1,0 +1,54 @@
+_wandb:
+    value:
+        cli_version: 0.19.8
+        m: []
+        python_version: 3.8.20
+        t:
+            "1":
+                - 1
+                - 55
+            "2":
+                - 1
+                - 55
+            "3":
+                - 2
+                - 3
+                - 14
+                - 23
+                - 55
+            "4": 3.8.20
+            "5": 0.19.8
+            "8":
+                - 5
+            "12": 0.19.8
+            "13": darwin-arm64
+entloss_coef:
+    value: 0.05
+eps_clip:
+    value: 0.2
+feature_set:
+    value: LBs,finished_mark,weighted_priorities,normalized_weights,remaining_weighted_work
+hidden_dim:
+    value: 128
+hidden_dim_actor:
+    value: 32
+hidden_dim_critic:
+    value: 32
+k_epochs:
+    value: 1
+log_every:
+    value: 50
+lr:
+    value: 2e-05
+max_updates:
+    value: 1000
+num_envs:
+    value: 16
+num_layers:
+    value: 3
+num_mlp_layers_actor:
+    value: 2
+num_mlp_layers_critic:
+    value: 2
+num_mlp_layers_feature_extract:
+    value: 2

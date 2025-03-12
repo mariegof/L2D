@@ -31,7 +31,7 @@ parser.add_argument('--hidden_dim_critic', type=int, default=32, help='hidden di
 # args for PPO
 parser.add_argument('--num_envs', type=int, default=8, help='No. of envs for training')
 parser.add_argument('--max_updates', type=int, default=10000, help='No. of episodes of each env for training')
-parser.add_argument('--lr', type=float, default=2e-5, help='lr')
+parser.add_argument('--lr', type=float, default=2e-4, help='lr')
 parser.add_argument('--decayflag', type=bool, default=False, help='lr decayflag')
 parser.add_argument('--decay_step_size', type=int, default=2000, help='decay_step_size')
 parser.add_argument('--decay_ratio', type=float, default=0.9, help='decay_ratio, e.g. 0.9, 0.95')
@@ -40,6 +40,6 @@ parser.add_argument('--k_epochs', type=int, default=1, help='update policy for K
 parser.add_argument('--eps_clip', type=float, default=0.2, help='clip parameter for PPO')
 parser.add_argument('--vloss_coef', type=float, default=1, help='critic loss coefficient')
 parser.add_argument('--ploss_coef', type=float, default=2, help='policy loss coefficient')
-parser.add_argument('--entloss_coef', type=float, default=0.05, help='entropy loss coefficient')
+parser.add_argument('--entloss_coef', type=float, default=0.01, help='entropy loss coefficient')
 
 configs = parser.parse_args()

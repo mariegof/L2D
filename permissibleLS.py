@@ -3,6 +3,19 @@ import numpy as np
 
 
 def permissibleLeftShift(a, durMat, mchMat, mchsStartTimes, opIDsOnMchs):
+    """
+    Determines the permissible left shift for a given operation in a scheduling problem.
+    Parameters:
+    a (int): The index of the operation to be scheduled.
+    durMat (np.ndarray): A matrix containing the durations of all operations.
+    mchMat (np.ndarray): A matrix containing the machine assignments for all operations.
+    mchsStartTimes (list of lists): A list where each sublist contains the start times of operations on a specific machine.
+    opIDsOnMchs (list of lists): A list where each sublist contains the operation IDs on a specific machine.
+    Returns:
+    tuple: A tuple containing:
+        - startTime_a (int): The start time of the operation `a`.
+        - flag (bool): A flag indicating whether the operation `a` was successfully left-shifted.
+    """
     jobRdyTime_a, mchRdyTime_a = calJobAndMchRdyTimeOfa(a, mchMat, durMat, mchsStartTimes, opIDsOnMchs)
     dur_a = np.take(durMat, a)
     mch_a = np.take(mchMat, a) - 1
@@ -26,6 +39,23 @@ def permissibleLeftShift(a, durMat, mchMat, mchsStartTimes, opIDsOnMchs):
 
 
 def putInTheEnd(a, jobRdyTime_a, mchRdyTime_a, startTimesForMchOfa, opsIDsForMchOfa):
+    """
+    Schedules a job at the earliest possible start time and updates the machine's schedule.
+
+    This function finds the first available slot in the machine's schedule (indicated by a placeholder value of -configs.high),
+    calculates the earliest start time for the job based on its ready time and the machine's ready time, and updates the 
+    machine's schedule with the job's start time and operation ID.
+
+    Args:
+        a (int): The operation ID of the job to be scheduled.
+        jobRdyTime_a (int): The ready time of the job.
+        mchRdyTime_a (int): The ready time of the machine.
+        startTimesForMchOfa (np.ndarray): An array representing the start times for the machine's operations.
+        opsIDsForMchOfa (np.ndarray): An array representing the operation IDs for the machine's operations.
+
+    Returns:
+        int: The start time of the scheduled job.
+    """
     # index = first position of -config.high in startTimesForMchOfa
     # print('Yes!OK!')
     index = np.where(startTimesForMchOfa == -configs.high)[0][0]
@@ -36,6 +66,23 @@ def putInTheEnd(a, jobRdyTime_a, mchRdyTime_a, startTimesForMchOfa, opsIDsForMch
 
 
 def calLegalPos(dur_a, jobRdyTime_a, durMat, possiblePos, startTimesForMchOfa, opsIDsForMchOfa):
+    """
+    Calculate legal positions for a job operation in a scheduling problem.
+
+    Parameters:
+    dur_a (int): Duration of the current job operation.
+    jobRdyTime_a (int): Ready time of the current job.
+    durMat (numpy.ndarray): Matrix containing durations of all operations.
+    possiblePos (numpy.ndarray): Array of possible positions for the current job operation.
+    startTimesForMchOfa (numpy.ndarray): Array of start times for all operations on the machine.
+    opsIDsForMchOfa (numpy.ndarray): Array of operation IDs for all operations on the machine.
+
+    Returns:
+    tuple: A tuple containing:
+        - idxLegalPos (numpy.ndarray): Indices of legal positions.
+        - legalPos (numpy.ndarray): Legal positions for the current job operation.
+        - endTimesForPossiblePos (numpy.ndarray): End times for the possible positions.
+    """
     startTimesOfPossiblePos = startTimesForMchOfa[possiblePos]
     durOfPossiblePos = np.take(durMat, opsIDsForMchOfa[possiblePos])
     startTimeEarlst = max(jobRdyTime_a, startTimesForMchOfa[possiblePos[0]-1] + np.take(durMat, [opsIDsForMchOfa[possiblePos[0]-1]]))
@@ -47,6 +94,20 @@ def calLegalPos(dur_a, jobRdyTime_a, durMat, possiblePos, startTimesForMchOfa, o
 
 
 def putInBetween(a, idxLegalPos, legalPos, endTimesForPossiblePos, startTimesForMchOfa, opsIDsForMchOfa):
+    """
+    Inserts the operation 'a' into the earliest legal position in the machine's schedule.
+
+    Parameters:
+    a (int): The operation ID to be inserted.
+    idxLegalPos (list of int): Indices of legal positions where the operation can be inserted.
+    legalPos (list of int): Legal positions where the operation can be inserted.
+    endTimesForPossiblePos (list of float): End times for the possible positions.
+    startTimesForMchOfa (numpy array): Start times for the machine's operations.
+    opsIDsForMchOfa (numpy array): Operation IDs for the machine's operations.
+
+    Returns:
+    float: The start time of the inserted operation.
+    """
     earlstIdx = idxLegalPos[0]
     # print('idxLegalPos:', idxLegalPos)
     earlstPos = legalPos[0]
@@ -58,6 +119,19 @@ def putInBetween(a, idxLegalPos, legalPos, endTimesForPossiblePos, startTimesFor
 
 
 def calJobAndMchRdyTimeOfa(a, mchMat, durMat, mchsStartTimes, opIDsOnMchs):
+    """
+    Calculate the ready times for a job and its corresponding machine.
+    Parameters:
+    a (int): The index of the current job operation.
+    mchMat (numpy.ndarray): A matrix where each element represents the machine assigned to a job operation.
+    durMat (numpy.ndarray): A matrix where each element represents the duration of a job operation.
+    mchsStartTimes (numpy.ndarray): A matrix where each row represents the start times of operations on a machine.
+    opIDsOnMchs (numpy.ndarray): A matrix where each row represents the operation IDs assigned to a machine.
+    Returns:
+    tuple: A tuple containing:
+        - jobRdyTime_a (int): The ready time for the job.
+        - mchRdyTime_a (int): The ready time for the machine.
+    """
     mch_a = np.take(mchMat, a) - 1
     # cal jobRdyTime_a
     jobPredecessor = a - 1 if a % mchMat.shape[1] != 0 else None

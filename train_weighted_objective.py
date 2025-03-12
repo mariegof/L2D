@@ -22,10 +22,10 @@ from WS.utils import setup_directories
 CONFIG = {
     "training": {
         "enabled": True,
-        "max_updates": 10000,     # Number of episodes for training
+        "max_updates": 5000,     # Number of episodes for training
         "save_every": 1000,      # Save model checkpoints every N episodes
         "log_every": 100,        # Log training statistics every N episodes
-        'wspt_guidance_duration': 0
+        'wspt_guidance_duration': 0.5
     },
     "validation": {
         "seed": 200,
@@ -157,7 +157,9 @@ def train_l2d_multi_env():
                     
                     # Implement WSPT guidance in early training
                     if episode < n_episodes * wspt_guidance_duration:  # First 20% of training
-                        wspt_influence = 0.5 * (1.0 - episode / (n_episodes * 0.2))
+                        #wspt_influence = 0.5 * (1.0 - episode / (n_episodes * 0.2))
+                        wspt_decay = np.exp(-episode / (n_episodes * wspt_guidance_duration))
+                        wspt_influence = 0.9 * wspt_decay
                         
                         # Calculate WSPT priorities
                         wspt_values = np.zeros(len(candidate_envs[i]))

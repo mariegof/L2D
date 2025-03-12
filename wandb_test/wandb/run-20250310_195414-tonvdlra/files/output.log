@@ -1,0 +1,42 @@
+
+==================================================
+TRAINING L2D FOR WEIGHTED SUM OBJECTIVE (6x6)
+==================================================
+Starting training for 1000 episodes with 8 environments...
+[34m[1mwandb[0m: Ctrl + C detected. Stopping sweep.
+Traceback (most recent call last):
+  File "sweep_config.py", line 132, in train_agent
+    return train_l2d_multi_env(run.config)
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb_test/run_exp.py", line 247, in train_l2d_multi_env
+    loss, v_loss = ppo.update(memories, n_j * n_m, configs.graph_pool_type)
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/PPO_jssp_multiInstances.py", line 130, in update
+    pis, vals = self.policy(x=fea_mb_t_all_env[i],
+  File "/Users/mariegoffin/miniconda3/envs/l2D/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2D/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/models/actor_critic.py", line 57, in forward
+    h_pooled, h_nodes = self.feature_extract(x=x,
+  File "/Users/mariegoffin/miniconda3/envs/l2D/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2D/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/models/graphcnn_congForSJSSP.py", line 140, in forward
+    h = self.next_layer(h, layer, Adj_block=Adj_block)
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/models/graphcnn_congForSJSSP.py", line 108, in next_layer
+    pooled_rep = self.mlps[layer](pooled)
+  File "/Users/mariegoffin/miniconda3/envs/l2D/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2D/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/models/mlp.py", line 49, in forward
+    h = F.relu(self.batch_norms[layer](self.linears[layer](h)))
+  File "/Users/mariegoffin/miniconda3/envs/l2D/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2D/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2D/lib/python3.8/site-packages/torch/nn/modules/batchnorm.py", line 176, in forward
+    return F.batch_norm(
+  File "/Users/mariegoffin/miniconda3/envs/l2D/lib/python3.8/site-packages/torch/nn/functional.py", line 2512, in batch_norm
+    return torch.batch_norm(
+Exception

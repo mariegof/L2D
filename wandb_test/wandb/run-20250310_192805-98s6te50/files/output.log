@@ -1,0 +1,42 @@
+
+==================================================
+TRAINING L2D FOR WEIGHTED SUM OBJECTIVE (6x6)
+==================================================
+Starting training for 1000 episodes with 8 environments...
+Episode 50/1000 | Reward: -14194.38 | Weighted Sum: 14194.38 | Loss: -0.157570
+Avg(100): Reward=-14256.98, Weighted Sum=14256.98 | Episode time: 0.66s | Total time: 18.82s
+Validating on 100 instances
+
+Instance 0 weights (first 3): [2 2 2]
+Initial weighted sum: 4785.00
+Final weighted sum: 6983.00
+Total steps: 36
+Reward-derived: -6983.00
+Improvement: -45.94%
+
+Instance 1 weights (first 3): [9 6 5]
+Initial weighted sum: 12298.00
+Final weighted sum: 18801.00
+Total steps: 36
+Reward-derived: -18801.00
+Improvement: -52.88%
+
+Instance 2 weights (first 3): [8 8 6]
+Initial weighted sum: 8727.00
+Final weighted sum: 11339.00
+Total steps: 36
+Reward-derived: -11339.00
+Improvement: -29.93%
+
+Weighted sum statistics:
+Mean: 13496.41
+Min: 5571.00
+Max: 27296.00
+Std: 4536.97
+Validation Weighted Sum: 13496.41 | Reward-derived: -13496.41 | Improvement: -50.18%
+Data lengths - Rewards: 50, Losses: 50, Weighted Sums: 50
+Validation history length: 1
+First few validation values: [13496.41]
+Last few validation values: [13496.41] (smaller is better)
+/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb_test/run_exp.py:413: UserWarning: Starting a Matplotlib GUI outside of the main thread will likely fail.
+  plt.figure(figsize=(12, 6))

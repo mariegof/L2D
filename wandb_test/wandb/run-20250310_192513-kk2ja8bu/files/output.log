@@ -1,0 +1,12 @@
+
+==================================================
+TRAINING L2D FOR WEIGHTED SUM OBJECTIVE (6x6)
+==================================================
+Traceback (most recent call last):
+  File "sweep_config.py", line 132, in train_agent
+    return train_l2d_multi_env(run.config)
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb_test/run_exp.py", line 99, in train_l2d_multi_env
+    dataLoaded = np.load('././DataGen/WeightData/weightedData' + str(n_j) + '_' + str(n_m) + '_Seed' + str(configs.np_seed_validation) + '.npy')
+  File "/Users/mariegoffin/miniconda3/envs/l2D/lib/python3.8/site-packages/numpy/lib/npyio.py", line 405, in load
+    fid = stack.enter_context(open(os_fspath(file), "rb"))
+FileNotFoundError: [Errno 2] No such file or directory: '././DataGen/WeightData/weightedData6_6_Seed200.npy'

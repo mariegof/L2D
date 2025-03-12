@@ -1,0 +1,135 @@
+{
+  "id": "exp_20250311_161525",
+  "timestamp": "20250311_161525",
+  "duration_minutes": 121.32653748194376,
+  "description": "",
+  "environment": {
+    "n_j": 6,
+    "n_m": 6,
+    "device": "cpu",
+    "num_envs": 8,
+    "max_updates": 15000,
+    "feature_set": [
+      "LBs",
+      "finished_mark",
+      "weighted_priorities",
+      "normalized_weights",
+      "machine_contention",
+      "remaining_weighted_work",
+      "time_elapsed"
+    ],
+    "wspt_guidance_enabled": false,
+    "wspt_guidance_duration": 0
+  },
+  "architecture": {
+    "num_layers": 3,
+    "input_dim": 7,
+    "hidden_dim": 64,
+    "num_mlp_layers_feature_extract": 2,
+    "num_mlp_layers_actor": 2,
+    "hidden_dim_actor": 32,
+    "num_mlp_layers_critic": 2,
+    "hidden_dim_critic": 32
+  },
+  "training_params": {
+    "lr": 2e-05,
+    "decayflag": false,
+    "decay_step_size": 2000,
+    "decay_ratio": 0.9,
+    "gamma": 1,
+    "k_epochs": 1,
+    "eps_clip": 0.2,
+    "vloss_coef": 1,
+    "ploss_coef": 2,
+    "entloss_coef": 0.05,
+    "rewardscale": 0.0,
+    "init_quality_flag": false
+  },
+  "results": {
+    "duration_minutes": 121.17582199970882,
+    "best_validation_episode": 13000,
+    "validation_weighted_sum": 12900.44,
+    "training_rewards": {
+      "type": "list",
+      "length": 15000,
+      "sample": [
+        -14206.625,
+        -14067.5,
+        -14674.125,
+        -15786.75,
+        -14497.875
+      ],
+      "summary": {
+        "mean": -14144.836583333334,
+        "min": -20258.125,
+        "max": -9697.0
+      }
+    },
+    "training_weighted_sums": {
+      "type": "list",
+      "length": 15000,
+      "sample": [
+        14206.625,
+        14067.5,
+        14674.125,
+        15786.75,
+        14497.875
+      ],
+      "summary": {
+        "mean": 14144.836583333334,
+        "min": 9697.0,
+        "max": 20258.125
+      }
+    },
+    "losses": {
+      "type": "list",
+      "length": 15000,
+      "sample": [
+        6.172807693481445,
+        6.193388938903809,
+        5.770761489868164,
+        6.003054141998291,
+        5.856488227844238
+      ],
+      "summary": {
+        "mean": -0.2952374695889652,
+        "min": -0.7987580299377441,
+        "max": 6.193388938903809
+      }
+    },
+    "validation_history": {
+      "type": "list",
+      "length": 150,
+      "sample": [
+        14447.89,
+        14545.84,
+        14474.77,
+        14610.98,
+        14641.05
+      ],
+      "summary": {
+        "mean": 13476.430466666665,
+        "min": 12900.44,
+        "max": 14703.07
+      }
+    },
+    "win_rate": 20.0,
+    "win_vs_spt": 66.66666666666666,
+    "win_vs_wspt": 22.22222222222222,
+    "avg_weighted_sum": 12560.3,
+    "improvement_over_spt": 5.350293512580725,
+    "improvement_over_wspt": -1.9637290557215192,
+    "training_completed": true,
+    "test_win_rate": 26.0,
+    "test_win_vs_spt": 72.22222222222221,
+    "test_win_vs_srpt": 74.28571428571429,
+    "test_win_vs_wspt": 32.098765432098766,
+    "test_avg_weighted_sum": 13714.5,
+    "test_improvement_over_spt": 6.462666228347174,
+    "test_improvement_over_srpt": 4.926267511119497,
+    "test_improvement_over_wspt": -4.0152171885061065,
+    "testing_completed": true
+  },
+  "config_hash": "02741c8e",
+  "is_duplicate": false
+}
