@@ -29,13 +29,16 @@ class SJSSP(gym.Env, EzPickle):
         
         # Define available features for state representation
         self.available_features = {
-            'LBs': True,                      # Lower bounds on operation end times
-            'finished_mark': True,            # Binary indicators of completed operations
-            'weighted_priorities': True,      # WSPT ratio (weight/processing time)
+            'LBs': False,                      # Lower bounds on operation end times
+            'weighted_LBs': False,            # Lower bounds multiplied by job weights (NEW)
+            'finished_mark': False,            # Binary indicators of completed operations
+            'weighted_priorities': False,      # WSPT ratio (weight/processing time)
             'normalized_weights': False,      # Direct job weights (normalized)
             'remaining_weighted_work': False, # Weight × sum of remaining processing times
             'time_elapsed': False,            # Current timestep in scheduling
-            'machine_contention': False       # Number of operations needing each machine
+            'machine_contention': False,       # Number of operations needing each machine
+            'weighted_priorities_normalized': False,  # Normalized WSPT ratio
+            'last_op_weighted': False          # Feature for normalized weights applied only to last operations
         }
         
         # Set default feature set for weighted sum if none specified
@@ -76,8 +79,8 @@ class SJSSP(gym.Env, EzPickle):
                 self.mask[action // self.number_of_machines] = 1
                 # This operation completes a job - update completion time record
                 job_idx = action // self.number_of_machines
-                job_completion_time = startTime_a + dur_a  # End time of last operation
-                self.job_completion_times[job_idx] = job_completion_time
+                # Get completion time directly from LBs (which is already updated correctly)
+                job_completion_time = self.LBs[job_idx, self.number_of_machines-1]
                 self.weighted_sum += self.weights[job_idx] * job_completion_time
 
             self.temp1[row, col] = startTime_a + dur_a
@@ -122,8 +125,7 @@ class SJSSP(gym.Env, EzPickle):
         # Handle job weights (default to uniform weights if not provided)
         self.weights = data[2].astype(np.single) if len(data) > 2 else np.ones(self.number_of_jobs, dtype=np.single)
         
-        # Initialize job completion times and weighted sum tracking
-        self.job_completion_times = np.zeros(self.number_of_jobs, dtype=np.single)
+        # Initialize weighted sum tracking
         self.weighted_sum = 0
         
         # record action history
@@ -149,7 +151,7 @@ class SJSSP(gym.Env, EzPickle):
         self.previous_weighted_sum = self.initQuality
         self.finished_mark = np.zeros_like(self.m, dtype=np.single)
         
-        # Calculate WSPT priority for each operation
+        # Calculate WSPT priority for each operation 
         self.weighted_priorities = np.zeros((self.number_of_jobs, self.number_of_machines), dtype=np.single)
         for j in range(self.number_of_jobs):
             for m in range(self.number_of_machines):
@@ -176,16 +178,14 @@ class SJSSP(gym.Env, EzPickle):
     def _calculate_weighted_sum_estimate(self):
         """
         Calculate current estimate of weighted sum objective.
-        Uses lower bounds for uncompleted jobs and actual completion times for completed jobs.
+        Uses lower bounds from LBs for all jobs, which automatically
+        reflects actual completion times for finished jobs.
         """
         weighted_sum = 0
         for j in range(self.number_of_jobs):
-            if self.job_completion_times[j] > 0:
-                # Use actual completion time for finished jobs
-                weighted_sum += self.weights[j] * self.job_completion_times[j]
-            else:
-                # Use lower bound for unfinished jobs
-                weighted_sum += self.weights[j] * self.LBs[j, self.number_of_machines-1]
+            # Use LBs which automatically has the right value
+            # for both completed and uncompleted jobs
+            weighted_sum += self.weights[j] * self.LBs[j, self.number_of_machines-1]
         return weighted_sum
     
     def _calculate_remaining_work(self):
@@ -222,13 +222,36 @@ class SJSSP(gym.Env, EzPickle):
         """
         features = []
         
+        # Get maximum weight for normalization
+        max_weight = np.max(self.weights)
+        
         # Lower bounds on operation end times
         if self.available_features['LBs']:
             features.append(self.LBs.reshape(-1, 1)/configs.et_normalize_coef)
-        
+            
         # Binary indicators of completed operations
         if self.available_features['finished_mark']:
             features.append(self.finished_mark.reshape(-1, 1))
+            
+        # Weighted lower bounds (LBs multiplied by job weights)
+        if self.available_features['weighted_LBs']:
+            # Create weighted LBs matrix
+            weighted_LBs = np.zeros_like(self.LBs, dtype=np.single)
+            for j in range(self.number_of_jobs):
+                # Apply job's weight to all of its operations' LBs
+                weighted_LBs[j, :] = self.weights[j] * self.LBs[j, :]
+            
+            # Add normalized weighted LBs as feature
+            # Use higher normalization coefficient since values are larger
+            norm_factor = configs.et_normalize_coef * np.max(self.weights) if np.max(self.weights) > 1 else configs.et_normalize_coef
+            features.append(weighted_LBs.reshape(-1, 1)/norm_factor)
+            
+        if self.available_features['weighted_priorities_normalized']:
+            # Normalize WSPT ratio by maximum value
+            norm_wspt = self.weighted_priorities.copy()
+            if np.max(norm_wspt) > 0:
+                norm_wspt = norm_wspt / np.max(norm_wspt)
+            features.append(norm_wspt.reshape(-1, 1))
         
         # WSPT ratio (weight/processing time)
         if self.available_features['weighted_priorities']:
@@ -238,6 +261,14 @@ class SJSSP(gym.Env, EzPickle):
         if self.available_features['normalized_weights']:
             norm_weights = self.weights / np.max(self.weights)
             features.append(np.repeat(norm_weights, self.number_of_machines).reshape(-1, 1))
+            
+        # Feature for normalized weights applied only to last operations
+        if self.available_features['last_op_weighted']:
+            last_op_weighted = np.zeros_like(self.LBs, dtype=np.single)
+            for j in range(self.number_of_jobs):
+                # Only apply weight to the last operation of each job
+                last_op_weighted[j, self.number_of_machines-1] = self.weights[j] / np.max(self.weights)
+            features.append(last_op_weighted.reshape(-1, 1))
         
         # Weight × sum of remaining processing times
         if self.available_features['remaining_weighted_work']:

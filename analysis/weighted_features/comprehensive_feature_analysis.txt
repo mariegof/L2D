@@ -1,0 +1,80 @@
+COMPREHENSIVE FEATURE ANALYSIS REPORT
+====================================
+
+1. FEATURE IMPORTANCE FROM MODEL WEIGHTS
+---------------------------------------
+time_elapsed: 0.2018
+LBs: 0.2016
+remaining_weighted_work: 0.1930
+weighted_priorities: 0.1800
+normalized_weights: 0.1762
+machine_contention: 0.1747
+finished_mark: 0.1684
+
+2. MULTI-INSTANCE OCCLUSION TESTING
+----------------------------------
+remaining_weighted_work: mean=0.0086, change rate=0.50, 95% CI=[0.0057, 0.0115]
+machine_contention: mean=0.0085, change rate=0.90, 95% CI=[0.0069, 0.0100]
+weighted_priorities: mean=0.0069, change rate=0.60, 95% CI=[0.0058, 0.0080]
+normalized_weights: mean=0.0060, change rate=0.50, 95% CI=[0.0036, 0.0085]
+LBs: mean=0.0041, change rate=0.30, 95% CI=[0.0033, 0.0050]
+finished_mark: mean=0.0000, change rate=0.00, 95% CI=[0.0000, 0.0000]
+time_elapsed: mean=0.0000, change rate=0.00, 95% CI=[0.0000, 0.0000]
+
+3. FEATURE IMPORTANCE ACROSS SCHEDULING STAGES
+--------------------------------------------
+
+EARLY STAGE:
+  finished_mark: 0.0656
+  machine_contention: 0.0643
+  normalized_weights: 0.0461
+  time_elapsed: 0.0338
+  remaining_weighted_work: 0.0314
+  LBs: 0.0280
+  weighted_priorities: 0.0272
+
+MIDDLE STAGE:
+  remaining_weighted_work: 0.0669
+  weighted_priorities: 0.0534
+  LBs: 0.0508
+  time_elapsed: 0.0495
+  normalized_weights: 0.0404
+  machine_contention: 0.0381
+  finished_mark: 0.0333
+
+LATE STAGE:
+  LBs: 0.0570
+  time_elapsed: 0.0465
+  remaining_weighted_work: 0.0373
+  finished_mark: 0.0231
+  weighted_priorities: 0.0228
+  machine_contention: 0.0154
+  normalized_weights: 0.0146
+
+4. FEATURE INTERACTIONS
+----------------------
+Top feature interactions by strength:
+normalized_weights + weighted_priorities: -0.0077 (redundant)
+normalized_weights + machine_contention: -0.0068 (redundant)
+weighted_priorities + remaining_weighted_work: -0.0068 (redundant)
+LBs + remaining_weighted_work: -0.0050 (redundant)
+LBs + normalized_weights: 0.0044 (synergistic)
+
+5. STATISTICAL SIGNIFICANCE
+--------------------------
+Features sorted by statistical significance:
+machine_contention: impact=0.0074, p-value=0.0000 **
+remaining_weighted_work: impact=0.0083, p-value=0.2400 
+LBs: impact=0.0065, p-value=0.3300 
+normalized_weights: impact=0.0062, p-value=0.4400 
+weighted_priorities: impact=0.0061, p-value=0.9600 
+finished_mark: impact=0.0000, p-value=1.0000 
+time_elapsed: impact=0.0000, p-value=1.0000 
+
+6. SUMMARY OF KEY FINDINGS
+-------------------------
+- Most important feature by model weights: time_elapsed
+- Most important feature by occlusion testing: remaining_weighted_work
+- Most statistically significant feature: machine_contention
+- Strongest feature interaction: normalized_weights + weighted_priorities (-0.0077)
+- Number of features that change decisions: 5

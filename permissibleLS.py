@@ -2,7 +2,7 @@ from Params import configs
 import numpy as np
 
 
-def permissibleLeftShift(a, durMat, mchMat, mchsStartTimes, opIDsOnMchs):
+def permissibleLeftShiftWeighted(a, durMat, mchMat, mchsStartTimes, opIDsOnMchs, weights=None):
     """
     Determines the permissible left shift for a given operation in a scheduling problem.
     Parameters:
@@ -16,6 +16,74 @@ def permissibleLeftShift(a, durMat, mchMat, mchsStartTimes, opIDsOnMchs):
         - startTime_a (int): The start time of the operation `a`.
         - flag (bool): A flag indicating whether the operation `a` was successfully left-shifted.
     """
+    # Calculate times and find positions
+    jobRdyTime_a, mchRdyTime_a = calJobAndMchRdyTimeOfa(a, mchMat, durMat, mchsStartTimes, opIDsOnMchs)
+    dur_a = np.take(durMat, a)
+    mch_a = np.take(mchMat, a) - 1
+    startTimesForMchOfa = mchsStartTimes[mch_a]
+    opsIDsForMchOfa = opIDsOnMchs[mch_a]
+    flag = False
+
+    # Find positions where job is ready before operations start
+    possiblePos = np.where(jobRdyTime_a < startTimesForMchOfa)[0]
+    # print('possiblePos:', possiblePos)
+    if len(possiblePos) == 0:
+        startTime_a = putInTheEnd(a, jobRdyTime_a, mchRdyTime_a, startTimesForMchOfa, opsIDsForMchOfa)
+        
+    else:
+        idxLegalPos, legalPos, endTimesForPossiblePos = calLegalPos(dur_a, jobRdyTime_a, durMat, possiblePos, startTimesForMchOfa, opsIDsForMchOfa)
+        # print('legalPos:', legalPos)
+        if len(legalPos) == 0:
+            startTime_a = putInTheEnd(a, jobRdyTime_a, mchRdyTime_a, startTimesForMchOfa, opsIDsForMchOfa)
+        else:
+            # NEW: Weight-aware position selection
+            #print("In the weight-aware case")
+            job_a = a // len(weights)  # Get job index for current operation
+            weight_a = weights[job_a]  # Get weight of current job
+            
+            # Evaluate each legal position considering weights
+            position_scores = []
+            for pos_idx, pos in enumerate(legalPos):
+                # Get operations that would be delayed
+                delayed_ops = [op for op in opsIDsForMchOfa[pos:] if op >= 0]
+                
+                # Calculate weighted penalty for this position
+                delay_penalty = 0
+                for op in delayed_ops:
+                    delayed_job = op // len(weights)
+                    # Higher penalty for delaying higher-weight jobs
+                    delay_penalty += weights[delayed_job] * dur_a
+                    
+                # Calculate position score (higher is better)
+                # Balance between:
+                # 1. Starting current operation early (weight_a * endTimesForPossiblePos[pos_idx])
+                # 2. Minimizing impact on other jobs (delay_penalty)
+                position_score = weight_a * (startTimesForMchOfa[-1] - endTimesForPossiblePos[pos_idx]) - delay_penalty
+                position_scores.append(position_score)
+                
+                #print(f"Scheduling op {a} (Job {job_a}, Weight {weight_a})")
+                #print(f"  Legal positions: {legalPos}")
+                #print(f"  End times: {endTimesForPossiblePos}")
+                
+                #print(f"  Position {pos}: Start={endTimesForPossiblePos[pos_idx]}")
+                #print(f"    Delayed ops: {delayed_ops}")
+                #print(f"    Score: {position_score}")
+            
+            if len(position_scores) > 0 and max(position_scores) > 0:
+                # Use position with best score if positive
+                best_pos_idx = np.argmax(position_scores)
+                flag = True
+                startTime_a = putInBetween(a, idxLegalPos[best_pos_idx:best_pos_idx+1], 
+                                         legalPos[best_pos_idx:best_pos_idx+1], 
+                                         endTimesForPossiblePos[best_pos_idx:best_pos_idx+1], 
+                                         startTimesForMchOfa, opsIDsForMchOfa)
+            else:
+                # If all positions have negative scores, put at end
+                startTime_a = putInTheEnd(a, jobRdyTime_a, mchRdyTime_a, startTimesForMchOfa, opsIDsForMchOfa)
+            
+    return startTime_a, flag
+
+def permissibleLeftShift(a, durMat, mchMat, mchsStartTimes, opIDsOnMchs):
     jobRdyTime_a, mchRdyTime_a = calJobAndMchRdyTimeOfa(a, mchMat, durMat, mchsStartTimes, opIDsOnMchs)
     dur_a = np.take(durMat, a)
     mch_a = np.take(mchMat, a) - 1
@@ -36,7 +104,6 @@ def permissibleLeftShift(a, durMat, mchMat, mchsStartTimes, opIDsOnMchs):
             flag = True
             startTime_a = putInBetween(a, idxLegalPos, legalPos, endTimesForPossiblePos, startTimesForMchOfa, opsIDsForMchOfa)
     return startTime_a, flag
-
 
 def putInTheEnd(a, jobRdyTime_a, mchRdyTime_a, startTimesForMchOfa, opsIDsForMchOfa):
     """
@@ -163,76 +230,158 @@ if __name__ == "__main__":
     high = 99
     SEED = 10
     np.random.seed(SEED)
-    env = SJSSP(n_j=n_j, n_m=n_m)
-
-    '''arr = np.ones(3)
-    idces = np.where(arr == -1)
-    print(len(idces[0]))'''
-
-    # rollout env random action
-    t1 = time.time()
+    
+    # Generate instance
     data = uni_instance_gen(n_j=n_j, n_m=n_m, low=low, high=high)
+    dur = data[0]
+    mch = data[1]
+    
+    # Define weights - high contrast to see differences
+    weights = np.array([10, 3, 1], dtype=np.single)
+    
     print('Dur')
-    print(data[0])
+    print(dur)
     print('Mach')
-    print(data[-1])
+    print(mch)
+    print('Weights')
+    print(weights)
     print()
 
-    # start time of operations on machines
-    mchsStartTimes = -configs.high * np.ones_like(data[0].transpose(), dtype=np.int32)
-    # Ops ID on machines
-    opIDsOnMchs = -n_j * np.ones_like(data[0].transpose(), dtype=np.int32)
-
-    # random rollout to test
-    # count = 0
+    # Create environment to determine eligible operations
+    env = SJSSP(n_j=n_j, n_m=n_m)
+    
+    # === TEST ORIGINAL PLS ===
+    print("\n=== TESTING ORIGINAL PLS ===")
+    # Initialize scheduling structures
+    mchsStartTimes_std = -configs.high * np.ones_like(dur.transpose(), dtype=np.int32)
+    opIDsOnMchs_std = -n_j * np.ones_like(dur.transpose(), dtype=np.int32)
+    
+    # Get initial eligible operations
     _, _, omega, mask = env.reset(data)
-    rewards = []
-    flags = []
-    # ts = []
-    while True:
-        action = np.random.choice(omega[np.where(mask == 0)])
-        print(action)
-        mch_a = np.take(data[-1], action) - 1
-        # print(mch_a)
-        # print('action:', action)
-        # t3 = time.time()
+    actions_taken = []
+    job_completions_std = np.zeros(n_j, dtype=np.single)
+    
+    # Run through all operations using eligibility from environment
+    while not env.done():
+        # Choose an eligible action (use the first one for determinism)
+        eligible_ops = omega[np.where(mask == 0)]
+        action = eligible_ops[0]  # Select first eligible operation
+        actions_taken.append(action)
+        
+        job_idx = action // n_m
+        op_idx = action % n_m
+        
+        print(f"Scheduling op {action} (Job {job_idx})")
+        
+        # Apply standard PLS
+        startTime_a, flag = permissibleLeftShift(
+            a=action, 
+            durMat=dur, 
+            mchMat=mch, 
+            mchsStartTimes=mchsStartTimes_std, 
+            opIDsOnMchs=opIDsOnMchs_std
+        )
+        
+        # Update completion time if last operation of job
+        if op_idx == n_m - 1:
+            job_completions_std[job_idx] = startTime_a + dur[job_idx, op_idx]
+        
+        print(f"  Start time: {startTime_a}")
+        
+        # Update environment to get next eligible operations
         adj, _, reward, done, omega, mask = env.step(action)
-        # t4 = time.time()
-        # ts.append(t4 - t3)
-        # jobRdyTime_a, mchRdyTime_a = calJobAndMchRdyTimeOfa(a=action, mchMat=data[-1], durMat=data[0], mchsStartTimes=mchsStartTimes, opIDsOnMchs=opIDsOnMchs)
-        # print('mchRdyTime_a:', mchRdyTime_a)
-        startTime_a, flag = permissibleLeftShift(a=action, durMat=data[0].astype(np.single), mchMat=data[-1], mchsStartTimes=mchsStartTimes, opIDsOnMchs=opIDsOnMchs)
-        flags.append(flag)
-        # print('startTime_a:', startTime_a)
-        # print('mchsStartTimes\n', mchsStartTimes)
-        # print('NOOOOOOOOOOOOO' if not np.array_equal(env.mchsStartTimes, mchsStartTimes) else '\n')
-        print('opIDsOnMchs\n', opIDsOnMchs)
-        # print('LBs\n', env.LBs)
-        rewards.append(reward)
-        # print('ET after action:\n', env.LBs)
+    
+    # Calculate weighted sum
+    weighted_sum_std = np.sum(weights * job_completions_std)
+    print(f"\nJob completion times: {job_completions_std}")
+    print(f"Weighted sum: {weighted_sum_std}")
+    
+    # === TEST WEIGHTED PLS ===
+    print("\n=== TESTING WEIGHTED PLS ===")
+    # Reset environment
+    env = SJSSP(n_j=n_j, n_m=n_m)
+    _, _, omega, mask = env.reset(data)
+    
+    # Initialize scheduling structures
+    mchsStartTimes_w = -configs.high * np.ones_like(dur.transpose(), dtype=np.int32)
+    opIDsOnMchs_w = -n_j * np.ones_like(dur.transpose(), dtype=np.int32)
+    
+    job_completions_w = np.zeros(n_j, dtype=np.single)
+    action_index = 0
+    
+    # Use the same sequence of operations from the first run
+    while not env.done():
+        action = actions_taken[action_index]
+        action_index += 1
+        
+        job_idx = action // n_m
+        op_idx = action % n_m
+        
+        print(f"Scheduling op {action} (Job {job_idx}, Weight {weights[job_idx]})")
+        
+        # Apply weighted PLS
+        startTime_a, flag = permissibleLeftShiftWeighted(
+            a=action, 
+            durMat=dur, 
+            mchMat=mch, 
+            mchsStartTimes=mchsStartTimes_w, 
+            opIDsOnMchs=opIDsOnMchs_w,
+            weights=weights
+        )
+        
+        # Update completion time if last operation of job
+        if op_idx == n_m - 1:
+            job_completions_w[job_idx] = startTime_a + dur[job_idx, op_idx]
+        
+        print(f"  Start time: {startTime_a}")
+        
+        # Update environment to maintain consistent eligible operations
+        adj, _, reward, done, omega, mask = env.step(action)
+    
+    # Calculate weighted sum
+    weighted_sum_w = np.sum(weights * job_completions_w)
+    print(f"\nJob completion times: {job_completions_w}")
+    print(f"Weighted sum: {weighted_sum_w}")
+    
+    # Compare results
+    print("\n=== RESULTS COMPARISON ===")
+    print(f"Original PLS weighted sum: {weighted_sum_std}")
+    print(f"Weighted PLS weighted sum: {weighted_sum_w}")
+    
+    if weighted_sum_std > weighted_sum_w:
+        improvement = (weighted_sum_std - weighted_sum_w) / weighted_sum_std * 100
+        print(f"Improvement with weighted PLS: {improvement:.2f}%")
+    else:
+        print("No improvement with weighted PLS on this instance.")
+    
+    # Visualize final schedules
+    print("\n=== SCHEDULE VISUALIZATION ===")
+    print("Original PLS Schedule:")
+    durAlongMchs_std = np.take(dur, opIDsOnMchs_std)
+    mchsEndTimes_std = mchsStartTimes_std + durAlongMchs_std
+    
+    for m in range(n_m):
+        print(f"Machine {m+1}:", end=" ")
+        for i in range(n_j):
+            if opIDsOnMchs_std[m][i] >= 0:
+                op = opIDsOnMchs_std[m][i]
+                job_idx = op // n_m
+                start = mchsStartTimes_std[m][i]
+                end = mchsEndTimes_std[m][i]
+                print(f"[J{job_idx}(w={weights[job_idx]}): {start}-{end}]", end=" ")
         print()
-        if env.done():
-            break
-    t2 = time.time()
-    print(t2 - t1)
-    # print(sum(ts))
-    # print(np.sum(opIDsOnMchs // n_m, axis=1))
-    # print(np.where(mchsStartTimes == mchsStartTimes.max()))
-    # print(opIDsOnMchs[np.where(mchsStartTimes == mchsStartTimes.max())])
-    print(mchsStartTimes.max() + np.take(data[0], opIDsOnMchs[np.where(mchsStartTimes == mchsStartTimes.max())]))
-    # np.save('sol', opIDsOnMchs // n_m)
-    # np.save('jobSequence', opIDsOnMchs)
-    # np.save('testData', data)
-    # print(mchsStartTimes)
-    durAlongMchs = np.take(data[0], opIDsOnMchs)
-    mchsEndTimes = mchsStartTimes + durAlongMchs
-    print(mchsStartTimes)
-    print(mchsEndTimes)
-    print()
-    print(env.opIDsOnMchs)
-    print(env.adj)
-    # print(sum(flags))
-    # data = np.load('data.npy')
-
-    # print(len(np.where(np.array(rewards) == 0)[0]))
-    # print(rewards)
+    
+    print("\nWeighted PLS Schedule:")
+    durAlongMchs_w = np.take(dur, opIDsOnMchs_w)
+    mchsEndTimes_w = mchsStartTimes_w + durAlongMchs_w
+    
+    for m in range(n_m):
+        print(f"Machine {m+1}:", end=" ")
+        for i in range(n_j):
+            if opIDsOnMchs_w[m][i] >= 0:
+                op = opIDsOnMchs_w[m][i]
+                job_idx = op // n_m
+                start = mchsStartTimes_w[m][i]
+                end = mchsEndTimes_w[m][i]
+                print(f"[J{job_idx}(w={weights[job_idx]}): {start}-{end}]", end=" ")
+        print()

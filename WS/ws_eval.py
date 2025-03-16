@@ -109,6 +109,73 @@ def evaluate_policies(policy=None, model_path=None, conf=None, feature_set=None)
     
     # Setup directories
     _, _, results_dir = setup_directories(conf)
+    # Define a separate directory for test instances (distinct from validation data)
+    TEST_DATA_DIR = './DataGen/TestData'
+    os.makedirs(TEST_DATA_DIR, exist_ok=True)
+    seed = 2025
+    
+    # Define path for test instances
+    test_file_path = os.path.join(TEST_DATA_DIR, f'weightedData{n_j}_{n_m}_Seed{seed}.npy')
+    
+    # Initialize environment
+    env = SJSSP(n_j=n_j, n_m=n_m, feature_set=feature_set)
+    
+    # Try to load existing test instances
+    instances = []
+    try:
+        print(f"Attempting to load test instances from {test_file_path}")
+        data_loaded = np.load(test_file_path)
+        
+        print(f"Successfully loaded data with shape {data_loaded.shape}")
+        
+        # Process the loaded data into the required format
+        for i in range(len(data_loaded)):
+            times = data_loaded[i][0]
+            machines = data_loaded[i][1]
+            weight_matrix = data_loaded[i][2]
+            
+            # Extract weights from the last column of weight_matrix
+            weights = weight_matrix[:, -1]
+            
+            # Create instance tuple with the correct format
+            instances.append((times, machines, weights))
+        
+        print(f"Successfully processed {len(instances)} test instances")
+        
+    except (FileNotFoundError, IOError) as e:
+        print(f"Could not load test instances: {e}")
+        print(f"Generating {n_instances} new test instances with seed {seed}...")
+        
+        # Set seed for reproducible instance generation
+        np.random.seed(seed)
+        
+        # Generate instances following the exact format from the code snippet
+        generated_data = []
+        for _ in range(n_instances):
+            times, machines, weights = weighted_instance_gen(
+                n_j=n_j, n_m=n_m, low=low, high=high,
+                weight_low=weight_low, weight_high=weight_high
+            )
+            
+            # Create a matrix of zeros with the same shape as times
+            weight_matrix = np.zeros((n_j, n_m), dtype=int)
+            
+            # Place the weights in the last column
+            weight_matrix[:, -1] = weights
+            
+            # Store all components for saving
+            generated_data.append(np.array([times, machines, weight_matrix]))
+            
+            # Add to instances list for immediate use
+            instances.append((times, machines, weights))
+        
+        # Save the generated instances
+        np.save(test_file_path, np.array(generated_data))
+        print(f"Generated and saved {n_instances} test instances to {test_file_path}")
+    
+    # Use only the requested number of instances (in case the file has more)
+    instances = instances[:n_instances]
+    print(f"Using {len(instances)} instances for evaluation")
     
     # Load policy if needed
     if policy is None and model_path is not None:
@@ -136,20 +203,6 @@ def evaluate_policies(policy=None, model_path=None, conf=None, feature_set=None)
     if policy is None:
         print("Error: No policy available for evaluation.")
         return
-    
-    # Initialize environment
-    env = SJSSP(n_j=n_j, n_m=n_m, feature_set = feature_set)
-    
-    # Generate random weighted instances
-    print(f"Generating {n_instances} random weighted instances...")
-    instances = [
-        weighted_instance_gen(
-            n_j=n_j, n_m=n_m, 
-            low=low, high=high,
-            weight_low=weight_low, weight_high=weight_high
-        ) 
-        for _ in range(n_instances)
-    ]
     
     # Results dictionary for weighted sum objective
     results = {

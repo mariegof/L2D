@@ -17,12 +17,13 @@ from LogExpResults import log_experiment_results
 from WS.ws_validation import validate_weighted, compare_validation_methods
 from WS.ws_eval import evaluate_policies
 from WS.utils import setup_directories 
+from WS.feature_analysis import *
 
 # Configuration parameters
 CONFIG = {
     "training": {
         "enabled": True,
-        "max_updates": 5000,     # Number of episodes for training
+        "max_updates": 10000,     # Number of episodes for training
         "save_every": 1000,      # Save model checkpoints every N episodes
         "log_every": 100,        # Log training statistics every N episodes
         'wspt_guidance_duration': 0.5
@@ -50,7 +51,7 @@ save_every = CONFIG["training"]["save_every"]
 log_every = CONFIG["training"]["log_every"]
 wspt_guidance_duration = CONFIG["training"]['wspt_guidance_duration']
 num_envs = configs.num_envs
-feature_set = ['LBs', 'finished_mark', 'weighted_priorities', 'normalized_weights', 'machine_contention', 'remaining_weighted_work', 'time_elapsed']
+feature_set = ['LBs', 'finished_mark', 'normalized_weights', 'weighted_priorities','remaining_weighted_work', 'time_elapsed', 'machine_contention']
 
 def train_l2d_multi_env():
     """
@@ -313,6 +314,60 @@ def train_l2d_multi_env():
     # Add baseline comparison metrics to the results
     training_results.update(comparison_metrics)
     
+    # After training completes, analyze feature importance
+    print("\nAnalyzing feature importance...")
+    feature_names = list(feature_set)  # Convert to list if it's not already
+
+    # Use validation data as test instances and the first environment for analysis
+    test_env = envs[0]  # Use the first environment from the array
+    
+    # Extract the first validation instance and format it correctly
+    times = vali_data[0][0]  
+    machines = vali_data[0][1]
+    weight_matrix = vali_data[0][2]
+    weights = weight_matrix[:, -1]  # Extract the weights from the last column
+
+    # Create properly formatted instance
+    test_instance = (times, machines, weights)
+
+    # Run a basic feature analysis first to get feature_importance and feature_impacts
+    # for the return values
+    feature_importance = analyze_feature_importance(ppo.policy, test_env, feature_names)
+    feature_impacts = feature_occlusion_test(
+        ppo.policy, 
+        test_env, 
+        test_instance,  # Use properly formatted instance
+        g_pool_step,
+        feature_names,
+        device="cpu"
+    )
+    
+    # Format all validation instances correctly
+    formatted_instances = []
+    for instance in vali_data:
+        times = instance[0]
+        machines = instance[1]
+        weight_matrix = instance[2]
+        weights = weight_matrix[:, -1]  # Extract weights from last column
+        formatted_instances.append((times, machines, weights))
+
+
+    # Run the comprehensive analysis (optional - can be commented out if taking too long)
+    analysis_dir = run_comprehensive_feature_analysis(
+        model=ppo.policy, 
+        env=test_env, 
+        instances=formatted_instances,  # Use validation data as test instances
+        g_pool_step=g_pool_step,
+        feature_names=feature_names,
+        device="cpu",
+        output_dir="analysis/weighted_features"  # Output directory
+    )
+
+    print(f"Analysis complete. Results saved to {analysis_dir}")
+    training_results['feature_importance'] = feature_importance
+    training_results['feature_impacts'] = feature_impacts
+    training_results['feature_analysis_dir'] = analysis_dir
+        
     return ppo.policy, final_model_path, weighted_sums_history, validation_history, training_results
 
 def plot_weighted_learning_curves(rewards, losses, weighted_sums, figures_dir, validation_history=None, log_every=100):
@@ -484,6 +539,28 @@ if __name__ == "__main__":
         
         # Create a training phase marker for logging
         collected_results['training_completed'] = True
+        
+        # Visualize feature analysis (only if training was performed)
+        print("\nCreating feature importance visualizations...")
+        feature_names = list(feature_set)  # Your feature names list
+        
+        # Create visualizations and get file paths
+        importance_plot_path = plot_feature_importance(training_results['feature_importance'], feature_names)
+        impact_plot_path = plot_feature_impacts(training_results['feature_impacts'])
+        summary_path = create_feature_summary_report(training_results['feature_importance'], training_results['feature_impacts'], feature_names)
+        
+        print(f"Feature importance visualization saved to {importance_plot_path}")
+        print(f"Feature impact visualization saved to {impact_plot_path}")
+        print(f"Feature analysis summary saved to {summary_path}")
+        
+        # Add feature analysis metrics to collected results
+        collected_results['most_important_feature'] = feature_names[np.argmax(training_results['feature_importance'])]
+        
+        # Calculate correlation between feature importance and impact
+        impact_values = [impact['probability_change'] for impact in training_results['feature_impacts']]
+        if len(training_results['feature_importance']) == len(impact_values):
+            correlation = np.corrcoef(training_results['feature_importance'], impact_values)[0, 1]
+            collected_results['importance_impact_correlation'] = correlation
     
     # Run evaluation if enabled
     if CONFIG["evaluation"]["enabled"]:

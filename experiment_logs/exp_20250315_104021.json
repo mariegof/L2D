@@ -1,0 +1,280 @@
+{
+  "id": "exp_20250315_104021",
+  "timestamp": "20250315_104021",
+  "duration_minutes": 39.209145816167194,
+  "description": "",
+  "environment": {
+    "n_j": 6,
+    "n_m": 6,
+    "device": "cpu",
+    "num_envs": 4,
+    "max_updates": 10000,
+    "feature_set": [
+      "LBs",
+      "weighted_LBs",
+      "finished_mark",
+      "weighted_priorities",
+      "normalized_weights",
+      "remaining_weighted_work",
+      "time_elapsed",
+      "machine_contention"
+    ],
+    "wspt_guidance_enabled": false,
+    "wspt_guidance_duration": 0
+  },
+  "architecture": {
+    "num_layers": 3,
+    "input_dim": 8,
+    "hidden_dim": 64,
+    "num_mlp_layers_feature_extract": 2,
+    "num_mlp_layers_actor": 2,
+    "hidden_dim_actor": 32,
+    "num_mlp_layers_critic": 2,
+    "hidden_dim_critic": 32
+  },
+  "training_params": {
+    "lr": 2e-05,
+    "decayflag": false,
+    "decay_step_size": 2000,
+    "decay_ratio": 0.9,
+    "gamma": 1,
+    "k_epochs": 1,
+    "eps_clip": 0.2,
+    "vloss_coef": 1,
+    "ploss_coef": 2,
+    "entloss_coef": 0.01,
+    "rewardscale": 0.0,
+    "init_quality_flag": false
+  },
+  "results": {
+    "duration_minutes": 39.00134903589885,
+    "best_validation_episode": 7800,
+    "validation_weighted_sum": 14069.05,
+    "training_rewards": {
+      "type": "list",
+      "length": 10000,
+      "sample": [
+        -15023.0,
+        -14860.25,
+        -15091.25,
+        -13819.5,
+        -18344.25
+      ],
+      "summary": {
+        "mean": -14483.99365,
+        "min": -20572.5,
+        "max": -8258.0
+      }
+    },
+    "training_weighted_sums": {
+      "type": "list",
+      "length": 10000,
+      "sample": [
+        15023.0,
+        14860.25,
+        15091.25,
+        13819.5,
+        18344.25
+      ],
+      "summary": {
+        "mean": 14483.99365,
+        "min": 8258.0,
+        "max": 20572.5
+      }
+    },
+    "losses": {
+      "type": "list",
+      "length": 10000,
+      "sample": [
+        3.652027130126953,
+        3.724024772644043,
+        3.5838050842285156,
+        3.5773606300354004,
+        3.681783676147461
+      ],
+      "summary": {
+        "mean": 0.12496708898823708,
+        "min": -0.27884137630462646,
+        "max": 3.724024772644043
+      }
+    },
+    "validation_history": [
+      14769.22,
+      14763.23,
+      14651.92,
+      14785.14,
+      14747.12,
+      14689.99,
+      14739.86,
+      14801.41,
+      14644.31,
+      14765.62,
+      14694.01,
+      14830.47,
+      14642.84,
+      14747.84,
+      14626.24,
+      14490.88,
+      14461.06,
+      14321.39,
+      14385.62,
+      14365.98,
+      14394.44,
+      14443.34,
+      14476.74,
+      14388.63,
+      14176.49,
+      14259.4,
+      14239.61,
+      14227.08,
+      14239.49,
+      14247.92,
+      14275.58,
+      14358.99,
+      14479.96,
+      14547.16,
+      14495.36,
+      14584.33,
+      14478.38,
+      14490.61,
+      14507.37,
+      14483.66,
+      14514.26,
+      14487.7,
+      14474.13,
+      14496.1,
+      14429.33,
+      14476.27,
+      14486.36,
+      14474.84,
+      14479.67,
+      14479.48,
+      14511.44,
+      14446.71,
+      14447.44,
+      14468.57,
+      14430.18,
+      14423.46,
+      14448.74,
+      14421.62,
+      14414.38,
+      14497.36,
+      14371.17,
+      14404.47,
+      14331.82,
+      14400.06,
+      14322.33,
+      14274.74,
+      14194.18,
+      14234.75,
+      14131.7,
+      14114.04,
+      14136.94,
+      14153.9,
+      14159.65,
+      14101.75,
+      14112.1,
+      14107.51,
+      14095.04,
+      14069.05,
+      14096.38,
+      14123.55,
+      14142.81,
+      14140.88,
+      14178.34,
+      14182.54,
+      14202.23,
+      14223.42,
+      14334.09,
+      14332.61,
+      14375.49,
+      14320.61,
+      14342.03,
+      14363.17,
+      14426.4,
+      14395.87,
+      14453.46,
+      14457.95,
+      14483.11,
+      14452.67,
+      14479.24,
+      14490.79
+    ],
+    "win_rate": 0.0,
+    "win_vs_spt": 0.0,
+    "win_vs_wspt": 0.0,
+    "avg_weighted_sum": 13756.9,
+    "improvement_over_spt": -3.666834962284202,
+    "improvement_over_wspt": -11.677652941940513,
+    "feature_importance": [
+      0.15935248136520386,
+      0.1744118481874466,
+      0.1766374260187149,
+      0.14644284546375275,
+      0.16168303787708282,
+      0.18896688520908356,
+      0.16710977256298065,
+      0.18337185680866241
+    ],
+    "feature_impacts": [
+      {
+        "feature": "normalized_weights",
+        "probability_change": "0.003748576",
+        "action_changed": "False"
+      },
+      {
+        "feature": "machine_contention",
+        "probability_change": "0.0032418866",
+        "action_changed": "True"
+      },
+      {
+        "feature": "remaining_weighted_work",
+        "probability_change": "0.0031732246",
+        "action_changed": "True"
+      },
+      {
+        "feature": "weighted_priorities",
+        "probability_change": "0.0022970785",
+        "action_changed": "True"
+      },
+      {
+        "feature": "LBs",
+        "probability_change": "0.0020580243",
+        "action_changed": "False"
+      },
+      {
+        "feature": "weighted_LBs",
+        "probability_change": "0.0009848574",
+        "action_changed": "True"
+      },
+      {
+        "feature": "finished_mark",
+        "probability_change": "0.0",
+        "action_changed": "False"
+      },
+      {
+        "feature": "time_elapsed",
+        "probability_change": "0.0",
+        "action_changed": "False"
+      }
+    ],
+    "feature_analysis_dir": "analysis/weighted_features",
+    "training_completed": true,
+    "most_important_feature": "remaining_weighted_work",
+    "importance_impact_correlation": -0.37320170242014267,
+    "test_win_rate": 10.0,
+    "test_win_vs_spt": 52.63157894736842,
+    "test_win_vs_srpt": 45.45454545454545,
+    "test_win_vs_wspt": 12.658227848101266,
+    "test_avg_weighted_sum": 14842.53,
+    "test_improvement_over_spt": -1.1944224378789918,
+    "test_improvement_over_srpt": -5.879520513157075,
+    "test_improvement_over_wspt": -13.419244209459723,
+    "testing_completed": true
+  },
+  "config_hash": "cb519911",
+  "is_duplicate": true,
+  "duplicate_of": [
+    "exp_20250314_002556"
+  ]
+}
