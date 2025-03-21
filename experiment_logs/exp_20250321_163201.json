@@ -1,0 +1,155 @@
+{
+  "id": "exp_20250321_163201",
+  "timestamp": "20250321_163201",
+  "duration_minutes": 15.568441764513652,
+  "description": "",
+  "environment": {
+    "n_j": 6,
+    "n_m": 6,
+    "device": "cpu",
+    "num_envs": 8,
+    "max_updates": 1000,
+    "feature_set": [
+      "LBs",
+      "finished_mark",
+      "normalized_weights"
+    ],
+    "wspt_guidance_enabled": false,
+    "wspt_guidance_duration": 0
+  },
+  "architecture": {
+    "num_layers": 3,
+    "input_dim": 3,
+    "hidden_dim": 128,
+    "num_mlp_layers_feature_extract": 2,
+    "num_mlp_layers_actor": 2,
+    "hidden_dim_actor": 32,
+    "num_mlp_layers_critic": 2,
+    "hidden_dim_critic": 32
+  },
+  "training_params": {
+    "lr": 2e-05,
+    "decayflag": true,
+    "decay_step_size": 200,
+    "decay_ratio": 0.9,
+    "gamma": 1,
+    "k_epochs": 10,
+    "eps_clip": 0.1,
+    "vloss_coef": 1,
+    "ploss_coef": 2,
+    "entloss_coef": 0.02,
+    "rewardscale": 0.0,
+    "init_quality_flag": false
+  },
+  "results": {
+    "duration_minutes": 15.350483584403992,
+    "best_validation_episode": 100,
+    "validation_weighted_sum": 13913.73,
+    "training_rewards": {
+      "type": "list",
+      "length": 1000,
+      "sample": [
+        -14406.950835068854,
+        -14348.091182845936,
+        -14556.945257938432,
+        -15596.479193503064,
+        -14294.55452365841
+      ],
+      "summary": {
+        "mean": -14484.075640345734,
+        "min": -19239.131484366626,
+        "max": -11115.326688026831
+      }
+    },
+    "training_weighted_sums": {
+      "type": "list",
+      "length": 1000,
+      "sample": [
+        13618.75,
+        13736.25,
+        14179.375,
+        14813.0,
+        13754.875
+      ],
+      "summary": {
+        "mean": 13893.2855,
+        "min": 10642.125,
+        "max": 18571.75
+      }
+    },
+    "losses": {
+      "type": "list",
+      "length": 1000,
+      "sample": [
+        8.207483291625977,
+        5.169550895690918,
+        3.22450590133667,
+        2.1182026863098145,
+        0.9437798857688904
+      ],
+      "summary": {
+        "mean": -0.021194610534235835,
+        "min": -0.31530168652534485,
+        "max": 8.207483291625977
+      }
+    },
+    "validation_history": [
+      13913.73,
+      14005.92,
+      14782.15,
+      14235.73,
+      14133.16,
+      14346.26,
+      14400.79,
+      14190.29,
+      14345.3,
+      14260.99
+    ],
+    "win_rate": 0.0,
+    "win_vs_spt": 0.0,
+    "win_vs_wspt": 0.0,
+    "avg_weighted_sum": 13979.4,
+    "improvement_over_spt": -7.6912410446036485,
+    "improvement_over_wspt": -15.300677152495407,
+    "feature_importance": [
+      0.2776036560535431,
+      0.2922571897506714,
+      0.26741406321525574
+    ],
+    "feature_impacts": [
+      {
+        "feature": "LBs",
+        "probability_change": "0.0039619505",
+        "action_changed": "True"
+      },
+      {
+        "feature": "normalized_weights",
+        "probability_change": "0.0023867413",
+        "action_changed": "True"
+      },
+      {
+        "feature": "finished_mark",
+        "probability_change": "0.0",
+        "action_changed": "False"
+      }
+    ],
+    "feature_analysis_dir": "analysis/weighted_features",
+    "training_completed": true,
+    "most_important_feature": "finished_mark",
+    "importance_impact_correlation": 0.5123680819620219,
+    "test_win_rate": 7.000000000000001,
+    "test_win_vs_spt": 38.88888888888889,
+    "test_win_vs_srpt": 41.17647058823529,
+    "test_win_vs_wspt": 8.860759493670885,
+    "test_avg_weighted_sum": 14830.11,
+    "test_improvement_over_spt": -4.235603047340049,
+    "test_improvement_over_srpt": -6.536003586134761,
+    "test_improvement_over_wspt": -15.734644202502137,
+    "testing_completed": true
+  },
+  "config_hash": "d3c17a6a",
+  "is_duplicate": true,
+  "duplicate_of": [
+    "exp_20250319_180343"
+  ]
+}

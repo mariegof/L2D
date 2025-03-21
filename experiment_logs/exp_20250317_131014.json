@@ -1,0 +1,200 @@
+{
+  "id": "exp_20250317_131014",
+  "timestamp": "20250317_131014",
+  "duration_minutes": 25.244468367099763,
+  "description": "",
+  "environment": {
+    "n_j": 6,
+    "n_m": 6,
+    "device": "cpu",
+    "num_envs": 8,
+    "max_updates": 10000,
+    "feature_set": [
+      "LBs",
+      "finished_mark",
+      "normalized_weights"
+    ],
+    "wspt_guidance_enabled": false,
+    "wspt_guidance_duration": 0
+  },
+  "architecture": {
+    "num_layers": 3,
+    "input_dim": 3,
+    "hidden_dim": 64,
+    "num_mlp_layers_feature_extract": 2,
+    "num_mlp_layers_actor": 2,
+    "hidden_dim_actor": 32,
+    "num_mlp_layers_critic": 2,
+    "hidden_dim_critic": 32
+  },
+  "training_params": {
+    "lr": 2e-05,
+    "decayflag": false,
+    "decay_step_size": 2000,
+    "decay_ratio": 0.9,
+    "gamma": 1,
+    "k_epochs": 1,
+    "eps_clip": 0.2,
+    "vloss_coef": 1,
+    "ploss_coef": 2,
+    "entloss_coef": 0.01,
+    "rewardscale": 0.0,
+    "init_quality_flag": false
+  },
+  "results": {
+    "duration_minutes": 25.13950586716334,
+    "best_validation_episode": 4500,
+    "validation_weighted_sum": 12477.09,
+    "training_rewards": {
+      "type": "list",
+      "length": 5500,
+      "sample": [
+        -9892.700726969882,
+        -10998.170899203305,
+        -10393.42490373682,
+        -9541.300380586745,
+        -10535.80336586904
+      ],
+      "summary": {
+        "mean": -31801.391953848914,
+        "min": -65650.3227586236,
+        "max": -9509.873273310157
+      }
+    },
+    "training_weighted_sums": {
+      "type": "list",
+      "length": 5500,
+      "sample": [
+        2517.25,
+        2792.0306453704834,
+        2830.7453422546387,
+        2552.452527999878,
+        2786.5333557128906
+      ],
+      "summary": {
+        "mean": 8601.664524765969,
+        "min": 2517.25,
+        "max": 17778.767578125
+      }
+    },
+    "losses": {
+      "type": "list",
+      "length": 5500,
+      "sample": [
+        18.802860260009766,
+        17.116191864013672,
+        17.90436553955078,
+        17.01799964904785,
+        16.18651580810547
+      ],
+      "summary": {
+        "mean": 0.1440547134143893,
+        "min": -0.4178813099861145,
+        "max": 18.802860260009766
+      }
+    },
+    "validation_history": [
+      13192.28,
+      13142.31,
+      13044.16,
+      13069.86,
+      13119.95,
+      13116.09,
+      13131.72,
+      13104.55,
+      13157.5,
+      13135.53,
+      13081.33,
+      13076.37,
+      13091.51,
+      13095.94,
+      13100.56,
+      13107.44,
+      12911.57,
+      12862.64,
+      12702.9,
+      12623.41,
+      12629.76,
+      12584.29,
+      12528.46,
+      12562.43,
+      12518.83,
+      12524.14,
+      12492.02,
+      12503.72,
+      12477.09,
+      12489.94,
+      12593.33,
+      12665.15,
+      12673.31,
+      12665.71,
+      12708.14,
+      12709.6,
+      12690.55,
+      12636.27,
+      12670.83,
+      12642.39,
+      12688.82,
+      12654.06,
+      12646.57,
+      12662.69,
+      12638.53,
+      12650.88,
+      12662.56,
+      12664.31,
+      12663.96,
+      12671.68,
+      12703.41,
+      12702.61,
+      12722.53,
+      12678.31,
+      12697.32
+    ],
+    "win_rate": 30.0,
+    "win_vs_spt": 75.0,
+    "win_vs_wspt": 33.33333333333333,
+    "avg_weighted_sum": 12126.8,
+    "improvement_over_spt": 6.580386719050926,
+    "improvement_over_wspt": -0.020619747119421328,
+    "feature_importance": [
+      0.2881266474723816,
+      0.2870492935180664,
+      0.2648601531982422
+    ],
+    "feature_impacts": [
+      {
+        "feature": "LBs",
+        "probability_change": "0.008534509",
+        "action_changed": "True"
+      },
+      {
+        "feature": "normalized_weights",
+        "probability_change": "0.008129145",
+        "action_changed": "True"
+      },
+      {
+        "feature": "finished_mark",
+        "probability_change": "0.0",
+        "action_changed": "False"
+      }
+    ],
+    "feature_analysis_dir": "analysis/weighted_features",
+    "training_completed": true,
+    "most_important_feature": "LBs",
+    "importance_impact_correlation": 0.9999994160795828,
+    "test_win_rate": 37.0,
+    "test_win_vs_spt": 88.09523809523809,
+    "test_win_vs_srpt": 88.09523809523809,
+    "test_win_vs_wspt": 41.11111111111111,
+    "test_avg_weighted_sum": 13011.85,
+    "test_improvement_over_spt": 8.544304019893879,
+    "test_improvement_over_srpt": 6.525946317171782,
+    "test_improvement_over_wspt": -1.5448860572394563,
+    "testing_completed": true
+  },
+  "config_hash": "426c34c6",
+  "is_duplicate": true,
+  "duplicate_of": [
+    "exp_20250317_100607"
+  ]
+}

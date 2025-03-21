@@ -11,22 +11,26 @@ from JSSP_Env import SJSSP
 from PPO_jssp_multiInstances import PPO, Memory
 from mb_agg import g_pool_cal
 from agent_utils import select_action
-from uniform_instance_gen import weighted_instance_gen
+from uniform_instance_gen import *
 from Params import configs
 from LogExpResults import log_experiment_results
 from WS.ws_validation import validate_weighted, compare_validation_methods
 from WS.ws_eval import evaluate_policies
 from WS.utils import setup_directories 
 from WS.feature_analysis import *
+from WS.ws_curriculum import generate_smart_curriculum_weights
 
 # Configuration parameters
 CONFIG = {
     "training": {
         "enabled": True,
-        "max_updates": 10000,     # Number of episodes for training
+        "max_updates": 1000,     # Number of episodes for training
         "save_every": 1000,      # Save model checkpoints every N episodes
         "log_every": 100,        # Log training statistics every N episodes
-        'wspt_guidance_duration': 0.5
+        'wspt_guidance_duration': 0,
+        "use_curriculum": False,  # Enable curriculum learning
+        "curriculum_type": "gini_controlled",  # Choose strategy: 'multi_stage', 'weighted_blend', 'focused_exploration', 'machine_aware'
+        "curriculum_seed": 42         # Seed for reproducible curriculum (optional)
     },
     "validation": {
         "seed": 200,
@@ -51,7 +55,7 @@ save_every = CONFIG["training"]["save_every"]
 log_every = CONFIG["training"]["log_every"]
 wspt_guidance_duration = CONFIG["training"]['wspt_guidance_duration']
 num_envs = configs.num_envs
-feature_set = ['LBs', 'finished_mark', 'normalized_weights', 'weighted_priorities','remaining_weighted_work', 'time_elapsed', 'machine_contention']
+feature_set = ['LBs', 'finished_mark', 'normalized_weights']
 
 def train_l2d_multi_env():
     """
@@ -109,9 +113,20 @@ def train_l2d_multi_env():
     weighted_sums_history = []
     loss_history = []
     validation_history = []
+    # Initialize training results dictionary
+    training_results = {
+        'duration_minutes': 0,
+        'best_validation_episode': 0,
+        'validation_weighted_sum': float('inf'),
+        'early_stopped': False
+    }
         
     # For saving best model
     best_weighted_sum = float('inf')
+    best_validation_score = float('inf')
+    patience = 10  # Number of validation checks without improvement before stopping
+    no_improvement_counter = 0
+    best_episode = 0
     
     # Training loop
     start_time = time.time()
@@ -126,8 +141,35 @@ def train_l2d_multi_env():
         adj_envs, fea_envs, candidate_envs, mask_envs = [], [], [], []
         
         for i, env in enumerate(envs):
-            # Generate weighted instances
-            adj, fea, candidate, mask = env.reset(weighted_instance_gen(n_j=n_j, n_m=n_m, low=configs.low, high=configs.high,weight_low=weight_low, weight_high=weight_high))
+            
+            # Use curriculum learning if enabled
+            if CONFIG["training"]["use_curriculum"]:
+                # Generate base instance components
+                times, machines = uni_instance_gen(n_j=n_j, n_m=n_m, low=configs.low, high=configs.high)
+                # Generate curriculum-based weights
+                weights = generate_smart_curriculum_weights(
+                    n_j=n_j,
+                    episode=episode,
+                    max_episodes=n_episodes,
+                    curriculum_type=CONFIG["training"]["curriculum_type"],
+                    weight_min=weight_low,
+                    weight_max=weight_high,
+                    seed=CONFIG["training"]["curriculum_seed"] if "curriculum_seed" in CONFIG["training"] else None
+                )
+                instance = (times, machines, weights)
+            else:
+                # Use standard random weights
+                instance = weighted_instance_gen(
+                    n_j=n_j, 
+                    n_m=n_m, 
+                    low=configs.low, 
+                    high=configs.high,
+                    weight_low=weight_low, 
+                    weight_high=weight_high
+                )
+            
+            # Reset environment with the instance
+            adj, fea, candidate, mask = env.reset(instance)
             adj_envs.append(adj)
             fea_envs.append(fea)
             candidate_envs.append(candidate)
@@ -250,6 +292,31 @@ def train_l2d_multi_env():
                 f"Reward-derived: {validation_results['reward_derived'].mean():.2f} | "
                 f"Improvement: {validation_results['improvement_pct'].mean():.2f}%")
             
+            # Only apply early stopping if curriculum has reached final phase
+            #curriculum_progress = min(1.0, episode / (n_episodes * 0.5))
+            #if curriculum_progress >= 0.9:  # Only consider early stopping in final phase
+                
+            """# Early stopping logic
+            if validation_weighted_sum_mean < best_validation_score:
+                best_validation_score = validation_weighted_sum_mean
+                best_episode = episode + 1
+                no_improvement_counter = 0
+                
+                # Save best model
+                best_model_path = os.path.join(models_dir, f"l2d_weighted_{n_j}x{n_m}_best.pth")
+                torch.save(ppo.policy.state_dict(), best_model_path)
+                print(f"New best model saved! Weighted sum: {validation_weighted_sum_mean:.2f}")
+            else:
+                no_improvement_counter += 1
+                print(f"No improvement for {no_improvement_counter} validation checks (best: {best_validation_score:.2f})")
+                
+            if no_improvement_counter >= patience:
+                print(f"Early stopping triggered after {episode+1} episodes due to no improvement for {patience} validation checks")
+                # Add to training results for reporting
+                training_results['early_stopped'] = True
+                training_results['early_stopping_episode'] = episode + 1
+                break"""
+            
             # Compare with baselines occasionally
             if (episode + 1) % (log_every * 5) == 0:
                 comparison_metrics = compare_validation_methods(vali_data[:10], ppo.policy, feature_set=feature_set)
@@ -261,7 +328,7 @@ def train_l2d_multi_env():
                 weighted_sums=np.array(weighted_sums_history),
                 losses=np.array(loss_history),
                 validation=np.array(validation_history)
-            )
+            )     
             
             # Plot learning curves using our improved plotting function
             if len(rewards_history) >= 1:
@@ -339,7 +406,7 @@ def train_l2d_multi_env():
         test_instance,  # Use properly formatted instance
         g_pool_step,
         feature_names,
-        device="cpu"
+        device=device
     )
     
     # Format all validation instances correctly
@@ -359,7 +426,7 @@ def train_l2d_multi_env():
         instances=formatted_instances,  # Use validation data as test instances
         g_pool_step=g_pool_step,
         feature_names=feature_names,
-        device="cpu",
+        device=device,
         output_dir="analysis/weighted_features"  # Output directory
     )
 
@@ -368,7 +435,7 @@ def train_l2d_multi_env():
     training_results['feature_impacts'] = feature_impacts
     training_results['feature_analysis_dir'] = analysis_dir
         
-    return ppo.policy, final_model_path, weighted_sums_history, validation_history, training_results
+    return ppo.policy, best_model_path, weighted_sums_history, validation_history, training_results
 
 def plot_weighted_learning_curves(rewards, losses, weighted_sums, figures_dir, validation_history=None, log_every=100):
     """
@@ -527,7 +594,7 @@ if __name__ == "__main__":
     }
     
     policy = None
-    model_path = None
+    model_path = None #'weighted_objective_experiments/models/l2d_weighted_6x6_best.pth'
     collected_results = {}
     
     # Run training if enabled

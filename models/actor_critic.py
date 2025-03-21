@@ -1,8 +1,8 @@
 import torch.nn as nn
-from models.mlp import MLPActor
-from models.mlp import MLPCritic
+from models.mlp import MLPActor, ResidualMLPActor
+from models.mlp import MLPCritic, ResidualMLPCritic
 import torch.nn.functional as F
-from models.graphcnn_congForSJSSP import GraphCNN
+from models.graphcnn_congForSJSSP import GraphCNN, Attention
 import torch
 
 
@@ -42,9 +42,14 @@ class ActorCritic(nn.Module):
                                         learn_eps=learn_eps,
                                         neighbor_pooling_type=neighbor_pooling_type,
                                         device=device).to(device)
-        self.actor = MLPActor(num_mlp_layers_actor, hidden_dim*2, hidden_dim_actor, 1).to(device)
-        self.critic = MLPCritic(num_mlp_layers_critic, hidden_dim, hidden_dim_critic, 1).to(device)
-
+        
+        # Attention mechanism
+        self.attention = Attention(hidden_dim).to(device)
+        
+        # Input dimension change because of attention concatenation 2->3
+        self.actor = ResidualMLPActor(num_mlp_layers_actor, hidden_dim*3, hidden_dim_actor, 1).to(device)
+        self.critic = ResidualMLPCritic(num_mlp_layers_critic, hidden_dim, hidden_dim_critic, 1).to(device)
+ 
     def forward(self,
                 x,
                 graph_pool,
@@ -62,6 +67,9 @@ class ActorCritic(nn.Module):
         dummy = candidate.unsqueeze(-1).expand(-1, self.n_j, h_nodes.size(-1))
         candidate_feature = torch.gather(h_nodes.reshape(dummy.size(0), -1, dummy.size(-1)), 1, dummy)
         h_pooled_repeated = h_pooled.unsqueeze(1).expand_as(candidate_feature)
+        
+        # Apply attention to get weighted features - already properly shaped
+        attention_weighted = self.attention(h_pooled, candidate_feature)
 
         '''# prepare policy feature: concat row work remaining feature
         durfea2mat = x[:, 1].reshape(shape=(-1, self.n_j, self.n_m))
@@ -73,7 +81,8 @@ class ActorCritic(nn.Module):
 
         # concatenate feature
         # concateFea = torch.cat((wkr, candidate_feature, h_pooled_repeated), dim=-1)
-        concateFea = torch.cat((candidate_feature, h_pooled_repeated), dim=-1)
+        #concateFea = torch.cat((candidate_feature, h_pooled_repeated), dim=-1)
+        concateFea = torch.cat((candidate_feature, h_pooled_repeated, attention_weighted), dim=-1)
         candidate_scores = self.actor(concateFea)
 
         # perform mask

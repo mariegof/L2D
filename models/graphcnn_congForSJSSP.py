@@ -5,17 +5,48 @@ from models.mlp import MLP
 # import sys
 # sys.path.append("models/")
 
-'''
 class Attention(nn.Module):
-    def __init__(self): super(Attention, self).__init__()
-
+    def __init__(self, hidden_dim):
+        super(Attention, self).__init__()
+        # Projection for attention scoring
+        self.query_proj = nn.Linear(hidden_dim, hidden_dim)
+        self.key_proj = nn.Linear(hidden_dim, hidden_dim)
+        
+        # Scaling factor for dot-product attention
+        self.scaling = torch.sqrt(torch.tensor(hidden_dim, dtype=torch.float32))
+        
     def forward(self, g_fea, candidates_feas):
-        attention_score = torch.mm(candidates_feas, g_fea.t())
-        attention_weight = F.softmax(attention_score, dim=0)
-        representation_weighted = torch.mm(attention_weight.t(), candidates_feas)
-        feas_final = torch.cat((g_fea, representation_weighted), dim=1)
-        return feas_final
-'''
+        """
+        Parameters:
+        - g_fea: Global graph features [batch_size, hidden_dim]
+        - candidates_feas: Features of candidate operations [batch_size, n_j, hidden_dim]
+        
+        Returns:
+        - Attention-weighted features [batch_size, n_j, hidden_dim]
+        """
+        batch_size, n_j, hidden_dim = candidates_feas.shape
+        
+        # Project graph features (query)
+        query = self.query_proj(g_fea).unsqueeze(1)  # [batch_size, 1, hidden_dim]
+        
+        # Project candidate features (keys)
+        keys = self.key_proj(candidates_feas)  # [batch_size, n_j, hidden_dim]
+        
+        # Compute attention scores
+        # [batch_size, 1, hidden_dim] × [batch_size, n_j, hidden_dim]^T = [batch_size, 1, n_j]
+        scores = torch.bmm(query, keys.transpose(1, 2)) / self.scaling
+        
+        # Convert to attention weights with softmax
+        attn_weights = F.softmax(scores, dim=2)  # [batch_size, 1, n_j]
+        
+        # Apply attention weights to get weighted representation
+        # [batch_size, 1, n_j] × [batch_size, n_j, hidden_dim] = [batch_size, 1, hidden_dim]
+        weighted_features = torch.bmm(attn_weights, candidates_feas)
+        
+        # Expand to match the shape of candidates_feas for concatenation
+        weighted_features = weighted_features.expand(-1, n_j, -1)
+        
+        return weighted_features
 
 
 class GraphCNN(nn.Module):

@@ -80,7 +80,7 @@ def aggr_obs(obs_mb, n_node):
         idx_mb = torch.stack((new_idx_row, new_idx_col))
         # print(idx_mb)
         # print(obs_mb.shape[0])
-        adj_batch = torch.sparse_coo_tensor(indices=idx_mb,
+        adj_batch = torch.sparse.FloatTensor(indices=idx_mb,
                                              values=vals,
                                              size=torch.Size([obs_mb.shape[0] * n_node,
                                                               obs_mb.shape[0] * n_node]),

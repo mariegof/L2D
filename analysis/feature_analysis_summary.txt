@@ -3,27 +3,19 @@ FEATURE ANALYSIS SUMMARY
 
 1. FEATURE IMPORTANCE (FROM MODEL WEIGHTS)
 ------------------------------------------
-time_elapsed: 0.2018
-LBs: 0.2016
-remaining_weighted_work: 0.1930
-weighted_priorities: 0.1800
-normalized_weights: 0.1762
-machine_contention: 0.1747
-finished_mark: 0.1684
+finished_mark: 0.2924
+LBs: 0.2772
+normalized_weights: 0.2680
 
 2. FEATURE IMPACT (FROM OCCLUSION TESTING)
 ------------------------------------------
-machine_contention: 0.0095 (CHANGES DECISIONS)
-normalized_weights: 0.0087 (CHANGES DECISIONS)
-remaining_weighted_work: 0.0077 (CHANGES DECISIONS)
-weighted_priorities: 0.0035 (preserves decisions)
-LBs: 0.0014 (preserves decisions)
+normalized_weights: 0.0183 (preserves decisions)
+LBs: 0.0086 (CHANGES DECISIONS)
 finished_mark: 0.0000 (preserves decisions)
-time_elapsed: 0.0000 (preserves decisions)
 
 3. KEY OBSERVATIONS
 ------------------
-- Most influential feature from model weights: time_elapsed
-- Feature with largest decision impact: machine_contention
+- Most influential feature from model weights: finished_mark
+- Feature with largest decision impact: normalized_weights
 - Note: Different features identified as important by different methods
-- Number of features that can change decisions when removed: 3
+- Number of features that can change decisions when removed: 1

@@ -1,0 +1,171 @@
+{
+  "id": "exp_20250317_124320",
+  "timestamp": "20250317_124320",
+  "duration_minutes": 11.651426148414611,
+  "description": "",
+  "environment": {
+    "n_j": 6,
+    "n_m": 6,
+    "device": "cpu",
+    "num_envs": 8,
+    "max_updates": 10000,
+    "feature_set": [
+      "LBs",
+      "finished_mark",
+      "normalized_weights"
+    ],
+    "wspt_guidance_enabled": false,
+    "wspt_guidance_duration": 0
+  },
+  "architecture": {
+    "num_layers": 3,
+    "input_dim": 3,
+    "hidden_dim": 64,
+    "num_mlp_layers_feature_extract": 2,
+    "num_mlp_layers_actor": 2,
+    "hidden_dim_actor": 32,
+    "num_mlp_layers_critic": 2,
+    "hidden_dim_critic": 32
+  },
+  "training_params": {
+    "lr": 2e-05,
+    "decayflag": false,
+    "decay_step_size": 2000,
+    "decay_ratio": 0.9,
+    "gamma": 1,
+    "k_epochs": 1,
+    "eps_clip": 0.2,
+    "vloss_coef": 1,
+    "ploss_coef": 2,
+    "entloss_coef": 0.01,
+    "rewardscale": 0.0,
+    "init_quality_flag": false
+  },
+  "results": {
+    "duration_minutes": 11.554760881265004,
+    "best_validation_episode": 1600,
+    "validation_weighted_sum": 12724.13,
+    "training_rewards": {
+      "type": "list",
+      "length": 2600,
+      "sample": [
+        -53147.96391499751,
+        -52622.70933823325,
+        -56168.950295571296,
+        -48636.141389064986,
+        -52436.97925150386
+      ],
+      "summary": {
+        "mean": -50410.29250271851,
+        "min": -66608.76996195597,
+        "max": -36182.62530157082
+      }
+    },
+    "training_weighted_sums": {
+      "type": "list",
+      "length": 2600,
+      "sample": [
+        14247.375,
+        14404.75,
+        15265.75,
+        13570.375,
+        13472.0
+      ],
+      "summary": {
+        "mean": 13447.161682692307,
+        "min": 9854.5,
+        "max": 17666.625
+      }
+    },
+    "losses": {
+      "type": "list",
+      "length": 2600,
+      "sample": [
+        22.968629837036133,
+        20.827817916870117,
+        21.41940689086914,
+        21.703126907348633,
+        19.839597702026367
+      ],
+      "summary": {
+        "mean": 0.5847821178009662,
+        "min": -0.43679893016815186,
+        "max": 22.968629837036133
+      }
+    },
+    "validation_history": [
+      12949.61,
+      12979.56,
+      12884.12,
+      12797.9,
+      12843.4,
+      12896.73,
+      12946.25,
+      12796.0,
+      12769.52,
+      12850.92,
+      12762.76,
+      12727.79,
+      12784.08,
+      12750.64,
+      12761.64,
+      12724.13,
+      12822.97,
+      12778.55,
+      12770.75,
+      12764.76,
+      12812.6,
+      12809.61,
+      12849.37,
+      12862.21,
+      12815.42,
+      12816.02
+    ],
+    "win_rate": 40.0,
+    "win_vs_spt": 100.0,
+    "win_vs_wspt": 40.0,
+    "avg_weighted_sum": 12475.7,
+    "improvement_over_spt": 3.892612279485396,
+    "improvement_over_wspt": -2.898311655105874,
+    "feature_importance": [
+      0.28880825638771057,
+      0.2871183753013611,
+      0.2647241950035095
+    ],
+    "feature_impacts": [
+      {
+        "feature": "normalized_weights",
+        "probability_change": "0.0095772",
+        "action_changed": "True"
+      },
+      {
+        "feature": "LBs",
+        "probability_change": "0.005363042",
+        "action_changed": "False"
+      },
+      {
+        "feature": "finished_mark",
+        "probability_change": "0.0",
+        "action_changed": "False"
+      }
+    ],
+    "feature_analysis_dir": "analysis/weighted_features",
+    "training_completed": true,
+    "most_important_feature": "LBs",
+    "importance_impact_correlation": 0.9243154999458194,
+    "test_win_rate": 34.0,
+    "test_win_vs_spt": 82.92682926829268,
+    "test_win_vs_srpt": 89.47368421052632,
+    "test_win_vs_wspt": 38.20224719101123,
+    "test_avg_weighted_sum": 13109.02,
+    "test_improvement_over_spt": 7.861330424410766,
+    "test_improvement_over_srpt": 5.827900013505477,
+    "test_improvement_over_wspt": -2.3032037890133363,
+    "testing_completed": true
+  },
+  "config_hash": "426c34c6",
+  "is_duplicate": true,
+  "duplicate_of": [
+    "exp_20250317_100607"
+  ]
+}
