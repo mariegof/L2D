@@ -1,12 +1,13 @@
 #!/bin/bash
-# Script to launch different types of sweeps and tests
+# Script to launch different types of sweeps and tests with concurrency support
 # Usage: ./launch.sh [command] [options]
 
 set -e  # Exit on error
 
 # Default values
 PROJECT="jssp-weighted-sum"
-COUNT=15
+COUNT=10
+WORKERS=0  # 0 means use (CPU count - 1)
 
 # Help message
 function show_help {
@@ -20,24 +21,24 @@ function show_help {
     echo "  sweep-model       Run model architecture sweep"
     echo "  sweep-feature     Run feature set sweep"
     echo "  sweep-reward      Run reward function sweep"
-    echo "  train             Run training with specified parameters"
     echo "  evaluate          Run evaluation on trained model"
+    echo "  generate-tables   Generate tables from a completed sweep"
     echo "  help              Show this help message"
     echo ""
     echo "Options:"
     echo "  --project NAME    WandB project name (default: $PROJECT)"
     echo "  --count N         Number of runs in sweep (default: $COUNT)"
-    echo "  --model FILE      Model file for evaluation"
-    echo "  --size NxM        Problem size as NxM (e.g., 6x6, 10x10)"
-    echo "  --weighted        Use weighted objective (default for sweeps)"
-    echo "  --uniform         Use uniform weights (all 1)"
+    echo "  --workers N       Number of concurrent agents (default: auto)"
+    echo "  --model FILE      Path to model file for evaluation"
+    echo "  --sweep ID        Sweep ID for generating tables"
+    echo "  --weighted        Use weighted instances (for evaluation)"
+    echo "  --uniform         Use uniform weights (for evaluation)"
     echo ""
     echo "Examples:"
-    echo "  ./launch.sh test-wandb                      # Run WandB test"
-    echo "  ./launch.sh sweep-env --count 20            # Run environment sweep with 20 agents"
-    echo "  ./launch.sh sweep-feature                  # Run feature set sweep"
-    echo "  ./launch.sh train --size 10x10 --weighted  # Train on 10x10 problems with weights"
-    echo "  ./launch.sh evaluate --model models/best/l2d_weighted_6x6_best.pth"
+    echo "  ./launch.sh test-wandb                           # Run WandB test"
+    echo "  ./launch.sh sweep-feature --count 20 --workers 4 # Run feature sweep with 20 runs on 4 workers"
+    echo "  ./launch.sh sweep-env                           # Run environment sweep"
+    echo "  ./launch.sh generate-tables --sweep [ID]        # Generate tables from sweep"
     echo ""
     echo "Note: Edit test_wandb.py to customize the WandB test parameters"
 }
@@ -62,15 +63,16 @@ while [ $# -gt 0 ]; do
             COUNT="$2"
             shift 2
             ;;
+        --workers)
+            WORKERS="$2"
+            shift 2
+            ;;
         --model)
             MODEL="$2"
             shift 2
             ;;
-        --size)
-            SIZE="$2"
-            # Extract N and M from NxM format
-            N_J=$(echo $SIZE | cut -d'x' -f1)
-            N_M=$(echo $SIZE | cut -d'x' -f2)
+        --sweep)
+            SWEEP_ID="$2"
             shift 2
             ;;
         --weighted)
@@ -108,54 +110,6 @@ function create_dirs {
     mkdir -p results/wandb_test
 }
 
-# Execute WandB sweep
-function run_sweep {
-    SWEEP_TYPE=$1
-    CONFIG_FILE="configs/${SWEEP_TYPE}_sweeps.yaml"
-    
-    if [ ! -f "$CONFIG_FILE" ]; then
-        echo "Error: Sweep configuration file not found: $CONFIG_FILE"
-        exit 1
-    fi
-    
-    # Create timestamp for this sweep
-    TIMESTAMP=$(date +%Y%m%d_%H%M%S)
-    
-    # Create output directory
-    OUTPUT_DIR="data/results/${SWEEP_TYPE}_sweeps/${TIMESTAMP}"
-    mkdir -p "$OUTPUT_DIR"
-    
-    # Copy the config file to the output directory for reference
-    cp "$CONFIG_FILE" "$OUTPUT_DIR/config.yaml"
-    
-    echo "Starting $SWEEP_TYPE sweep with $COUNT agents..."
-    echo "Results will be saved to $OUTPUT_DIR"
-    
-    # Initialize the sweep
-    SWEEP_ID=$(wandb sweep --project "$PROJECT" "$CONFIG_FILE" | grep -oP 'Created sweep with ID: \K.*')
-    
-    if [ -z "$SWEEP_ID" ]; then
-        echo "Error: Failed to create sweep"
-        exit 1
-    fi
-    
-    echo "Sweep ID: $SWEEP_ID"
-    
-    # Run the agents
-    echo "Running $COUNT agents..."
-    wandb agent "$PROJECT/$SWEEP_ID" --count "$COUNT"
-    
-    # Save sweep ID to output directory
-    echo "$SWEEP_ID" > "$OUTPUT_DIR/sweep_id.txt"
-    
-    # Generate tables
-    echo "Generating tables from sweep results..."
-    python scripts/generate_tables.py --project "$PROJECT" --sweep_id "$SWEEP_ID" --output "$OUTPUT_DIR/tables" --table_type "$SWEEP_TYPE"
-    
-    echo "Sweep completed. Results saved to $OUTPUT_DIR"
-    echo "You can find the sweep results at: https://wandb.ai/$PROJECT/sweeps/$SWEEP_ID"
-}
-
 # Execute command
 case "$COMMAND" in
     test-wandb)
@@ -165,72 +119,51 @@ case "$COMMAND" in
         python scripts/test_wandb.py
         ;;
     sweep-env)
-        echo "Running environment parameters sweep..."
+        echo "Running environment parameters sweep with $COUNT runs..."
         create_dirs
-        run_sweep "environment"
+        python scripts/concurrent_sweep_runner.py --type environment --project "$PROJECT" --count "$COUNT" --workers "$WORKERS"
         ;;
     sweep-model)
-        echo "Running model architecture sweep..."
+        echo "Running model architecture sweep with $COUNT runs..."
         create_dirs
-        run_sweep "model"
+        python scripts/concurrent_sweep_runner.py --type model --project "$PROJECT" --count "$COUNT" --workers "$WORKERS"
         ;;
     sweep-feature)
-        echo "Running feature set sweep..."
+        echo "Running feature set sweep with $COUNT runs..."
         create_dirs
-        run_sweep "feature"
+        python scripts/concurrent_sweep_runner.py --type feature --project "$PROJECT" --count "$COUNT" --workers "$WORKERS"
         ;;
     sweep-reward)
-        echo "Running reward function sweep..."
+        echo "Running reward function sweep with $COUNT runs..."
         create_dirs
-        run_sweep "reward"
+        python scripts/concurrent_sweep_runner.py --type reward --project "$PROJECT" --count "$COUNT" --workers "$WORKERS"
         ;;
-    train)
-        echo "Running training with specified parameters..."
-        create_dirs
-        
-        # Check if size was provided
-        if [ -z "$N_J" ] || [ -z "$N_M" ]; then
-            echo "Error: Size not specified. Use --size NxM (e.g., --size 6x6)"
+    generate-tables)
+        echo "Generating tables from sweep results..."
+        if [ -z "$SWEEP_ID" ]; then
+            echo "Error: Missing sweep ID. Use --sweep to specify the sweep ID."
             exit 1
         fi
-        
-        # Set weight parameter
-        WEIGHT_PARAM=""
-        if [ "$WEIGHTED" = true ]; then
-            WEIGHT_PARAM="--weighted"
-        elif [ "$WEIGHTED" = false ]; then
-            WEIGHT_PARAM="--uniform"
-        fi
-        
-        echo "Starting training on ${N_J}x${N_M} problems..."
-        python scripts/train.py --n_j "$N_J" --n_m "$N_M" $WEIGHT_PARAM --project "$PROJECT"
+        create_dirs
+        python scripts/enhanced_table_generator.py --project "$PROJECT" --sweep_id "$SWEEP_ID" --output "data/results/latex_tables" --detailed
         ;;
     evaluate)
         echo "Running evaluation on trained model..."
-        create_dirs
-        
-        # Check if model was provided
         if [ -z "$MODEL" ]; then
-            echo "Error: Model not specified. Use --model path/to/model.pth"
+            echo "Error: Missing model file. Use --model to specify the model file."
             exit 1
         fi
+        create_dirs
         
-        # Set size parameters if provided
-        SIZE_PARAMS=""
-        if [ ! -z "$N_J" ] && [ ! -z "$N_M" ]; then
-            SIZE_PARAMS="--n_j $N_J --n_m $N_M"
-        fi
-        
-        # Set weight parameter
-        WEIGHT_PARAM=""
+        # Set weight flag for test_methods.py
+        WEIGHT_FLAG=""
         if [ "$WEIGHTED" = true ]; then
-            WEIGHT_PARAM="--weighted"
+            WEIGHT_FLAG="--weighted True"
         elif [ "$WEIGHTED" = false ]; then
-            WEIGHT_PARAM="--weighted False"
+            WEIGHT_FLAG="--weighted False"
         fi
         
-        echo "Evaluating model: $MODEL"
-        python scripts/test_methods.py --model "$MODEL" $SIZE_PARAMS $WEIGHT_PARAM
+        python scripts/test_methods.py --model "$MODEL" $WEIGHT_FLAG
         ;;
     help)
         show_help
