@@ -1,0 +1,17 @@
+program: scripts/train.py
+method: bayes
+metric:
+  name: validation_win_rate_vs_wspt
+  goal: maximize
+parameters:
+  reward_strategy:
+    values: [
+      "default",
+      "wspt_guided",
+      "potential_based",
+      "critical_path",
+      "wspt",
+      "weighted_delay",
+      "direct_weighted_sum",
+      "look_ahead"
+    ]

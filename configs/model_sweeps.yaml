@@ -1,0 +1,40 @@
+program: scripts/train.py
+method: bayes
+metric:
+  name: validation_win_rate_vs_wspt
+  goal: maximize
+parameters:
+  num_layers:
+    values: [2, 3, 4]
+  neighbor_pooling_type:
+    values: ["sum", "average", "max"]
+  graph_pool_type:
+    values: ["average", "sum", "max"]
+  hidden_dim:
+    values: [64, 128, 256]
+  num_mlp_layers_feature_extract:
+    values: [1, 2, 3]
+  num_mlp_layers_actor:
+    values: [1, 2, 3]
+  hidden_dim_actor:
+    values: [16, 32, 64]
+  num_mlp_layers_critic:
+    values: [1, 2, 3]
+  hidden_dim_critic:
+    values: [16, 32, 64]
+  lr:
+    distribution: log_uniform_values
+    min: 1e-6
+    max: 1e-3
+  gamma:
+    values: [0.99, 0.999, 1.0]
+  k_epochs:
+    values: [1, 5, 10, 15]
+  eps_clip:
+    values: [0.1, 0.2, 0.3]
+  vloss_coef:
+    values: [0.5, 1.0, 2.0]
+  ploss_coef:
+    values: [1.0, 2.0, 4.0]
+  entloss_coef:
+    values: [0.01, 0.02, 0.05]

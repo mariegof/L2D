@@ -1,0 +1,19 @@
+program: scripts/train.py
+method: bayes
+metric:
+  name: validation_win_rate_vs_wspt
+  goal: maximize
+parameters:
+  feature_set:
+    values: [
+      ["LBs", "finished_mark"],
+      ["LBs", "finished_mark", "normalized_weights"],
+      ["LBs", "finished_mark", "weighted_priorities"],
+      ["LBs", "finished_mark", "normalized_weights", "weighted_priorities"],
+      ["LBs", "finished_mark", "normalized_weights", "weighted_priorities", "remaining_weighted_work"],
+      ["LBs", "finished_mark", "weighted_LBs"],
+      ["LBs", "finished_mark", "weighted_priorities_normalized"],
+      ["LBs", "finished_mark", "weighted_priorities", "machine_contention"],
+      ["LBs", "finished_mark", "weighted_priorities", "critical_path_contribution"],
+      ["LBs", "finished_mark", "weighted_priorities", "time_elapsed"]
+    ]
