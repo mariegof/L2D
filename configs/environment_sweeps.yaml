@@ -1,32 +1,28 @@
 program: scripts/train.py
 method: bayes
 metric:
-  name: validation_win_rate_vs_wspt
-  goal: maximize
+  name: validation_weighted_sum
+  goal: minimize
 parameters:
   n_j:
-    values: [6, 10, 15]
+    values: [6]
   n_m:
-    values: [6, 10, 15]
+    values: [6]
   low:
-    values: [1, 5, 10]
-  high:
-    values: [50, 99, 150]
-  weight_low:
     values: [1]
-  weight_high:
-    values: [2, 10]
+  high:
+    values: [99]
   rewardscale:
     distribution: uniform
     min: 0.0
     max: 0.5
   np_seed_train:
-    values: [42, 100, 200, 300, 400, 500]
+    values: [200]
   np_seed_validation:
     values: [200]
   torch_seed:
     values: [600]
   max_updates:
-    values: [1000, 5000, 10000]
+    values: [20]
   num_envs:
     values: [4, 8, 16]

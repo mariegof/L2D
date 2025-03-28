@@ -1,0 +1,62 @@
+
+wandb: WARNING Calling wandb.run.save without any arguments is deprecated.Changes to attributes are automatically persisted.
+Loaded validation data from ./data/instances/variable_weights/validation_data_6x6_seed200.npy
+Starting training for 100 episodes with 16 environments...
+Episode 100/100 | Reward: -2903.31 | Weighted Sum: 2785.25 | Loss: -0.069337
+Avg(100): Reward=-2876.89, Weighted Sum=2741.59 | Episode time: 1.92s | Total time: 219.54s
+Validation weighted sum statistics:
+Mean: 13835.23
+Min: 7805.00
+Max: 21083.00
+Std: 2907.85
+Validation Weighted Sum: 13835.23 | Reward-derived: -14432.11 | Improvement: -52.97%
+Validation weighted sum statistics:
+Mean: 13835.23
+Min: 7805.00
+Max: 21083.00
+Std: 2907.85
+Validation Results:
+Average Weighted Sums:
+L2D: 13835.23
+SPT: 13903.27
+WSPT: 12822.80
+Win Statistics:
+L2D: 21/100 (21.00%)
+SPT: 14/100 (14.00%)
+WSPT: 65/100 (65.00%)
+New best model saved! Win rate vs WSPT: 24.42%
+Training completed in 0h 3m 47.66s
+Final model saved to ./models/l2d_weighted_6x6_final.pth
+Validation weighted sum statistics:
+Mean: 13835.23
+Min: 7805.00
+Max: 21083.00
+Std: 2907.85
+Traceback (most recent call last):
+  File "scripts/train.py", line 591, in train
+    wandb.run.summary.update()  # This is different than the problematic empty update() call
+TypeError: update() missing 1 required positional argument: 'd'
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "scripts/train.py", line 599, in train
+    traceback.print_exc()
+UnboundLocalError: local variable 'traceback' referenced before assignment
+Validation weighted sum statistics:
+Mean: 13835.23
+Min: 7805.00
+Max: 21083.00
+Std: 2907.85
+Validation Results:
+Average Weighted Sums:
+L2D: 13835.23
+SPT: 13903.27
+WSPT: 12822.80
+Win Statistics:
+L2D: 21/100 (21.00%)
+SPT: 14/100 (14.00%)
+WSPT: 65/100 (65.00%)
+Final Validation Weighted Sum: 13835.23
+Win rate vs SPT: 60.00%
+Win rate vs WSPT: 24.42%
+Error during WandB finalization: update() missing 1 required positional argument: 'd'
+Error during training: local variable 'traceback' referenced before assignment

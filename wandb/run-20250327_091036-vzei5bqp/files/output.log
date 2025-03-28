@@ -1,0 +1,20 @@
+[34m[1mwandb[0m: [33mWARNING[0m Calling wandb.run.save without any arguments is deprecated.Changes to attributes are automatically persisted.
+Loading validation data from ./data/instances/variable_weights/validation_data_6x6_seed200.npy...
+Successfully loaded 100 validation instances
+Starting training for 10000 episodes with 8 environments...
+Episode 100/10000 | Reward: -14449.75 | Weighted Sum: 13846.25 | Loss: 0.011981
+Avg(100): Reward=-13642.60, Weighted Sum=13006.32 | Episode time: 0.80s | Total time: 88.42s
+Traceback (most recent call last):
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/scripts/train.py", line 751, in <module>
+    main()
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/scripts/train.py", line 744, in main
+    best_win_rate, best_episode, final_comparison = train(config)
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/scripts/train.py", line 495, in train
+    validation_results = validate_weighted(validation_data, agent.policy, config.feature_set)
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/src/utils/validation.py", line 101, in validate_weighted
+    adj, fea, reward, done, candidate, mask = env.step(action.item())
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/src/environments/JSSP_Env.py", line 107, in step
+    precd, succd = self.getNghbs(action, self.opIDsOnMchs)
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/src/utils/updateAdjMat.py", line 7, in getActionNbghs
+    succdTemp = opIDsOnMchs[coordAction[0], coordAction[1] + 1 if coordAction[1].item() + 1 < opIDsOnMchs.shape[-1] else coordAction[1]].item()
+KeyboardInterrupt

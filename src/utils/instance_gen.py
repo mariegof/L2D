@@ -20,7 +20,11 @@ def weighted_instance_gen(n_j, n_m, low, high, weight_low=1, weight_high=10):
     machines = permute_rows(machines)
     
     # Generate random weights for each job
-    weights = np.random.randint(low=weight_low, high=weight_high, size=n_j)
+    # Handle the special case of uniform weights (when low == high)
+    if weight_low == weight_high:
+        weights = np.ones(n_j, dtype=np.int32) * weight_low
+    else:
+        weights = np.random.randint(low=weight_low, high=weight_high, size=n_j)
     
     return times, machines, weights
 

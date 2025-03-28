@@ -1,0 +1,27 @@
+Traceback (most recent call last):
+  File "scripts/train.py", line 492, in train
+    reward, weighted_sum = train_episode(envs, memories, agent, device, g_pool_step, config)
+  File "scripts/train.py", line 175, in train_episode
+    pi, _ = agent.policy_old(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/src/models/actor_critic.py", line 62, in forward
+    h_pooled, h_nodes = self.feature_extract(x=x,
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/src/models/graphcnn.py", line 169, in forward
+    h = self.next_layer(h, layer, padded_neighbor_list=padded_neighbor_list)
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/src/models/graphcnn.py", line 128, in next_layer
+    pooled = self.maxpool(h, padded_neighbor_list)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1729, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'GraphCNN' object has no attribute 'maxpool'
+WandB initialized. Will train for exactly 100 episodes.
+Loading validation data from ./data/instances/variable_weights/validation_data_6x6_seed200.npy...
+Successfully loaded 100 validation instances
+Starting training for 100 episodes with 8 environments...
+Error during training: 'GraphCNN' object has no attribute 'maxpool'

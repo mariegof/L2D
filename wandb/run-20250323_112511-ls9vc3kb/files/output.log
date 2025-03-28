@@ -1,0 +1,60 @@
+wandb: WARNING Config item 'high' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'low' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'max_updates' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'n_j' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'n_m' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'np_seed_train' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'np_seed_validation' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'num_envs' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'output_dir' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'rewardscale' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'torch_seed' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'weight_high' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'weight_low' was locked by 'sweep' (ignored update).
+Training episodes:   0%|          | 0/20 [00:00<?, ?it/s]
+Loaded validation data from ./data/instances/variable_weights/validation_data_6x6_seed200.npy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Training episodes: 100%|██████████| 20/20 [02:10<00:00,  6.51s/it]
+Training completed in 0h 2m 10.23s
+Final model saved to ./models/l2d_weighted_6x6_final.pth
+Validation weighted sum statistics:
+Mean: 12988.44
+Min: 7115.00
+Max: 21217.00
+Std: 3039.85
+Validation weighted sum statistics:
+Mean: 12988.44
+Min: 7115.00
+Max: 21217.00
+Std: 3039.85
+Validation Results:
+Average Weighted Sums:
+L2D: 12988.44
+SPT: 13903.27
+WSPT: 12822.80
+Win Statistics:
+L2D: 39/100 (39.00%)
+SPT: 9/100 (9.00%)
+WSPT: 52/100 (52.00%)
+Final Validation Weighted Sum: 12988.44
+Win rate vs SPT: 81.25%
+Win rate vs WSPT: 42.86%

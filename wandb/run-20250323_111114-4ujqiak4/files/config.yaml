@@ -1,0 +1,160 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    python_version: 3.8.20
+    cli_version: 0.19.8
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1742724674
+    t:
+      1:
+      - 1
+      - 55
+      2:
+      - 1
+      - 55
+      3:
+      - 14
+      - 16
+      - 23
+      - 37
+      4: 3.8.20
+      5: 0.19.8
+      8:
+      - 5
+      13: darwin-arm64
+device:
+  desc: null
+  value: cpu
+n_j:
+  desc: null
+  value: 6
+n_m:
+  desc: null
+  value: 10
+rewardscale:
+  desc: null
+  value: 0.23696418494880228
+init_quality_flag:
+  desc: null
+  value: false
+low:
+  desc: null
+  value: 1
+high:
+  desc: null
+  value: 99
+weight_low:
+  desc: null
+  value: 1
+weight_high:
+  desc: null
+  value: 10
+np_seed_train:
+  desc: null
+  value: 200
+np_seed_validation:
+  desc: null
+  value: 200
+torch_seed:
+  desc: null
+  value: 600
+et_normalize_coef:
+  desc: null
+  value: 1000
+wkr_normalize_coef:
+  desc: null
+  value: 100
+num_layers:
+  desc: null
+  value: 3
+neighbor_pooling_type:
+  desc: null
+  value: sum
+graph_pool_type:
+  desc: null
+  value: average
+input_dim:
+  desc: null
+  value: 3
+hidden_dim:
+  desc: null
+  value: 128
+num_mlp_layers_feature_extract:
+  desc: null
+  value: 2
+num_mlp_layers_actor:
+  desc: null
+  value: 2
+hidden_dim_actor:
+  desc: null
+  value: 32
+num_mlp_layers_critic:
+  desc: null
+  value: 2
+hidden_dim_critic:
+  desc: null
+  value: 32
+num_envs:
+  desc: null
+  value: 4
+max_updates:
+  desc: null
+  value: 20
+lr:
+  desc: null
+  value: 2.0e-05
+decayflag:
+  desc: null
+  value: true
+decay_step_size:
+  desc: null
+  value: 200
+decay_ratio:
+  desc: null
+  value: 0.9
+gamma:
+  desc: null
+  value: 1
+k_epochs:
+  desc: null
+  value: 10
+eps_clip:
+  desc: null
+  value: 0.1
+vloss_coef:
+  desc: null
+  value: 1
+ploss_coef:
+  desc: null
+  value: 2
+entloss_coef:
+  desc: null
+  value: 0.02
+config:
+  desc: null
+  value: null
+sweep:
+  desc: null
+  value: false
+no_wandb:
+  desc: null
+  value: false
+feature_set:
+  desc: null
+  value:
+  - LBs
+  - finished_mark
+  - normalized_weights
+reward_strategy:
+  desc: null
+  value: default
+validate_every:
+  desc: null
+  value: 100
+output_dir:
+  desc: null
+  value: data/results/environment_sweeps/20250323_111101

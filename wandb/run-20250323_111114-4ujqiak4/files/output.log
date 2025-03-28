@@ -1,0 +1,33 @@
+wandb: WARNING Config item 'high' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'low' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'max_updates' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'n_j' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'n_m' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'np_seed_train' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'np_seed_validation' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'num_envs' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'output_dir' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'rewardscale' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'torch_seed' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'weight_high' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'weight_low' was locked by 'sweep' (ignored update).
+Traceback (most recent call last):
+  File "scripts/train.py", line 91, in load_validation_data
+    dataLoaded = np.load(validation_path)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/numpy/lib/npyio.py", line 405, in load
+    fid = stack.enter_context(open(os_fspath(file), "rb"))
+FileNotFoundError: [Errno 2] No such file or directory: './data/instances/variable_weights/validation_data_6x10_seed200.npy'
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "scripts/train.py", line 614, in <module>
+    main()
+  File "scripts/train.py", line 607, in main
+    best_win_rate, best_episode, final_comparison = train(config)
+  File "scripts/train.py", line 359, in train
+    validation_data = load_validation_data(config)
+  File "scripts/train.py", line 114, in load_validation_data
+    validation_array = np.array([np.array([d[0], d[1], d[2]]) for d in vali_data])
+  File "scripts/train.py", line 114, in <listcomp>
+    validation_array = np.array([np.array([d[0], d[1], d[2]]) for d in vali_data])
+ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 2 dimensions. The detected shape was (3, 6) + inhomogeneous part.
+Could not load validation data, generating new instances...

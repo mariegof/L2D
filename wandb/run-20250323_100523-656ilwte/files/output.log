@@ -1,0 +1,43 @@
+wandb: WARNING Config item 'feature_set' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'max_updates' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'output_dir' was locked by 'sweep' (ignored update).
+Training episodes:  20%|██        | 1/5 [00:00<00:03,  1.19it/s]
+Environment initialized with features: ['LBs', 'finished_mark', 'normalized_weights']
+Environment initialized with features: ['LBs', 'finished_mark', 'normalized_weights']
+Environment initialized with features: ['LBs', 'finished_mark', 'normalized_weights']
+Environment initialized with features: ['LBs', 'finished_mark', 'normalized_weights']
+Environment initialized with features: ['LBs', 'finished_mark', 'normalized_weights']
+Environment initialized with features: ['LBs', 'finished_mark', 'normalized_weights']
+Environment initialized with features: ['LBs', 'finished_mark', 'normalized_weights']
+Environment initialized with features: ['LBs', 'finished_mark', 'normalized_weights']
+Loaded validation data from ./data/instances/variable_weights/validation_data_6x6_seed200.npy
+
+Training episodes:  60%|██████    | 3/5 [00:02<00:01,  1.01it/s]
+Training completed in 0h 0m 4.89s
+Final model saved to ./models/l2d_weighted_6x6_final.pth
+
+Training episodes: 100%|██████████| 5/5 [00:04<00:00,  1.02it/s]
+Validation weighted sum statistics:
+Mean: 13206.08
+Min: 7361.00
+Max: 20396.00
+Std: 2916.45
+Environment initialized with features: ['LBs', 'finished_mark', 'normalized_weights']
+Environment initialized with features: ['LBs', 'finished_mark', 'normalized_weights']
+Validation weighted sum statistics:
+Mean: 13206.08
+Min: 7361.00
+Max: 20396.00
+Std: 2916.45
+Validation Results:
+Average Weighted Sums:
+L2D: 13206.08
+SPT: 13903.27
+WSPT: 12822.80
+Win Statistics:
+L2D: 35/100 (35.00%)
+SPT: 9/100 (9.00%)
+WSPT: 56/100 (56.00%)
+Final Validation Weighted Sum: 13206.08
+Win rate vs SPT: 79.55%
+Win rate vs WSPT: 38.46%

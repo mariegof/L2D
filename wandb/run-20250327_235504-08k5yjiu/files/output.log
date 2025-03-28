@@ -1,0 +1,37 @@
+WandB initialized. Will train for exactly 100 episodes.
+Loading validation data from ./data/instances/variable_weights/validation_data_6x6_seed200.npy...
+Successfully loaded 100 validation instances
+Starting training for 100 episodes with 8 environments...
+Error during training: mat1 and mat2 shapes cannot be multiplied (36x2 and 3x128)
+Traceback (most recent call last):
+  File "scripts/train.py", line 488, in train
+    reward, weighted_sum = train_episode(envs, memories, agent, device, g_pool_step, config)
+  File "scripts/train.py", line 171, in train_episode
+    pi, _ = agent.policy_old(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/src/models/actor_critic.py", line 62, in forward
+    h_pooled, h_nodes = self.feature_extract(x=x,
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/src/models/graphcnn.py", line 171, in forward
+    h = self.next_layer(h, layer, Adj_block=Adj_block)
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/src/models/graphcnn.py", line 139, in next_layer
+    pooled_rep = self.mlps[layer](pooled)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/src/models/mlp.py", line 49, in forward
+    h = F.relu(self.batch_norms[layer](self.linears[layer](h)))
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 117, in forward
+    return F.linear(input, self.weight, self.bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (36x2 and 3x128)

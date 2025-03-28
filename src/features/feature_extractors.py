@@ -9,6 +9,26 @@ def build_features(env, features_set=None):
     if features_set is None:
         features_set = ['LBs', 'finished_mark', 'normalized_weights']
     
+    # Handle string input (from command line or config)
+    if isinstance(features_set, str):
+        if ',' in features_set:
+            features_set = [f.strip() for f in features_set.split(',')]
+        else:
+            features_set = [features_set]
+    
+    # Also handle list-like string representation
+    if len(features_set) == 1 and features_set[0].startswith('[') and features_set[0].endswith(']'):
+        try:
+            # Try to safely parse it
+            import ast
+            features_set = ast.literal_eval(features_set[0])
+        except:
+            print(f"Warning: Could not parse feature set {features_set}. Using default features.")
+            features_set = ['LBs', 'finished_mark', 'normalized_weights']
+    
+    # Print what we're using for debugging
+    #print(f"Using features: {features_set}")
+    
     # Create a dictionary to track which features are enabled
     available_features = {
         'LBs': False,                      # Lower bounds on operation end times
@@ -25,9 +45,17 @@ def build_features(env, features_set=None):
     }
     
     # Enable selected features
+    valid_features_count = 0
     for feature in features_set:
         if feature in available_features:
             available_features[feature] = True
+            valid_features_count += 1
+    
+    # Safety check - if no valid features, use defaults
+    if valid_features_count == 0:
+        print(f"Warning: No valid features found in {features_set}. Using default features.")
+        available_features['LBs'] = True
+        available_features['finished_mark'] = True
     
     features = []
     
@@ -132,6 +160,13 @@ def build_features(env, features_set=None):
                 contributions[j, op] = weight_factor * position_factor
     
         features.append(contributions.reshape(-1, 1))
+        
+     # Final safety check before concatenation
+    if not features:
+        # If still no features, create a minimal feature set
+        print("Error: No features generated. Creating minimal feature set.")
+        features.append(env.LBs.reshape(-1, 1)/configs.et_normalize_coef)
+        features.append(env.finished_mark.reshape(-1, 1))
         
     return np.concatenate(features, axis=1)
 

@@ -1,0 +1,56 @@
+
+wandb: WARNING Calling wandb.run.save without any arguments is deprecated.Changes to attributes are automatically persisted.
+Loading validation data from ./data/instances/uniform_weights/validation_data_6x6_seed200.npy...
+Successfully loaded 100 validation instances
+Starting training for 200 episodes with 4 environments...
+Episode 20/200 | Reward: -2907.25 | Weighted Sum: 2769.50 | Loss: -0.020067
+Avg(100): Reward=-2858.30, Weighted Sum=2728.34 | Episode time: 0.56s | Total time: 15.70s
+Validation weighted sum statistics:
+Mean: 2633.29
+Min: 1996.00
+Max: 3456.00
+Std: 298.98
+Validation value loss: -0.1322
+Validation policy entropy: 1.5348
+Validation Weighted Sum: 2633.29 | Reward-derived: -2757.71 | Improvement: -47.75%
+Traceback (most recent call last):
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/PIL/ImageFile.py", line 273, in load
+    s = read(self.decodermaxblock)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/PIL/PngImagePlugin.py", line 962, in load_read
+    cid, pos, length = self.png.read()
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/PIL/PngImagePlugin.py", line 172, in read
+    length = i32(s)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/PIL/_binary.py", line 95, in i32be
+    return unpack_from(">I", c, o)[0]
+struct.error: unpack_from requires a buffer of at least 4 bytes for unpacking 4 bytes at offset 0 (actual buffer size is 0)
+The above exception was the direct cause of the following exception:
+Traceback (most recent call last):
+  File "scripts/train.py", line 566, in train
+    wandb.log({"learning_curves": wandb.Image(learning_curves)})
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/data_types/image.py", line 177, in __init__
+    self._initialize_from_path(data_or_path)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/data_types/image.py", line 278, in _initialize_from_path
+    self._image.load()
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/PIL/ImageFile.py", line 280, in load
+    raise OSError(msg) from e
+OSError: image file is truncated
+Validation weighted sum statistics:
+Mean: 2633.29
+Min: 1996.00
+Max: 3456.00
+Std: 298.98
+Validation value loss: -0.1322
+Validation policy entropy: 1.5348
+Validation Results:
+Average Weighted Sums:
+L2D: 2633.29
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 54/100 (54.00%)
+SPT: 25/100 (25.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 21/100 (21.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+Error during training: image file is truncated

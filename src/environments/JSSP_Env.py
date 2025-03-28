@@ -50,11 +50,15 @@ class SJSSP(gym.Env, EzPickle):
             'critical_path_contribution': False # Contribution to critical paths of weighted jobs
         }
         
-        # Set default feature set if none specified
         if feature_set is None:
             feature_set = ['LBs', 'finished_mark', 'normalized_weights']
-        
-        # Store the feature set
+        elif isinstance(feature_set, str):
+            if ',' in feature_set:
+                feature_set = [f.strip() for f in feature_set.split(',')]
+            else:
+                feature_set = [feature_set]
+                
+        #print(f"Environment initialized with features: {feature_set}")
         self.feature_set = feature_set
         
         # Enable selected features

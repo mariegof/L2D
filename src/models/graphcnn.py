@@ -176,6 +176,52 @@ class GraphCNN(nn.Module):
         # pooled_h = graph_pool.spmm(h)
 
         return pooled_h, h_nodes
+    
+    def maxpool(self, h, padded_neighbor_list):
+        """
+        Performs max pooling over each node's neighborhood
+        
+        Parameters:
+        - h: Node features tensor of shape [num_nodes, hidden_dim]
+        - padded_neighbor_list: List of lists where each sublist contains the indices 
+        of a node's neighbors (padded with a dummy index like -1)
+        
+        Returns:
+        - Tensor of pooled features with the same shape as h
+        """
+        # Initialize output tensor with same shape as input but filled with -inf
+        # This ensures any real value from neighbors will be greater
+        num_nodes = h.shape[0]
+        hidden_dim = h.shape[1]
+        pooled_features = torch.full((num_nodes, hidden_dim), float('-inf'), device=self.device)
+        
+        # For each node, compute the maximum feature across its neighborhood
+        for node_idx, neighbors in enumerate(padded_neighbor_list):
+            # Filter out padding (-1 indices)
+            valid_neighbors = [n for n in neighbors if n >= 0]
+            
+            if valid_neighbors:
+                # Get features of all valid neighbors
+                neighbor_features = h[valid_neighbors]
+                
+                # Compute max across all neighbors for each feature dimension
+                # Shape: [hidden_dim]
+                max_features = torch.max(neighbor_features, dim=0)[0]
+                
+                # Update pooled features for this node
+                pooled_features[node_idx] = max_features
+            else:
+                # If node has no neighbors, use its own features
+                pooled_features[node_idx] = h[node_idx]
+        
+        # Replace any remaining -inf values with 0 (in case of isolated nodes)
+        pooled_features = torch.where(
+            torch.isinf(pooled_features),
+            torch.zeros_like(pooled_features),
+            pooled_features
+        )
+        
+        return pooled_features
 
 
 if __name__ == '__main__':

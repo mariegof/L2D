@@ -1,0 +1,32 @@
+2025-03-27 13:47:16,779 INFO    MainThread:74729 [wandb_setup.py:_flush():76] Configure stats pid to 74729
+2025-03-27 13:47:16,779 INFO    MainThread:74729 [wandb_setup.py:_flush():76] Loading settings from /Users/mariegoffin/.config/wandb/settings
+2025-03-27 13:47:16,779 INFO    MainThread:74729 [wandb_setup.py:_flush():76] Loading settings from /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/settings
+2025-03-27 13:47:16,779 WARNING MainThread:74729 [wandb_setup.py:_flush():76] Unknown environment variable: WANDB_SERVICE
+2025-03-27 13:47:16,779 INFO    MainThread:74729 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'project': 'jssp-uniform-sum', 'entity': 'marie-goffin-university-of-li-ge', 'sweep_id': 'e263wpvp', 'root_dir': '/Users/mariegoffin/Documents/Master_3/IML/projects/L2D', 'run_id': 'gbzuvqyn', 'sweep_param_path': '/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/sweep-e263wpvp/config-gbzuvqyn.yaml'}
+2025-03-27 13:47:16,779 INFO    MainThread:74729 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2025-03-27 13:47:16,779 INFO    MainThread:74729 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'scripts/train.py', 'program': 'scripts/train.py'}
+2025-03-27 13:47:16,779 INFO    MainThread:74729 [wandb_init.py:_log_setup():507] Logging user logs to /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250327_134716-gbzuvqyn/logs/debug.log
+2025-03-27 13:47:16,779 INFO    MainThread:74729 [wandb_init.py:_log_setup():508] Logging internal logs to /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250327_134716-gbzuvqyn/logs/debug-internal.log
+2025-03-27 13:47:16,779 INFO    MainThread:74729 [wandb_init.py:init():547] calling init triggers
+2025-03-27 13:47:16,779 INFO    MainThread:74729 [wandb_init.py:init():554] wandb.init called with sweep_config: {'high': 99, 'low': 1, 'max_updates': 100, 'n_j': 6, 'n_m': 6, 'np_seed_train': 200, 'np_seed_validation': 200, 'num_envs': 16, 'output_dir': 'results/uniform_weights/environment_sweeps/20250327_134702', 'rewardscale': 0.13728116875894897, 'torch_seed': 600, 'validate_every': 20, 'weight_high': 1, 'weight_low': 1}
+config: {'device': 'cpu', 'n_j': 6, 'n_m': 6, 'rewardscale': 0.13728116875894897, 'init_quality_flag': False, 'low': 1, 'high': 99, 'weight_low': 1, 'weight_high': 1, 'np_seed_train': 200, 'np_seed_validation': 200, 'torch_seed': 600, 'et_normalize_coef': 1000, 'wkr_normalize_coef': 100, 'num_layers': 3, 'neighbor_pooling_type': 'sum', 'graph_pool_type': 'average', 'input_dim': 3, 'hidden_dim': 128, 'num_mlp_layers_feature_extract': 2, 'num_mlp_layers_actor': 2, 'hidden_dim_actor': 32, 'num_mlp_layers_critic': 2, 'hidden_dim_critic': 32, 'num_envs': 16, 'max_updates': 100, 'lr': 2e-05, 'decayflag': True, 'decay_step_size': 200, 'decay_ratio': 0.9, 'gamma': 1, 'k_epochs': 10, 'eps_clip': 0.1, 'vloss_coef': 1, 'ploss_coef': 2, 'entloss_coef': 0.02, 'config': None, 'sweep': False, 'no_wandb': False, 'feature_set': ['LBs', 'finished_mark', 'normalized_weights'], 'reward_strategy': 'default', 'validate_every': 20, 'output_dir': 'results/uniform_weights/environment_sweeps/20250327_134702'}
+2025-03-27 13:47:16,779 INFO    MainThread:74729 [wandb_init.py:init():595] starting backend
+2025-03-27 13:47:16,779 INFO    MainThread:74729 [wandb_init.py:init():599] setting up manager
+2025-03-27 13:47:16,789 INFO    MainThread:74729 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=spawn,fork,forkserver, using: spawn
+2025-03-27 13:47:16,799 INFO    MainThread:74729 [wandb_init.py:init():605] backend started and connected
+2025-03-27 13:47:16,813 INFO    MainThread:74729 [wandb_run.py:_config_callback():1285] config_cb None None {'high': 99, 'low': 1, 'max_updates': 100, 'n_j': 6, 'n_m': 6, 'np_seed_train': 200, 'np_seed_validation': 200, 'num_envs': 16, 'output_dir': 'results/uniform_weights/environment_sweeps/20250327_134702', 'rewardscale': 0.13728116875894897, 'torch_seed': 600, 'validate_every': 20, 'weight_high': 1, 'weight_low': 1}
+2025-03-27 13:47:16,817 INFO    MainThread:74729 [wandb_init.py:init():695] updated telemetry
+2025-03-27 13:47:16,856 INFO    MainThread:74729 [wandb_init.py:init():732] communicating run to backend with 60.0 second timeout
+2025-03-27 13:47:17,232 INFO    MainThread:74729 [wandb_run.py:_on_init():2176] communicating current version
+2025-03-27 13:47:17,347 INFO    MainThread:74729 [wandb_run.py:_on_init():2185] got version response upgrade_message: "wandb version 0.19.8 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2025-03-27 13:47:17,347 INFO    MainThread:74729 [wandb_init.py:init():782] starting run threads in backend
+2025-03-27 13:47:18,922 INFO    MainThread:74729 [wandb_run.py:_console_start():2157] atexit reg
+2025-03-27 13:47:18,922 INFO    MainThread:74729 [wandb_run.py:_redirect():2012] redirect: SettingsConsole.WRAP_RAW
+2025-03-27 13:47:18,923 INFO    MainThread:74729 [wandb_run.py:_redirect():2077] Wrapping output streams.
+2025-03-27 13:47:18,923 INFO    MainThread:74729 [wandb_run.py:_redirect():2102] Redirects installed.
+2025-03-27 13:47:18,924 INFO    MainThread:74729 [wandb_init.py:init():824] run started, returning control to user process
+2025-03-27 13:56:58,764 INFO    MainThread:74729 [wandb_run.py:_finish():1892] finishing run marie-goffin-university-of-li-ge/jssp-uniform-sum/gbzuvqyn
+2025-03-27 13:56:58,765 INFO    MainThread:74729 [wandb_run.py:_atexit_cleanup():2126] got exitcode: 0
+2025-03-27 13:56:58,765 INFO    MainThread:74729 [wandb_run.py:_restore():2109] restore
+2025-03-27 13:56:58,765 INFO    MainThread:74729 [wandb_run.py:_restore():2115] restore done

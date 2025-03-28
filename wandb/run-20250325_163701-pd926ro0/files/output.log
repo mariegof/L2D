@@ -1,0 +1,49 @@
+Loaded validation data from ./data/instances/variable_weights/validation_data_6x6_seed200.npy
+Starting training for 100 episodes with 8 environments...
+Episode 100/100 | Reward: -3123.25 | Weighted Sum: 2968.75 | Loss: -0.077504
+Avg(100): Reward=-2868.08, Weighted Sum=2733.58 | Episode time: 0.77s | Total time: 80.08s
+Validation weighted sum statistics:
+Mean: 14270.09
+Min: 7805.00
+Max: 23238.00
+Std: 3155.88
+Validation Weighted Sum: 14270.09 | Reward-derived: -14912.25 | Improvement: -57.41%
+Validation weighted sum statistics:
+Mean: 14270.09
+Min: 7805.00
+Max: 23238.00
+Std: 3155.88
+Validation Results:
+Average Weighted Sums:
+L2D: 14270.09
+SPT: 13903.27
+WSPT: 12822.80
+Win Statistics:
+L2D: 14/100 (14.00%)
+SPT: 15/100 (15.00%)
+WSPT: 71/100 (71.00%)
+New best model saved! Win rate vs WSPT: 16.47%
+Training completed in 0h 1m 27.04s
+Final model saved to ./models/l2d_weighted_6x6_final.pth
+Validation weighted sum statistics:
+Mean: 14270.09
+Min: 7805.00
+Max: 23238.00
+Std: 3155.88
+Validation weighted sum statistics:
+Mean: 14270.09
+Min: 7805.00
+Max: 23238.00
+Std: 3155.88
+Validation Results:
+Average Weighted Sums:
+L2D: 14270.09
+SPT: 13903.27
+WSPT: 12822.80
+Win Statistics:
+L2D: 14/100 (14.00%)
+SPT: 15/100 (15.00%)
+WSPT: 71/100 (71.00%)
+Final Validation Weighted Sum: 14270.09
+Win rate vs SPT: 48.28%
+Win rate vs WSPT: 16.47%

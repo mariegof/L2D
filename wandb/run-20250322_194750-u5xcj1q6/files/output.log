@@ -1,0 +1,20 @@
+[34m[1mwandb[39m[22m: [33mWARNING[39m Config item 'feature_set' was locked by 'sweep' (ignored update).
+[34m[1mwandb[39m[22m: [33mWARNING[39m Config item 'output_dir' was locked by 'sweep' (ignored update).
+Training episodes:   0%|                                                                                                                                                                                                        | 0/10000 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "scripts/train.py", line 609, in <module>
+    main()
+  File "scripts/train.py", line 602, in main
+    best_win_rate, best_episode, final_comparison = train(config)
+  File "scripts/train.py", line 387, in train
+    reward, weighted_sum = train_episode(envs, memories, agent, device, g_pool_step, config)
+  File "scripts/train.py", line 133, in train_episode
+    adj, fea, candidate, mask = env.reset(instance)
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/scripts/../src/environments/JSSP_Env.py", line 183, in reset
+    fea = build_features(self, self.feature_set)
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/scripts/../src/features/feature_extractors.py", line 136, in build_features
+    return np.concatenate(features, axis=1)
+  File "<__array_function__ internals>", line 200, in concatenate
+ValueError: need at least one array to concatenate
+Loaded validation data from ./data/instances/variable_weights/validation_data_6x6_seed200.npy
+Starting training for 10000 episodes with 8 environments...

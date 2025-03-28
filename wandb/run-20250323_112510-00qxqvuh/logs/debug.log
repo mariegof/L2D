@@ -1,0 +1,31 @@
+2025-03-23 11:25:10,634 INFO    MainThread:79994 [wandb_setup.py:_flush():67] Current SDK version is 0.19.8
+2025-03-23 11:25:10,634 INFO    MainThread:79994 [wandb_setup.py:_flush():67] Configure stats pid to 79994
+2025-03-23 11:25:10,634 INFO    MainThread:79994 [wandb_setup.py:_flush():67] Loading settings from /Users/mariegoffin/.config/wandb/settings
+2025-03-23 11:25:10,634 INFO    MainThread:79994 [wandb_setup.py:_flush():67] Loading settings from /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/settings
+2025-03-23 11:25:10,634 INFO    MainThread:79994 [wandb_setup.py:_flush():67] Loading settings from environment variables
+2025-03-23 11:25:10,634 INFO    MainThread:79994 [wandb_init.py:setup_run_log_directory():647] Logging user logs to /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250323_112510-00qxqvuh/logs/debug.log
+2025-03-23 11:25:10,634 INFO    MainThread:79994 [wandb_init.py:setup_run_log_directory():648] Logging internal logs to /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250323_112510-00qxqvuh/logs/debug-internal.log
+2025-03-23 11:25:10,634 INFO    MainThread:79994 [wandb_init.py:init():761] calling init triggers
+2025-03-23 11:25:10,634 INFO    MainThread:79994 [wandb_init.py:init():766] wandb.init called with sweep_config: {'high': 99, 'low': 1, 'max_updates': 20, 'n_j': 6, 'n_m': 6, 'np_seed_train': 200, 'np_seed_validation': 200, 'num_envs': 16, 'output_dir': 'data/results/environment_sweeps/20250323_112457', 'rewardscale': 0.25735138830810467, 'torch_seed': 600, 'weight_high': 2, 'weight_low': 1}
+config: {'device': 'cpu', 'n_j': 6, 'n_m': 6, 'rewardscale': 0.25735138830810467, 'init_quality_flag': False, 'low': 1, 'high': 99, 'weight_low': 1, 'weight_high': 2, 'np_seed_train': 200, 'np_seed_validation': 200, 'torch_seed': 600, 'et_normalize_coef': 1000, 'wkr_normalize_coef': 100, 'num_layers': 3, 'neighbor_pooling_type': 'sum', 'graph_pool_type': 'average', 'input_dim': 3, 'hidden_dim': 128, 'num_mlp_layers_feature_extract': 2, 'num_mlp_layers_actor': 2, 'hidden_dim_actor': 32, 'num_mlp_layers_critic': 2, 'hidden_dim_critic': 32, 'num_envs': 16, 'max_updates': 20, 'lr': 2e-05, 'decayflag': True, 'decay_step_size': 200, 'decay_ratio': 0.9, 'gamma': 1, 'k_epochs': 10, 'eps_clip': 0.1, 'vloss_coef': 1, 'ploss_coef': 2, 'entloss_coef': 0.02, 'config': None, 'sweep': False, 'no_wandb': False, 'feature_set': ['LBs', 'finished_mark', 'normalized_weights'], 'reward_strategy': 'default', 'validate_every': 100, 'output_dir': 'data/results/environment_sweeps/20250323_112457', '_wandb': {}}
+2025-03-23 11:25:10,634 INFO    MainThread:79994 [wandb_init.py:init():784] starting backend
+2025-03-23 11:25:10,634 INFO    MainThread:79994 [wandb_init.py:init():788] sending inform_init request
+2025-03-23 11:25:10,651 INFO    MainThread:79994 [backend.py:_multiprocessing_setup():101] multiprocessing start_methods=spawn,fork,forkserver, using: spawn
+2025-03-23 11:25:10,651 INFO    MainThread:79994 [wandb_init.py:init():798] backend started and connected
+2025-03-23 11:25:10,653 INFO    MainThread:79994 [wandb_run.py:_config_callback():1261] config_cb None None {'high': 99, 'low': 1, 'max_updates': 20, 'n_j': 6, 'n_m': 6, 'np_seed_train': 200, 'np_seed_validation': 200, 'num_envs': 16, 'output_dir': 'data/results/environment_sweeps/20250323_112457', 'rewardscale': 0.25735138830810467, 'torch_seed': 600, 'weight_high': 2, 'weight_low': 1}
+2025-03-23 11:25:10,656 INFO    MainThread:79994 [wandb_init.py:init():891] updated telemetry
+2025-03-23 11:25:10,690 INFO    MainThread:79994 [wandb_init.py:init():915] communicating run to backend with 90.0 second timeout
+2025-03-23 11:25:11,056 INFO    MainThread:79994 [wandb_init.py:init():990] starting run threads in backend
+2025-03-23 11:25:12,118 INFO    MainThread:79994 [wandb_run.py:_console_start():2375] atexit reg
+2025-03-23 11:25:12,119 INFO    MainThread:79994 [wandb_run.py:_redirect():2227] redirect: wrap_raw
+2025-03-23 11:25:12,120 INFO    MainThread:79994 [wandb_run.py:_redirect():2292] Wrapping output streams.
+2025-03-23 11:25:12,120 INFO    MainThread:79994 [wandb_run.py:_redirect():2315] Redirects installed.
+2025-03-23 11:25:12,122 INFO    MainThread:79994 [wandb_init.py:init():1032] run started, returning control to user process
+2025-03-23 11:25:12,123 INFO    MainThread:79994 [wandb_run.py:_config_callback():1261] config_cb None None {'config': None, 'decay_ratio': 0.9, 'decay_step_size': 200, 'decayflag': True, 'device': 'cpu', 'entloss_coef': 0.02, 'eps_clip': 0.1, 'et_normalize_coef': 1000, 'feature_set': ['LBs', 'finished_mark', 'normalized_weights'], 'gamma': 1, 'graph_pool_type': 'average', 'hidden_dim': 128, 'hidden_dim_actor': 32, 'hidden_dim_critic': 32, 'init_quality_flag': False, 'input_dim': 3, 'k_epochs': 10, 'lr': 2e-05, 'neighbor_pooling_type': 'sum', 'no_wandb': False, 'num_layers': 3, 'num_mlp_layers_actor': 2, 'num_mlp_layers_critic': 2, 'num_mlp_layers_feature_extract': 2, 'ploss_coef': 2, 'reward_strategy': 'default', 'sweep': False, 'validate_every': 100, 'vloss_coef': 1, 'wkr_normalize_coef': 100}
+2025-03-23 11:27:39,714 INFO    MainThread:79994 [wandb_run.py:_finish():2112] finishing run marie-goffin-university-of-li-ge/jssp-weighted-sum/00qxqvuh
+2025-03-23 11:27:39,715 INFO    MainThread:79994 [wandb_run.py:_atexit_cleanup():2340] got exitcode: 0
+2025-03-23 11:27:39,715 INFO    MainThread:79994 [wandb_run.py:_restore():2322] restore
+2025-03-23 11:27:39,716 INFO    MainThread:79994 [wandb_run.py:_restore():2328] restore done
+2025-03-23 11:27:43,145 INFO    MainThread:79994 [wandb_run.py:_footer_history_summary_info():3956] rendering history
+2025-03-23 11:27:43,145 INFO    MainThread:79994 [wandb_run.py:_footer_history_summary_info():3988] rendering summary
+2025-03-23 11:27:43,146 INFO    MainThread:79994 [wandb_run.py:_footer_sync_info():3917] logging synced files

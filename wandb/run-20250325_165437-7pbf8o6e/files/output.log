@@ -1,0 +1,54 @@
+Loaded validation data from ./data/instances/variable_weights/validation_data_6x6_seed200.npy
+Starting training for 100 episodes with 8 environments...
+Episode 100/100 | Reward: -3175.13 | Weighted Sum: 2974.62 | Loss: -0.010750
+Avg(100): Reward=-2875.87, Weighted Sum=2741.07 | Episode time: 1.06s | Total time: 106.96s
+Validation weighted sum statistics:
+Mean: 14182.76
+Min: 7805.00
+Max: 23522.00
+Std: 3092.81
+Validation Weighted Sum: 14182.76 | Reward-derived: -14714.65 | Improvement: -56.61%
+Validation weighted sum statistics:
+Mean: 14182.76
+Min: 7805.00
+Max: 23522.00
+Std: 3092.81
+Validation Results:
+Average Weighted Sums:
+L2D: 14182.76
+SPT: 13903.27
+WSPT: 12822.80
+Win Statistics:
+L2D: 20/100 (20.00%)
+SPT: 14/100 (14.00%)
+WSPT: 66/100 (66.00%)
+New best model saved! Win rate vs WSPT: 23.26%
+Training completed in 0h 1m 55.41s
+Final model saved to ./models/l2d_weighted_6x6_final.pth
+Validation weighted sum statistics:
+Mean: 14182.76
+Min: 7805.00
+Max: 23522.00
+Std: 3092.81
+Validation weighted sum statistics:
+Mean: 14182.76
+Min: 7805.00
+Max: 23522.00
+Std: 3092.81
+Validation Results:
+Average Weighted Sums:
+L2D: 14182.76
+SPT: 13903.27
+WSPT: 12822.80
+Win Statistics:
+L2D: 20/100 (20.00%)
+SPT: 14/100 (14.00%)
+WSPT: 66/100 (66.00%)
+Final Validation Weighted Sum: 14182.76
+Win rate vs SPT: 58.82%
+Win rate vs WSPT: 23.26%
+Error during training: update() missing 1 required positional argument: 'd'
+Traceback (most recent call last):
+  File "scripts/train.py", line 593, in train
+    wandb.run.summary.update()
+TypeError: update() missing 1 required positional argument: 'd'

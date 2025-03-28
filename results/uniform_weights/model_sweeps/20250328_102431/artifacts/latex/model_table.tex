@@ -1,0 +1,16 @@
+\begin{table}[htbp]%
+\centering%
+\begin{tabular}{lrrrrrr}%
+\toprule%
+\textbf{Config}&\textbf{Hidden Dim}&\textbf{Layers}&\textbf{Learning Rate}&\textbf{Win Rate (\%)}&\textbf{vs WSPT (\%)}&\textbf{Weighted Sum}\\%
+\midrule%
+h=64, L=4, lr=5.1e-04&64.00&4.00&5.1e-04&60.0&100.0&2603\\%
+h=256, L=4, lr=5.2e-05&256.00&\textbf{4.00}&5.2e-05&\textbf{59.0}&\textbf{100.0}&2610\\%
+h=64, L=3, lr=1.4e-06&64.00&3.00&1.4e-06&42.0&100.0&\textbf{2738}\\%
+h=64, L=4, lr=6.3e-06&\textbf{64.00}&4.00&6.3e-06&42.0&100.0&2734\\%
+h=128, L=3, lr=1.3e-06&128.00&3.00&1.3e-06&35.0&100.0&2758\\%
+\bottomrule%
+\end{tabular}%
+\caption{Comparison of Model Configurations}%
+\label{tab:models}%
+\end{table}

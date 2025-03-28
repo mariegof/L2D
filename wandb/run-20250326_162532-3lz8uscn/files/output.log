@@ -1,0 +1,155 @@
+
+wandb: WARNING Calling wandb.run.save without any arguments is deprecated.Changes to attributes are automatically persisted.
+Loaded validation data from ./data/instances/variable_weights/validation_data_6x6_seed200.npy
+Starting training for 100 episodes with 16 environments...
+Episode 20/100 | Reward: -2818.56 | Weighted Sum: 2706.31 | Loss: -0.030010
+Avg(100): Reward=-2868.70, Weighted Sum=2734.50 | Episode time: 4.27s | Total time: 61.70s
+Validation weighted sum statistics:
+Mean: 13439.19
+Min: 7461.00
+Max: 20643.00
+Std: 2937.28
+Validation Weighted Sum: 13439.19 | Reward-derived: -14023.27 | Improvement: -48.25%
+Validation weighted sum statistics:
+Mean: 13439.19
+Min: 7461.00
+Max: 20643.00
+Std: 2937.28
+Validation Results:
+Average Weighted Sums:
+L2D: 13439.19
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+Win Statistics:
+L2D: 22/100 (22.00%)
+SPT: 6/100 (6.00%)
+WSPT: 55/100 (55.00%)
+SRPT: 17/100 (17.00%)
+New best model saved! Win rate vs WSPT: 28.57%
+Episode 40/100 | Reward: -2916.12 | Weighted Sum: 2782.12 | Loss: -0.119343
+Avg(100): Reward=-2874.11, Weighted Sum=2738.39 | Episode time: 3.90s | Total time: 137.70s
+Validation weighted sum statistics:
+Mean: 13600.97
+Min: 7363.00
+Max: 21585.00
+Std: 3057.45
+Validation Weighted Sum: 13600.97 | Reward-derived: -14148.90 | Improvement: -49.81%
+Validation weighted sum statistics:
+Mean: 13600.97
+Min: 7363.00
+Max: 21585.00
+Std: 3057.45
+Validation Results:
+Average Weighted Sums:
+L2D: 13600.97
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+Win Statistics:
+L2D: 20/100 (20.00%)
+SPT: 8/100 (8.00%)
+WSPT: 55/100 (55.00%)
+SRPT: 17/100 (17.00%)
+No improvement for 1 validation checks (best: 28.57%)
+Episode 60/100 | Reward: -2857.62 | Weighted Sum: 2690.75 | Loss: -0.070106
+Avg(100): Reward=-2878.70, Weighted Sum=2742.31 | Episode time: 2.05s | Total time: 202.21s
+Validation weighted sum statistics:
+Mean: 13489.59
+Min: 7220.00
+Max: 22491.00
+Std: 3027.59
+Validation Weighted Sum: 13489.59 | Reward-derived: -14065.75 | Improvement: -48.65%
+Validation weighted sum statistics:
+Mean: 13489.59
+Min: 7220.00
+Max: 22491.00
+Std: 3027.59
+Validation Results:
+Average Weighted Sums:
+L2D: 13489.59
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+Win Statistics:
+L2D: 24/100 (24.00%)
+SPT: 6/100 (6.00%)
+WSPT: 53/100 (53.00%)
+SRPT: 17/100 (17.00%)
+New best model saved! Win rate vs WSPT: 31.17%
+Episode 80/100 | Reward: -2940.00 | Weighted Sum: 2789.38 | Loss: -0.112885
+Avg(100): Reward=-2877.86, Weighted Sum=2742.11 | Episode time: 1.76s | Total time: 253.93s
+Validation weighted sum statistics:
+Mean: 13804.53
+Min: 7524.00
+Max: 22354.00
+Std: 3006.30
+Validation Weighted Sum: 13804.53 | Reward-derived: -14399.25 | Improvement: -52.42%
+Validation weighted sum statistics:
+Mean: 13804.53
+Min: 7524.00
+Max: 22354.00
+Std: 3006.30
+Validation Results:
+Average Weighted Sums:
+L2D: 13804.53
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+Win Statistics:
+L2D: 18/100 (18.00%)
+SPT: 9/100 (9.00%)
+WSPT: 55/100 (55.00%)
+SRPT: 18/100 (18.00%)
+No improvement for 1 validation checks (best: 31.17%)
+Episode 100/100 | Reward: -2919.19 | Weighted Sum: 2777.25 | Loss: -0.004224
+Avg(100): Reward=-2876.09, Weighted Sum=2741.46 | Episode time: 1.84s | Total time: 303.96s
+Validation weighted sum statistics:
+Mean: 13875.58
+Min: 7805.00
+Max: 22354.00
+Std: 3075.90
+Validation Weighted Sum: 13875.58 | Reward-derived: -14435.85 | Improvement: -53.13%
+Validation weighted sum statistics:
+Mean: 13875.58
+Min: 7805.00
+Max: 22354.00
+Std: 3075.90
+Validation Results:
+Average Weighted Sums:
+L2D: 13875.58
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+Win Statistics:
+L2D: 14/100 (14.00%)
+SPT: 9/100 (9.00%)
+WSPT: 58/100 (58.00%)
+SRPT: 19/100 (19.00%)
+No improvement for 2 validation checks (best: 31.17%)
+Training completed in 0h 5m 14.08s
+Final model saved to ./models/l2d_weighted_6x6_final.pth
+Validation weighted sum statistics:
+Mean: 13875.58
+Min: 7805.00
+Max: 22354.00
+Std: 3075.90
+Validation weighted sum statistics:
+Mean: 13875.58
+Min: 7805.00
+Max: 22354.00
+Std: 3075.90
+Validation Results:
+Average Weighted Sums:
+L2D: 13875.58
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+Win Statistics:
+L2D: 14/100 (14.00%)
+SPT: 9/100 (9.00%)
+WSPT: 58/100 (58.00%)
+SRPT: 19/100 (19.00%)
+Final Validation Weighted Sum: 13875.58
+Win rate vs SPT: 60.87%
+Win rate vs WSPT: 19.44%

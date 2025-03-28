@@ -7,7 +7,7 @@ from Params import configs
 
 def validate_weighted(vali_set, model, feature_set=None):
     """
-    Validate the model on a set of instances for weighted sum objective.
+    Validate the model on a set of instances for weighted sum objective with enhanced metrics.
     
     Args:
         vali_set: List of JSSP instances with weights
@@ -15,7 +15,7 @@ def validate_weighted(vali_set, model, feature_set=None):
         feature_set: Set of features to use
         
     Returns:
-        dict: Dictionary containing validation metrics
+        dict: Dictionary containing validation metrics including rewards and losses
     """
     # Set default feature set if not provided
     if feature_set is None:
@@ -41,6 +41,8 @@ def validate_weighted(vali_set, model, feature_set=None):
     weighted_sums = []
     reward_derived = []
     improvement_pct = []
+    value_losses = []    # For critic loss tracking
+    policy_entropies = [] # For policy quality tracking
     
     # Rollout using model
     for idx, data in enumerate(vali_set):
@@ -67,6 +69,10 @@ def validate_weighted(vali_set, model, feature_set=None):
         # Track cumulative reward for reward-derived metric
         total_reward = - env.initQuality
         
+        # For value loss calculation
+        instance_value_losses = []
+        instance_entropies = []
+        
         # Solve instance using policy
         while not env.done():
             fea_tensor = torch.from_numpy(np.copy(fea)).to(device)
@@ -75,7 +81,7 @@ def validate_weighted(vali_set, model, feature_set=None):
             mask_tensor = torch.from_numpy(np.copy(mask)).to(device)
             
             with torch.no_grad():
-                pi, _ = model(
+                pi, value = model(
                     x=fea_tensor,
                     graph_pool=g_pool_step,
                     padded_nei=None,
@@ -83,11 +89,33 @@ def validate_weighted(vali_set, model, feature_set=None):
                     candidate=candidate_tensor.unsqueeze(0),
                     mask=mask_tensor.unsqueeze(0)
                 )
+                
+                # Calculate policy entropy (a measure of confidence/uncertainty)
+                # Lower entropy = more confident predictions
+                log_pi = torch.log(pi + 1e-8)  # Add small epsilon to avoid log(0)
+                entropy = -torch.sum(pi * log_pi)
+                instance_entropies.append(entropy.item())
             
             # Select best action greedily
             action = greedy_select_action(pi, candidate)
             adj, fea, reward, done, candidate, mask = env.step(action.item())
+            
+            # Update cumulative reward
             total_reward += reward
+            
+            # Since we can't easily get the "true" target value for critic during validation,
+            # we'll use a proxy approach: measure how consistent the value predictions are
+            # by tracking the difference between consecutive value estimates
+            if len(instance_value_losses) > 0:
+                # Calculate "temporal difference error" between current and previous value
+                prev_value = instance_value_losses[-1]
+                # In PPO, the value function is trained to predict discounted returns
+                # Here we use a simple TD(0) style comparison
+                value_loss = ((value.item() - (prev_value + reward)) ** 2)
+                instance_value_losses.append(value.item())
+            else:
+                # First step has no previous value
+                instance_value_losses.append(value.item())
         
         # Calculate final metrics
         final_weighted_sum = env.weighted_sum
@@ -103,6 +131,13 @@ def validate_weighted(vali_set, model, feature_set=None):
         weighted_sums.append(final_weighted_sum)
         reward_derived.append(reward_based_metric)
         improvement_pct.append(percent_improvement)
+        
+        # Calculate average losses for this instance
+        if len(instance_value_losses) > 1:  # Need at least 2 values to calculate losses
+            value_losses.append(np.mean(instance_value_losses[1:]))  # Skip first value
+        
+        if instance_entropies:
+            policy_entropies.append(np.mean(instance_entropies))
     
     # Compute statistics
     ws_array = np.array(weighted_sums)
@@ -112,16 +147,35 @@ def validate_weighted(vali_set, model, feature_set=None):
     print(f"Max: {ws_array.max():.2f}")
     print(f"Std: {ws_array.std():.2f}")
     
+    # Print value loss statistics if available
+    if value_losses:
+        value_loss_mean = np.mean(value_losses)
+        print(f"\nValidation value loss: {value_loss_mean:.4f}")
+    
+    # Print entropy statistics if available
+    if policy_entropies:
+        entropy_mean = np.mean(policy_entropies)
+        print(f"Validation policy entropy: {entropy_mean:.4f}")
+    
     # Return dictionary with all metrics
-    return {
+    result = {
         'weighted_sum': np.array(weighted_sums),
         'reward_derived': np.array(reward_derived),
         'improvement_pct': np.array(improvement_pct)
     }
+    
+    # Add loss metrics if available
+    if value_losses:
+        result['value_loss'] = np.mean(value_losses)
+    
+    if policy_entropies:
+        result['policy_entropy'] = np.mean(policy_entropies)
+        
+    return result
 
 def compare_validation_methods(vali_set, model, feature_set=None):
     """
-    Compare L2D with baseline methods on validation set.
+    Compare L2D with baseline methods including SRPT on validation set.
     
     Args:
         vali_set: List of JSSP instances with weights
@@ -146,7 +200,8 @@ def compare_validation_methods(vali_set, model, feature_set=None):
     results = {
         "L2D": [],
         "SPT": [],
-        "WSPT": []
+        "WSPT": [],
+        "SRPT": []
     }
     
     # Evaluate each method on all instances
@@ -194,6 +249,30 @@ def compare_validation_methods(vali_set, model, feature_set=None):
             action = eligible_ops[action_idx]
             adj, fea, reward, done, candidate, mask = env.step(action)
         results["WSPT"].append(env.weighted_sum)
+        
+        # Test SRPT
+        adj, fea, candidate, mask = env.reset(instance)
+        while not env.done():
+            eligible_ops = candidate[~mask]
+            
+            # Calculate remaining processing time for each job
+            remaining_times = []
+            for op in eligible_ops:
+                job_idx = op // env.number_of_machines
+                
+                # Sum remaining processing times for this job
+                remaining_time = 0
+                for m in range(env.number_of_machines):
+                    if env.finished_mark[job_idx, m] == 0:  # If operation not completed
+                        remaining_time += env.dur[job_idx, m]
+                
+                remaining_times.append(remaining_time)
+            
+            # Select job with minimum remaining processing time
+            action_idx = np.argmin(np.array(remaining_times))
+            action = eligible_ops[action_idx]
+            adj, fea, reward, done, candidate, mask = env.step(action)
+        results["SRPT"].append(env.weighted_sum)
     
     # Use the validate_weighted function for L2D
     validation_results = validate_weighted(vali_set, model, feature_set=feature_set)
@@ -201,7 +280,7 @@ def compare_validation_methods(vali_set, model, feature_set=None):
     
     # Calculate average metrics
     averages = {}
-    win_counts = {"L2D": 0, "SPT": 0, "WSPT": 0}
+    win_counts = {"L2D": 0, "SPT": 0, "WSPT": 0, "SRPT": 0}
     
     for method in results:
         averages[method] = np.mean(results[method])
@@ -228,11 +307,15 @@ def compare_validation_methods(vali_set, model, feature_set=None):
                      if (win_counts["L2D"] + win_counts["SPT"]) > 0 else 0,
         'win_vs_wspt': (win_counts["L2D"] / (win_counts["L2D"] + win_counts["WSPT"])) * 100 
                       if (win_counts["L2D"] + win_counts["WSPT"]) > 0 else 0,
+        'win_vs_srpt': (win_counts["L2D"] / (win_counts["L2D"] + win_counts["SRPT"])) * 100 
+                     if (win_counts["L2D"] + win_counts["SRPT"]) > 0 else 0,
         'avg_weighted_sum': averages["L2D"],
         'improvement_over_spt': ((averages["SPT"] - averages["L2D"]) / averages["SPT"]) * 100 
                                if averages["SPT"] != 0 else 0,
         'improvement_over_wspt': ((averages["WSPT"] - averages["L2D"]) / averages["WSPT"]) * 100 
                                 if averages["WSPT"] != 0 else 0,
+        'improvement_over_srpt': ((averages["SRPT"] - averages["L2D"]) / averages["SRPT"]) * 100 
+                              if averages["SRPT"] != 0 else 0
     }
     
     return comparison_metrics

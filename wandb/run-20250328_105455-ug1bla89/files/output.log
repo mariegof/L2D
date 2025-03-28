@@ -1,0 +1,65 @@
+WandB initialized. Will train for exactly 100 episodes.
+Loading validation data from ./data/instances/uniform_weights/validation_data_6x6_seed200.npy...
+Successfully loaded 100 validation instances
+Starting training for 100 episodes with 8 environments...
+Episode 20/100 | Reward: -2798.12 | Weighted Sum: 2651.50 | Loss: -0.037658
+Avg(100): Reward=-2871.72, Weighted Sum=2766.11 | Episode time: 4.94s | Total time: 636.70s
+Validation weighted sum statistics:
+Mean: 2803.39
+Min: 2113.00
+Max: 3564.00
+Std: 302.62
+Validation value loss: 0.3854
+Validation policy entropy: 1.1124
+Validation Weighted Sum: 2803.39 | Reward-derived: -2881.63 | Improvement: -57.40%
+Validation weighted sum statistics:
+Mean: 2803.39
+Min: 2113.00
+Max: 3564.00
+Std: 302.62
+Validation value loss: 0.3854
+Validation policy entropy: 1.1124
+Validation Results:
+Average Weighted Sums:
+L2D: 2803.39
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 27/100 (27.00%)
+SPT: 34/100 (34.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 39/100 (39.00%)
+Updated learning curves plot at episode 20: ./models/figures/learning_curves.png and ./models/figures/learning_curves_20.png
+Successfully logged learning curves to WandB
+New best model saved! Weighted Sum: 2803.39, Win Rate: 27.00%
+Episode 40/100 | Reward: -2878.12 | Weighted Sum: 2799.88 | Loss: -0.093608
+Avg(100): Reward=-2874.17, Weighted Sum=2774.71 | Episode time: 5.05s | Total time: 830.39s
+Validation weighted sum statistics:
+Mean: 2820.94
+Min: 2150.00
+Max: 3577.00
+Std: 297.66
+Validation value loss: 0.3611
+Validation policy entropy: 1.0433
+Validation Weighted Sum: 2820.94 | Reward-derived: -2901.29 | Improvement: -58.43%
+Validation weighted sum statistics:
+Mean: 2820.94
+Min: 2150.00
+Max: 3577.00
+Std: 297.66
+Validation value loss: 0.3611
+Validation policy entropy: 1.0433
+Validation Results:
+Average Weighted Sums:
+L2D: 2820.94
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 23/100 (23.00%)
+SPT: 33/100 (33.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 44/100 (44.00%)
+Updated learning curves plot at episode 40: ./models/figures/learning_curves.png and ./models/figures/learning_curves_40.png
+Successfully logged learning curves to WandB

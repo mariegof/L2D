@@ -1,0 +1,110 @@
+2025-03-28 10:51:07,948 INFO    MainThread:93409 [wandb_setup.py:_flush():67] Current SDK version is 0.19.8
+2025-03-28 10:51:07,949 INFO    MainThread:93409 [wandb_setup.py:_flush():67] Configure stats pid to 93409
+2025-03-28 10:51:07,949 INFO    MainThread:93409 [wandb_setup.py:_flush():67] Loading settings from /Users/mariegoffin/.config/wandb/settings
+2025-03-28 10:51:07,949 INFO    MainThread:93409 [wandb_setup.py:_flush():67] Loading settings from /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/settings
+2025-03-28 10:51:07,949 INFO    MainThread:93409 [wandb_setup.py:_flush():67] Loading settings from environment variables
+2025-03-28 10:51:07,949 INFO    MainThread:93409 [wandb_init.py:setup_run_log_directory():647] Logging user logs to /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_105107-2ap0ackj/logs/debug.log
+2025-03-28 10:51:07,949 INFO    MainThread:93409 [wandb_init.py:setup_run_log_directory():648] Logging internal logs to /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_105107-2ap0ackj/logs/debug-internal.log
+2025-03-28 10:51:07,949 INFO    MainThread:93409 [wandb_init.py:init():761] calling init triggers
+2025-03-28 10:51:07,949 INFO    MainThread:93409 [wandb_init.py:init():766] wandb.init called with sweep_config: {'decay_ratio': 0.9, 'decay_step_size': 200, 'decayflag': True, 'device': 'cpu', 'entloss_coef': 0.02, 'eps_clip': 0.3, 'et_normalize_coef': 1000, 'feature_set': ['LBs', 'finished_mark', 'normalized_weights'], 'gamma': 0.99, 'graph_pool_type': 'average', 'hidden_dim': 256, 'hidden_dim_actor': 32, 'hidden_dim_critic': 64, 'high': 99, 'init_quality_flag': False, 'input_dim': 3, 'k_epochs': 5, 'low': 1, 'lr': 1.3540547417803006e-06, 'max_updates': 100, 'n_j': 6, 'n_m': 6, 'neighbor_pooling_type': 'average', 'np_seed_train': 200, 'np_seed_validation': 200, 'num_envs': 8, 'num_layers': 4, 'num_mlp_layers_actor': 1, 'num_mlp_layers_critic': 3, 'num_mlp_layers_feature_extract': 2, 'output_dir': 'results/variable_weights/model_sweeps/20250328_105035', 'ploss_coef': 2, 'reward_strategy': 'default', 'rewardscale': 0, 'torch_seed': 600, 'validate_every': 20, 'vloss_coef': 1, 'weight_high': 10, 'weight_low': 1, 'wkr_normalize_coef': 100}
+config: {'device': 'cpu', 'n_j': 6, 'n_m': 6, 'rewardscale': 0.0, 'init_quality_flag': True, 'low': 1, 'high': 99, 'weight_low': 1, 'weight_high': 10, 'np_seed_train': 200, 'np_seed_validation': 200, 'torch_seed': 600, 'et_normalize_coef': 1000, 'wkr_normalize_coef': 100, 'num_layers': 4, 'neighbor_pooling_type': 'average', 'graph_pool_type': 'average', 'input_dim': 3, 'hidden_dim': 256, 'num_mlp_layers_feature_extract': 2, 'num_mlp_layers_actor': 1, 'hidden_dim_actor': 32, 'num_mlp_layers_critic': 3, 'hidden_dim_critic': 64, 'num_envs': 8, 'max_updates': 100, 'lr': 1.3540547417803006e-06, 'decayflag': True, 'decay_step_size': 200, 'decay_ratio': 0.9, 'gamma': 0.99, 'k_epochs': 5, 'eps_clip': 0.3, 'vloss_coef': 1.0, 'ploss_coef': 2.0, 'entloss_coef': 0.02, 'config': None, 'sweep': False, 'no_wandb': False, 'feature_set': ["['LBs'", "'finished_mark'", "'normalized_weights']"], 'reward_strategy': 'default', 'validate_every': 20, 'output_dir': 'results/variable_weights/model_sweeps/20250328_105035', '_wandb': {}}
+2025-03-28 10:51:07,949 INFO    MainThread:93409 [wandb_init.py:init():784] starting backend
+2025-03-28 10:51:07,949 INFO    MainThread:93409 [wandb_init.py:init():788] sending inform_init request
+2025-03-28 10:51:07,978 INFO    MainThread:93409 [backend.py:_multiprocessing_setup():101] multiprocessing start_methods=spawn,fork,forkserver, using: spawn
+2025-03-28 10:51:07,979 INFO    MainThread:93409 [wandb_init.py:init():798] backend started and connected
+2025-03-28 10:51:07,981 INFO    MainThread:93409 [wandb_run.py:_config_callback():1261] config_cb None None {'decay_ratio': 0.9, 'decay_step_size': 200, 'decayflag': True, 'device': 'cpu', 'entloss_coef': 0.02, 'eps_clip': 0.3, 'et_normalize_coef': 1000, 'feature_set': ['LBs', 'finished_mark', 'normalized_weights'], 'gamma': 0.99, 'graph_pool_type': 'average', 'hidden_dim': 256, 'hidden_dim_actor': 32, 'hidden_dim_critic': 64, 'high': 99, 'init_quality_flag': False, 'input_dim': 3, 'k_epochs': 5, 'low': 1, 'lr': 1.3540547417803006e-06, 'max_updates': 100, 'n_j': 6, 'n_m': 6, 'neighbor_pooling_type': 'average', 'np_seed_train': 200, 'np_seed_validation': 200, 'num_envs': 8, 'num_layers': 4, 'num_mlp_layers_actor': 1, 'num_mlp_layers_critic': 3, 'num_mlp_layers_feature_extract': 2, 'output_dir': 'results/variable_weights/model_sweeps/20250328_105035', 'ploss_coef': 2, 'reward_strategy': 'default', 'rewardscale': 0, 'torch_seed': 600, 'validate_every': 20, 'vloss_coef': 1, 'weight_high': 10, 'weight_low': 1, 'wkr_normalize_coef': 100}
+2025-03-28 10:51:07,983 INFO    MainThread:93409 [wandb_init.py:init():891] updated telemetry
+2025-03-28 10:51:08,039 INFO    MainThread:93409 [wandb_init.py:init():915] communicating run to backend with 90.0 second timeout
+2025-03-28 10:51:08,412 INFO    MainThread:93409 [wandb_init.py:init():990] starting run threads in backend
+2025-03-28 10:51:10,558 INFO    MainThread:93409 [wandb_run.py:_console_start():2375] atexit reg
+2025-03-28 10:51:10,559 INFO    MainThread:93409 [wandb_run.py:_redirect():2227] redirect: wrap_raw
+2025-03-28 10:51:10,565 INFO    MainThread:93409 [wandb_run.py:_redirect():2292] Wrapping output streams.
+2025-03-28 10:51:10,565 INFO    MainThread:93409 [wandb_run.py:_redirect():2315] Redirects installed.
+2025-03-28 10:51:10,573 INFO    MainThread:93409 [wandb_init.py:init():1032] run started, returning control to user process
+2025-03-28 11:09:50,322 INFO    MainThread:93409 [retry.py:__call__():175] Retry attempt failed:
+Traceback (most recent call last):
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/connectionpool.py", line 490, in _make_request
+    raise new_e
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/connectionpool.py", line 466, in _make_request
+    self._validate_conn(conn)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/connectionpool.py", line 1095, in _validate_conn
+    conn.connect()
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/connection.py", line 730, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/connection.py", line 909, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/util/ssl_.py", line 469, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/util/ssl_.py", line 513, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/ssl.py", line 500, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/ssl.py", line 1073, in _create
+    self.do_handshake()
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/ssl.py", line 1342, in do_handshake
+    self._sslobj.do_handshake()
+ConnectionResetError: [Errno 54] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/util/retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/connectionpool.py", line 490, in _make_request
+    raise new_e
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/connectionpool.py", line 466, in _make_request
+    self._validate_conn(conn)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/connectionpool.py", line 1095, in _validate_conn
+    conn.connect()
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/connection.py", line 730, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/connection.py", line 909, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/util/ssl_.py", line 469, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/util/ssl_.py", line 513, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/ssl.py", line 500, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/ssl.py", line 1073, in _create
+    self.do_handshake()
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/ssl.py", line 1342, in do_handshake
+    self._sslobj.do_handshake()
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/lib/retry.py", line 134, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/apis/public/api.py", line 79, in execute
+    return self._client.execute(*args, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/lib/gql_request.py", line 58, in execute
+    request = self.session.post(self.url, **post_args)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/requests/adapters.py", line 682, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2025-03-28 11:09:50,334 INFO    MainThread:93409 [wandb_run.py:_finish():2112] finishing run marie-goffin-university-of-li-ge/jssp-variable-sum/2ap0ackj
+2025-03-28 11:09:50,334 INFO    MainThread:93409 [wandb_run.py:_atexit_cleanup():2340] got exitcode: 1
+2025-03-28 11:09:50,334 INFO    MainThread:93409 [wandb_run.py:_restore():2322] restore
+2025-03-28 11:09:50,334 INFO    MainThread:93409 [wandb_run.py:_restore():2328] restore done

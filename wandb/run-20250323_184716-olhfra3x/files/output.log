@@ -1,0 +1,144 @@
+wandb: WARNING Config item 'high' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'low' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'max_updates' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'n_j' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'n_m' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'np_seed_train' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'np_seed_validation' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'num_envs' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'output_dir' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'rewardscale' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'torch_seed' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'weight_high' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'weight_low' was locked by 'sweep' (ignored update).
+Training episodes:   0%|          | 0/100 [00:00<?, ?it/s]
+Loaded validation data from ./data/instances/variable_weights/validation_data_6x6_seed200.npy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Training episodes:  99%|█████████▉| 99/100 [04:08<00:01,  1.83s/it]
+Episode 100/100 | Reward: -2921.69 | Weighted Sum: 2790.44 | Loss: -0.043372
+Avg(100): Reward=-2877.16, Weighted Sum=2741.35 | Episode time: 1.76s | Total time: 250.45s
+Validation weighted sum statistics:
+Mean: 13788.66
+Min: 7805.00
+Max: 21083.00
+Std: 2904.47
+Training episodes:  99%|█████████▉| 99/100 [04:17<00:02,  2.61s/it]
+Traceback (most recent call last):
+  File "scripts/train.py", line 618, in <module>
+    main()
+  File "scripts/train.py", line 611, in main
+    best_win_rate, best_episode, final_comparison = train(config)
+  File "scripts/train.py", line 501, in train
+    plt.close(perf_profile_fig)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/matplotlib/pyplot.py", line 991, in close
+    raise TypeError("close() argument must be a Figure, an int, a string, "
+TypeError: close() argument must be a Figure, an int, a string, or None, not <class 'module'>
+Validation weighted sum statistics:
+Mean: 13788.66
+Min: 7805.00
+Max: 21083.00
+Std: 2904.47
+Validation Results:
+Average Weighted Sums:
+L2D: 13788.66
+SPT: 13903.27
+WSPT: 12822.80
+Win Statistics:
+L2D: 21/100 (21.00%)
+SPT: 14/100 (14.00%)
+WSPT: 65/100 (65.00%)

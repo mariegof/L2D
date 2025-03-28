@@ -1,0 +1,266 @@
+WandB initialized. Will train for exactly 100 episodes.
+Loading validation data from ./data/instances/variable_weights/validation_data_6x6_seed200.npy...
+Successfully loaded 100 validation instances
+Starting training for 100 episodes with 8 environments...
+Episode 20/100 | Reward: -15560.00 | Weighted Sum: 14783.88 | Loss: 1.812950
+Avg(100): Reward=-14703.59, Weighted Sum=14041.59 | Episode time: 5.83s | Total time: 136.67s
+Validation weighted sum statistics:
+Mean: 14940.64
+Min: 7288.00
+Max: 22776.00
+Std: 3192.18
+Validation value loss: -0.0524
+Validation policy entropy: 1.3057
+Validation Weighted Sum: 14940.64 | Reward-derived: -15423.31 | Improvement: -65.21%
+Validation weighted sum statistics:
+Mean: 14940.64
+Min: 7288.00
+Max: 22776.00
+Std: 3192.18
+Validation value loss: -0.0524
+Validation policy entropy: 1.3057
+Validation Results:
+Average Weighted Sums:
+L2D: 14940.64
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+Win Statistics:
+L2D: 6/100 (6.00%)
+SPT: 10/100 (10.00%)
+WSPT: 65/100 (65.00%)
+SRPT: 19/100 (19.00%)
+Updated learning curves plot at episode 20: ./models/figures/learning_curves.png and ./models/figures/learning_curves_20.png
+Successfully logged learning curves to WandB
+New best model saved! Weighted Sum: 14940.64, Win Rate: 6.00%
+Episode 40/100 | Reward: -16776.75 | Weighted Sum: 16256.25 | Loss: 0.775832
+Avg(100): Reward=-14539.14, Weighted Sum=13844.54 | Episode time: 7.21s | Total time: 511.41s
+Validation weighted sum statistics:
+Mean: 14795.65
+Min: 7592.00
+Max: 24301.00
+Std: 3105.85
+Validation value loss: -0.0874
+Validation policy entropy: 1.2894
+Validation Weighted Sum: 14795.65 | Reward-derived: -15296.20 | Improvement: -63.76%
+Validation weighted sum statistics:
+Mean: 14795.65
+Min: 7592.00
+Max: 24301.00
+Std: 3105.85
+Validation value loss: -0.0874
+Validation policy entropy: 1.2894
+Validation Results:
+Average Weighted Sums:
+L2D: 14795.65
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+Win Statistics:
+L2D: 7/100 (7.00%)
+SPT: 8/100 (8.00%)
+WSPT: 66/100 (66.00%)
+SRPT: 19/100 (19.00%)
+Updated learning curves plot at episode 40: ./models/figures/learning_curves.png and ./models/figures/learning_curves_40.png
+Successfully logged learning curves to WandB
+New best model saved! Weighted Sum: 14795.65, Win Rate: 7.00%
+Episode 60/100 | Reward: -14980.12 | Weighted Sum: 14732.25 | Loss: 1.772973
+Avg(100): Reward=-14511.66, Weighted Sum=13845.66 | Episode time: 8.31s | Total time: 754.32s
+Validation weighted sum statistics:
+Mean: 14812.77
+Min: 7592.00
+Max: 24301.00
+Std: 3212.59
+Validation value loss: -0.0954
+Validation policy entropy: 1.2795
+Validation Weighted Sum: 14812.77 | Reward-derived: -15258.46 | Improvement: -63.69%
+Validation weighted sum statistics:
+Mean: 14812.77
+Min: 7592.00
+Max: 24301.00
+Std: 3212.59
+Validation value loss: -0.0954
+Validation policy entropy: 1.2795
+Validation Results:
+Average Weighted Sums:
+L2D: 14812.77
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+Win Statistics:
+L2D: 7/100 (7.00%)
+SPT: 8/100 (8.00%)
+WSPT: 66/100 (66.00%)
+SRPT: 19/100 (19.00%)
+Updated learning curves plot at episode 60: ./models/figures/learning_curves.png and ./models/figures/learning_curves_60.png
+Successfully logged learning curves to WandB
+No improvement for 1 validation checks (best weighted sum: 14795.65)
+Episode 80/100 | Reward: -14227.25 | Weighted Sum: 13643.00 | Loss: 0.894070
+Avg(100): Reward=-14570.11, Weighted Sum=13910.76 | Episode time: 3.22s | Total time: 905.95s
+Validation weighted sum statistics:
+Mean: 14655.02
+Min: 8281.00
+Max: 23448.00
+Std: 3166.66
+Validation value loss: -0.0911
+Validation policy entropy: 1.2579
+Validation Weighted Sum: 14655.02 | Reward-derived: -15088.08 | Improvement: -61.93%
+Validation weighted sum statistics:
+Mean: 14655.02
+Min: 8281.00
+Max: 23448.00
+Std: 3166.66
+Validation value loss: -0.0911
+Validation policy entropy: 1.2579
+Validation Results:
+Average Weighted Sums:
+L2D: 14655.02
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+Win Statistics:
+L2D: 6/100 (6.00%)
+SPT: 8/100 (8.00%)
+WSPT: 66/100 (66.00%)
+SRPT: 20/100 (20.00%)
+Updated learning curves plot at episode 80: ./models/figures/learning_curves.png and ./models/figures/learning_curves_80.png
+Successfully logged learning curves to WandB
+New best model saved! Weighted Sum: 14655.02, Win Rate: 6.00%
+Episode 100/100 | Reward: -15266.38 | Weighted Sum: 14580.50 | Loss: 0.743153
+Avg(100): Reward=-14655.41, Weighted Sum=13978.59 | Episode time: 3.46s | Total time: 1069.97s
+Validation weighted sum statistics:
+Mean: 14581.52
+Min: 7288.00
+Max: 23125.00
+Std: 3165.57
+Validation value loss: -0.0883
+Validation policy entropy: 1.2560
+Validation Weighted Sum: 14581.52 | Reward-derived: -14976.56 | Improvement: -61.06%
+Validation weighted sum statistics:
+Mean: 14581.52
+Min: 7288.00
+Max: 23125.00
+Std: 3165.57
+Validation value loss: -0.0883
+Validation policy entropy: 1.2560
+Validation Results:
+Average Weighted Sums:
+L2D: 14581.52
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+Win Statistics:
+L2D: 8/100 (8.00%)
+SPT: 7/100 (7.00%)
+WSPT: 65/100 (65.00%)
+SRPT: 20/100 (20.00%)
+Updated learning curves plot at episode 100: ./models/figures/learning_curves.png and ./models/figures/learning_curves_100.png
+Successfully logged learning curves to WandB
+New best model saved! Weighted Sum: 14581.52, Win Rate: 8.00%
+Error during training: [Errno 32] Broken pipe
+wandb: Network error (ConnectionError), entering retry loop.
+Traceback (most recent call last):
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/connectionpool.py", line 490, in _make_request
+    raise new_e
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/connectionpool.py", line 466, in _make_request
+    self._validate_conn(conn)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/connectionpool.py", line 1095, in _validate_conn
+    conn.connect()
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/connection.py", line 730, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/connection.py", line 909, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/util/ssl_.py", line 469, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/util/ssl_.py", line 513, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/ssl.py", line 500, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/ssl.py", line 1073, in _create
+    self.do_handshake()
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/ssl.py", line 1342, in do_handshake
+    self._sslobj.do_handshake()
+ConnectionResetError: [Errno 54] Connection reset by peer
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/util/retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/connectionpool.py", line 490, in _make_request
+    raise new_e
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/connectionpool.py", line 466, in _make_request
+    self._validate_conn(conn)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/connectionpool.py", line 1095, in _validate_conn
+    conn.connect()
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/connection.py", line 730, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/connection.py", line 909, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/util/ssl_.py", line 469, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/urllib3/util/ssl_.py", line 513, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/ssl.py", line 500, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/ssl.py", line 1073, in _create
+    self.do_handshake()
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/ssl.py", line 1342, in do_handshake
+    self._sslobj.do_handshake()
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/lib/retry.py", line 134, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/apis/public/api.py", line 79, in execute
+    return self._client.execute(*args, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/lib/gql_request.py", line 58, in execute
+    request = self.session.post(self.url, **post_args)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/requests/adapters.py", line 682, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "scripts/train.py", line 668, in train
+    wandb.log_artifact(checkpoint_artifact)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 401, in wrapper_fn
+    return func(self, *args, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 391, in wrapper
+    return func(self, *args, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 3101, in log_artifact
+    return self._log_artifact(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 3248, in _log_artifact
+    self._assert_can_log_artifact(artifact)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 3299, in _assert_can_log_artifact
+    expected_type = Artifact._expected_type(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/artifacts/artifact.py", line 2371, in _expected_type
+    response = client.execute(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/lib/retry.py", line 215, in wrapped_fn
+    return retrier(*args, **kargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/lib/retry.py", line 186, in __call__
+    wandb.termlog(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/errors/term.py", line 172, in termlog
+    _log(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/errors/term.py", line 358, in _log
+    click.echo(string, file=sys.stderr, nl=newline)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/click/utils.py", line 319, in echo
+    file.flush()
+BrokenPipeError: [Errno 32] Broken pipe

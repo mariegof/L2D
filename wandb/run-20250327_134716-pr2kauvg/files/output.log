@@ -1,0 +1,37 @@
+
+wandb: WARNING Calling wandb.run.save without any arguments is deprecated.Changes to attributes are automatically persisted.
+WandB initialized. Will train for exactly 100 episodes.
+Loading validation data from ./data/instances/uniform_weights/validation_data_6x6_seed200.npy...
+Successfully loaded 100 validation instances
+Starting training for 100 episodes with 16 environments...
+Episode 20/100 | Reward: -2818.56 | Weighted Sum: 2706.31 | Loss: -0.015650
+Avg(100): Reward=-2868.94, Weighted Sum=2734.80 | Episode time: 12.70s | Total time: 209.49s
+Validation weighted sum statistics:
+Mean: 2638.94
+Min: 2044.00
+Max: 3328.00
+Std: 266.10
+Validation value loss: -0.1292
+Validation policy entropy: 1.5263
+Validation Weighted Sum: 2638.94 | Reward-derived: -2751.71 | Improvement: -48.19%
+Validation weighted sum statistics:
+Mean: 2638.94
+Min: 2044.00
+Max: 3328.00
+Std: 266.10
+Validation value loss: -0.1292
+Validation policy entropy: 1.5263
+Validation Results:
+Average Weighted Sums:
+L2D: 2638.94
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 57/100 (57.00%)
+SPT: 24/100 (24.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 19/100 (19.00%)
+Updated learning curves plot at episode 20: ./models/figures/learning_curves.png and ./models/figures/learning_curves_20.png
+Successfully logged learning curves to WandB at step 20
+New best model saved! Win rate vs WSPT: 100.00%

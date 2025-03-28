@@ -1,0 +1,106 @@
+[34m[1mwandb[0m: [33mWARNING[0m Calling wandb.run.save without any arguments is deprecated.Changes to attributes are automatically persisted.
+Loading validation data from ./data/instances/variable_weights/validation_data_6x6_seed200.npy...
+Successfully loaded 100 validation instances
+Starting training for 100 episodes with 8 environments...
+Episode 1/100 | Reward: -13716.00 | Weighted Sum: 13077.75 | Loss: 0.026311
+Avg(100): Reward=-13716.00, Weighted Sum=13077.75 | Episode time: 0.94s | Total time: 0.95s
+
+Validation weighted sum statistics:
+Mean: 13158.84
+Min: 7220.00
+Max: 21301.00
+Std: 3153.62
+
+Validation value loss: -0.4272
+Validation policy entropy: 1.4623
+Validation Weighted Sum: 13158.84 | Reward-derived: -13666.77 | Improvement: -44.56%
+
+Validation weighted sum statistics:
+Mean: 13158.84
+Min: 7220.00
+Max: 21301.00
+Std: 3153.62
+
+Validation value loss: -0.4272
+Validation policy entropy: 1.4623
+
+Validation Results:
+Average Weighted Sums:
+L2D: 13158.84
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 28/100 (28.00%)
+SPT: 4/100 (4.00%)
+WSPT: 52/100 (52.00%)
+SRPT: 16/100 (16.00%)
+/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/scripts/train.py:331: UserWarning: Tight layout not applied. tight_layout cannot make axes height small enough to accommodate all axes decorations.
+  plt.tight_layout(rect=[0, 0, 1, 0.98])
+Updated learning curves plot at: ./models/figures/learning_curves.png
+New best model saved! Win rate vs WSPT: 35.00%
+Episode 2/100 | Reward: -13800.12 | Weighted Sum: 13233.00 | Loss: -3.133695
+Avg(100): Reward=-13758.06, Weighted Sum=13155.38 | Episode time: 0.94s | Total time: 11.85s
+
+Validation weighted sum statistics:
+Mean: 13189.96
+Min: 7106.00
+Max: 21147.00
+Std: 3059.66
+
+Validation value loss: -0.3697
+Validation policy entropy: 1.4670
+Validation Weighted Sum: 13189.96 | Reward-derived: -13694.05 | Improvement: -45.13%
+
+Validation weighted sum statistics:
+Mean: 13189.96
+Min: 7106.00
+Max: 21147.00
+Std: 3059.66
+
+Validation value loss: -0.3697
+Validation policy entropy: 1.4670
+
+Validation Results:
+Average Weighted Sums:
+L2D: 13189.96
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 27/100 (27.00%)
+SPT: 6/100 (6.00%)
+WSPT: 51/100 (51.00%)
+SRPT: 16/100 (16.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 1 validation checks (best: 35.00%)
+Episode 3/100 | Reward: -14714.12 | Weighted Sum: 13985.38 | Loss: -3.612187
+Avg(100): Reward=-14076.75, Weighted Sum=13432.04 | Episode time: 1.38s | Total time: 21.97s
+Traceback (most recent call last):
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/scripts/train.py", line 751, in <module>
+    main()
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/scripts/train.py", line 744, in main
+    best_win_rate, best_episode, final_comparison = train(config)
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/scripts/train.py", line 495, in train
+    validation_results = validate_weighted(validation_data, agent.policy, config.feature_set)
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/src/utils/validation.py", line 84, in validate_weighted
+    pi, value = model(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/src/models/actor_critic.py", line 86, in forward
+    candidate_scores = self.actor(concateFea)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/src/models/mlp.py", line 300, in forward
+    h = torch.tanh(self.linears[0](x))
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1559, in _call_impl
+    if not (self._backward_hooks or self._backward_pre_hooks or self._forward_hooks or self._forward_pre_hooks
+KeyboardInterrupt

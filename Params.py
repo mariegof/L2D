@@ -46,12 +46,19 @@ parser.add_argument('--config', type=str, default=None, help='Path to configurat
 parser.add_argument('--sweep', action='store_true', help='Enable WandB sweep mode')
 parser.add_argument('--no_wandb', action='store_true', help='Disable WandB logging')
 # feature and reward strategy arguments
-parser.add_argument('--feature_set', nargs='+', 
-                    default=['LBs', 'finished_mark', 'normalized_weights'],
-                    help='Features to use')
+parser.add_argument('--feature_set', type=str,
+                    default='LBs,finished_mark,normalized_weights',
+                    help='Comma-separated list of features to use')
 parser.add_argument('--reward_strategy', type=str, default='default', 
                     help='Reward strategy')
 parser.add_argument('--validate_every', type=int, default=100, 
                     help='Validate every N episodes')
+
+# Add WandB sweep-specific arguments
+parser.add_argument('--output_dir', type=str, default='./results', 
+                    help='Directory to save results (used by WandB)')
+
+# Parse known arguments only
+#configs, unknown = parser.parse_known_args()
 
 configs = parser.parse_args()

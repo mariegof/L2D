@@ -1,0 +1,499 @@
+2025-03-28 12:03:52,080 INFO    StreamThr :17179 [internal.py:wandb_internal():83] W&B internal server running at pid: 17179, started at: 2025-03-28 12:03:52.074887
+2025-03-28 12:03:52,094 INFO    WriterThread:17179 [datastore.py:open_for_write():87] open: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/run-opcyvuyb.wandb
+2025-03-28 12:03:52,588 INFO    SenderThread:17179 [dir_watcher.py:__init__():211] watching files in: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files
+2025-03-28 12:03:52,588 INFO    SenderThread:17179 [sender.py:_start_run_threads():1134] run started: opcyvuyb with start time 1743159832.060402
+2025-03-28 12:03:52,595 INFO    HandlerThread:17179 [system_monitor.py:start():187] Starting system monitor
+2025-03-28 12:03:52,597 INFO    SystemMonitor:17179 [system_monitor.py:_start():151] Starting system asset monitoring threads
+2025-03-28 12:03:52,598 INFO    HandlerThread:17179 [system_monitor.py:probe():207] Collecting system info
+2025-03-28 12:03:52,599 INFO    SystemMonitor:17179 [interfaces.py:start():186] Started cpu monitoring
+2025-03-28 12:03:52,601 INFO    SystemMonitor:17179 [interfaces.py:start():186] Started disk monitoring
+2025-03-28 12:03:52,606 INFO    SystemMonitor:17179 [interfaces.py:start():186] Started memory monitoring
+2025-03-28 12:03:52,617 INFO    SystemMonitor:17179 [interfaces.py:start():186] Started network monitoring
+2025-03-28 12:03:52,710 INFO    HandlerThread:17179 [system_monitor.py:probe():217] Finished collecting system info
+2025-03-28 12:03:52,710 INFO    HandlerThread:17179 [system_monitor.py:probe():220] Publishing system info
+2025-03-28 12:03:53,589 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_created():272] file/dir created: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/conda-environment.yaml
+2025-03-28 12:03:54,255 INFO    HandlerThread:17179 [system_monitor.py:probe():222] Finished publishing system info
+2025-03-28 12:03:54,262 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-metadata.json with policy now
+2025-03-28 12:03:54,590 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/conda-environment.yaml
+2025-03-28 12:03:54,591 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_created():272] file/dir created: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-metadata.json
+2025-03-28 12:03:54,591 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_created():272] file/dir created: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/requirements.txt
+2025-03-28 12:03:54,892 INFO    wandb-upload_0:17179 [upload_job.py:push():130] Uploaded file /var/folders/xs/r4h4thtd5t7gg6wq7ypykfsw0000gn/T/tmp7lcunkwvwandb/9sz0k8qo-wandb-metadata.json
+2025-03-28 12:03:55,016 INFO    SenderThread:17179 [sender.py:send_run():981] updated run: opcyvuyb
+2025-03-28 12:03:55,592 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/config.yaml
+2025-03-28 12:03:55,592 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_created():272] file/dir created: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/output.log
+2025-03-28 12:03:57,595 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/output.log
+2025-03-28 12:04:00,478 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:04:00,608 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_created():272] file/dir created: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:04:05,062 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:04:05,625 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:04:10,264 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:04:10,680 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:04:13,754 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:04:14,748 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:04:18,714 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:04:18,757 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:04:22,107 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:04:22,771 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:04:25,776 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/config.yaml
+2025-03-28 12:04:26,599 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:04:26,781 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:04:30,077 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:04:30,793 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:04:33,887 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:04:34,803 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:04:37,047 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:04:37,813 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:04:41,052 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:04:41,829 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:04:47,008 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:04:47,950 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:04:54,394 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:04:54,972 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:04:58,851 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:04:58,991 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:05:02,970 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:05:03,004 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:05:08,222 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:05:09,046 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:05:12,611 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:05:13,065 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:05:16,860 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:05:17,074 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:05:21,154 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:05:22,104 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:05:25,722 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:05:26,128 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:05:28,135 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/output.log
+2025-03-28 12:05:38,186 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/output.log
+2025-03-28 12:05:46,207 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:05:46,209 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:05:46,211 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:05:46,212 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:05:46,214 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:05:46,216 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:05:46,217 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:05:46,218 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:05:46,219 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:05:46,221 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:05:46,222 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:05:46,821 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file media/images/learning_curves_21_5dc8555f4ceba6cbad52.png with policy now
+2025-03-28 12:05:46,831 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:05:46,834 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:05:46,841 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:05:46,846 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:05:46,846 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:05:47,222 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:05:47,222 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_created():272] file/dir created: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/media/images/learning_curves_21_5dc8555f4ceba6cbad52.png
+2025-03-28 12:05:47,223 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_created():272] file/dir created: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/media
+2025-03-28 12:05:47,223 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_created():272] file/dir created: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/media/images
+2025-03-28 12:05:47,852 INFO    wandb-upload_0:17179 [upload_job.py:push():130] Uploaded file /var/folders/xs/r4h4thtd5t7gg6wq7ypykfsw0000gn/T/tmp7lcunkwvwandb/vxid8dl2-media/images/learning_curves_21_5dc8555f4ceba6cbad52.png
+2025-03-28 12:05:48,232 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/output.log
+2025-03-28 12:05:48,800 INFO    wandb-upload_0:17179 [upload_job.py:push():130] Uploaded file /var/folders/xs/r4h4thtd5t7gg6wq7ypykfsw0000gn/T/tmp7lcunkwvwandb/okljewn4-media/images/learning_curves_21_5dc8555f4ceba6cbad52.png
+2025-03-28 12:05:49,272 INFO    wandb-upload_1:17179 [upload_job.py:push():88] Uploaded file /Users/mariegoffin/Library/Application Support/wandb/artifacts/staging/tmpy_mha10a
+2025-03-28 12:05:50,140 INFO    SenderThread:17179 [sender.py:send_request_log_artifact():1487] logged artifact model_6x6 - {'id': 'QXJ0aWZhY3Q6MTYwNDk4ODkwOQ==', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjU5MTE3MDQ4NA==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTYwNDk4ODg1Ng==', 'versionIndex': 157}}}
+2025-03-28 12:05:50,239 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/output.log
+2025-03-28 12:05:51,166 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:05:51,240 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:05:54,305 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:05:55,258 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:05:57,274 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/media
+2025-03-28 12:05:57,275 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/media/images
+2025-03-28 12:05:57,483 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:05:58,280 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:06:00,917 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:06:01,293 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:06:01,293 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/media
+2025-03-28 12:06:01,293 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/media/images
+2025-03-28 12:06:02,299 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/config.yaml
+2025-03-28 12:06:04,017 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:06:04,317 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:06:08,463 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:06:09,343 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:06:11,770 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:06:12,357 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:06:14,734 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:06:15,372 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:06:17,378 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:06:17,382 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:06:20,438 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:06:21,398 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:06:22,966 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:06:23,406 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:06:26,807 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:06:27,435 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:06:30,161 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:06:30,451 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:06:33,357 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:06:33,475 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:06:36,587 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:06:37,498 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:06:39,798 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:06:40,515 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:06:44,532 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:06:44,584 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:06:47,282 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:06:47,591 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:06:50,694 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:06:51,604 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:06:53,300 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:06:53,615 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/output.log
+2025-03-28 12:06:53,615 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:07:03,665 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/output.log
+2025-03-28 12:07:13,015 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:07:13,017 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:07:13,019 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:07:13,020 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:07:13,020 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:07:13,021 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:07:13,024 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:07:13,025 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:07:13,027 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:07:13,029 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:07:13,142 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file media/images/learning_curves_44_3db382fc753cb3e7bc21.png with policy now
+2025-03-28 12:07:13,154 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:07:13,157 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:07:13,159 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:07:13,160 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:07:13,162 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:07:13,540 INFO    SenderThread:17179 [sender.py:send_request_log_artifact():1487] logged artifact model_6x6 - {'id': 'QXJ0aWZhY3Q6MTYwNDk5MDc1MA==', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjU5MTE3MDQ4NA==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTYwNDk5MDc1MA==', 'versionIndex': 164}}}
+2025-03-28 12:07:13,714 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/output.log
+2025-03-28 12:07:13,715 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:07:13,715 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_created():272] file/dir created: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/media/images/learning_curves_44_3db382fc753cb3e7bc21.png
+2025-03-28 12:07:13,716 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/media/images
+2025-03-28 12:07:14,089 INFO    wandb-upload_0:17179 [upload_job.py:push():130] Uploaded file /var/folders/xs/r4h4thtd5t7gg6wq7ypykfsw0000gn/T/tmp7lcunkwvwandb/v4dm5yyx-media/images/learning_curves_44_3db382fc753cb3e7bc21.png
+2025-03-28 12:07:15,079 INFO    wandb-upload_1:17179 [upload_job.py:push():130] Uploaded file /var/folders/xs/r4h4thtd5t7gg6wq7ypykfsw0000gn/T/tmp7lcunkwvwandb/xcgvwbzm-media/images/learning_curves_44_3db382fc753cb3e7bc21.png
+2025-03-28 12:07:15,721 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/output.log
+2025-03-28 12:07:16,621 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:07:16,727 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:07:19,932 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:07:20,735 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:07:21,736 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/media
+2025-03-28 12:07:21,737 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/media/images
+2025-03-28 12:07:23,269 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:07:23,744 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:07:26,230 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:07:26,760 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:07:29,532 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:07:29,783 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:07:32,183 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:07:32,797 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:07:35,336 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:07:35,815 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:07:38,148 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:07:38,838 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:07:41,136 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:07:41,853 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:07:44,267 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:07:44,867 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:07:47,899 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:07:48,886 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:07:50,894 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:07:50,899 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:07:53,926 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:07:54,919 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:07:56,552 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:07:56,924 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:08:00,096 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:08:00,980 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:08:02,881 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:08:02,991 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:08:05,901 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:08:06,005 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:08:08,678 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:08:09,014 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:08:11,643 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:08:12,024 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:08:14,290 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:08:15,039 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:08:16,045 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/output.log
+2025-03-28 12:08:24,077 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/output.log
+2025-03-28 12:08:33,860 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:08:33,863 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:08:33,863 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:08:33,865 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:08:33,866 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:08:33,868 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:08:33,870 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:08:33,871 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:08:33,872 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:08:33,876 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:08:33,967 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file media/images/learning_curves_67_d3a0357f3e582e0de33a.png with policy now
+2025-03-28 12:08:33,972 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:08:34,112 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/output.log
+2025-03-28 12:08:34,114 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:08:34,116 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_created():272] file/dir created: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/media/images/learning_curves_67_d3a0357f3e582e0de33a.png
+2025-03-28 12:08:34,116 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/media/images
+2025-03-28 12:08:35,006 INFO    wandb-upload_0:17179 [upload_job.py:push():130] Uploaded file /var/folders/xs/r4h4thtd5t7gg6wq7ypykfsw0000gn/T/tmp7lcunkwvwandb/6yqbabzx-media/images/learning_curves_67_d3a0357f3e582e0de33a.png
+2025-03-28 12:08:36,027 INFO    wandb-upload_1:17179 [upload_job.py:push():130] Uploaded file /var/folders/xs/r4h4thtd5t7gg6wq7ypykfsw0000gn/T/tmp7lcunkwvwandb/3ulkja0k-media/images/learning_curves_67_d3a0357f3e582e0de33a.png
+2025-03-28 12:08:36,123 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/output.log
+2025-03-28 12:08:36,937 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:08:37,128 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:08:39,496 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:08:40,142 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:08:42,594 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:08:43,161 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:08:45,334 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:08:46,174 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:08:46,175 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/media
+2025-03-28 12:08:46,175 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/media/images
+2025-03-28 12:08:48,994 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:08:49,188 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:08:51,704 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:08:52,203 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:08:54,533 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:08:55,214 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:08:57,254 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:08:58,227 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:09:00,090 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:09:00,236 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:09:02,976 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:09:03,247 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:09:05,665 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:09:06,261 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:09:08,669 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:09:09,277 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:09:11,728 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:09:12,291 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:09:14,453 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:09:15,303 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:09:17,210 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:09:17,314 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:09:20,024 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:09:20,329 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:09:22,889 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:09:23,343 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:09:25,944 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:09:26,358 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:09:28,392 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:09:29,373 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:09:31,842 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:09:32,389 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:09:34,398 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/output.log
+2025-03-28 12:09:44,436 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/output.log
+2025-03-28 12:09:55,367 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:09:55,370 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:09:55,374 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:09:55,376 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:09:55,379 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:09:55,380 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:09:55,380 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:09:55,381 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:09:55,382 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:09:55,382 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:09:55,500 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file media/images/learning_curves_89_efbe416198b2fd113636.png with policy now
+2025-03-28 12:09:55,501 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:09:55,645 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:09:55,646 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_created():272] file/dir created: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/media/images/learning_curves_89_efbe416198b2fd113636.png
+2025-03-28 12:09:55,647 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/media/images
+2025-03-28 12:09:56,481 INFO    wandb-upload_0:17179 [upload_job.py:push():130] Uploaded file /var/folders/xs/r4h4thtd5t7gg6wq7ypykfsw0000gn/T/tmp7lcunkwvwandb/n6dyf32m-media/images/learning_curves_89_efbe416198b2fd113636.png
+2025-03-28 12:09:56,649 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/output.log
+2025-03-28 12:09:57,504 INFO    wandb-upload_1:17179 [upload_job.py:push():130] Uploaded file /var/folders/xs/r4h4thtd5t7gg6wq7ypykfsw0000gn/T/tmp7lcunkwvwandb/wocr3hqx-media/images/learning_curves_89_efbe416198b2fd113636.png
+2025-03-28 12:09:58,503 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:09:58,658 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:10:01,601 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:10:01,674 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:10:04,734 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:10:05,691 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:10:07,594 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:10:07,701 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:10:08,703 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/media
+2025-03-28 12:10:08,704 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/media/images
+2025-03-28 12:10:10,941 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:10:11,718 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:10:13,735 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:10:14,735 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:10:16,957 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:10:17,751 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:10:21,331 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:10:21,766 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:10:25,417 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:10:25,793 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:10:37,172 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:10:37,231 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:10:44,021 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:10:44,262 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:10:48,283 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:10:49,282 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:10:52,633 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:10:53,298 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:10:56,156 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:10:56,314 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:10:59,550 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:00,328 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:11:04,418 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:05,386 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:11:10,852 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:11,420 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:11:16,869 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:17,445 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:11:22,858 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:23,481 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:11:27,538 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:28,504 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/output.log
+2025-03-28 12:11:28,505 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:11:42,577 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/output.log
+2025-03-28 12:11:50,784 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:50,784 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:50,784 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:50,785 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:50,785 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:50,785 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:50,786 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:50,786 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:50,786 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:50,786 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:50,898 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file media/images/learning_curves_111_cf0489ffefe59771b980.png with policy now
+2025-03-28 12:11:50,900 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:51,618 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:11:51,618 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_created():272] file/dir created: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/media/images/learning_curves_111_cf0489ffefe59771b980.png
+2025-03-28 12:11:51,618 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/media/images
+2025-03-28 12:11:51,877 INFO    wandb-upload_0:17179 [upload_job.py:push():130] Uploaded file /var/folders/xs/r4h4thtd5t7gg6wq7ypykfsw0000gn/T/tmp7lcunkwvwandb/2skj0as0-media/images/learning_curves_111_cf0489ffefe59771b980.png
+2025-03-28 12:11:52,624 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/output.log
+2025-03-28 12:11:52,769 INFO    wandb-upload_1:17179 [upload_job.py:push():88] Uploaded file /Users/mariegoffin/Library/Application Support/wandb/artifacts/staging/tmp5bx32_dg
+2025-03-28 12:11:53,148 INFO    wandb-upload_0:17179 [upload_job.py:push():130] Uploaded file /var/folders/xs/r4h4thtd5t7gg6wq7ypykfsw0000gn/T/tmp7lcunkwvwandb/y04ql38d-media/images/learning_curves_111_cf0489ffefe59771b980.png
+2025-03-28 12:11:53,542 INFO    SenderThread:17179 [sender.py:send_request_log_artifact():1487] logged artifact checkpoint_6x6_ep100 - {'id': 'QXJ0aWZhY3Q6MTYwNDk5ODAyMg==', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjU5MTgwMzk3Mw==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTYwNDk2Njc4Ng==', 'versionIndex': 87}}}
+2025-03-28 12:11:53,543 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:53,628 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:11:54,633 INFO    Thread-12 :17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/output.log
+2025-03-28 12:11:54,915 INFO    wandb-upload_1:17179 [upload_job.py:push():88] Uploaded file /Users/mariegoffin/Library/Application Support/wandb/artifacts/staging/tmpv5t_9da7
+2025-03-28 12:11:55,659 INFO    SenderThread:17179 [sender.py:send_request_log_artifact():1487] logged artifact final_model_6x6 - {'id': 'QXJ0aWZhY3Q6MTYwNDk5ODA5OQ==', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjU5MTE3MDUyNw==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTYwNDk2Njg3OA==', 'versionIndex': 89}}}
+2025-03-28 12:11:55,661 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,663 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,665 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,666 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,667 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,668 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,669 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,670 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,670 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,671 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,672 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,673 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,673 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,674 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,675 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,677 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,678 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,680 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,684 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,686 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,687 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,695 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,697 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,697 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,699 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,701 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,701 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,702 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,703 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,704 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,705 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,706 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,706 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,706 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,707 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,707 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,708 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,708 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,708 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,709 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,709 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,709 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,710 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,710 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,711 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,712 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,712 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,712 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,713 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,713 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,714 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,714 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,714 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,715 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,715 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,715 INFO    SenderThread:17179 [sender.py:send_exit():554] handling exit code: 0
+2025-03-28 12:11:55,716 INFO    SenderThread:17179 [sender.py:send_exit():556] handling runtime: 480
+2025-03-28 12:11:55,716 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,716 INFO    SenderThread:17179 [sender.py:send_exit():562] send defer
+2025-03-28 12:11:55,716 INFO    HandlerThread:17179 [handler.py:handle_request_defer():188] handle defer: 0
+2025-03-28 12:11:55,716 INFO    SenderThread:17179 [sender.py:send_request_defer():578] handle sender defer: 0
+2025-03-28 12:11:55,716 INFO    SenderThread:17179 [sender.py:transition_state():582] send defer: 1
+2025-03-28 12:11:55,716 INFO    HandlerThread:17179 [handler.py:handle_request_defer():188] handle defer: 1
+2025-03-28 12:11:55,716 INFO    SenderThread:17179 [sender.py:send_request_defer():578] handle sender defer: 1
+2025-03-28 12:11:55,716 INFO    SenderThread:17179 [sender.py:transition_state():582] send defer: 2
+2025-03-28 12:11:55,716 INFO    HandlerThread:17179 [handler.py:handle_request_defer():188] handle defer: 2
+2025-03-28 12:11:55,716 INFO    HandlerThread:17179 [system_monitor.py:finish():196] Stopping system monitor
+2025-03-28 12:11:55,717 INFO    HandlerThread:17179 [interfaces.py:finish():198] Joined cpu monitor
+2025-03-28 12:11:55,717 INFO    HandlerThread:17179 [interfaces.py:finish():198] Joined disk monitor
+2025-03-28 12:11:55,717 INFO    HandlerThread:17179 [interfaces.py:finish():198] Joined memory monitor
+2025-03-28 12:11:55,717 INFO    HandlerThread:17179 [interfaces.py:finish():198] Joined network monitor
+2025-03-28 12:11:55,717 INFO    SenderThread:17179 [sender.py:send_request_defer():578] handle sender defer: 2
+2025-03-28 12:11:55,717 INFO    SenderThread:17179 [sender.py:transition_state():582] send defer: 3
+2025-03-28 12:11:55,717 INFO    HandlerThread:17179 [handler.py:handle_request_defer():188] handle defer: 3
+2025-03-28 12:11:55,718 INFO    SenderThread:17179 [sender.py:send_request_defer():578] handle sender defer: 3
+2025-03-28 12:11:55,718 INFO    SenderThread:17179 [sender.py:transition_state():582] send defer: 4
+2025-03-28 12:11:55,718 INFO    HandlerThread:17179 [handler.py:handle_request_defer():188] handle defer: 4
+2025-03-28 12:11:55,718 INFO    SenderThread:17179 [sender.py:send_request_defer():578] handle sender defer: 4
+2025-03-28 12:11:55,718 INFO    SenderThread:17179 [sender.py:transition_state():582] send defer: 5
+2025-03-28 12:11:55,718 INFO    HandlerThread:17179 [handler.py:handle_request_defer():188] handle defer: 5
+2025-03-28 12:11:55,719 INFO    SenderThread:17179 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-03-28 12:11:55,719 INFO    SenderThread:17179 [sender.py:send_request_defer():578] handle sender defer: 5
+2025-03-28 12:11:55,719 INFO    SenderThread:17179 [sender.py:transition_state():582] send defer: 6
+2025-03-28 12:11:55,719 INFO    HandlerThread:17179 [handler.py:handle_request_defer():188] handle defer: 6
+2025-03-28 12:11:55,719 INFO    SenderThread:17179 [sender.py:send_request_defer():578] handle sender defer: 6
+2025-03-28 12:11:55,975 INFO    SenderThread:17179 [sender.py:transition_state():582] send defer: 7
+2025-03-28 12:11:55,983 INFO    HandlerThread:17179 [handler.py:handle_request_defer():188] handle defer: 7
+2025-03-28 12:11:55,986 INFO    SenderThread:17179 [sender.py:send_request_defer():578] handle sender defer: 7
+2025-03-28 12:11:56,375 INFO    SenderThread:17179 [sender.py:transition_state():582] send defer: 8
+2025-03-28 12:11:56,376 INFO    HandlerThread:17179 [handler.py:handle_request_defer():188] handle defer: 8
+2025-03-28 12:11:56,376 INFO    SenderThread:17179 [sender.py:send_request_defer():578] handle sender defer: 8
+2025-03-28 12:11:56,376 INFO    SenderThread:17179 [sender.py:transition_state():582] send defer: 9
+2025-03-28 12:11:56,376 INFO    HandlerThread:17179 [handler.py:handle_request_defer():188] handle defer: 9
+2025-03-28 12:11:56,376 INFO    SenderThread:17179 [sender.py:send_request_defer():578] handle sender defer: 9
+2025-03-28 12:11:56,376 INFO    SenderThread:17179 [dir_watcher.py:finish():359] shutting down directory watcher
+2025-03-28 12:11:56,639 INFO    SenderThread:17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/config.yaml
+2025-03-28 12:11:56,640 INFO    SenderThread:17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/output.log
+2025-03-28 12:11:56,640 INFO    SenderThread:17179 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:11:56,640 INFO    SenderThread:17179 [dir_watcher.py:finish():389] scan: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files
+2025-03-28 12:11:56,640 INFO    SenderThread:17179 [dir_watcher.py:finish():403] scan save: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/requirements.txt requirements.txt
+2025-03-28 12:11:56,640 INFO    SenderThread:17179 [dir_watcher.py:finish():403] scan save: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/output.log output.log
+2025-03-28 12:11:56,640 INFO    SenderThread:17179 [dir_watcher.py:finish():403] scan save: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/config.yaml config.yaml
+2025-03-28 12:11:56,641 INFO    SenderThread:17179 [dir_watcher.py:finish():403] scan save: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json wandb-summary.json
+2025-03-28 12:11:56,642 INFO    SenderThread:17179 [dir_watcher.py:finish():403] scan save: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/conda-environment.yaml conda-environment.yaml
+2025-03-28 12:11:56,642 INFO    SenderThread:17179 [dir_watcher.py:finish():403] scan save: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-metadata.json wandb-metadata.json
+2025-03-28 12:11:56,646 INFO    SenderThread:17179 [dir_watcher.py:finish():403] scan save: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/media/images/learning_curves_21_5dc8555f4ceba6cbad52.png media/images/learning_curves_21_5dc8555f4ceba6cbad52.png
+2025-03-28 12:11:56,646 INFO    SenderThread:17179 [dir_watcher.py:finish():403] scan save: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/media/images/learning_curves_111_cf0489ffefe59771b980.png media/images/learning_curves_111_cf0489ffefe59771b980.png
+2025-03-28 12:11:56,646 INFO    SenderThread:17179 [dir_watcher.py:finish():403] scan save: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/media/images/learning_curves_89_efbe416198b2fd113636.png media/images/learning_curves_89_efbe416198b2fd113636.png
+2025-03-28 12:11:56,647 INFO    SenderThread:17179 [dir_watcher.py:finish():403] scan save: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/media/images/learning_curves_67_d3a0357f3e582e0de33a.png media/images/learning_curves_67_d3a0357f3e582e0de33a.png
+2025-03-28 12:11:56,647 INFO    SenderThread:17179 [dir_watcher.py:finish():403] scan save: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/media/images/learning_curves_44_3db382fc753cb3e7bc21.png media/images/learning_curves_44_3db382fc753cb3e7bc21.png
+2025-03-28 12:11:56,647 INFO    SenderThread:17179 [sender.py:transition_state():582] send defer: 10
+2025-03-28 12:11:56,647 INFO    HandlerThread:17179 [handler.py:handle_request_defer():188] handle defer: 10
+2025-03-28 12:11:56,647 INFO    SenderThread:17179 [sender.py:send_request_defer():578] handle sender defer: 10
+2025-03-28 12:11:56,647 INFO    SenderThread:17179 [file_pusher.py:finish():169] shutting down file pusher
+2025-03-28 12:11:57,028 INFO    wandb-upload_0:17179 [upload_job.py:push():130] Uploaded file /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/requirements.txt
+2025-03-28 12:11:57,041 INFO    wandb-upload_1:17179 [upload_job.py:push():130] Uploaded file /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/output.log
+2025-03-28 12:11:57,094 INFO    wandb-upload_2:17179 [upload_job.py:push():130] Uploaded file /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/config.yaml
+2025-03-28 12:11:57,114 INFO    wandb-upload_4:17179 [upload_job.py:push():130] Uploaded file /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/conda-environment.yaml
+2025-03-28 12:11:57,114 INFO    wandb-upload_3:17179 [upload_job.py:push():130] Uploaded file /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/files/wandb-summary.json
+2025-03-28 12:11:57,319 INFO    Thread-11 :17179 [sender.py:transition_state():582] send defer: 11
+2025-03-28 12:11:57,320 INFO    HandlerThread:17179 [handler.py:handle_request_defer():188] handle defer: 11
+2025-03-28 12:11:57,320 INFO    SenderThread:17179 [sender.py:send_request_defer():578] handle sender defer: 11
+2025-03-28 12:11:57,320 INFO    SenderThread:17179 [file_pusher.py:join():175] waiting for file pusher
+2025-03-28 12:11:57,328 INFO    SenderThread:17179 [sender.py:transition_state():582] send defer: 12
+2025-03-28 12:11:57,328 INFO    HandlerThread:17179 [handler.py:handle_request_defer():188] handle defer: 12
+2025-03-28 12:11:57,328 INFO    SenderThread:17179 [sender.py:send_request_defer():578] handle sender defer: 12
+2025-03-28 12:11:57,329 INFO    SenderThread:17179 [file_stream.py:finish():601] file stream finish called
+2025-03-28 12:11:57,783 INFO    SenderThread:17179 [file_stream.py:finish():605] file stream finish is done
+2025-03-28 12:11:57,783 INFO    SenderThread:17179 [sender.py:transition_state():582] send defer: 13
+2025-03-28 12:11:57,783 INFO    HandlerThread:17179 [handler.py:handle_request_defer():188] handle defer: 13
+2025-03-28 12:11:57,783 INFO    SenderThread:17179 [sender.py:send_request_defer():578] handle sender defer: 13
+2025-03-28 12:11:57,783 INFO    SenderThread:17179 [sender.py:transition_state():582] send defer: 14
+2025-03-28 12:11:57,784 INFO    HandlerThread:17179 [handler.py:handle_request_defer():188] handle defer: 14
+2025-03-28 12:11:57,784 INFO    SenderThread:17179 [sender.py:send_request_defer():578] handle sender defer: 14
+2025-03-28 12:11:57,794 INFO    HandlerThread:17179 [handler.py:finish():897] shutting down handler
+2025-03-28 12:11:58,794 INFO    WriterThread:17179 [datastore.py:close():296] close: /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_120352-opcyvuyb/run-opcyvuyb.wandb
+2025-03-28 12:11:58,795 INFO    SenderThread:17179 [sender.py:finish():1582] shutting down sender
+2025-03-28 12:11:58,795 INFO    SenderThread:17179 [file_pusher.py:finish():169] shutting down file pusher
+2025-03-28 12:11:58,795 INFO    SenderThread:17179 [file_pusher.py:join():175] waiting for file pusher
+2025-03-28 12:11:58,797 INFO    MsgRouterThr:17179 [mailbox.py:close():129] Closing mailbox, abandoning 0 handles.

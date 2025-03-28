@@ -1,0 +1,30 @@
+wandb: WARNING Config item 'high' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'low' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'max_updates' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'n_j' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'n_m' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'np_seed_train' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'np_seed_validation' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'num_envs' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'output_dir' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'rewardscale' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'torch_seed' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'weight_high' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'weight_low' was locked by 'sweep' (ignored update).
+Training episodes:   0%|          | 0/20 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "scripts/train.py", line 614, in <module>
+    main()
+  File "scripts/train.py", line 607, in main
+    best_win_rate, best_episode, final_comparison = train(config)
+  File "scripts/train.py", line 392, in train
+    reward, weighted_sum = train_episode(envs, memories, agent, device, g_pool_step, config)
+  File "scripts/train.py", line 128, in train_episode
+    instance = weighted_instance_gen(
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/scripts/../src/utils/instance_gen.py", line 23, in weighted_instance_gen
+    weights = np.random.randint(low=weight_low, high=weight_high, size=n_j)
+  File "mtrand.pyx", line 765, in numpy.random.mtrand.RandomState.randint
+  File "_bounded_integers.pyx", line 1247, in numpy.random._bounded_integers._rand_int64
+ValueError: low >= high
+Loaded validation data from ./data/instances/variable_weights/validation_data_6x6_seed200.npy
+Starting training for 20 episodes with 4 environments...

@@ -1,0 +1,15 @@
+# configs/sweep_config.yaml
+# Master configuration for Job Shop Scheduling sweeps
+
+# Sweep parameters
+sweep_type: reward   # Options: environment, feature, model, reward
+weight_type: variable      # Options: uniform, variable
+count: 5                 # Number of runs
+workers: 5                # Number of parallel workers
+max_updates: 100         # Number of training episodes
+validate_every: 20  # Validate every 20 episodes
+override_max_updates: true  # Whether to override max_updates in sweep file
+
+# Project settings
+project: jssp-weighted-sum
+entity: null              # WandB entity (username) - set to null if not using

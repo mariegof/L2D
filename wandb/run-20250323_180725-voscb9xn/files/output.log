@@ -1,0 +1,68 @@
+wandb: WARNING Config item 'high' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'low' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'max_updates' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'n_j' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'n_m' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'np_seed_train' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'np_seed_validation' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'num_envs' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'output_dir' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'rewardscale' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'torch_seed' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'weight_high' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'weight_low' was locked by 'sweep' (ignored update).
+Training episodes:   3%|▎         | 3/100 [00:01<00:40,  2.42it/s]
+Loaded validation data from ./data/instances/variable_weights/validation_data_6x6_seed200.npy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Training episodes:  99%|█████████▉| 99/100 [00:41<00:00,  2.38it/s]
+Episode 100/100 | Reward: -2866.75 | Weighted Sum: 2756.25 | Loss: -0.050539
+Avg(100): Reward=-2871.55, Weighted Sum=2733.04 | Episode time: 0.45s | Total time: 42.05s
+Validation weighted sum statistics:
+Mean: 13964.16
+Min: 7534.00
+Max: 21786.00
+Std: 3138.00
+Training episodes:  99%|█████████▉| 99/100 [00:49<00:00,  2.01it/s]
+Traceback (most recent call last):
+  File "scripts/train.py", line 614, in <module>
+    main()
+  File "scripts/train.py", line 607, in main
+    best_win_rate, best_episode, final_comparison = train(config)
+  File "scripts/train.py", line 481, in train
+    plt.close(win_rates_fig)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/matplotlib/pyplot.py", line 991, in close
+    raise TypeError("close() argument must be a Figure, an int, a string, "
+TypeError: close() argument must be a Figure, an int, a string, or None, not <class 'module'>
+Validation weighted sum statistics:
+Mean: 13964.16
+Min: 7534.00
+Max: 21786.00
+Std: 3138.00
+Validation Results:
+Average Weighted Sums:
+L2D: 13964.16
+SPT: 13903.27
+WSPT: 12822.80
+Win Statistics:
+L2D: 16/100 (16.00%)
+SPT: 14/100 (14.00%)
+WSPT: 70/100 (70.00%)

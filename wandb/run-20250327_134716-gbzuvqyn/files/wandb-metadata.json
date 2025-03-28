@@ -1,0 +1,61 @@
+{
+    "os": "macOS-15.3.2-arm64-arm-64bit",
+    "python": "3.8.20",
+    "heartbeatAt": "2025-03-27T12:47:17.360563",
+    "startedAt": "2025-03-27T12:47:16.777218",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--high=99",
+        "--low=1",
+        "--max_updates=100",
+        "--n_j=6",
+        "--n_m=6",
+        "--np_seed_train=200",
+        "--np_seed_validation=200",
+        "--num_envs=16",
+        "--output_dir=results/uniform_weights/environment_sweeps/20250327_134702",
+        "--rewardscale=0.13728116875894897",
+        "--torch_seed=600",
+        "--validate_every=20",
+        "--weight_high=1",
+        "--weight_low=1"
+    ],
+    "state": "running",
+    "program": "scripts/train.py",
+    "codePath": "scripts/train.py",
+    "git": {
+        "remote": "https://github.com/mariegof/L2D.git",
+        "commit": "7e08aff01040fec655c6cf42352ee6b00543448c"
+    },
+    "email": "marie.goffin@gmail.com",
+    "root": "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D",
+    "host": "MacBook-Pro-de-Marie-7.local",
+    "username": "mariegoffin",
+    "executable": "/Users/mariegoffin/miniconda3/envs/l2d/bin/python3",
+    "cpu_count": 8,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 3204,
+        "min": 600,
+        "max": 3204
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3204,
+            "min": 600,
+            "max": 3204
+        }
+    ],
+    "disk": {
+        "total": 460.4317207336426,
+        "used": 388.141658782959
+    },
+    "gpuapple": {
+        "type": "arm",
+        "vendor": "Apple"
+    },
+    "memory": {
+        "total": 16.0
+    }
+}

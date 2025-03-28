@@ -1,0 +1,203 @@
+
+wandb: WARNING Calling wandb.run.save without any arguments is deprecated.Changes to attributes are automatically persisted.
+Loading validation data from ./data/instances/uniform_weights/validation_data_6x6_seed200.npy...
+Successfully loaded 100 validation instances
+Starting training for 100 episodes with 16 environments...
+Episode 20/100 | Reward: -2818.56 | Weighted Sum: 2706.31 | Loss: -0.017612
+Avg(100): Reward=-2868.94, Weighted Sum=2734.80 | Episode time: 3.14s | Total time: 72.15s
+Validation weighted sum statistics:
+Mean: 2639.86
+Min: 2044.00
+Max: 3328.00
+Std: 267.60
+Validation value loss: -0.1293
+Validation policy entropy: 1.5255
+Validation Weighted Sum: 2639.86 | Reward-derived: -2753.72 | Improvement: -48.24%
+Validation weighted sum statistics:
+Mean: 2639.86
+Min: 2044.00
+Max: 3328.00
+Std: 267.60
+Validation value loss: -0.1293
+Validation policy entropy: 1.5255
+Validation Results:
+Average Weighted Sums:
+L2D: 2639.86
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 56/100 (56.00%)
+SPT: 24/100 (24.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 20/100 (20.00%)
+Data lengths - Rewards: 20, Losses: 20, Weighted Sums: 20
+Validation history length: 1
+First few validation values: [2639.86] (smaller is better)
+scripts/train.py:284: UserWarning: Tight layout not applied. The left and right margins cannot be made large enough to accommodate all axes decorations.
+  plt.tight_layout()
+All learning curve plots saved to: ./models/figures
+New best model saved! Win rate vs WSPT: 100.00%
+Episode 40/100 | Reward: -2906.37 | Weighted Sum: 2773.12 | Loss: -0.095092
+Avg(100): Reward=-2873.69, Weighted Sum=2738.24 | Episode time: 2.52s | Total time: 150.23s
+Validation weighted sum statistics:
+Mean: 2649.98
+Min: 1928.00
+Max: 3346.00
+Std: 302.80
+Validation value loss: -0.1123
+Validation policy entropy: 1.5221
+Validation Weighted Sum: 2649.98 | Reward-derived: -2771.81 | Improvement: -48.67%
+Validation weighted sum statistics:
+Mean: 2649.98
+Min: 1928.00
+Max: 3346.00
+Std: 302.80
+Validation value loss: -0.1123
+Validation policy entropy: 1.5221
+Validation Results:
+Average Weighted Sums:
+L2D: 2649.98
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 51/100 (51.00%)
+SPT: 25/100 (25.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 24/100 (24.00%)
+Data lengths - Rewards: 40, Losses: 40, Weighted Sums: 40
+Validation history length: 2
+First few validation values: [2639.86, 2649.98] (smaller is better)
+All learning curve plots saved to: ./models/figures
+No improvement for 1 validation checks (best: 100.00%)
+Episode 60/100 | Reward: -2847.69 | Weighted Sum: 2669.25 | Loss: -0.114283
+Avg(100): Reward=-2878.08, Weighted Sum=2741.01 | Episode time: 3.22s | Total time: 224.44s
+Validation weighted sum statistics:
+Mean: 2680.45
+Min: 1959.00
+Max: 3500.00
+Std: 289.70
+Validation value loss: -0.1093
+Validation policy entropy: 1.5356
+Validation Weighted Sum: 2680.45 | Reward-derived: -2800.77 | Improvement: -50.45%
+Validation weighted sum statistics:
+Mean: 2680.45
+Min: 1959.00
+Max: 3500.00
+Std: 289.70
+Validation value loss: -0.1093
+Validation policy entropy: 1.5356
+Validation Results:
+Average Weighted Sums:
+L2D: 2680.45
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 47/100 (47.00%)
+SPT: 24/100 (24.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 29/100 (29.00%)
+Data lengths - Rewards: 60, Losses: 60, Weighted Sums: 60
+Validation history length: 3
+First few validation values: [2639.86, 2649.98, 2680.45] (smaller is better)
+All learning curve plots saved to: ./models/figures
+No improvement for 2 validation checks (best: 100.00%)
+Episode 80/100 | Reward: -2941.12 | Weighted Sum: 2768.44 | Loss: -0.017859
+Avg(100): Reward=-2876.95, Weighted Sum=2740.55 | Episode time: 3.35s | Total time: 303.92s
+Validation weighted sum statistics:
+Mean: 2719.05
+Min: 1928.00
+Max: 3493.00
+Std: 312.61
+Validation value loss: -0.0990
+Validation policy entropy: 1.5222
+Validation Weighted Sum: 2719.05 | Reward-derived: -2825.60 | Improvement: -52.56%
+Validation weighted sum statistics:
+Mean: 2719.05
+Min: 1928.00
+Max: 3493.00
+Std: 312.61
+Validation value loss: -0.0990
+Validation policy entropy: 1.5222
+Validation Results:
+Average Weighted Sums:
+L2D: 2719.05
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 34/100 (34.00%)
+SPT: 28/100 (28.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 38/100 (38.00%)
+Data lengths - Rewards: 80, Losses: 80, Weighted Sums: 80
+Validation history length: 4
+First few validation values: [2639.86, 2649.98, 2680.45, 2719.05] (smaller is better)
+All learning curve plots saved to: ./models/figures
+No improvement for 3 validation checks (best: 100.00%)
+Episode 100/100 | Reward: -2929.06 | Weighted Sum: 2800.94 | Loss: -0.070191
+Avg(100): Reward=-2875.15, Weighted Sum=2739.91 | Episode time: 2.83s | Total time: 386.70s
+Validation weighted sum statistics:
+Mean: 2732.51
+Min: 2157.00
+Max: 3858.00
+Std: 297.57
+Validation value loss: -0.0991
+Validation policy entropy: 1.5031
+Validation Weighted Sum: 2732.51 | Reward-derived: -2839.67 | Improvement: -53.45%
+Validation weighted sum statistics:
+Mean: 2732.51
+Min: 2157.00
+Max: 3858.00
+Std: 297.57
+Validation value loss: -0.0991
+Validation policy entropy: 1.5031
+Validation Results:
+Average Weighted Sums:
+L2D: 2732.51
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 34/100 (34.00%)
+SPT: 30/100 (30.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 36/100 (36.00%)
+Data lengths - Rewards: 100, Losses: 100, Weighted Sums: 100
+Validation history length: 5
+First few validation values: [2639.86, 2649.98, 2680.45, 2719.05, 2732.51] (smaller is better)
+Last few validation values: [2639.86, 2649.98, 2680.45, 2719.05, 2732.51] (smaller is better)
+All learning curve plots saved to: ./models/figures
+No improvement for 4 validation checks (best: 100.00%)
+Training completed in 0h 6m 40.05s
+Final model saved to ./models/l2d_weighted_6x6_final.pth
+Validation weighted sum statistics:
+Mean: 2732.51
+Min: 2157.00
+Max: 3858.00
+Std: 297.57
+Validation value loss: -0.0991
+Validation policy entropy: 1.5031
+Validation weighted sum statistics:
+Mean: 2732.51
+Min: 2157.00
+Max: 3858.00
+Std: 297.57
+Validation value loss: -0.0991
+Validation policy entropy: 1.5031
+Validation Results:
+Average Weighted Sums:
+L2D: 2732.51
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 34/100 (34.00%)
+SPT: 30/100 (30.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 36/100 (36.00%)
+Final Validation Weighted Sum: 2732.51
+Win rate vs SPT: 53.12%
+Win rate vs WSPT: 100.00%

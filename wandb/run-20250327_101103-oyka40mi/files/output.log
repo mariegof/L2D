@@ -1,0 +1,2612 @@
+[34m[1mwandb[0m: [33mWARNING[0m Calling wandb.run.save without any arguments is deprecated.Changes to attributes are automatically persisted.
+Loading validation data from ./data/instances/variable_weights/validation_data_6x6_seed200.npy...
+Successfully loaded 100 validation instances
+Starting training for 100 episodes with 8 environments...
+Episode 1/100 | Reward: -13716.00 | Weighted Sum: 13077.75 | Loss: 0.026311
+Avg(100): Reward=-13716.00, Weighted Sum=13077.75 | Episode time: 0.89s | Total time: 0.90s
+
+Validation weighted sum statistics:
+Mean: 13158.84
+Min: 7220.00
+Max: 21301.00
+Std: 3153.62
+
+Validation value loss: -0.4272
+Validation policy entropy: 1.4623
+Validation Weighted Sum: 13158.84 | Reward-derived: -13666.77 | Improvement: -44.56%
+
+Validation weighted sum statistics:
+Mean: 13158.84
+Min: 7220.00
+Max: 21301.00
+Std: 3153.62
+
+Validation value loss: -0.4272
+Validation policy entropy: 1.4623
+
+Validation Results:
+Average Weighted Sums:
+L2D: 13158.84
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 28/100 (28.00%)
+SPT: 4/100 (4.00%)
+WSPT: 52/100 (52.00%)
+SRPT: 16/100 (16.00%)
+scripts/train.py:331: UserWarning: Tight layout not applied. tight_layout cannot make axes height small enough to accommodate all axes decorations.
+  plt.tight_layout(rect=[0, 0, 1, 0.98])
+Updated learning curves plot at: ./models/figures/learning_curves.png
+New best model saved! Win rate vs WSPT: 35.00%
+Episode 2/100 | Reward: -13800.12 | Weighted Sum: 13233.00 | Loss: -3.133695
+Avg(100): Reward=-13758.06, Weighted Sum=13155.38 | Episode time: 2.09s | Total time: 15.04s
+
+Validation weighted sum statistics:
+Mean: 13189.96
+Min: 7106.00
+Max: 21147.00
+Std: 3059.66
+
+Validation value loss: -0.3697
+Validation policy entropy: 1.4670
+Validation Weighted Sum: 13189.96 | Reward-derived: -13694.05 | Improvement: -45.13%
+
+Validation weighted sum statistics:
+Mean: 13189.96
+Min: 7106.00
+Max: 21147.00
+Std: 3059.66
+
+Validation value loss: -0.3697
+Validation policy entropy: 1.4670
+
+Validation Results:
+Average Weighted Sums:
+L2D: 13189.96
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 27/100 (27.00%)
+SPT: 6/100 (6.00%)
+WSPT: 51/100 (51.00%)
+SRPT: 16/100 (16.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 1 validation checks (best: 35.00%)
+Episode 3/100 | Reward: -14714.12 | Weighted Sum: 13985.38 | Loss: -3.612187
+Avg(100): Reward=-14076.75, Weighted Sum=13432.04 | Episode time: 0.82s | Total time: 26.32s
+
+Validation weighted sum statistics:
+Mean: 13172.61
+Min: 7112.00
+Max: 21036.00
+Std: 2977.90
+
+Validation value loss: -0.3093
+Validation policy entropy: 1.4624
+Validation Weighted Sum: 13172.61 | Reward-derived: -13763.95 | Improvement: -45.09%
+
+Validation weighted sum statistics:
+Mean: 13172.61
+Min: 7112.00
+Max: 21036.00
+Std: 2977.90
+
+Validation value loss: -0.3093
+Validation policy entropy: 1.4624
+
+Validation Results:
+Average Weighted Sums:
+L2D: 13172.61
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 29/100 (29.00%)
+SPT: 6/100 (6.00%)
+WSPT: 49/100 (49.00%)
+SRPT: 16/100 (16.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+New best model saved! Win rate vs WSPT: 37.18%
+Episode 4/100 | Reward: -14755.62 | Weighted Sum: 14133.25 | Loss: -3.147379
+Avg(100): Reward=-14246.47, Weighted Sum=13607.34 | Episode time: 0.93s | Total time: 35.93s
+
+Validation weighted sum statistics:
+Mean: 13177.98
+Min: 7112.00
+Max: 21036.00
+Std: 2932.31
+
+Validation value loss: -0.2518
+Validation policy entropy: 1.4712
+Validation Weighted Sum: 13177.98 | Reward-derived: -13777.42 | Improvement: -45.26%
+
+Validation weighted sum statistics:
+Mean: 13177.98
+Min: 7112.00
+Max: 21036.00
+Std: 2932.31
+
+Validation value loss: -0.2518
+Validation policy entropy: 1.4712
+
+Validation Results:
+Average Weighted Sums:
+L2D: 13177.98
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 29/100 (29.00%)
+SPT: 6/100 (6.00%)
+WSPT: 47/100 (47.00%)
+SRPT: 18/100 (18.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+New best model saved! Win rate vs WSPT: 38.16%
+Episode 5/100 | Reward: -13974.00 | Weighted Sum: 13205.38 | Loss: -2.299444
+Avg(100): Reward=-14191.98, Weighted Sum=13526.95 | Episode time: 1.14s | Total time: 50.42s
+
+Validation weighted sum statistics:
+Mean: 13206.08
+Min: 7361.00
+Max: 20396.00
+Std: 2916.45
+
+Validation value loss: -0.1999
+Validation policy entropy: 1.4720
+Validation Weighted Sum: 13206.08 | Reward-derived: -13842.33 | Improvement: -45.66%
+
+Validation weighted sum statistics:
+Mean: 13206.08
+Min: 7361.00
+Max: 20396.00
+Std: 2916.45
+
+Validation value loss: -0.1999
+Validation policy entropy: 1.4720
+
+Validation Results:
+Average Weighted Sums:
+L2D: 13206.08
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 30/100 (30.00%)
+SPT: 6/100 (6.00%)
+WSPT: 47/100 (47.00%)
+SRPT: 17/100 (17.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+New best model saved! Win rate vs WSPT: 38.96%
+Episode 6/100 | Reward: -12828.75 | Weighted Sum: 11841.75 | Loss: -1.164702
+Avg(100): Reward=-13964.77, Weighted Sum=13246.08 | Episode time: 1.02s | Total time: 61.64s
+
+Validation weighted sum statistics:
+Mean: 13133.89
+Min: 7220.00
+Max: 20087.00
+Std: 2943.41
+
+Validation value loss: -0.1581
+Validation policy entropy: 1.4622
+Validation Weighted Sum: 13133.89 | Reward-derived: -13715.87 | Improvement: -44.75%
+
+Validation weighted sum statistics:
+Mean: 13133.89
+Min: 7220.00
+Max: 20087.00
+Std: 2943.41
+
+Validation value loss: -0.1581
+Validation policy entropy: 1.4622
+
+Validation Results:
+Average Weighted Sums:
+L2D: 13133.89
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 35/100 (35.00%)
+SPT: 4/100 (4.00%)
+WSPT: 44/100 (44.00%)
+SRPT: 17/100 (17.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+New best model saved! Win rate vs WSPT: 44.30%
+Episode 7/100 | Reward: -11721.88 | Weighted Sum: 11217.12 | Loss: -0.751374
+Avg(100): Reward=-13644.36, Weighted Sum=12956.23 | Episode time: 1.49s | Total time: 72.10s
+
+Validation weighted sum statistics:
+Mean: 13153.38
+Min: 7220.00
+Max: 20087.00
+Std: 3017.64
+
+Validation value loss: -0.1244
+Validation policy entropy: 1.4680
+Validation Weighted Sum: 13153.38 | Reward-derived: -13761.55 | Improvement: -44.76%
+
+Validation weighted sum statistics:
+Mean: 13153.38
+Min: 7220.00
+Max: 20087.00
+Std: 3017.64
+
+Validation value loss: -0.1244
+Validation policy entropy: 1.4680
+
+Validation Results:
+Average Weighted Sums:
+L2D: 13153.38
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 35/100 (35.00%)
+SPT: 4/100 (4.00%)
+WSPT: 45/100 (45.00%)
+SRPT: 16/100 (16.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 1 validation checks (best: 44.30%)
+Episode 8/100 | Reward: -14211.38 | Weighted Sum: 13247.00 | Loss: -0.450963
+Avg(100): Reward=-13715.23, Weighted Sum=12992.58 | Episode time: 1.10s | Total time: 81.87s
+
+Validation weighted sum statistics:
+Mean: 13177.71
+Min: 7220.00
+Max: 20087.00
+Std: 2979.98
+
+Validation value loss: -0.1002
+Validation policy entropy: 1.4766
+Validation Weighted Sum: 13177.71 | Reward-derived: -13802.08 | Improvement: -45.16%
+
+Validation weighted sum statistics:
+Mean: 13177.71
+Min: 7220.00
+Max: 20087.00
+Std: 2979.98
+
+Validation value loss: -0.1002
+Validation policy entropy: 1.4766
+
+Validation Results:
+Average Weighted Sums:
+L2D: 13177.71
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 35/100 (35.00%)
+SPT: 4/100 (4.00%)
+WSPT: 44/100 (44.00%)
+SRPT: 17/100 (17.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 2 validation checks (best: 44.30%)
+Episode 9/100 | Reward: -14579.00 | Weighted Sum: 14019.88 | Loss: -0.490404
+Avg(100): Reward=-13811.21, Weighted Sum=13106.72 | Episode time: 1.34s | Total time: 91.34s
+
+Validation weighted sum statistics:
+Mean: 13136.89
+Min: 7220.00
+Max: 19765.00
+Std: 3010.01
+
+Validation value loss: -0.0817
+Validation policy entropy: 1.4769
+Validation Weighted Sum: 13136.89 | Reward-derived: -13767.10 | Improvement: -44.53%
+
+Validation weighted sum statistics:
+Mean: 13136.89
+Min: 7220.00
+Max: 19765.00
+Std: 3010.01
+
+Validation value loss: -0.0817
+Validation policy entropy: 1.4769
+
+Validation Results:
+Average Weighted Sums:
+L2D: 13136.89
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 36/100 (36.00%)
+SPT: 4/100 (4.00%)
+WSPT: 45/100 (45.00%)
+SRPT: 15/100 (15.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+New best model saved! Win rate vs WSPT: 44.44%
+Episode 10/100 | Reward: -13814.12 | Weighted Sum: 13554.00 | Loss: -0.125249
+Avg(100): Reward=-13811.50, Weighted Sum=13151.45 | Episode time: 1.24s | Total time: 101.27s
+
+Validation weighted sum statistics:
+Mean: 13118.20
+Min: 7361.00
+Max: 19765.00
+Std: 3007.16
+
+Validation value loss: -0.0685
+Validation policy entropy: 1.4847
+Validation Weighted Sum: 13118.20 | Reward-derived: -13786.72 | Improvement: -44.32%
+
+Validation weighted sum statistics:
+Mean: 13118.20
+Min: 7361.00
+Max: 19765.00
+Std: 3007.16
+
+Validation value loss: -0.0685
+Validation policy entropy: 1.4847
+
+Validation Results:
+Average Weighted Sums:
+L2D: 13118.20
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 34/100 (34.00%)
+SPT: 4/100 (4.00%)
+WSPT: 46/100 (46.00%)
+SRPT: 16/100 (16.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 1 validation checks (best: 44.44%)
+Episode 11/100 | Reward: -15780.50 | Weighted Sum: 15227.12 | Loss: 0.211239
+Avg(100): Reward=-13990.50, Weighted Sum=13340.15 | Episode time: 1.06s | Total time: 110.99s
+
+Validation weighted sum statistics:
+Mean: 13077.15
+Min: 7361.00
+Max: 19882.00
+Std: 2969.75
+
+Validation value loss: -0.0581
+Validation policy entropy: 1.4877
+Validation Weighted Sum: 13077.15 | Reward-derived: -13731.24 | Improvement: -43.94%
+
+Validation weighted sum statistics:
+Mean: 13077.15
+Min: 7361.00
+Max: 19882.00
+Std: 2969.75
+
+Validation value loss: -0.0581
+Validation policy entropy: 1.4877
+
+Validation Results:
+Average Weighted Sums:
+L2D: 13077.15
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 33/100 (33.00%)
+SPT: 4/100 (4.00%)
+WSPT: 47/100 (47.00%)
+SRPT: 16/100 (16.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 2 validation checks (best: 44.44%)
+Episode 12/100 | Reward: -13161.75 | Weighted Sum: 12729.38 | Loss: 0.875555
+Avg(100): Reward=-13921.44, Weighted Sum=13289.25 | Episode time: 1.24s | Total time: 121.19s
+
+Validation weighted sum statistics:
+Mean: 13035.83
+Min: 7220.00
+Max: 20019.00
+Std: 2957.65
+
+Validation value loss: -0.0541
+Validation policy entropy: 1.4887
+Validation Weighted Sum: 13035.83 | Reward-derived: -13705.69 | Improvement: -43.48%
+
+Validation weighted sum statistics:
+Mean: 13035.83
+Min: 7220.00
+Max: 20019.00
+Std: 2957.65
+
+Validation value loss: -0.0541
+Validation policy entropy: 1.4887
+
+Validation Results:
+Average Weighted Sums:
+L2D: 13035.83
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 34/100 (34.00%)
+SPT: 4/100 (4.00%)
+WSPT: 47/100 (47.00%)
+SRPT: 15/100 (15.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 3 validation checks (best: 44.44%)
+Episode 13/100 | Reward: -10972.75 | Weighted Sum: 10476.88 | Loss: 0.345933
+Avg(100): Reward=-13694.62, Weighted Sum=13072.91 | Episode time: 1.11s | Total time: 131.10s
+
+Validation weighted sum statistics:
+Mean: 13090.67
+Min: 7220.00
+Max: 20019.00
+Std: 2920.13
+
+Validation value loss: -0.0545
+Validation policy entropy: 1.4896
+Validation Weighted Sum: 13090.67 | Reward-derived: -13754.64 | Improvement: -44.24%
+
+Validation weighted sum statistics:
+Mean: 13090.67
+Min: 7220.00
+Max: 20019.00
+Std: 2920.13
+
+Validation value loss: -0.0545
+Validation policy entropy: 1.4896
+
+Validation Results:
+Average Weighted Sums:
+L2D: 13090.67
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 33/100 (33.00%)
+SPT: 4/100 (4.00%)
+WSPT: 49/100 (49.00%)
+SRPT: 14/100 (14.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 4 validation checks (best: 44.44%)
+Episode 14/100 | Reward: -13719.12 | Weighted Sum: 12916.00 | Loss: 0.104132
+Avg(100): Reward=-13696.37, Weighted Sum=13061.71 | Episode time: 1.17s | Total time: 140.55s
+
+Validation weighted sum statistics:
+Mean: 13103.29
+Min: 7135.00
+Max: 20019.00
+Std: 2970.04
+
+Validation value loss: -0.0545
+Validation policy entropy: 1.4887
+Validation Weighted Sum: 13103.29 | Reward-derived: -13738.38 | Improvement: -44.20%
+
+Validation weighted sum statistics:
+Mean: 13103.29
+Min: 7135.00
+Max: 20019.00
+Std: 2970.04
+
+Validation value loss: -0.0545
+Validation policy entropy: 1.4887
+
+Validation Results:
+Average Weighted Sums:
+L2D: 13103.29
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 31/100 (31.00%)
+SPT: 5/100 (5.00%)
+WSPT: 50/100 (50.00%)
+SRPT: 14/100 (14.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 5 validation checks (best: 44.44%)
+Episode 15/100 | Reward: -17377.50 | Weighted Sum: 16684.62 | Loss: 0.017663
+Avg(100): Reward=-13941.77, Weighted Sum=13303.23 | Episode time: 1.26s | Total time: 150.54s
+
+Validation weighted sum statistics:
+Mean: 13064.45
+Min: 7135.00
+Max: 20019.00
+Std: 2991.33
+
+Validation value loss: -0.0518
+Validation policy entropy: 1.4898
+Validation Weighted Sum: 13064.45 | Reward-derived: -13702.04 | Improvement: -43.69%
+
+Validation weighted sum statistics:
+Mean: 13064.45
+Min: 7135.00
+Max: 20019.00
+Std: 2991.33
+
+Validation value loss: -0.0518
+Validation policy entropy: 1.4898
+
+Validation Results:
+Average Weighted Sums:
+L2D: 13064.45
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 32/100 (32.00%)
+SPT: 4/100 (4.00%)
+WSPT: 50/100 (50.00%)
+SRPT: 14/100 (14.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 6 validation checks (best: 44.44%)
+Episode 16/100 | Reward: -13513.62 | Weighted Sum: 12556.88 | Loss: 0.179535
+Avg(100): Reward=-13915.02, Weighted Sum=13256.59 | Episode time: 1.06s | Total time: 160.17s
+
+Validation weighted sum statistics:
+Mean: 13089.17
+Min: 7107.00
+Max: 20019.00
+Std: 3023.59
+
+Validation value loss: -0.0472
+Validation policy entropy: 1.4845
+Validation Weighted Sum: 13089.17 | Reward-derived: -13670.07 | Improvement: -43.93%
+
+Validation weighted sum statistics:
+Mean: 13089.17
+Min: 7107.00
+Max: 20019.00
+Std: 3023.59
+
+Validation value loss: -0.0472
+Validation policy entropy: 1.4845
+
+Validation Results:
+Average Weighted Sums:
+L2D: 13089.17
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 34/100 (34.00%)
+SPT: 4/100 (4.00%)
+WSPT: 48/100 (48.00%)
+SRPT: 14/100 (14.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 7 validation checks (best: 44.44%)
+Episode 17/100 | Reward: -13314.75 | Weighted Sum: 12539.75 | Loss: 0.447593
+Avg(100): Reward=-13879.71, Weighted Sum=13214.42 | Episode time: 1.21s | Total time: 169.83s
+
+Validation weighted sum statistics:
+Mean: 13009.38
+Min: 7107.00
+Max: 20019.00
+Std: 3038.58
+
+Validation value loss: -0.0466
+Validation policy entropy: 1.4819
+Validation Weighted Sum: 13009.38 | Reward-derived: -13647.65 | Improvement: -42.98%
+
+Validation weighted sum statistics:
+Mean: 13009.38
+Min: 7107.00
+Max: 20019.00
+Std: 3038.58
+
+Validation value loss: -0.0466
+Validation policy entropy: 1.4819
+
+Validation Results:
+Average Weighted Sums:
+L2D: 13009.38
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 37/100 (37.00%)
+SPT: 5/100 (5.00%)
+WSPT: 45/100 (45.00%)
+SRPT: 13/100 (13.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+New best model saved! Win rate vs WSPT: 45.12%
+Episode 18/100 | Reward: -14425.38 | Weighted Sum: 13529.00 | Loss: 0.417095
+Avg(100): Reward=-13910.02, Weighted Sum=13231.90 | Episode time: 1.16s | Total time: 179.55s
+
+Validation weighted sum statistics:
+Mean: 13004.48
+Min: 7107.00
+Max: 20116.00
+Std: 2986.95
+
+Validation value loss: -0.0504
+Validation policy entropy: 1.4768
+Validation Weighted Sum: 13004.48 | Reward-derived: -13627.45 | Improvement: -43.05%
+
+Validation weighted sum statistics:
+Mean: 13004.48
+Min: 7107.00
+Max: 20116.00
+Std: 2986.95
+
+Validation value loss: -0.0504
+Validation policy entropy: 1.4768
+
+Validation Results:
+Average Weighted Sums:
+L2D: 13004.48
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 34/100 (34.00%)
+SPT: 5/100 (5.00%)
+WSPT: 45/100 (45.00%)
+SRPT: 16/100 (16.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 1 validation checks (best: 45.12%)
+Episode 19/100 | Reward: -15248.75 | Weighted Sum: 14746.25 | Loss: 0.161555
+Avg(100): Reward=-13980.48, Weighted Sum=13311.60 | Episode time: 1.12s | Total time: 189.53s
+
+Validation weighted sum statistics:
+Mean: 12966.17
+Min: 7140.00
+Max: 19882.00
+Std: 2957.44
+
+Validation value loss: -0.0544
+Validation policy entropy: 1.4713
+Validation Weighted Sum: 12966.17 | Reward-derived: -13562.57 | Improvement: -42.61%
+
+Validation weighted sum statistics:
+Mean: 12966.17
+Min: 7140.00
+Max: 19882.00
+Std: 2957.44
+
+Validation value loss: -0.0544
+Validation policy entropy: 1.4713
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12966.17
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 33/100 (33.00%)
+SPT: 5/100 (5.00%)
+WSPT: 46/100 (46.00%)
+SRPT: 16/100 (16.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 2 validation checks (best: 45.12%)
+Episode 20/100 | Reward: -14107.62 | Weighted Sum: 13231.50 | Loss: 0.204022
+Avg(100): Reward=-13986.84, Weighted Sum=13307.59 | Episode time: 0.94s | Total time: 198.83s
+
+Validation weighted sum statistics:
+Mean: 12968.00
+Min: 7087.00
+Max: 19882.00
+Std: 2954.53
+
+Validation value loss: -0.0567
+Validation policy entropy: 1.4720
+Validation Weighted Sum: 12968.00 | Reward-derived: -13561.17 | Improvement: -42.64%
+
+Validation weighted sum statistics:
+Mean: 12968.00
+Min: 7087.00
+Max: 19882.00
+Std: 2954.53
+
+Validation value loss: -0.0567
+Validation policy entropy: 1.4720
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12968.00
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 33/100 (33.00%)
+SPT: 5/100 (5.00%)
+WSPT: 46/100 (46.00%)
+SRPT: 16/100 (16.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 3 validation checks (best: 45.12%)
+Episode 21/100 | Reward: -14969.25 | Weighted Sum: 13966.88 | Loss: 0.115473
+Avg(100): Reward=-14033.62, Weighted Sum=13338.99 | Episode time: 1.22s | Total time: 208.97s
+
+Validation weighted sum statistics:
+Mean: 12941.29
+Min: 7087.00
+Max: 19882.00
+Std: 2957.02
+
+Validation value loss: -0.0578
+Validation policy entropy: 1.4777
+Validation Weighted Sum: 12941.29 | Reward-derived: -13559.67 | Improvement: -42.37%
+
+Validation weighted sum statistics:
+Mean: 12941.29
+Min: 7087.00
+Max: 19882.00
+Std: 2957.02
+
+Validation value loss: -0.0578
+Validation policy entropy: 1.4777
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12941.29
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 36/100 (36.00%)
+SPT: 5/100 (5.00%)
+WSPT: 43/100 (43.00%)
+SRPT: 16/100 (16.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+New best model saved! Win rate vs WSPT: 45.57%
+Episode 22/100 | Reward: -12450.12 | Weighted Sum: 12021.75 | Loss: 0.102663
+Avg(100): Reward=-13961.64, Weighted Sum=13279.11 | Episode time: 1.49s | Total time: 219.37s
+
+Validation weighted sum statistics:
+Mean: 12953.91
+Min: 7094.00
+Max: 19882.00
+Std: 2973.41
+
+Validation value loss: -0.0574
+Validation policy entropy: 1.4893
+Validation Weighted Sum: 12953.91 | Reward-derived: -13620.14 | Improvement: -42.49%
+
+Validation weighted sum statistics:
+Mean: 12953.91
+Min: 7094.00
+Max: 19882.00
+Std: 2973.41
+
+Validation value loss: -0.0574
+Validation policy entropy: 1.4893
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12953.91
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 35/100 (35.00%)
+SPT: 5/100 (5.00%)
+WSPT: 46/100 (46.00%)
+SRPT: 14/100 (14.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 1 validation checks (best: 45.57%)
+Episode 23/100 | Reward: -14481.12 | Weighted Sum: 13303.38 | Loss: 0.224447
+Avg(100): Reward=-13984.23, Weighted Sum=13280.17 | Episode time: 1.00s | Total time: 229.14s
+
+Validation weighted sum statistics:
+Mean: 12972.85
+Min: 7135.00
+Max: 19882.00
+Std: 2985.38
+
+Validation value loss: -0.0553
+Validation policy entropy: 1.4970
+Validation Weighted Sum: 12972.85 | Reward-derived: -13608.49 | Improvement: -42.72%
+
+Validation weighted sum statistics:
+Mean: 12972.85
+Min: 7135.00
+Max: 19882.00
+Std: 2985.38
+
+Validation value loss: -0.0553
+Validation policy entropy: 1.4970
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12972.85
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 33/100 (33.00%)
+SPT: 6/100 (6.00%)
+WSPT: 45/100 (45.00%)
+SRPT: 16/100 (16.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 2 validation checks (best: 45.57%)
+Episode 24/100 | Reward: -13005.50 | Weighted Sum: 12626.38 | Loss: 0.199080
+Avg(100): Reward=-13943.45, Weighted Sum=13252.93 | Episode time: 1.75s | Total time: 239.13s
+
+Validation weighted sum statistics:
+Mean: 12946.96
+Min: 7135.00
+Max: 19882.00
+Std: 2957.69
+
+Validation value loss: -0.0540
+Validation policy entropy: 1.4967
+Validation Weighted Sum: 12946.96 | Reward-derived: -13574.18 | Improvement: -42.47%
+
+Validation weighted sum statistics:
+Mean: 12946.96
+Min: 7135.00
+Max: 19882.00
+Std: 2957.69
+
+Validation value loss: -0.0540
+Validation policy entropy: 1.4967
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12946.96
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 36/100 (36.00%)
+SPT: 6/100 (6.00%)
+WSPT: 43/100 (43.00%)
+SRPT: 15/100 (15.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 3 validation checks (best: 45.57%)
+Episode 25/100 | Reward: -14030.88 | Weighted Sum: 13177.62 | Loss: 0.169922
+Avg(100): Reward=-13946.94, Weighted Sum=13249.92 | Episode time: 1.04s | Total time: 249.26s
+
+Validation weighted sum statistics:
+Mean: 13010.85
+Min: 7135.00
+Max: 19882.00
+Std: 2962.27
+
+Validation value loss: -0.0516
+Validation policy entropy: 1.5024
+Validation Weighted Sum: 13010.85 | Reward-derived: -13705.99 | Improvement: -43.18%
+
+Validation weighted sum statistics:
+Mean: 13010.85
+Min: 7135.00
+Max: 19882.00
+Std: 2962.27
+
+Validation value loss: -0.0516
+Validation policy entropy: 1.5024
+
+Validation Results:
+Average Weighted Sums:
+L2D: 13010.85
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 34/100 (34.00%)
+SPT: 5/100 (5.00%)
+WSPT: 46/100 (46.00%)
+SRPT: 15/100 (15.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 4 validation checks (best: 45.57%)
+Episode 26/100 | Reward: -14780.62 | Weighted Sum: 14256.62 | Loss: 0.139222
+Avg(100): Reward=-13979.01, Weighted Sum=13288.63 | Episode time: 1.44s | Total time: 259.27s
+
+Validation weighted sum statistics:
+Mean: 13069.26
+Min: 7135.00
+Max: 19882.00
+Std: 2971.14
+
+Validation value loss: -0.0474
+Validation policy entropy: 1.5064
+Validation Weighted Sum: 13069.26 | Reward-derived: -13808.99 | Improvement: -43.81%
+
+Validation weighted sum statistics:
+Mean: 13069.26
+Min: 7135.00
+Max: 19882.00
+Std: 2971.14
+
+Validation value loss: -0.0474
+Validation policy entropy: 1.5064
+
+Validation Results:
+Average Weighted Sums:
+L2D: 13069.26
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 32/100 (32.00%)
+SPT: 5/100 (5.00%)
+WSPT: 48/100 (48.00%)
+SRPT: 15/100 (15.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 5 validation checks (best: 45.57%)
+Episode 27/100 | Reward: -12085.12 | Weighted Sum: 11725.00 | Loss: 0.381693
+Avg(100): Reward=-13908.87, Weighted Sum=13230.72 | Episode time: 1.38s | Total time: 269.18s
+
+Validation weighted sum statistics:
+Mean: 12996.96
+Min: 6916.00
+Max: 19882.00
+Std: 2963.71
+
+Validation value loss: -0.0487
+Validation policy entropy: 1.5015
+Validation Weighted Sum: 12996.96 | Reward-derived: -13675.31 | Improvement: -42.99%
+
+Validation weighted sum statistics:
+Mean: 12996.96
+Min: 6916.00
+Max: 19882.00
+Std: 2963.71
+
+Validation value loss: -0.0487
+Validation policy entropy: 1.5015
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12996.96
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 34/100 (34.00%)
+SPT: 5/100 (5.00%)
+WSPT: 46/100 (46.00%)
+SRPT: 15/100 (15.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 6 validation checks (best: 45.57%)
+Episode 28/100 | Reward: -11527.50 | Weighted Sum: 10872.50 | Loss: 0.149735
+Avg(100): Reward=-13823.82, Weighted Sum=13146.50 | Episode time: 1.16s | Total time: 278.64s
+
+Validation weighted sum statistics:
+Mean: 12987.34
+Min: 6916.00
+Max: 19882.00
+Std: 2947.42
+
+Validation value loss: -0.0515
+Validation policy entropy: 1.5041
+Validation Weighted Sum: 12987.34 | Reward-derived: -13633.28 | Improvement: -42.93%
+
+Validation weighted sum statistics:
+Mean: 12987.34
+Min: 6916.00
+Max: 19882.00
+Std: 2947.42
+
+Validation value loss: -0.0515
+Validation policy entropy: 1.5041
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12987.34
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 34/100 (34.00%)
+SPT: 4/100 (4.00%)
+WSPT: 47/100 (47.00%)
+SRPT: 15/100 (15.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 7 validation checks (best: 45.57%)
+Episode 29/100 | Reward: -13890.88 | Weighted Sum: 13203.25 | Loss: 0.253956
+Avg(100): Reward=-13826.13, Weighted Sum=13148.46 | Episode time: 1.32s | Total time: 289.03s
+
+Validation weighted sum statistics:
+Mean: 13008.15
+Min: 6916.00
+Max: 19882.00
+Std: 2959.22
+
+Validation value loss: -0.0521
+Validation policy entropy: 1.5044
+Validation Weighted Sum: 13008.15 | Reward-derived: -13664.73 | Improvement: -43.13%
+
+Validation weighted sum statistics:
+Mean: 13008.15
+Min: 6916.00
+Max: 19882.00
+Std: 2959.22
+
+Validation value loss: -0.0521
+Validation policy entropy: 1.5044
+
+Validation Results:
+Average Weighted Sums:
+L2D: 13008.15
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 34/100 (34.00%)
+SPT: 4/100 (4.00%)
+WSPT: 46/100 (46.00%)
+SRPT: 16/100 (16.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 8 validation checks (best: 45.57%)
+Episode 30/100 | Reward: -11084.50 | Weighted Sum: 10503.62 | Loss: 0.126891
+Avg(100): Reward=-13734.74, Weighted Sum=13060.30 | Episode time: 1.28s | Total time: 298.73s
+
+Validation weighted sum statistics:
+Mean: 12981.00
+Min: 6916.00
+Max: 19990.00
+Std: 2944.13
+
+Validation value loss: -0.0525
+Validation policy entropy: 1.5004
+Validation Weighted Sum: 12981.00 | Reward-derived: -13627.39 | Improvement: -42.84%
+
+Validation weighted sum statistics:
+Mean: 12981.00
+Min: 6916.00
+Max: 19990.00
+Std: 2944.13
+
+Validation value loss: -0.0525
+Validation policy entropy: 1.5004
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12981.00
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 35/100 (35.00%)
+SPT: 4/100 (4.00%)
+WSPT: 45/100 (45.00%)
+SRPT: 16/100 (16.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 9 validation checks (best: 45.57%)
+Episode 31/100 | Reward: -13208.88 | Weighted Sum: 12362.38 | Loss: 0.184689
+Avg(100): Reward=-13717.78, Weighted Sum=13037.78 | Episode time: 1.27s | Total time: 308.70s
+
+Validation weighted sum statistics:
+Mean: 12961.16
+Min: 6916.00
+Max: 19990.00
+Std: 2919.76
+
+Validation value loss: -0.0520
+Validation policy entropy: 1.4962
+Validation Weighted Sum: 12961.16 | Reward-derived: -13596.28 | Improvement: -42.66%
+
+Validation weighted sum statistics:
+Mean: 12961.16
+Min: 6916.00
+Max: 19990.00
+Std: 2919.76
+
+Validation value loss: -0.0520
+Validation policy entropy: 1.4962
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12961.16
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 36/100 (36.00%)
+SPT: 4/100 (4.00%)
+WSPT: 44/100 (44.00%)
+SRPT: 16/100 (16.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 10 validation checks (best: 45.57%)
+Episode 32/100 | Reward: -12615.25 | Weighted Sum: 11928.75 | Loss: -0.026170
+Avg(100): Reward=-13683.32, Weighted Sum=13003.12 | Episode time: 1.75s | Total time: 319.00s
+
+Validation weighted sum statistics:
+Mean: 12904.84
+Min: 6916.00
+Max: 19990.00
+Std: 2950.86
+
+Validation value loss: -0.0503
+Validation policy entropy: 1.4877
+Validation Weighted Sum: 12904.84 | Reward-derived: -13559.26 | Improvement: -41.95%
+
+Validation weighted sum statistics:
+Mean: 12904.84
+Min: 6916.00
+Max: 19990.00
+Std: 2950.86
+
+Validation value loss: -0.0503
+Validation policy entropy: 1.4877
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12904.84
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 39/100 (39.00%)
+SPT: 3/100 (3.00%)
+WSPT: 43/100 (43.00%)
+SRPT: 15/100 (15.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+New best model saved! Win rate vs WSPT: 47.56%
+Episode 33/100 | Reward: -15693.12 | Weighted Sum: 15039.50 | Loss: 0.118562
+Avg(100): Reward=-13744.23, Weighted Sum=13064.83 | Episode time: 0.96s | Total time: 330.54s
+
+Validation weighted sum statistics:
+Mean: 12883.07
+Min: 6916.00
+Max: 19990.00
+Std: 2972.52
+
+Validation value loss: -0.0486
+Validation policy entropy: 1.4781
+Validation Weighted Sum: 12883.07 | Reward-derived: -13473.93 | Improvement: -41.65%
+
+Validation weighted sum statistics:
+Mean: 12883.07
+Min: 6916.00
+Max: 19990.00
+Std: 2972.52
+
+Validation value loss: -0.0486
+Validation policy entropy: 1.4781
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12883.07
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 40/100 (40.00%)
+SPT: 3/100 (3.00%)
+WSPT: 43/100 (43.00%)
+SRPT: 14/100 (14.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+New best model saved! Win rate vs WSPT: 48.19%
+Episode 34/100 | Reward: -11096.25 | Weighted Sum: 10737.38 | Loss: 0.357451
+Avg(100): Reward=-13666.35, Weighted Sum=12996.38 | Episode time: 1.37s | Total time: 340.94s
+
+Validation weighted sum statistics:
+Mean: 12846.40
+Min: 6931.00
+Max: 19990.00
+Std: 2943.75
+
+Validation value loss: -0.0490
+Validation policy entropy: 1.4745
+Validation Weighted Sum: 12846.40 | Reward-derived: -13414.40 | Improvement: -41.28%
+
+Validation weighted sum statistics:
+Mean: 12846.40
+Min: 6931.00
+Max: 19990.00
+Std: 2943.75
+
+Validation value loss: -0.0490
+Validation policy entropy: 1.4745
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12846.40
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 40/100 (40.00%)
+SPT: 3/100 (3.00%)
+WSPT: 43/100 (43.00%)
+SRPT: 14/100 (14.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 1 validation checks (best: 48.19%)
+Episode 35/100 | Reward: -13927.25 | Weighted Sum: 13213.62 | Loss: 0.218946
+Avg(100): Reward=-13673.80, Weighted Sum=13002.59 | Episode time: 1.39s | Total time: 352.03s
+
+Validation weighted sum statistics:
+Mean: 12861.44
+Min: 6931.00
+Max: 19990.00
+Std: 2962.96
+
+Validation value loss: -0.0508
+Validation policy entropy: 1.4729
+Validation Weighted Sum: 12861.44 | Reward-derived: -13414.79 | Improvement: -41.41%
+
+Validation weighted sum statistics:
+Mean: 12861.44
+Min: 6931.00
+Max: 19990.00
+Std: 2962.96
+
+Validation value loss: -0.0508
+Validation policy entropy: 1.4729
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12861.44
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 37/100 (37.00%)
+SPT: 4/100 (4.00%)
+WSPT: 44/100 (44.00%)
+SRPT: 15/100 (15.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 2 validation checks (best: 48.19%)
+Episode 36/100 | Reward: -14624.38 | Weighted Sum: 14120.88 | Loss: -0.039256
+Avg(100): Reward=-13700.20, Weighted Sum=13033.65 | Episode time: 1.12s | Total time: 362.22s
+
+Validation weighted sum statistics:
+Mean: 12877.61
+Min: 6931.00
+Max: 19882.00
+Std: 2954.46
+
+Validation value loss: -0.0513
+Validation policy entropy: 1.4713
+Validation Weighted Sum: 12877.61 | Reward-derived: -13424.73 | Improvement: -41.61%
+
+Validation weighted sum statistics:
+Mean: 12877.61
+Min: 6931.00
+Max: 19882.00
+Std: 2954.46
+
+Validation value loss: -0.0513
+Validation policy entropy: 1.4713
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12877.61
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 37/100 (37.00%)
+SPT: 4/100 (4.00%)
+WSPT: 44/100 (44.00%)
+SRPT: 15/100 (15.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 3 validation checks (best: 48.19%)
+Episode 37/100 | Reward: -13583.12 | Weighted Sum: 12780.75 | Loss: 0.165662
+Avg(100): Reward=-13697.04, Weighted Sum=13026.81 | Episode time: 1.33s | Total time: 372.54s
+
+Validation weighted sum statistics:
+Mean: 12896.96
+Min: 6931.00
+Max: 19882.00
+Std: 2994.51
+
+Validation value loss: -0.0515
+Validation policy entropy: 1.4721
+Validation Weighted Sum: 12896.96 | Reward-derived: -13458.46 | Improvement: -41.76%
+
+Validation weighted sum statistics:
+Mean: 12896.96
+Min: 6931.00
+Max: 19882.00
+Std: 2994.51
+
+Validation value loss: -0.0515
+Validation policy entropy: 1.4721
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12896.96
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 37/100 (37.00%)
+SPT: 5/100 (5.00%)
+WSPT: 43/100 (43.00%)
+SRPT: 15/100 (15.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 4 validation checks (best: 48.19%)
+Episode 38/100 | Reward: -12725.25 | Weighted Sum: 11888.62 | Loss: 0.098970
+Avg(100): Reward=-13671.47, Weighted Sum=12996.86 | Episode time: 1.26s | Total time: 382.47s
+
+Validation weighted sum statistics:
+Mean: 12892.41
+Min: 6916.00
+Max: 19882.00
+Std: 2987.47
+
+Validation value loss: -0.0508
+Validation policy entropy: 1.4741
+Validation Weighted Sum: 12892.41 | Reward-derived: -13480.12 | Improvement: -41.75%
+
+Validation weighted sum statistics:
+Mean: 12892.41
+Min: 6916.00
+Max: 19882.00
+Std: 2987.47
+
+Validation value loss: -0.0508
+Validation policy entropy: 1.4741
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12892.41
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 38/100 (38.00%)
+SPT: 5/100 (5.00%)
+WSPT: 43/100 (43.00%)
+SRPT: 14/100 (14.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 5 validation checks (best: 48.19%)
+Episode 39/100 | Reward: -13415.00 | Weighted Sum: 13042.88 | Loss: 0.041771
+Avg(100): Reward=-13664.89, Weighted Sum=12998.04 | Episode time: 1.26s | Total time: 392.20s
+
+Validation weighted sum statistics:
+Mean: 12906.07
+Min: 6916.00
+Max: 19990.00
+Std: 3000.17
+
+Validation value loss: -0.0480
+Validation policy entropy: 1.4823
+Validation Weighted Sum: 12906.07 | Reward-derived: -13495.45 | Improvement: -41.85%
+
+Validation weighted sum statistics:
+Mean: 12906.07
+Min: 6916.00
+Max: 19990.00
+Std: 3000.17
+
+Validation value loss: -0.0480
+Validation policy entropy: 1.4823
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12906.07
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 36/100 (36.00%)
+SPT: 5/100 (5.00%)
+WSPT: 45/100 (45.00%)
+SRPT: 14/100 (14.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 6 validation checks (best: 48.19%)
+Episode 40/100 | Reward: -15117.75 | Weighted Sum: 14261.25 | Loss: -0.149069
+Avg(100): Reward=-13701.21, Weighted Sum=13029.62 | Episode time: 1.01s | Total time: 401.50s
+
+Validation weighted sum statistics:
+Mean: 12909.79
+Min: 6916.00
+Max: 19990.00
+Std: 2960.02
+
+Validation value loss: -0.0407
+Validation policy entropy: 1.4885
+Validation Weighted Sum: 12909.79 | Reward-derived: -13496.44 | Improvement: -42.01%
+
+Validation weighted sum statistics:
+Mean: 12909.79
+Min: 6916.00
+Max: 19990.00
+Std: 2960.02
+
+Validation value loss: -0.0407
+Validation policy entropy: 1.4885
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12909.79
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 35/100 (35.00%)
+SPT: 5/100 (5.00%)
+WSPT: 46/100 (46.00%)
+SRPT: 14/100 (14.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 7 validation checks (best: 48.19%)
+Episode 41/100 | Reward: -13288.00 | Weighted Sum: 12931.50 | Loss: 0.153588
+Avg(100): Reward=-13691.13, Weighted Sum=13027.23 | Episode time: 1.72s | Total time: 412.33s
+
+Validation weighted sum statistics:
+Mean: 12878.23
+Min: 6916.00
+Max: 19882.00
+Std: 2970.80
+
+Validation value loss: -0.0358
+Validation policy entropy: 1.4801
+Validation Weighted Sum: 12878.23 | Reward-derived: -13454.34 | Improvement: -41.63%
+
+Validation weighted sum statistics:
+Mean: 12878.23
+Min: 6916.00
+Max: 19882.00
+Std: 2970.80
+
+Validation value loss: -0.0358
+Validation policy entropy: 1.4801
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12878.23
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 37/100 (37.00%)
+SPT: 4/100 (4.00%)
+WSPT: 44/100 (44.00%)
+SRPT: 15/100 (15.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 8 validation checks (best: 48.19%)
+Episode 42/100 | Reward: -16163.75 | Weighted Sum: 15308.38 | Loss: 0.128104
+Avg(100): Reward=-13750.01, Weighted Sum=13081.54 | Episode time: 1.23s | Total time: 422.84s
+
+Validation weighted sum statistics:
+Mean: 12868.01
+Min: 6916.00
+Max: 19882.00
+Std: 2969.05
+
+Validation value loss: -0.0346
+Validation policy entropy: 1.4784
+Validation Weighted Sum: 12868.01 | Reward-derived: -13444.05 | Improvement: -41.51%
+
+Validation weighted sum statistics:
+Mean: 12868.01
+Min: 6916.00
+Max: 19882.00
+Std: 2969.05
+
+Validation value loss: -0.0346
+Validation policy entropy: 1.4784
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12868.01
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 37/100 (37.00%)
+SPT: 4/100 (4.00%)
+WSPT: 44/100 (44.00%)
+SRPT: 15/100 (15.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 9 validation checks (best: 48.19%)
+Episode 43/100 | Reward: -12779.50 | Weighted Sum: 12077.38 | Loss: 0.033954
+Avg(100): Reward=-13727.44, Weighted Sum=13058.19 | Episode time: 1.10s | Total time: 432.36s
+
+Validation weighted sum statistics:
+Mean: 12856.03
+Min: 6916.00
+Max: 19882.00
+Std: 2945.90
+
+Validation value loss: -0.0344
+Validation policy entropy: 1.4828
+Validation Weighted Sum: 12856.03 | Reward-derived: -13495.28 | Improvement: -41.41%
+
+Validation weighted sum statistics:
+Mean: 12856.03
+Min: 6916.00
+Max: 19882.00
+Std: 2945.90
+
+Validation value loss: -0.0344
+Validation policy entropy: 1.4828
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12856.03
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 38/100 (38.00%)
+SPT: 5/100 (5.00%)
+WSPT: 42/100 (42.00%)
+SRPT: 15/100 (15.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 10 validation checks (best: 48.19%)
+Episode 44/100 | Reward: -14355.12 | Weighted Sum: 13575.62 | Loss: 0.373527
+Avg(100): Reward=-13741.70, Weighted Sum=13069.95 | Episode time: 0.98s | Total time: 442.37s
+
+Validation weighted sum statistics:
+Mean: 12860.56
+Min: 6916.00
+Max: 19882.00
+Std: 2944.54
+
+Validation value loss: -0.0362
+Validation policy entropy: 1.4775
+Validation Weighted Sum: 12860.56 | Reward-derived: -13494.79 | Improvement: -41.50%
+
+Validation weighted sum statistics:
+Mean: 12860.56
+Min: 6916.00
+Max: 19882.00
+Std: 2944.54
+
+Validation value loss: -0.0362
+Validation policy entropy: 1.4775
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12860.56
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 39/100 (39.00%)
+SPT: 4/100 (4.00%)
+WSPT: 42/100 (42.00%)
+SRPT: 15/100 (15.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 11 validation checks (best: 48.19%)
+Episode 45/100 | Reward: -12242.25 | Weighted Sum: 11667.00 | Loss: 0.379827
+Avg(100): Reward=-13708.38, Weighted Sum=13038.77 | Episode time: 1.11s | Total time: 453.33s
+
+Validation weighted sum statistics:
+Mean: 12845.63
+Min: 6916.00
+Max: 19990.00
+Std: 2937.63
+
+Validation value loss: -0.0432
+Validation policy entropy: 1.4702
+Validation Weighted Sum: 12845.63 | Reward-derived: -13451.92 | Improvement: -41.36%
+
+Validation weighted sum statistics:
+Mean: 12845.63
+Min: 6916.00
+Max: 19990.00
+Std: 2937.63
+
+Validation value loss: -0.0432
+Validation policy entropy: 1.4702
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12845.63
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 37/100 (37.00%)
+SPT: 5/100 (5.00%)
+WSPT: 43/100 (43.00%)
+SRPT: 15/100 (15.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 12 validation checks (best: 48.19%)
+Episode 46/100 | Reward: -12014.38 | Weighted Sum: 11552.38 | Loss: 0.312038
+Avg(100): Reward=-13671.55, Weighted Sum=13006.46 | Episode time: 1.10s | Total time: 463.83s
+
+Validation weighted sum statistics:
+Mean: 12858.85
+Min: 6916.00
+Max: 19882.00
+Std: 2944.97
+
+Validation value loss: -0.0526
+Validation policy entropy: 1.4676
+Validation Weighted Sum: 12858.85 | Reward-derived: -13432.53 | Improvement: -41.47%
+
+Validation weighted sum statistics:
+Mean: 12858.85
+Min: 6916.00
+Max: 19882.00
+Std: 2944.97
+
+Validation value loss: -0.0526
+Validation policy entropy: 1.4676
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12858.85
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 37/100 (37.00%)
+SPT: 5/100 (5.00%)
+WSPT: 43/100 (43.00%)
+SRPT: 15/100 (15.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 13 validation checks (best: 48.19%)
+Episode 47/100 | Reward: -12263.12 | Weighted Sum: 11745.50 | Loss: 0.118712
+Avg(100): Reward=-13641.59, Weighted Sum=12979.63 | Episode time: 1.21s | Total time: 474.72s
+
+Validation weighted sum statistics:
+Mean: 12846.37
+Min: 6814.00
+Max: 19882.00
+Std: 2963.01
+
+Validation value loss: -0.0560
+Validation policy entropy: 1.4606
+Validation Weighted Sum: 12846.37 | Reward-derived: -13388.68 | Improvement: -41.29%
+
+Validation weighted sum statistics:
+Mean: 12846.37
+Min: 6814.00
+Max: 19882.00
+Std: 2963.01
+
+Validation value loss: -0.0560
+Validation policy entropy: 1.4606
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12846.37
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 39/100 (39.00%)
+SPT: 5/100 (5.00%)
+WSPT: 42/100 (42.00%)
+SRPT: 14/100 (14.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 14 validation checks (best: 48.19%)
+Episode 48/100 | Reward: -13131.00 | Weighted Sum: 12387.00 | Loss: -0.039283
+Avg(100): Reward=-13630.95, Weighted Sum=12967.28 | Episode time: 1.22s | Total time: 485.86s
+
+Validation weighted sum statistics:
+Mean: 12823.00
+Min: 6814.00
+Max: 19990.00
+Std: 2934.11
+
+Validation value loss: -0.0536
+Validation policy entropy: 1.4613
+Validation Weighted Sum: 12823.00 | Reward-derived: -13394.22 | Improvement: -41.07%
+
+Validation weighted sum statistics:
+Mean: 12823.00
+Min: 6814.00
+Max: 19990.00
+Std: 2934.11
+
+Validation value loss: -0.0536
+Validation policy entropy: 1.4613
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12823.00
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 35/100 (35.00%)
+SPT: 5/100 (5.00%)
+WSPT: 44/100 (44.00%)
+SRPT: 16/100 (16.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 15 validation checks (best: 48.19%)
+Episode 49/100 | Reward: -15112.50 | Weighted Sum: 14700.00 | Loss: -0.075532
+Avg(100): Reward=-13661.19, Weighted Sum=13002.65 | Episode time: 1.32s | Total time: 495.63s
+
+Validation weighted sum statistics:
+Mean: 12746.58
+Min: 6826.00
+Max: 19990.00
+Std: 2869.76
+
+Validation value loss: -0.0469
+Validation policy entropy: 1.4651
+Validation Weighted Sum: 12746.58 | Reward-derived: -13327.22 | Improvement: -40.33%
+
+Validation weighted sum statistics:
+Mean: 12746.58
+Min: 6826.00
+Max: 19990.00
+Std: 2869.76
+
+Validation value loss: -0.0469
+Validation policy entropy: 1.4651
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12746.58
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 39/100 (39.00%)
+SPT: 4/100 (4.00%)
+WSPT: 41/100 (41.00%)
+SRPT: 16/100 (16.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+New best model saved! Win rate vs WSPT: 48.75%
+Episode 50/100 | Reward: -13590.62 | Weighted Sum: 12995.75 | Loss: 0.049923
+Avg(100): Reward=-13659.77, Weighted Sum=13002.51 | Episode time: 1.34s | Total time: 505.81s
+
+Validation weighted sum statistics:
+Mean: 12785.97
+Min: 7012.00
+Max: 19990.00
+Std: 2826.77
+
+Validation value loss: -0.0419
+Validation policy entropy: 1.4737
+Validation Weighted Sum: 12785.97 | Reward-derived: -13407.08 | Improvement: -40.92%
+
+Validation weighted sum statistics:
+Mean: 12785.97
+Min: 7012.00
+Max: 19990.00
+Std: 2826.77
+
+Validation value loss: -0.0419
+Validation policy entropy: 1.4737
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12785.97
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 41/100 (41.00%)
+SPT: 4/100 (4.00%)
+WSPT: 39/100 (39.00%)
+SRPT: 16/100 (16.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+New best model saved! Win rate vs WSPT: 51.25%
+Episode 51/100 | Reward: -13522.25 | Weighted Sum: 12960.25 | Loss: 0.079282
+Avg(100): Reward=-13657.08, Weighted Sum=13001.68 | Episode time: 1.44s | Total time: 516.24s
+
+Validation weighted sum statistics:
+Mean: 12810.07
+Min: 7012.00
+Max: 19990.00
+Std: 2799.37
+
+Validation value loss: -0.0385
+Validation policy entropy: 1.4763
+Validation Weighted Sum: 12810.07 | Reward-derived: -13438.93 | Improvement: -41.26%
+
+Validation weighted sum statistics:
+Mean: 12810.07
+Min: 7012.00
+Max: 19990.00
+Std: 2799.37
+
+Validation value loss: -0.0385
+Validation policy entropy: 1.4763
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12810.07
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 40/100 (40.00%)
+SPT: 4/100 (4.00%)
+WSPT: 42/100 (42.00%)
+SRPT: 14/100 (14.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 1 validation checks (best: 51.25%)
+Episode 52/100 | Reward: -12118.50 | Weighted Sum: 11461.12 | Loss: 0.188783
+Avg(100): Reward=-13627.49, Weighted Sum=12972.05 | Episode time: 1.36s | Total time: 527.75s
+
+Validation weighted sum statistics:
+Mean: 12733.93
+Min: 7012.00
+Max: 19990.00
+Std: 2875.49
+
+Validation value loss: -0.0378
+Validation policy entropy: 1.4707
+Validation Weighted Sum: 12733.93 | Reward-derived: -13339.82 | Improvement: -40.21%
+
+Validation weighted sum statistics:
+Mean: 12733.93
+Min: 7012.00
+Max: 19990.00
+Std: 2875.49
+
+Validation value loss: -0.0378
+Validation policy entropy: 1.4707
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12733.93
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 42/100 (42.00%)
+SPT: 4/100 (4.00%)
+WSPT: 40/100 (40.00%)
+SRPT: 14/100 (14.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 2 validation checks (best: 51.25%)
+Episode 53/100 | Reward: -13210.12 | Weighted Sum: 12636.75 | Loss: 0.007234
+Avg(100): Reward=-13619.62, Weighted Sum=12965.73 | Episode time: 0.95s | Total time: 537.99s
+
+Validation weighted sum statistics:
+Mean: 12738.03
+Min: 7181.00
+Max: 19990.00
+Std: 2883.20
+
+Validation value loss: -0.0333
+Validation policy entropy: 1.4664
+Validation Weighted Sum: 12738.03 | Reward-derived: -13335.19 | Improvement: -40.20%
+
+Validation weighted sum statistics:
+Mean: 12738.03
+Min: 7181.00
+Max: 19990.00
+Std: 2883.20
+
+Validation value loss: -0.0333
+Validation policy entropy: 1.4664
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12738.03
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 40/100 (40.00%)
+SPT: 4/100 (4.00%)
+WSPT: 42/100 (42.00%)
+SRPT: 14/100 (14.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 3 validation checks (best: 51.25%)
+Episode 54/100 | Reward: -13826.50 | Weighted Sum: 13124.25 | Loss: 0.321699
+Avg(100): Reward=-13623.45, Weighted Sum=12968.66 | Episode time: 1.69s | Total time: 548.23s
+
+Validation weighted sum statistics:
+Mean: 12706.26
+Min: 7181.00
+Max: 19990.00
+Std: 2824.85
+
+Validation value loss: -0.0300
+Validation policy entropy: 1.4633
+Validation Weighted Sum: 12706.26 | Reward-derived: -13307.80 | Improvement: -39.97%
+
+Validation weighted sum statistics:
+Mean: 12706.26
+Min: 7181.00
+Max: 19990.00
+Std: 2824.85
+
+Validation value loss: -0.0300
+Validation policy entropy: 1.4633
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12706.26
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 43/100 (43.00%)
+SPT: 4/100 (4.00%)
+WSPT: 40/100 (40.00%)
+SRPT: 13/100 (13.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+New best model saved! Win rate vs WSPT: 51.81%
+Episode 55/100 | Reward: -13641.50 | Weighted Sum: 12872.00 | Loss: 0.379152
+Avg(100): Reward=-13623.77, Weighted Sum=12966.90 | Episode time: 0.93s | Total time: 559.62s
+
+Validation weighted sum statistics:
+Mean: 12713.10
+Min: 7181.00
+Max: 19990.00
+Std: 2826.94
+
+Validation value loss: -0.0357
+Validation policy entropy: 1.4532
+Validation Weighted Sum: 12713.10 | Reward-derived: -13304.37 | Improvement: -40.07%
+
+Validation weighted sum statistics:
+Mean: 12713.10
+Min: 7181.00
+Max: 19990.00
+Std: 2826.94
+
+Validation value loss: -0.0357
+Validation policy entropy: 1.4532
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12713.10
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 42/100 (42.00%)
+SPT: 4/100 (4.00%)
+WSPT: 40/100 (40.00%)
+SRPT: 14/100 (14.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 1 validation checks (best: 51.81%)
+Episode 56/100 | Reward: -13326.38 | Weighted Sum: 12861.62 | Loss: -0.015668
+Avg(100): Reward=-13618.46, Weighted Sum=12965.02 | Episode time: 0.92s | Total time: 570.07s
+
+Validation weighted sum statistics:
+Mean: 12709.83
+Min: 7181.00
+Max: 19990.00
+Std: 2839.03
+
+Validation value loss: -0.0381
+Validation policy entropy: 1.4446
+Validation Weighted Sum: 12709.83 | Reward-derived: -13261.82 | Improvement: -39.99%
+
+Validation weighted sum statistics:
+Mean: 12709.83
+Min: 7181.00
+Max: 19990.00
+Std: 2839.03
+
+Validation value loss: -0.0381
+Validation policy entropy: 1.4446
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12709.83
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 42/100 (42.00%)
+SPT: 5/100 (5.00%)
+WSPT: 39/100 (39.00%)
+SRPT: 14/100 (14.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+New best model saved! Win rate vs WSPT: 51.85%
+Episode 57/100 | Reward: -13477.25 | Weighted Sum: 12782.75 | Loss: 0.269592
+Avg(100): Reward=-13615.99, Weighted Sum=12961.83 | Episode time: 0.92s | Total time: 579.80s
+
+Validation weighted sum statistics:
+Mean: 12721.90
+Min: 7181.00
+Max: 19990.00
+Std: 2829.32
+
+Validation value loss: -0.0408
+Validation policy entropy: 1.4404
+Validation Weighted Sum: 12721.90 | Reward-derived: -13243.01 | Improvement: -40.16%
+
+Validation weighted sum statistics:
+Mean: 12721.90
+Min: 7181.00
+Max: 19990.00
+Std: 2829.32
+
+Validation value loss: -0.0408
+Validation policy entropy: 1.4404
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12721.90
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 43/100 (43.00%)
+SPT: 5/100 (5.00%)
+WSPT: 38/100 (38.00%)
+SRPT: 14/100 (14.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+New best model saved! Win rate vs WSPT: 53.09%
+Episode 58/100 | Reward: -15711.38 | Weighted Sum: 14754.75 | Loss: -0.027206
+Avg(100): Reward=-13652.11, Weighted Sum=12992.74 | Episode time: 1.31s | Total time: 590.13s
+
+Validation weighted sum statistics:
+Mean: 12707.23
+Min: 7154.00
+Max: 19990.00
+Std: 2850.19
+
+Validation value loss: -0.0435
+Validation policy entropy: 1.4350
+Validation Weighted Sum: 12707.23 | Reward-derived: -13207.87 | Improvement: -39.92%
+
+Validation weighted sum statistics:
+Mean: 12707.23
+Min: 7154.00
+Max: 19990.00
+Std: 2850.19
+
+Validation value loss: -0.0435
+Validation policy entropy: 1.4350
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12707.23
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 44/100 (44.00%)
+SPT: 5/100 (5.00%)
+WSPT: 37/100 (37.00%)
+SRPT: 14/100 (14.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+New best model saved! Win rate vs WSPT: 54.32%
+Episode 59/100 | Reward: -14143.88 | Weighted Sum: 13355.25 | Loss: -0.272631
+Avg(100): Reward=-13660.45, Weighted Sum=12998.88 | Episode time: 1.46s | Total time: 600.42s
+
+Validation weighted sum statistics:
+Mean: 12690.09
+Min: 7154.00
+Max: 19990.00
+Std: 2842.42
+
+Validation value loss: -0.0355
+Validation policy entropy: 1.4313
+Validation Weighted Sum: 12690.09 | Reward-derived: -13188.28 | Improvement: -39.75%
+
+Validation weighted sum statistics:
+Mean: 12690.09
+Min: 7154.00
+Max: 19990.00
+Std: 2842.42
+
+Validation value loss: -0.0355
+Validation policy entropy: 1.4313
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12690.09
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 44/100 (44.00%)
+SPT: 5/100 (5.00%)
+WSPT: 37/100 (37.00%)
+SRPT: 14/100 (14.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 1 validation checks (best: 54.32%)
+Episode 60/100 | Reward: -14495.75 | Weighted Sum: 13836.12 | Loss: 0.347300
+Avg(100): Reward=-13674.37, Weighted Sum=13012.84 | Episode time: 1.35s | Total time: 610.78s
+
+Validation weighted sum statistics:
+Mean: 12728.18
+Min: 7115.00
+Max: 19990.00
+Std: 2852.99
+
+Validation value loss: -0.0317
+Validation policy entropy: 1.4302
+Validation Weighted Sum: 12728.18 | Reward-derived: -13236.83 | Improvement: -40.19%
+
+Validation weighted sum statistics:
+Mean: 12728.18
+Min: 7115.00
+Max: 19990.00
+Std: 2852.99
+
+Validation value loss: -0.0317
+Validation policy entropy: 1.4302
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12728.18
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 44/100 (44.00%)
+SPT: 4/100 (4.00%)
+WSPT: 38/100 (38.00%)
+SRPT: 14/100 (14.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 2 validation checks (best: 54.32%)
+Episode 61/100 | Reward: -14648.25 | Weighted Sum: 14129.25 | Loss: 0.137714
+Avg(100): Reward=-13690.34, Weighted Sum=13031.14 | Episode time: 1.14s | Total time: 621.40s
+
+Validation weighted sum statistics:
+Mean: 12727.16
+Min: 7115.00
+Max: 19990.00
+Std: 2856.20
+
+Validation value loss: -0.0343
+Validation policy entropy: 1.4249
+Validation Weighted Sum: 12727.16 | Reward-derived: -13229.77 | Improvement: -40.15%
+
+Validation weighted sum statistics:
+Mean: 12727.16
+Min: 7115.00
+Max: 19990.00
+Std: 2856.20
+
+Validation value loss: -0.0343
+Validation policy entropy: 1.4249
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12727.16
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 44/100 (44.00%)
+SPT: 5/100 (5.00%)
+WSPT: 38/100 (38.00%)
+SRPT: 13/100 (13.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 3 validation checks (best: 54.32%)
+Episode 62/100 | Reward: -14491.88 | Weighted Sum: 13870.88 | Loss: 0.262203
+Avg(100): Reward=-13703.26, Weighted Sum=13044.68 | Episode time: 1.54s | Total time: 632.01s
+
+Validation weighted sum statistics:
+Mean: 12735.08
+Min: 7115.00
+Max: 19882.00
+Std: 2862.35
+
+Validation value loss: -0.0381
+Validation policy entropy: 1.4186
+Validation Weighted Sum: 12735.08 | Reward-derived: -13218.51 | Improvement: -40.24%
+
+Validation weighted sum statistics:
+Mean: 12735.08
+Min: 7115.00
+Max: 19882.00
+Std: 2862.35
+
+Validation value loss: -0.0381
+Validation policy entropy: 1.4186
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12735.08
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 46/100 (46.00%)
+SPT: 4/100 (4.00%)
+WSPT: 37/100 (37.00%)
+SRPT: 13/100 (13.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+New best model saved! Win rate vs WSPT: 55.42%
+Episode 63/100 | Reward: -15969.38 | Weighted Sum: 15066.88 | Loss: 0.370446
+Avg(100): Reward=-13739.23, Weighted Sum=13076.78 | Episode time: 1.08s | Total time: 644.95s
+
+Validation weighted sum statistics:
+Mean: 12707.94
+Min: 7115.00
+Max: 19990.00
+Std: 2871.00
+
+Validation value loss: -0.0432
+Validation policy entropy: 1.4137
+Validation Weighted Sum: 12707.94 | Reward-derived: -13191.12 | Improvement: -39.89%
+
+Validation weighted sum statistics:
+Mean: 12707.94
+Min: 7115.00
+Max: 19990.00
+Std: 2871.00
+
+Validation value loss: -0.0432
+Validation policy entropy: 1.4137
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12707.94
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 44/100 (44.00%)
+SPT: 5/100 (5.00%)
+WSPT: 38/100 (38.00%)
+SRPT: 13/100 (13.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 1 validation checks (best: 55.42%)
+Episode 64/100 | Reward: -10942.62 | Weighted Sum: 10665.88 | Loss: 0.118417
+Avg(100): Reward=-13695.54, Weighted Sum=13039.11 | Episode time: 0.90s | Total time: 655.51s
+
+Validation weighted sum statistics:
+Mean: 12740.77
+Min: 7115.00
+Max: 19990.00
+Std: 2861.47
+
+Validation value loss: -0.0478
+Validation policy entropy: 1.4093
+Validation Weighted Sum: 12740.77 | Reward-derived: -13205.62 | Improvement: -40.28%
+
+Validation weighted sum statistics:
+Mean: 12740.77
+Min: 7115.00
+Max: 19990.00
+Std: 2861.47
+
+Validation value loss: -0.0478
+Validation policy entropy: 1.4093
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12740.77
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 40/100 (40.00%)
+SPT: 5/100 (5.00%)
+WSPT: 41/100 (41.00%)
+SRPT: 14/100 (14.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 2 validation checks (best: 55.42%)
+Episode 65/100 | Reward: -12466.00 | Weighted Sum: 11853.25 | Loss: 0.262326
+Avg(100): Reward=-13676.62, Weighted Sum=13020.87 | Episode time: 1.28s | Total time: 664.55s
+
+Validation weighted sum statistics:
+Mean: 12747.45
+Min: 7115.00
+Max: 19990.00
+Std: 2871.11
+
+Validation value loss: -0.0493
+Validation policy entropy: 1.4071
+Validation Weighted Sum: 12747.45 | Reward-derived: -13235.60 | Improvement: -40.30%
+
+Validation weighted sum statistics:
+Mean: 12747.45
+Min: 7115.00
+Max: 19990.00
+Std: 2871.11
+
+Validation value loss: -0.0493
+Validation policy entropy: 1.4071
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12747.45
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 41/100 (41.00%)
+SPT: 5/100 (5.00%)
+WSPT: 39/100 (39.00%)
+SRPT: 15/100 (15.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 3 validation checks (best: 55.42%)
+Episode 66/100 | Reward: -11972.00 | Weighted Sum: 11507.12 | Loss: 0.109106
+Avg(100): Reward=-13650.79, Weighted Sum=12997.93 | Episode time: 0.97s | Total time: 674.78s
+
+Validation weighted sum statistics:
+Mean: 12779.34
+Min: 6814.00
+Max: 21738.00
+Std: 2957.02
+
+Validation value loss: -0.0476
+Validation policy entropy: 1.4080
+Validation Weighted Sum: 12779.34 | Reward-derived: -13267.03 | Improvement: -40.56%
+
+Validation weighted sum statistics:
+Mean: 12779.34
+Min: 6814.00
+Max: 21738.00
+Std: 2957.02
+
+Validation value loss: -0.0476
+Validation policy entropy: 1.4080
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12779.34
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 43/100 (43.00%)
+SPT: 4/100 (4.00%)
+WSPT: 40/100 (40.00%)
+SRPT: 13/100 (13.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 4 validation checks (best: 55.42%)
+Episode 67/100 | Reward: -13080.12 | Weighted Sum: 12298.12 | Loss: 0.101677
+Avg(100): Reward=-13642.28, Weighted Sum=12987.49 | Episode time: 1.33s | Total time: 684.26s
+
+Validation weighted sum statistics:
+Mean: 12779.85
+Min: 6814.00
+Max: 21738.00
+Std: 2929.67
+
+Validation value loss: -0.0479
+Validation policy entropy: 1.4102
+Validation Weighted Sum: 12779.85 | Reward-derived: -13288.13 | Improvement: -40.64%
+
+Validation weighted sum statistics:
+Mean: 12779.85
+Min: 6814.00
+Max: 21738.00
+Std: 2929.67
+
+Validation value loss: -0.0479
+Validation policy entropy: 1.4102
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12779.85
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 43/100 (43.00%)
+SPT: 5/100 (5.00%)
+WSPT: 39/100 (39.00%)
+SRPT: 13/100 (13.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 5 validation checks (best: 55.42%)
+Episode 68/100 | Reward: -12042.88 | Weighted Sum: 11610.25 | Loss: 0.048298
+Avg(100): Reward=-13618.76, Weighted Sum=12967.23 | Episode time: 1.21s | Total time: 694.16s
+
+Validation weighted sum statistics:
+Mean: 12822.63
+Min: 6814.00
+Max: 21738.00
+Std: 2920.00
+
+Validation value loss: -0.0477
+Validation policy entropy: 1.4052
+Validation Weighted Sum: 12822.63 | Reward-derived: -13323.13 | Improvement: -41.13%
+
+Validation weighted sum statistics:
+Mean: 12822.63
+Min: 6814.00
+Max: 21738.00
+Std: 2920.00
+
+Validation value loss: -0.0477
+Validation policy entropy: 1.4052
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12822.63
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 43/100 (43.00%)
+SPT: 4/100 (4.00%)
+WSPT: 39/100 (39.00%)
+SRPT: 14/100 (14.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 6 validation checks (best: 55.42%)
+Episode 69/100 | Reward: -13935.00 | Weighted Sum: 13431.00 | Loss: -0.052087
+Avg(100): Reward=-13623.34, Weighted Sum=12973.95 | Episode time: 0.89s | Total time: 703.53s
+
+Validation weighted sum statistics:
+Mean: 12808.87
+Min: 6814.00
+Max: 21738.00
+Std: 2912.52
+
+Validation value loss: -0.0434
+Validation policy entropy: 1.4031
+Validation Weighted Sum: 12808.87 | Reward-derived: -13281.20 | Improvement: -40.98%
+
+Validation weighted sum statistics:
+Mean: 12808.87
+Min: 6814.00
+Max: 21738.00
+Std: 2912.52
+
+Validation value loss: -0.0434
+Validation policy entropy: 1.4031
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12808.87
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 43/100 (43.00%)
+SPT: 5/100 (5.00%)
+WSPT: 38/100 (38.00%)
+SRPT: 14/100 (14.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 7 validation checks (best: 55.42%)
+Episode 70/100 | Reward: -15251.62 | Weighted Sum: 14210.62 | Loss: 0.125786
+Avg(100): Reward=-13646.60, Weighted Sum=12991.62 | Episode time: 1.00s | Total time: 715.00s
+
+Validation weighted sum statistics:
+Mean: 12757.31
+Min: 6814.00
+Max: 19990.00
+Std: 2859.09
+
+Validation value loss: -0.0420
+Validation policy entropy: 1.4036
+Validation Weighted Sum: 12757.31 | Reward-derived: -13246.19 | Improvement: -40.49%
+
+Validation weighted sum statistics:
+Mean: 12757.31
+Min: 6814.00
+Max: 19990.00
+Std: 2859.09
+
+Validation value loss: -0.0420
+Validation policy entropy: 1.4036
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12757.31
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 45/100 (45.00%)
+SPT: 5/100 (5.00%)
+WSPT: 37/100 (37.00%)
+SRPT: 13/100 (13.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 8 validation checks (best: 55.42%)
+Episode 71/100 | Reward: -12206.75 | Weighted Sum: 11927.75 | Loss: -0.227611
+Avg(100): Reward=-13626.32, Weighted Sum=12976.64 | Episode time: 1.01s | Total time: 725.14s
+
+Validation weighted sum statistics:
+Mean: 12796.77
+Min: 6814.00
+Max: 21738.00
+Std: 2916.72
+
+Validation value loss: -0.0360
+Validation policy entropy: 1.4001
+Validation Weighted Sum: 12796.77 | Reward-derived: -13276.04 | Improvement: -40.84%
+
+Validation weighted sum statistics:
+Mean: 12796.77
+Min: 6814.00
+Max: 21738.00
+Std: 2916.72
+
+Validation value loss: -0.0360
+Validation policy entropy: 1.4001
+
+Validation Results:
+Average Weighted Sums:
+L2D: 12796.77
+SPT: 13903.27
+WSPT: 12822.80
+SRPT: 13980.95
+
+Win Statistics:
+L2D: 42/100 (42.00%)
+SPT: 5/100 (5.00%)
+WSPT: 38/100 (38.00%)
+SRPT: 15/100 (15.00%)
+Updated learning curves plot at: ./models/figures/learning_curves.png
+No improvement for 9 validation checks (best: 55.42%)
+Episode 72/100 | Reward: -14822.25 | Weighted Sum: 14355.38 | Loss: 0.265375
+Avg(100): Reward=-13642.93, Weighted Sum=12995.79 | Episode time: 1.16s | Total time: 735.60s
+
+Validation weighted sum statistics:
+Mean: 12787.29
+Min: 6814.00
+Max: 21738.00
+Std: 2931.35
+
+Validation value loss: -0.0353
+Validation policy entropy: 1.3962
+Validation Weighted Sum: 12787.29 | Reward-derived: -13266.58 | Improvement: -40.68%
+Traceback (most recent call last):
+  File "scripts/train.py", line 751, in <module>
+    main()
+  File "scripts/train.py", line 744, in main
+    best_win_rate, best_episode, final_comparison = train(config)
+  File "scripts/train.py", line 514, in train
+    comparison_metrics = compare_validation_methods(validation_data, agent.policy, config.feature_set)
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/src/utils/validation.py", line 278, in compare_validation_methods
+    validation_results = validate_weighted(vali_set, model, feature_set=feature_set)
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/src/utils/validation.py", line 84, in validate_weighted
+    pi, value = model(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/src/models/actor_critic.py", line 62, in forward
+    h_pooled, h_nodes = self.feature_extract(x=x,
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/src/models/graphcnn.py", line 171, in forward
+    h = self.next_layer(h, layer, Adj_block=Adj_block)
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/src/models/graphcnn.py", line 139, in next_layer
+    pooled_rep = self.mlps[layer](pooled)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/mariegoffin/Documents/Master_3/IML/projects/L2D/src/models/mlp.py", line 50, in forward
+    return self.linears[self.num_layers - 1](h)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 117, in forward
+    return F.linear(input, self.weight, self.bias)
+KeyboardInterrupt

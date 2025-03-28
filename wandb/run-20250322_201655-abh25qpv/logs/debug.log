@@ -1,0 +1,25 @@
+2025-03-22 20:16:55,484 INFO    MainThread:46950 [wandb_setup.py:_flush():67] Current SDK version is 0.19.8
+2025-03-22 20:16:55,484 INFO    MainThread:46950 [wandb_setup.py:_flush():67] Configure stats pid to 46950
+2025-03-22 20:16:55,484 INFO    MainThread:46950 [wandb_setup.py:_flush():67] Loading settings from /Users/mariegoffin/.config/wandb/settings
+2025-03-22 20:16:55,484 INFO    MainThread:46950 [wandb_setup.py:_flush():67] Loading settings from /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/settings
+2025-03-22 20:16:55,484 INFO    MainThread:46950 [wandb_setup.py:_flush():67] Loading settings from environment variables
+2025-03-22 20:16:55,485 INFO    MainThread:46950 [wandb_init.py:setup_run_log_directory():647] Logging user logs to /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250322_201655-abh25qpv/logs/debug.log
+2025-03-22 20:16:55,485 INFO    MainThread:46950 [wandb_init.py:setup_run_log_directory():648] Logging internal logs to /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250322_201655-abh25qpv/logs/debug-internal.log
+2025-03-22 20:16:55,485 INFO    MainThread:46950 [wandb_init.py:init():761] calling init triggers
+2025-03-22 20:16:55,485 INFO    MainThread:46950 [wandb_init.py:init():766] wandb.init called with sweep_config: {'feature_set': '["LBs", "finished_mark", "weighted_priorities_normalized"]', 'output_dir': 'data/results/feature_sweeps/20250322_201644'}
+config: {'device': 'cpu', 'n_j': 6, 'n_m': 6, 'rewardscale': 0.0, 'init_quality_flag': False, 'low': 1, 'high': 99, 'weight_low': 1, 'weight_high': 10, 'np_seed_train': 200, 'np_seed_validation': 200, 'torch_seed': 600, 'et_normalize_coef': 1000, 'wkr_normalize_coef': 100, 'num_layers': 3, 'neighbor_pooling_type': 'sum', 'graph_pool_type': 'average', 'input_dim': 3, 'hidden_dim': 128, 'num_mlp_layers_feature_extract': 2, 'num_mlp_layers_actor': 2, 'hidden_dim_actor': 32, 'num_mlp_layers_critic': 2, 'hidden_dim_critic': 32, 'num_envs': 8, 'max_updates': 10000, 'lr': 2e-05, 'decayflag': True, 'decay_step_size': 200, 'decay_ratio': 0.9, 'gamma': 1, 'k_epochs': 10, 'eps_clip': 0.1, 'vloss_coef': 1, 'ploss_coef': 2, 'entloss_coef': 0.02, 'config': None, 'sweep': False, 'no_wandb': False, 'feature_set': ['["LBs", "finished_mark", "weighted_priorities_normalized"]'], 'reward_strategy': 'default', 'validate_every': 100, 'output_dir': 'data/results/feature_sweeps/20250322_201644', '_wandb': {}}
+2025-03-22 20:16:55,485 INFO    MainThread:46950 [wandb_init.py:init():784] starting backend
+2025-03-22 20:16:55,485 INFO    MainThread:46950 [wandb_init.py:init():788] sending inform_init request
+2025-03-22 20:16:55,500 INFO    MainThread:46950 [backend.py:_multiprocessing_setup():101] multiprocessing start_methods=spawn,fork,forkserver, using: spawn
+2025-03-22 20:16:55,500 INFO    MainThread:46950 [wandb_init.py:init():798] backend started and connected
+2025-03-22 20:16:55,501 INFO    MainThread:46950 [wandb_run.py:_config_callback():1261] config_cb None None {'feature_set': '["LBs", "finished_mark", "weighted_priorities_normalized"]', 'output_dir': 'data/results/feature_sweeps/20250322_201644'}
+2025-03-22 20:16:55,503 INFO    MainThread:46950 [wandb_init.py:init():891] updated telemetry
+2025-03-22 20:16:55,525 INFO    MainThread:46950 [wandb_init.py:init():915] communicating run to backend with 90.0 second timeout
+2025-03-22 20:16:55,918 INFO    MainThread:46950 [wandb_init.py:init():990] starting run threads in backend
+2025-03-22 20:16:56,956 INFO    MainThread:46950 [wandb_run.py:_console_start():2375] atexit reg
+2025-03-22 20:16:56,956 INFO    MainThread:46950 [wandb_run.py:_redirect():2227] redirect: wrap_raw
+2025-03-22 20:16:56,956 INFO    MainThread:46950 [wandb_run.py:_redirect():2292] Wrapping output streams.
+2025-03-22 20:16:56,956 INFO    MainThread:46950 [wandb_run.py:_redirect():2315] Redirects installed.
+2025-03-22 20:16:56,958 INFO    MainThread:46950 [wandb_init.py:init():1032] run started, returning control to user process
+2025-03-22 20:16:56,959 INFO    MainThread:46950 [wandb_run.py:_config_callback():1261] config_cb None None {'config': None, 'decay_ratio': 0.9, 'decay_step_size': 200, 'decayflag': True, 'device': 'cpu', 'entloss_coef': 0.02, 'eps_clip': 0.1, 'et_normalize_coef': 1000, 'gamma': 1, 'graph_pool_type': 'average', 'hidden_dim': 128, 'hidden_dim_actor': 32, 'hidden_dim_critic': 32, 'high': 99, 'init_quality_flag': False, 'input_dim': 3, 'k_epochs': 10, 'low': 1, 'lr': 2e-05, 'max_updates': 10000, 'n_j': 6, 'n_m': 6, 'neighbor_pooling_type': 'sum', 'no_wandb': False, 'np_seed_train': 200, 'np_seed_validation': 200, 'num_envs': 8, 'num_layers': 3, 'num_mlp_layers_actor': 2, 'num_mlp_layers_critic': 2, 'num_mlp_layers_feature_extract': 2, 'ploss_coef': 2, 'reward_strategy': 'default', 'rewardscale': 0.0, 'sweep': False, 'torch_seed': 600, 'validate_every': 100, 'vloss_coef': 1, 'weight_high': 10, 'weight_low': 1, 'wkr_normalize_coef': 100}
+2025-03-22 20:16:58,175 INFO    MsgRouterThr:46950 [mailbox.py:close():129] Closing mailbox, abandoning 0 handles.

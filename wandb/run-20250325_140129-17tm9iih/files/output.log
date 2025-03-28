@@ -1,0 +1,64 @@
+wandb: WARNING Config item 'high' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'low' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'max_updates' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'n_j' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'n_m' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'np_seed_train' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'np_seed_validation' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'num_envs' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'output_dir' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'rewardscale' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'torch_seed' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'weight_high' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'weight_low' was locked by 'sweep' (ignored update).
+Training episodes:   0%|          | 0/100 [00:00<?, ?it/s]
+Loaded validation data from ./data/instances/variable_weights/validation_data_6x6_seed200.npy
+Starting training for 100 episodes with 16 environments...
+Episode 100/100 | Reward: -2927.19 | Weighted Sum: 2797.31 | Loss: -0.005631
+Avg(100): Reward=-2875.74, Weighted Sum=2741.36 | Episode time: 2.43s | Total time: 234.03s
+Validation weighted sum statistics:
+Mean: 13757.71
+Min: 7805.00
+Max: 21359.00
+Std: 3030.54
+Validation Weighted Sum: 13757.71 | Reward-derived: -14339.11 | Improvement: -51.83%
+Validation weighted sum statistics:
+Mean: 13757.71
+Min: 7805.00
+Max: 21359.00
+Std: 3030.54
+Validation Results:
+Average Weighted Sums:
+L2D: 13757.71
+SPT: 13903.27
+WSPT: 12822.80
+Win Statistics:
+L2D: 20/100 (20.00%)
+SPT: 14/100 (14.00%)
+
+Training episodes:   1%|          | 1/100 [04:04<6:43:30, 244.55s/it, reward=-2927.19, weighted_sum=2797.31]
+New best model saved! Win rate vs WSPT: 23.26%
+Training completed in 0h 4m 4.56s
+Final model saved to ./models/l2d_weighted_6x6_final.pth
+Validation weighted sum statistics:
+Mean: 13757.71
+Min: 7805.00
+Max: 21359.00
+Std: 3030.54
+Validation weighted sum statistics:
+Mean: 13757.71
+Min: 7805.00
+Max: 21359.00
+Std: 3030.54
+Validation Results:
+Average Weighted Sums:
+L2D: 13757.71
+SPT: 13903.27
+WSPT: 12822.80
+Win Statistics:
+L2D: 20/100 (20.00%)
+SPT: 14/100 (14.00%)
+WSPT: 66/100 (66.00%)
+Final Validation Weighted Sum: 13757.71
+Win rate vs SPT: 58.82%
+Win rate vs WSPT: 23.26%

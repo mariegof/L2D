@@ -1,0 +1,105 @@
+method: bayes
+metric:
+  goal: minimize
+  name: validation_weighted_sum
+parameters:
+  decay_ratio:
+    value: 0.9
+  decay_step_size:
+    value: 200
+  decayflag:
+    value: true
+  device:
+    value: cpu
+  entloss_coef:
+    value: 0.02
+  eps_clip:
+    value: 0.1
+  et_normalize_coef:
+    value: 1000
+  eval_instances:
+    value: 100
+  experiment_name:
+    value: uniform_jssp_base
+  feature_set:
+    values:
+    - LBs,finished_mark
+    - LBs,finished_mark,normalized_weights
+    - LBs,finished_mark,weighted_priorities
+    - LBs,finished_mark,normalized_weights,weighted_priorities
+    - LBs,finished_mark,normalized_weights,machine_contention
+    - LBs,finished_mark,normalized_weights,weighted_priorities,remaining_weighted_work
+    - weighted_LBs,finished_mark
+    - LBs,finished_mark,weighted_priorities_normalized
+    - LBs,finished_mark,weighted_priorities,machine_contention
+    - LBs,finished_mark,weighted_priorities,critical_path_contribution
+    - LBs,finished_mark,weighted_priorities,time_elapsed
+  gamma:
+    value: 1.0
+  graph_pool_type:
+    value: average
+  hidden_dim:
+    value: 128
+  hidden_dim_actor:
+    value: 32
+  hidden_dim_critic:
+    value: 32
+  high:
+    value: 99
+  init_quality_flag:
+    value: false
+  input_dim:
+    value: 3
+  k_epochs:
+    value: 10
+  low:
+    value: 1
+  lr:
+    value: 2.0e-05
+  max_updates:
+    value: 100
+  n_j:
+    value: 6
+  n_m:
+    value: 6
+  neighbor_pooling_type:
+    value: sum
+  np_seed_train:
+    value: 200
+  np_seed_validation:
+    value: 200
+  num_envs:
+    value: 8
+  num_layers:
+    value: 3
+  num_mlp_layers_actor:
+    value: 2
+  num_mlp_layers_critic:
+    value: 2
+  num_mlp_layers_feature_extract:
+    value: 2
+  output_dir:
+    value: results/uniform_weights/feature_sweeps/20250328_093141
+  ploss_coef:
+    value: 2.0
+  reward_strategy:
+    value: default
+  rewardscale:
+    value: 0.0
+  test_instances:
+    value: 100
+  torch_seed:
+    value: 600
+  validate_every:
+    value: 20
+  vloss_coef:
+    value: 1.0
+  weight_high:
+    value: 1
+  weight_low:
+    value: 1
+  weight_type:
+    value: uniform
+  wkr_normalize_coef:
+    value: 100
+program: scripts/train.py

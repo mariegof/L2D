@@ -1,0 +1,144 @@
+wandb: WARNING Config item 'high' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'low' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'max_updates' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'n_j' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'n_m' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'np_seed_train' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'np_seed_validation' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'num_envs' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'output_dir' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'rewardscale' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'torch_seed' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'weight_high' was locked by 'sweep' (ignored update).
+wandb: WARNING Config item 'weight_low' was locked by 'sweep' (ignored update).
+Training episodes:   0%|          | 0/100 [00:00<?, ?it/s]
+Loaded validation data from ./data/instances/variable_weights/validation_data_6x6_seed200.npy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Training episodes:  99%|█████████▉| 99/100 [02:39<00:01,  1.66s/it]
+Episode 100/100 | Reward: -2949.88 | Weighted Sum: 2801.25 | Loss: -0.086687
+Avg(100): Reward=-2875.42, Weighted Sum=2741.36 | Episode time: 1.71s | Total time: 161.49s
+Validation weighted sum statistics:
+Mean: 13766.34
+Min: 7805.00
+Max: 21359.00
+Std: 2962.78
+Validation Weighted Sum: 13766.34 | Reward-derived: -14287.93 | Improvement: -52.03%
+Validation weighted sum statistics:
+Mean: 13766.34
+Min: 7805.00
+Max: 21359.00
+Std: 2962.78
+Validation Results:
+Average Weighted Sums:
+L2D: 13766.34
+SPT: 13903.27
+WSPT: 12822.80
+Win Statistics:
+L2D: 18/100 (18.00%)
+SPT: 14/100 (14.00%)
+
+Training episodes: 100%|██████████| 100/100 [02:48<00:00,  1.69s/it]
+New best model saved! Win rate vs WSPT: 20.93%
+Training completed in 0h 2m 48.72s
+Final model saved to ./models/l2d_weighted_6x6_final.pth
+Validation weighted sum statistics:
+Mean: 13766.34
+Min: 7805.00
+Max: 21359.00
+Std: 2962.78
+Validation weighted sum statistics:
+Mean: 13766.34
+Min: 7805.00
+Max: 21359.00
+Std: 2962.78
+Validation Results:
+Average Weighted Sums:
+L2D: 13766.34
+SPT: 13903.27
+WSPT: 12822.80
+Win Statistics:
+L2D: 18/100 (18.00%)
+SPT: 14/100 (14.00%)
+WSPT: 68/100 (68.00%)
+Final Validation Weighted Sum: 13766.34
+Win rate vs SPT: 56.25%
+Win rate vs WSPT: 20.93%
