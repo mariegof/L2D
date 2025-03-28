@@ -11,6 +11,7 @@ import time
 import wandb
 import torch
 import numpy as np
+import sys
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 
@@ -217,17 +218,18 @@ def train_episode(envs, memories, agent, device, g_pool_step, config):
     
     return np.mean(ep_rewards), np.mean(weighted_sums)
 
-def plot_weighted_learning_curves(rewards, losses, weighted_sums, figures_dir, 
+def plot_weighted_learning_curves(rewards, losses, weighted_sums, figures_dir=None, 
                                validation_history=None, validation_rewards=None, validation_losses=None, 
                                log_every=100, current_episode=None):
     """
-    Create a single three-panel plot with training and validation metrics.
+    Create a single three-panel plot with training and validation metrics,
+    including horizontal lines for best values.
     
     Args:
         rewards: List of training rewards
         losses: List of training losses
         weighted_sums: List of training weighted sums
-        figures_dir: Directory to save figure
+        figures_dir: Optional directory to save figure (if None, will create run-specific dir)
         validation_history: List of validation weighted sum means
         validation_rewards: List of validation rewards
         validation_losses: List of validation losses
@@ -235,6 +237,50 @@ def plot_weighted_learning_curves(rewards, losses, weighted_sums, figures_dir,
         current_episode: Current episode number for consistent filenames
     """
     try:
+        # Get a unique run identifier from WandB
+        run_id = "local"
+        if 'wandb' in sys.modules and hasattr(wandb, 'run') and wandb.run is not None:
+            run_id = wandb.run.id
+        
+        # Create a run-specific directory for plots if figures_dir not provided
+        if figures_dir is None:
+            # Check if we're in a sweep by looking for sweep_id in config
+            sweep_id = None
+            if (hasattr(wandb, 'config') and 
+                isinstance(wandb.config, dict) and 
+                'sweep_id' in wandb.config):
+                sweep_id = wandb.config['sweep_id']
+            
+            # Determine weight type (variable or uniform)
+            weight_type = "variable_weights"
+            if hasattr(wandb, 'config'):
+                if hasattr(wandb.config, 'weight_high') and hasattr(wandb.config, 'weight_low'):
+                    if wandb.config.weight_high == wandb.config.weight_low == 1:
+                        weight_type = "uniform_weights"
+            
+            # Determine sweep type
+            sweep_type = "unknown_sweeps"
+            for possible_type in ['environment', 'feature', 'reward', 'model']:
+                if hasattr(wandb, 'config') and hasattr(wandb.config, f'{possible_type}_sweep'):
+                    sweep_type = f"{possible_type}_sweeps"
+                    break
+                elif hasattr(wandb, 'run') and hasattr(wandb.run, 'name') and possible_type in str(wandb.run.name).lower():
+                    sweep_type = f"{possible_type}_sweeps"
+                    break
+            
+            # Get timestamp as folder name if we can't determine sweep
+            import datetime
+            timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+            
+            # Build the directory path
+            if sweep_id:
+                # If part of a sweep, use the sweep's directory structure
+                base_dir = f"results/{weight_type}/{sweep_type}/{timestamp}"
+                figures_dir = f"{base_dir}/runs/{run_id}"
+            else:
+                # For standalone runs
+                figures_dir = f"results/standalone_runs/{run_id}"
+        
         # Create directory if it doesn't exist
         os.makedirs(figures_dir, exist_ok=True)
         
@@ -264,6 +310,11 @@ def plot_weighted_learning_curves(rewards, losses, weighted_sums, figures_dir,
             # Plot raw and smoothed training data
             ax.plot(episodes, weighted_sums, label='Training', **line_styles['train_raw'])
             ax.plot(episodes, smooth_ws, label='Training (smoothed)', **line_styles['train_smooth'])
+            
+            # Add horizontal line for best training value
+            best_train_ws = min(smooth_ws)
+            ax.axhline(y=best_train_ws, color='blue', linestyle='--', alpha=0.7,
+                      label=f'Best training: {best_train_ws:.1f}')
         else:
             ax.plot(episodes, weighted_sums, label='Training', **line_styles['train_smooth'])
         
@@ -272,12 +323,14 @@ def plot_weighted_learning_curves(rewards, losses, weighted_sums, figures_dir,
             val_steps = np.array([(i+1) * log_every for i in range(len(validation_history))])
             ax.plot(val_steps, validation_history, label='Validation', **line_styles['validation'])
             
-            # Mark best validation point
+            # Add horizontal line for best validation value
             best_val = min(validation_history)
             best_idx = validation_history.index(best_val)
+            ax.axhline(y=best_val, color='red', linestyle='--', alpha=0.7,
+                      label=f'Best validation: {best_val:.1f} (ep. {(best_idx+1)*log_every})')
+            
+            # Mark best validation point
             ax.plot(val_steps[best_idx], best_val, 'ro', markersize=8)
-            ax.text(val_steps[best_idx], best_val*0.97, f'Best: {best_val:.1f}', 
-                   fontsize=10, ha='center')
         
         ax.set_title('Weighted Sum', fontsize=14)
         ax.set_ylabel('Weighted Sum')
@@ -294,6 +347,11 @@ def plot_weighted_learning_curves(rewards, losses, weighted_sums, figures_dir,
             # Plot raw and smoothed training data
             ax.plot(episodes, losses, label='Training', **line_styles['train_raw'])
             ax.plot(episodes, smooth_losses, label='Training (smoothed)', **line_styles['train_smooth'])
+            
+            # Add horizontal line for best training loss
+            best_train_loss = min(smooth_losses)
+            ax.axhline(y=best_train_loss, color='blue', linestyle='--', alpha=0.7,
+                      label=f'Best training: {best_train_loss:.4f}')
         else:
             ax.plot(episodes, losses, label='Training', **line_styles['train_smooth'])
         
@@ -301,6 +359,12 @@ def plot_weighted_learning_curves(rewards, losses, weighted_sums, figures_dir,
         if validation_losses and len(validation_losses) > 0:
             val_steps = np.array([(i+1) * log_every for i in range(len(validation_losses))])
             ax.plot(val_steps, validation_losses, label='Validation', **line_styles['validation'])
+            
+            # Add horizontal line for best validation loss
+            best_val_loss = min(validation_losses)
+            best_idx = validation_losses.index(best_val_loss)
+            ax.axhline(y=best_val_loss, color='red', linestyle='--', alpha=0.7,
+                      label=f'Best validation: {best_val_loss:.4f}')
         
         ax.set_title('Loss', fontsize=14)
         ax.set_ylabel('Loss')
@@ -317,6 +381,11 @@ def plot_weighted_learning_curves(rewards, losses, weighted_sums, figures_dir,
             # Plot raw and smoothed training data
             ax.plot(episodes, rewards, label='Training', **line_styles['train_raw'])
             ax.plot(episodes, smooth_rewards, label='Training (smoothed)', **line_styles['train_smooth'])
+            
+            # Add horizontal line for best training reward
+            best_train_reward = max(smooth_rewards)
+            ax.axhline(y=best_train_reward, color='blue', linestyle='--', alpha=0.7,
+                      label=f'Best training: {best_train_reward:.1f}')
         else:
             ax.plot(episodes, rewards, label='Training', **line_styles['train_smooth'])
         
@@ -324,6 +393,12 @@ def plot_weighted_learning_curves(rewards, losses, weighted_sums, figures_dir,
         if validation_rewards and len(validation_rewards) > 0:
             val_steps = np.array([(i+1) * log_every for i in range(len(validation_rewards))])
             ax.plot(val_steps, validation_rewards, label='Validation', **line_styles['validation'])
+            
+            # Add horizontal line for best validation reward
+            best_val_reward = max(validation_rewards)
+            best_idx = validation_rewards.index(best_val_reward)
+            ax.axhline(y=best_val_reward, color='red', linestyle='--', alpha=0.7,
+                      label=f'Best validation: {best_val_reward:.1f}')
         
         ax.set_title('Reward', fontsize=14)
         ax.set_xlabel('Episode')
@@ -337,36 +412,55 @@ def plot_weighted_learning_curves(rewards, losses, weighted_sums, figures_dir,
         # Adjust layout
         plt.tight_layout(rect=[0, 0, 1, 0.98])
         
-        # Use episode number for filenames instead of timestamps (to ensure consistency)
-        episode_str = str(current_episode) if current_episode is not None else str(len(rewards))
-        unique_filename = os.path.join(figures_dir, f"learning_curves_{episode_str}.png")
+        # Save as a single plot that gets overwritten for each episode
         standard_filename = os.path.join(figures_dir, "learning_curves.png")
-        
-        # Use a BytesIO buffer to ensure atomic write
-        from io import BytesIO
-        buf = BytesIO()
-        plt.savefig(buf, format='png', dpi=300, bbox_inches='tight')
-        buf.seek(0)
-        
-        # Write buffer to file
-        with open(unique_filename, 'wb') as f:
-            f.write(buf.getbuffer())
+        plt.savefig(standard_filename, format='png', dpi=300, bbox_inches='tight')
             
-        # Also save to standard filename (for WandB logging)
-        with open(standard_filename, 'wb') as f:
-            buf.seek(0)  # Reset buffer position
-            f.write(buf.getbuffer())
-            
+        # Optionally, if keeping episodic versions is desired:
+        if current_episode is not None:
+            episode_str = str(current_episode)
+            episode_filename = os.path.join(figures_dir, f"learning_curves_ep{episode_str}.png")
+            plt.savefig(episode_filename, format='png', dpi=300, bbox_inches='tight')
+        
         plt.close(fig)
         
-        print(f"Updated learning curves plot at episode {episode_str}: {standard_filename} and {unique_filename}")
-        return True, unique_filename, standard_filename
+        print(f"Updated learning curves plot at episode {current_episode or len(rewards)}")
+        return True, standard_filename, standard_filename  # Return the same file twice for backward compatibility
         
     except Exception as e:
         print(f"Error creating learning curves plot: {e}")
         import traceback
         traceback.print_exc()
         return False, None, None
+    
+def safe_log_image_to_wandb(image_path, image_name="image"):
+    """
+    Safely log an image to WandB using numpy arrays for compatibility.
+    
+    Args:
+        image_path: Path to the image file
+        image_name: Name to use in WandB dashboard
+        
+    Returns:
+        True if successful, False otherwise
+    """
+    try:
+        # Use PIL to read the image and convert to numpy array
+        from PIL import Image
+        import numpy as np
+        
+        # Open and convert to RGB to ensure compatibility
+        img = Image.open(image_path).convert('RGB')
+        
+        # Convert to numpy array (this has ndim attribute WandB expects)
+        img_array = np.array(img)
+        
+        # Log the image as numpy array
+        wandb.log({image_name: wandb.Image(img_array)})
+        return True
+    except Exception as e:
+        print(f"Error logging image to WandB (safely ignored): {e}")
+        return False
 
 def train(config):
     """Main training function with WandB integration."""
@@ -554,8 +648,7 @@ def train(config):
                     win_rates_history.append(comparison_metrics)
                     
                     # Create/update learning curve plots after each validation
-                    figures_dir = os.path.join(model_dir, "figures")
-                    os.makedirs(figures_dir, exist_ok=True)
+                    figures_dir = None  # The function will create a run-specific directory
                     
                     # Extract validation rewards and losses
                     validation_rewards = []
@@ -584,16 +677,44 @@ def train(config):
                     
                     # Create standardized metric dictionary for WandB
                     validation_metrics = {
+                        # Core validation metrics
                         "validation_weighted_sum": validation_weighted_sum_mean,
                         "validation_improvement_pct": validation_results['improvement_pct'].mean(),
+                        
+                        # Traditional win metrics (keep for backward compatibility)
                         "validation_win_rate": comparison_metrics['win_rate'],
                         "validation_win_vs_spt": comparison_metrics['win_vs_spt'],
                         "validation_win_vs_wspt": comparison_metrics['win_vs_wspt'],
                         "validation_win_vs_srpt": comparison_metrics['win_vs_srpt'],
+                        
+                        # Improvement percentages 
                         "validation_improvement_over_spt": comparison_metrics['improvement_over_spt'],
                         "validation_improvement_over_wspt": comparison_metrics['improvement_over_wspt'],
-                        "validation_improvement_over_srpt": comparison_metrics['improvement_over_srpt'] 
+                        "validation_improvement_over_srpt": comparison_metrics['improvement_over_srpt'],
+                        
+                        # Baseline weighted sums
+                        "baseline_spt_weighted_sum": comparison_metrics.get('baseline_spt_weighted_sum', 0),
+                        "baseline_wspt_weighted_sum": comparison_metrics.get('baseline_wspt_weighted_sum', 0),
+                        "baseline_srpt_weighted_sum": comparison_metrics.get('baseline_srpt_weighted_sum', 0),
+                        
+                        # NEW: Win rates for all methods
+                        "win_rate_l2d": comparison_metrics.get('win_rate_l2d', comparison_metrics['win_rate']),
+                        "win_rate_spt": comparison_metrics.get('win_rate_spt', 0),
+                        "win_rate_wspt": comparison_metrics.get('win_rate_wspt', 0),
+                        "win_rate_srpt": comparison_metrics.get('win_rate_srpt', 0),
+                        
+                        # NEW: Raw win counts
+                        "win_count_l2d": comparison_metrics.get('win_count_l2d', 0),
+                        "win_count_spt": comparison_metrics.get('win_count_spt', 0),
+                        "win_count_wspt": comparison_metrics.get('win_count_wspt', 0),
+                        "win_count_srpt": comparison_metrics.get('win_count_srpt', 0)
                     }
+                    
+                    # If value loss and policy entropy are available, add them too
+                    if 'value_loss' in validation_results:
+                        validation_metrics["validation_value_loss"] = validation_results['value_loss']
+                    if 'policy_entropy' in validation_results:
+                        validation_metrics["validation_policy_entropy"] = validation_results['policy_entropy']
                     
                     # Log validation metrics and plot to WandB
                     if use_wandb:
@@ -607,11 +728,9 @@ def train(config):
                         
                         # Log the main comparison plot to WandB
                         if plot_success and os.path.exists(standard_path):
-                            try:
-                                wandb.log({"learning_curves": wandb.Image(standard_path)})
+                            success = safe_log_image_to_wandb(standard_path, "learning_curves")
+                            if success:
                                 print(f"Successfully logged learning curves to WandB")
-                            except Exception as e:
-                                print(f"Error logging plot to WandB: {e}")
                     
                     # CHANGED: Save model based on weighted sum instead of win rate
                     # Lower weighted sum is better, so we check if it's less than the best so far

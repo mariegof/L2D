@@ -100,6 +100,9 @@ def main():
     generator = TableGenerator()
     formatter = PyLatexFormatter()
     
+    # Create visualizer (used across all sweep types)
+    visualizer = SweepVisualizer(writer.get_directory('plots'))
+    
     # Generate appropriate table based on sweep type
     if args.sweep_type and args.sweep_type.lower() in ['environment', 'env']:
         df = generator.create_environment_table(runs)
@@ -108,9 +111,12 @@ def main():
         env_table = formatter.format_dataframe_to_latex(df, caption, label)
         writer.write_latex_table(env_table, "environment_table")
         
-        # Create performance profile plot
-        visualizer = SweepVisualizer(writer.get_directory('plots'))
-        visualizer.create_performance_profile(runs, writer.get_path("performance_profile.png", "plots"))
+        # Create performance plot with explicit sweep type
+        visualizer.create_performance_plot(
+            runs, 
+            writer.get_path("performance_plot.png", "plots"),
+            sweep_type=args.sweep_type
+        )
         
         # Create parameter impact plots
         for param in ['rewardscale']:
@@ -127,9 +133,12 @@ def main():
         feature_table = formatter.format_dataframe_to_latex(df, caption, label)
         writer.write_latex_table(feature_table, "feature_table")
         
-        # Create performance profile plot for features
-        visualizer = SweepVisualizer(writer.get_directory('plots'))
-        visualizer.create_performance_profile(runs, writer.get_path("performance_profile.png", "plots"))
+        # Create performance plot with explicit sweep type
+        visualizer.create_performance_plot(
+            runs, 
+            writer.get_path("performance_plot.png", "plots"),
+            sweep_type=args.sweep_type
+        )
         
     elif args.sweep_type and args.sweep_type.lower() in ['reward', 'rewards']:
         df = generator.create_reward_table(runs)
@@ -138,9 +147,12 @@ def main():
         reward_table = formatter.format_dataframe_to_latex(df, caption, label)
         writer.write_latex_table(reward_table, "reward_table")
         
-        # Create performance profile plot for rewards
-        visualizer = SweepVisualizer(writer.get_directory('plots'))
-        visualizer.create_performance_profile(runs, writer.get_path("performance_profile.png", "plots"))
+        # Create performance plot with explicit sweep type
+        visualizer.create_performance_plot(
+            runs, 
+            writer.get_path("performance_plot.png", "plots"),
+            sweep_type=args.sweep_type
+        )
         
     elif args.sweep_type and args.sweep_type.lower() in ['model', 'models']:
         df = generator.create_model_table(runs)
@@ -149,18 +161,13 @@ def main():
         model_table = formatter.format_dataframe_to_latex(df, caption, label)
         writer.write_latex_table(model_table, "model_table")
         
-        # Create performance profile plot for models
-        visualizer = SweepVisualizer(writer.get_directory('plots'))
-        visualizer.create_performance_profile(runs, writer.get_path("performance_profile.png", "plots"))
+        # Create performance plot with explicit sweep type
+        visualizer.create_performance_plot(
+            runs, 
+            writer.get_path("performance_plot.png", "plots"),
+            sweep_type=args.sweep_type
+        )
         
-        # Create parameter impact plots for key model parameters
-        for param in ['hidden_dim', 'num_layers', 'lr']:
-            if param in df.columns:
-                visualizer.create_parameter_impact_plot(
-                    df, param, args.primary_metric, 
-                    writer.get_path(f"{param}_impact.png", "plots")
-                )
-    
     # Create summary table
     summary_df = generator.create_summary_table(runs, args.sweep_type or 'unknown', args.top_k)
     caption = f'Top {args.top_k} Configurations'

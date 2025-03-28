@@ -1,0 +1,87 @@
+2025-03-28 22:50:52,810 INFO    MainThread:71608 [wandb_setup.py:_flush():67] Current SDK version is 0.19.8
+2025-03-28 22:50:52,811 INFO    MainThread:71608 [wandb_setup.py:_flush():67] Configure stats pid to 71608
+2025-03-28 22:50:52,811 INFO    MainThread:71608 [wandb_setup.py:_flush():67] Loading settings from /Users/mariegoffin/.config/wandb/settings
+2025-03-28 22:50:52,811 INFO    MainThread:71608 [wandb_setup.py:_flush():67] Loading settings from /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/settings
+2025-03-28 22:50:52,811 INFO    MainThread:71608 [wandb_setup.py:_flush():67] Loading settings from environment variables
+2025-03-28 22:50:52,811 INFO    MainThread:71608 [wandb_init.py:setup_run_log_directory():647] Logging user logs to /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_225052-uu4og0hd/logs/debug.log
+2025-03-28 22:50:52,811 INFO    MainThread:71608 [wandb_init.py:setup_run_log_directory():648] Logging internal logs to /Users/mariegoffin/Documents/Master_3/IML/projects/L2D/wandb/run-20250328_225052-uu4og0hd/logs/debug-internal.log
+2025-03-28 22:50:52,811 INFO    MainThread:71608 [wandb_init.py:init():761] calling init triggers
+2025-03-28 22:50:52,811 INFO    MainThread:71608 [wandb_init.py:init():766] wandb.init called with sweep_config: {'decay_ratio': 0.9, 'decay_step_size': 200, 'decayflag': True, 'device': 'cpu', 'entloss_coef': 0.02, 'eps_clip': 0.1, 'et_normalize_coef': 1000, 'feature_set': ['LBs', 'finished_mark', 'normalized_weights'], 'gamma': 1, 'graph_pool_type': 'average', 'hidden_dim': 128, 'hidden_dim_actor': 32, 'hidden_dim_critic': 32, 'high': 99, 'init_quality_flag': False, 'input_dim': 3, 'k_epochs': 10, 'low': 1, 'lr': 2e-05, 'max_updates': 100, 'n_j': 6, 'n_m': 6, 'neighbor_pooling_type': 'sum', 'np_seed_train': 200, 'np_seed_validation': 200, 'num_envs': 8, 'num_layers': 3, 'num_mlp_layers_actor': 2, 'num_mlp_layers_critic': 2, 'num_mlp_layers_feature_extract': 2, 'output_dir': 'results/variable_weights/reward_sweeps/20250328_225037', 'ploss_coef': 2, 'reward_strategy': 'default', 'rewardscale': 0, 'torch_seed': 600, 'validate_every': 20, 'vloss_coef': 1, 'weight_high': 10, 'weight_low': 1, 'wkr_normalize_coef': 100}
+config: {'device': 'cpu', 'n_j': 6, 'n_m': 6, 'rewardscale': 0.0, 'init_quality_flag': True, 'low': 1, 'high': 99, 'weight_low': 1, 'weight_high': 10, 'np_seed_train': 200, 'np_seed_validation': 200, 'torch_seed': 600, 'et_normalize_coef': 1000, 'wkr_normalize_coef': 100, 'num_layers': 3, 'neighbor_pooling_type': 'sum', 'graph_pool_type': 'average', 'input_dim': 3, 'hidden_dim': 128, 'num_mlp_layers_feature_extract': 2, 'num_mlp_layers_actor': 2, 'hidden_dim_actor': 32, 'num_mlp_layers_critic': 2, 'hidden_dim_critic': 32, 'num_envs': 8, 'max_updates': 100, 'lr': 2e-05, 'decayflag': True, 'decay_step_size': 200, 'decay_ratio': 0.9, 'gamma': 1.0, 'k_epochs': 10, 'eps_clip': 0.1, 'vloss_coef': 1.0, 'ploss_coef': 2.0, 'entloss_coef': 0.02, 'config': None, 'sweep': False, 'no_wandb': False, 'feature_set': ["['LBs'", "'finished_mark'", "'normalized_weights']"], 'reward_strategy': 'default', 'validate_every': 20, 'output_dir': 'results/variable_weights/reward_sweeps/20250328_225037', '_wandb': {}}
+2025-03-28 22:50:52,811 INFO    MainThread:71608 [wandb_init.py:init():784] starting backend
+2025-03-28 22:50:52,811 INFO    MainThread:71608 [wandb_init.py:init():788] sending inform_init request
+2025-03-28 22:50:52,838 INFO    MainThread:71608 [backend.py:_multiprocessing_setup():101] multiprocessing start_methods=spawn,fork,forkserver, using: spawn
+2025-03-28 22:50:52,839 INFO    MainThread:71608 [wandb_init.py:init():798] backend started and connected
+2025-03-28 22:50:52,840 INFO    MainThread:71608 [wandb_run.py:_config_callback():1261] config_cb None None {'decay_ratio': 0.9, 'decay_step_size': 200, 'decayflag': True, 'device': 'cpu', 'entloss_coef': 0.02, 'eps_clip': 0.1, 'et_normalize_coef': 1000, 'feature_set': ['LBs', 'finished_mark', 'normalized_weights'], 'gamma': 1, 'graph_pool_type': 'average', 'hidden_dim': 128, 'hidden_dim_actor': 32, 'hidden_dim_critic': 32, 'high': 99, 'init_quality_flag': False, 'input_dim': 3, 'k_epochs': 10, 'low': 1, 'lr': 2e-05, 'max_updates': 100, 'n_j': 6, 'n_m': 6, 'neighbor_pooling_type': 'sum', 'np_seed_train': 200, 'np_seed_validation': 200, 'num_envs': 8, 'num_layers': 3, 'num_mlp_layers_actor': 2, 'num_mlp_layers_critic': 2, 'num_mlp_layers_feature_extract': 2, 'output_dir': 'results/variable_weights/reward_sweeps/20250328_225037', 'ploss_coef': 2, 'reward_strategy': 'default', 'rewardscale': 0, 'torch_seed': 600, 'validate_every': 20, 'vloss_coef': 1, 'weight_high': 10, 'weight_low': 1, 'wkr_normalize_coef': 100}
+2025-03-28 22:50:52,844 INFO    MainThread:71608 [wandb_init.py:init():891] updated telemetry
+2025-03-28 22:50:52,871 INFO    MainThread:71608 [wandb_init.py:init():915] communicating run to backend with 90.0 second timeout
+2025-03-28 22:50:53,484 INFO    MainThread:71608 [wandb_init.py:init():990] starting run threads in backend
+2025-03-28 22:50:55,675 INFO    MainThread:71608 [wandb_run.py:_console_start():2375] atexit reg
+2025-03-28 22:50:55,675 INFO    MainThread:71608 [wandb_run.py:_redirect():2227] redirect: wrap_raw
+2025-03-28 22:50:55,676 INFO    MainThread:71608 [wandb_run.py:_redirect():2292] Wrapping output streams.
+2025-03-28 22:50:55,676 INFO    MainThread:71608 [wandb_run.py:_redirect():2315] Redirects installed.
+2025-03-28 22:50:55,682 INFO    MainThread:71608 [wandb_init.py:init():1032] run started, returning control to user process
+2025-03-28 23:00:02,347 INFO    MainThread:71608 [wandb_run.py:_finish():2112] finishing run marie-goffin-university-of-li-ge/jssp-variable-sum/uu4og0hd
+2025-03-28 23:00:02,348 INFO    MainThread:71608 [wandb_run.py:_atexit_cleanup():2340] got exitcode: 0
+2025-03-28 23:00:02,348 INFO    MainThread:71608 [wandb_run.py:_restore():2322] restore
+2025-03-28 23:00:02,349 INFO    MainThread:71608 [wandb_run.py:_restore():2328] restore done
+2025-03-28 23:00:05,894 INFO    MainThread:71608 [wandb_run.py:_restore():2322] restore
+2025-03-28 23:00:05,894 INFO    MainThread:71608 [wandb_run.py:_restore():2328] restore done
+2025-03-28 23:00:05,894 ERROR   MainThread:71608 [wandb_run.py:_atexit_cleanup():2361] Problem finishing run
+Traceback (most recent call last):
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 2352, in _atexit_cleanup
+    self._on_finish()
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 2609, in _on_finish
+    wait_with_progress(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/mailbox/wait_with_progress.py", line 24, in wait_with_progress
+    return wait_all_with_progress(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/mailbox/wait_with_progress.py", line 87, in wait_all_with_progress
+    return asyncio_compat.run(progress_loop_with_timeout)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/lib/asyncio_compat.py", line 30, in run
+    return future.result()
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/concurrent/futures/_base.py", line 444, in result
+    return self.__get_result()
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/lib/asyncio_compat.py", line 74, in run
+    return asyncio.run(self._run_or_cancel(fn))
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/lib/asyncio_compat.py", line 98, in _run_or_cancel
+    return fn_task.result()
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/mailbox/wait_with_progress.py", line 82, in progress_loop_with_timeout
+    return await _wait_handles_async(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/contextlib.py", line 120, in __exit__
+    next(self.gen)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/lib/asyncio_compat.py", line 208, in cancel_on_exit
+    raise exception
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 2587, in _display_finish_stats
+    task_group.start_soon(loop_poll_exit())
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/contextlib.py", line 178, in __aexit__
+    await self.gen.__anext__()
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/lib/asyncio_compat.py", line 190, in open_task_group
+    await task_group._wait_all()
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/lib/asyncio_compat.py", line 159, in _wait_all
+    raise exc
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 2565, in loop_update_printer
+    progress_printer.update(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/lib/progress.py", line 133, in update
+    self._update_single_run(progress[0])
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/lib/progress.py", line 182, in _update_single_run
+    self._update_progress_text(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/lib/progress.py", line 225, in _update_progress_text
+    self._printer.progress_update(text + "\r", progress)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/lib/printer.py", line 326, in progress_update
+    wandb.termlog(f"{next(self._progress)} {text}", newline=False)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/errors/term.py", line 172, in termlog
+    _log(
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/errors/term.py", line 358, in _log
+    click.echo(string, file=sys.stderr, nl=newline)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/click/utils.py", line 319, in echo
+    file.flush()
+BrokenPipeError: [Errno 32] Broken pipe
+2025-03-28 23:00:06,893 INFO    MsgRouterThr:71608 [mailbox.py:close():129] Closing mailbox, abandoning 0 handles.

@@ -1,9 +1,11 @@
+import time
 import numpy as np
 import torch
 from src.environments.JSSP_Env import SJSSP
 from src.utils.mb_agg import g_pool_cal
 from src.utils.agent_utils import greedy_select_action
 from Params import configs
+from src.utils.testing import *
 
 def validate_weighted(vali_set, model, feature_set=None):
     """
@@ -183,7 +185,7 @@ def compare_validation_methods(vali_set, model, feature_set=None):
         feature_set: Set of features to use
         
     Returns:
-        dict: Dictionary with performance metrics
+        dict: Dictionary with performance metrics and raw weighted sum values
     """
     # Set default feature set if not provided
     if feature_set is None:
@@ -196,7 +198,7 @@ def compare_validation_methods(vali_set, model, feature_set=None):
     # Initialize environment
     env = SJSSP(n_j=N_JOBS, n_m=N_MACHINES, feature_set=feature_set)
     
-    # Results dictionary
+    # Results dictionary for storing weighted sums
     results = {
         "L2D": [],
         "SPT": [],
@@ -204,8 +206,13 @@ def compare_validation_methods(vali_set, model, feature_set=None):
         "SRPT": []
     }
     
-    # Evaluate each method on all instances
-    for instance_data in vali_set:
+    # Device setup
+    device = torch.device(configs.device)
+    
+    # Evaluate baseline methods on all instances
+    start_time = time.time()
+    
+    for instance_idx, instance_data in enumerate(vali_set):
         # Extract times and machines
         times = instance_data[0]
         machines = instance_data[1]
@@ -222,68 +229,40 @@ def compare_validation_methods(vali_set, model, feature_set=None):
         # Create instance
         instance = (times, machines, weights)
         
-        # Test SPT
-        adj, fea, candidate, mask = env.reset(instance)
-        while not env.done():
-            eligible_ops = candidate[~mask]
-            proc_times = []
-            for op in eligible_ops:
-                job_idx = op // env.number_of_machines
-                op_idx = op % env.number_of_machines
-                proc_times.append(env.dur[job_idx, op_idx])
-            action_idx = np.argmin(np.array(proc_times))
-            action = eligible_ops[action_idx]
-            adj, fea, reward, done, candidate, mask = env.step(action)
-        results["SPT"].append(env.weighted_sum)
+        # Test SPT, WSPT, and SRPT using their test functions
+        _, spt_weighted_sum = test_spt(env, instance)
+        results["SPT"].append(spt_weighted_sum)
         
-        # Test WSPT
-        adj, fea, candidate, mask = env.reset(instance)
-        while not env.done():
-            eligible_ops = candidate[~mask]
-            wspt_values = []
-            for op in eligible_ops:
-                job_idx = op // env.number_of_machines
-                op_idx = op % env.number_of_machines
-                wspt_values.append(env.weights[job_idx] / env.dur[job_idx, op_idx])
-            action_idx = np.argmax(np.array(wspt_values))
-            action = eligible_ops[action_idx]
-            adj, fea, reward, done, candidate, mask = env.step(action)
-        results["WSPT"].append(env.weighted_sum)
+        _, wspt_weighted_sum = test_wspt(env, instance)
+        results["WSPT"].append(wspt_weighted_sum)
         
-        # Test SRPT
-        adj, fea, candidate, mask = env.reset(instance)
-        while not env.done():
-            eligible_ops = candidate[~mask]
-            
-            # Calculate remaining processing time for each job
-            remaining_times = []
-            for op in eligible_ops:
-                job_idx = op // env.number_of_machines
-                
-                # Sum remaining processing times for this job
-                remaining_time = 0
-                for m in range(env.number_of_machines):
-                    if env.finished_mark[job_idx, m] == 0:  # If operation not completed
-                        remaining_time += env.dur[job_idx, m]
-                
-                remaining_times.append(remaining_time)
-            
-            # Select job with minimum remaining processing time
-            action_idx = np.argmin(np.array(remaining_times))
-            action = eligible_ops[action_idx]
-            adj, fea, reward, done, candidate, mask = env.step(action)
-        results["SRPT"].append(env.weighted_sum)
+        _, srpt_weighted_sum = test_srpt(env, instance)
+        results["SRPT"].append(srpt_weighted_sum)
+        
+        # Print progress every 10 instances
+        if (instance_idx + 1) % 10 == 0:
+            elapsed = time.time() - start_time
+            print(f"Validated {instance_idx + 1}/{len(vali_set)} instances in {elapsed:.2f}s")
     
-    # Use the validate_weighted function for L2D
+    # Use the original validate_weighted function for L2D
     validation_results = validate_weighted(vali_set, model, feature_set=feature_set)
     results["L2D"] = validation_results['weighted_sum'].tolist()
     
     # Calculate average metrics
     averages = {}
     win_counts = {"L2D": 0, "SPT": 0, "WSPT": 0, "SRPT": 0}
+    baseline_weighted_sums = {}
     
     for method in results:
+        # Convert to numpy array for easier calculations
+        if isinstance(results[method], list):
+            results[method] = np.array(results[method])
+        
         averages[method] = np.mean(results[method])
+        
+        # Store baseline weighted sums for the return dictionary
+        if method != "L2D":
+            baseline_weighted_sums[f"baseline_{method.lower()}_weighted_sum"] = averages[method]
     
     # Track win statistics
     for i in range(len(vali_set)):
@@ -301,21 +280,61 @@ def compare_validation_methods(vali_set, model, feature_set=None):
         print(f"{method}: {count}/{len(vali_set)} ({percent:.2f}%)")
     
     # Calculate performance metrics
+    total_instances = len(vali_set) if len(vali_set) > 0 else 1
     comparison_metrics = {
-        'win_rate': (win_counts["L2D"] / len(vali_set)) * 100 if len(vali_set) > 0 else 0,
-        'win_vs_spt': (win_counts["L2D"] / (win_counts["L2D"] + win_counts["SPT"])) * 100 
+        # Win rate metrics for L2D (renamed for clarity)
+        'l2d_win_rate': (win_counts["L2D"] / total_instances) * 100,
+        
+        # Head-to-head win rates
+        'l2d_win_vs_spt': (win_counts["L2D"] / (win_counts["L2D"] + win_counts["SPT"])) * 100 
                      if (win_counts["L2D"] + win_counts["SPT"]) > 0 else 0,
-        'win_vs_wspt': (win_counts["L2D"] / (win_counts["L2D"] + win_counts["WSPT"])) * 100 
+        'l2d_win_vs_wspt': (win_counts["L2D"] / (win_counts["L2D"] + win_counts["WSPT"])) * 100 
                       if (win_counts["L2D"] + win_counts["WSPT"]) > 0 else 0,
-        'win_vs_srpt': (win_counts["L2D"] / (win_counts["L2D"] + win_counts["SRPT"])) * 100 
+        'l2d_win_vs_srpt': (win_counts["L2D"] / (win_counts["L2D"] + win_counts["SRPT"])) * 100 
                      if (win_counts["L2D"] + win_counts["SRPT"]) > 0 else 0,
+        
+        # Overall win rates for all methods (new)
+        'win_rate_l2d': (win_counts["L2D"] / total_instances) * 100,
+        'win_rate_spt': (win_counts["SPT"] / total_instances) * 100,
+        'win_rate_wspt': (win_counts["WSPT"] / total_instances) * 100,
+        'win_rate_srpt': (win_counts["SRPT"] / total_instances) * 100,
+        
+        # Weighted sum average
         'avg_weighted_sum': averages["L2D"],
+        
+        # Improvement percentages
         'improvement_over_spt': ((averages["SPT"] - averages["L2D"]) / averages["SPT"]) * 100 
                                if averages["SPT"] != 0 else 0,
         'improvement_over_wspt': ((averages["WSPT"] - averages["L2D"]) / averages["WSPT"]) * 100 
                                 if averages["WSPT"] != 0 else 0,
         'improvement_over_srpt': ((averages["SRPT"] - averages["L2D"]) / averages["SRPT"]) * 100 
-                              if averages["SRPT"] != 0 else 0
+                               if averages["SRPT"] != 0 else 0
     }
+    
+    # For backward compatibility (to be phased out)
+    comparison_metrics['win_rate'] = comparison_metrics['l2d_win_rate']
+    comparison_metrics['win_vs_spt'] = comparison_metrics['l2d_win_vs_spt'] 
+    comparison_metrics['win_vs_wspt'] = comparison_metrics['l2d_win_vs_wspt']
+    comparison_metrics['win_vs_srpt'] = comparison_metrics['l2d_win_vs_srpt']
+    
+    # Include value loss and policy entropy if available
+    if 'value_loss' in validation_results:
+        comparison_metrics['value_loss'] = validation_results['value_loss']
+    
+    if 'policy_entropy' in validation_results:
+        comparison_metrics['policy_entropy'] = validation_results['policy_entropy']
+    
+    # Merge baseline weighted sums into the metrics
+    comparison_metrics.update(baseline_weighted_sums)
+    
+    # Also include the actual results for detailed analysis
+    comparison_metrics['method_results'] = {
+        method: values.tolist() if isinstance(values, np.ndarray) else values 
+        for method, values in results.items()
+    }
+    
+    # Add the win counts directly
+    for method in win_counts:
+        comparison_metrics[f'win_count_{method.lower()}'] = win_counts[method]
     
     return comparison_metrics

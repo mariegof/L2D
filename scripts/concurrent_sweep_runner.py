@@ -86,8 +86,10 @@ def load_sweep_config(args):
     
     return config
 
-def create_directory_structure():
+def create_directory_structure(output_dir=None):
     """Create the standard directory structure if it doesn't exist."""
+    from pathlib import Path
+    
     directories = [
         'configs',
         'data/instances/uniform_weights',
@@ -97,8 +99,22 @@ def create_directory_structure():
         'models/best',
     ]
     
+    # Create base directories
     for directory in directories:
         Path(directory).mkdir(parents=True, exist_ok=True)
+    
+    # If an output directory is specified, create sweep-specific structure
+    if output_dir:
+        sweep_directories = [
+            f'{output_dir}/runs',            # Individual run outputs
+            f'{output_dir}/artifacts/latex',  # LaTeX tables
+            f'{output_dir}/artifacts/plots',  # Generated plots
+            f'{output_dir}/best_run',         # Best run info
+            f'{output_dir}/best_run/model',   # Best run model
+        ]
+        
+        for directory in sweep_directories:
+            Path(directory).mkdir(parents=True, exist_ok=True)
     
     if os.path.exists('results'):
         print("Directory structure verified.")
@@ -403,12 +419,9 @@ python scripts/concurrent_sweep_runner.py --config configs/sweep_config.yaml --s
         return None
 
 def download_sweep_artifacts(project, sweep_id, entity, output_dir):
-    """Download artifacts from the best run in the sweep."""
+    """Download artifacts from the best run in the sweep with robust error handling."""
     try:
         print(f"Extracting artifacts from best run in sweep {sweep_id}...")
-        
-        # Use the standard directory structure from ReportWriter
-        from src.reporting import ReportWriter
         
         # Create writer with full directory structure
         writer = ReportWriter(output_dir, create_all=True)
@@ -474,57 +487,97 @@ def download_sweep_artifacts(project, sweep_id, entity, output_dir):
         
         writer.write_metadata(best_config, "best_config.yaml", "best_run")
         
-        # Download only the most recent learning curves image
-        files = best_run.files()
-        # Find the latest learning curve
-        latest_learning_curve = None
-        latest_step = -1
-
-        for file in files:
-            if "media/images" in file.name and "learning_curves" in file.name:
-                try:
-                    # Extract step number from filename
-                    # Pattern like: learning_curves_220_b0750b1240a41695d5dc.png
-                    step_str = file.name.split('learning_curves_')[1].split('_')[0]
-                    step = int(step_str)
-                    
-                    if step > latest_step:
-                        latest_step = step
-                        latest_learning_curve = file
-                except Exception as e:
-                    print(f"Error parsing filename {file.name}: {e}")
-                    # Keep this file as a fallback if we can't parse step
-                    if latest_learning_curve is None:
-                        latest_learning_curve = file
-
-        # Download the latest learning curve
-        if latest_learning_curve:
-            try:
-                # Download with original filename
-                media_dir = os.path.join(output_dir, "best_run")
-                os.makedirs(media_dir, exist_ok=True)
-                latest_learning_curve.download(root=media_dir, replace=True)
-                download_path = os.path.join(media_dir, os.path.basename(latest_learning_curve.name))
-                print(f"Downloaded latest learning curves (step {latest_step}) to {download_path}")
-                
-                # Optionally copy to a standardized filename for easy reference
+        # Find and copy the learning curves plot from the best run to artifacts folder
+        run_plots_dir = os.path.join(output_dir, "runs", best_run.id)
+        if os.path.exists(run_plots_dir):
+            source_plot = os.path.join(run_plots_dir, "learning_curves.png")
+            dest_plot = os.path.join(writer.get_directory("best_run"), "learning_curves.png")
+            
+            # Copy if it exists
+            if os.path.exists(source_plot):
                 import shutil
-                standard_path = os.path.join(media_dir, "learning_curves.png")
-                if os.path.exists(download_path):
-                    shutil.copy(download_path, standard_path)
-                    print(f"Copied to standard filename: {standard_path}")
-                    
-            except Exception as e:
-                print(f"Error downloading learning curves: {e}")
-                traceback.print_exc()
+                shutil.copy(source_plot, dest_plot)
+                print(f"Copied learning curves from best run to {dest_plot}")
         
-        # Save best model weights if available
-        artifacts = best_run.logged_artifacts()
+        # Download the latest learning curves image with retry mechanism
+        try:
+            files = best_run.files()
+            # Find the latest learning curve
+            latest_learning_curve = None
+            latest_step = -1
+
+            for file in files:
+                if "media/images" in file.name and "learning_curves" in file.name:
+                    try:
+                        # Extract step number from filename
+                        # Pattern like: learning_curves_220_b0750b1240a41695d5dc.png
+                        step_str = file.name.split('learning_curves_')[1].split('_')[0]
+                        step = int(step_str)
+                        
+                        if step > latest_step:
+                            latest_step = step
+                            latest_learning_curve = file
+                    except Exception as e:
+                        print(f"Error parsing filename {file.name}: {e}")
+                        # Keep this file as a fallback if we can't parse step
+                        if latest_learning_curve is None:
+                            latest_learning_curve = file
+
+            # Download the latest learning curve with retry mechanism
+            if latest_learning_curve:
+                max_retries = 3
+                retry_delay = 5  # seconds
+                
+                for attempt in range(max_retries):
+                    try:
+                        # Download with original filename
+                        media_dir = os.path.join(output_dir, "best_run")
+                        os.makedirs(media_dir, exist_ok=True)
+                        latest_learning_curve.download(root=media_dir, replace=True)
+                        download_path = os.path.join(media_dir, os.path.basename(latest_learning_curve.name))
+                        print(f"Downloaded latest learning curves (step {latest_step}) to {download_path}")
+                        
+                        # Copy to a standardized filename for easy reference
+                        import shutil
+                        standard_path = os.path.join(media_dir, "learning_curves.png")
+                        if os.path.exists(download_path):
+                            shutil.copy(download_path, standard_path)
+                            print(f"Copied to standard filename: {standard_path}")
+                        
+                        break  # Success
+                    except Exception as e:
+                        print(f"Error downloading learning curves (attempt {attempt+1}/{max_retries}): {e}")
+                        if attempt < max_retries - 1:
+                            print(f"Retrying in {retry_delay} seconds...")
+                            time.sleep(retry_delay)
+                            retry_delay *= 2  # Exponential backoff
+        except Exception as e:
+            print(f"Error processing image files: {e}")
+        
+        # Save best model weights with retry mechanism
+        artifacts = []
+        try:
+            artifacts = best_run.logged_artifacts()
+        except Exception as e:
+            print(f"Error accessing logged artifacts: {e}")
+        
         for artifact in artifacts:
             if "model" in artifact.type and ("best" in artifact.name or "final" in artifact.name):
-                model_dir = writer.get_directory("best_run_model")
-                artifact.download(root=model_dir)
-                print(f"Downloaded model weights from best run to {model_dir}")
+                max_retries = 3
+                retry_delay = 5  # seconds
+                
+                for attempt in range(max_retries):
+                    try:
+                        model_dir = writer.get_directory("best_run_model")
+                        artifact.download(root=model_dir)
+                        print(f"Downloaded model weights from best run to {model_dir}")
+                        break  # Success
+                    except Exception as e:
+                        print(f"Error downloading model (attempt {attempt+1}/{max_retries}): {e}")
+                        if attempt < max_retries - 1:
+                            print(f"Retrying in {retry_delay} seconds...")
+                            time.sleep(retry_delay)
+                            retry_delay *= 2  # Exponential backoff
         
         print(f"Best run artifacts saved to {writer.get_directory('best_run')}")
         return True
@@ -591,6 +644,10 @@ def main():
             sweep_info_path = os.path.join(output_dir, 'sweep_info.yaml')
             with open(sweep_info_path, 'w') as f:
                 yaml.dump(sweep_info, f)
+                
+            # Create output directory and sweep structure
+            create_directory_structure(output_dir)  # Set up run directories
+            print(f"Created sweep directory structure in {output_dir}")
                 
             # Determine the number of parallel workers
             workers = config["workers"] if config["workers"] is not None else max(1, multiprocessing.cpu_count() - 1)

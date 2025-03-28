@@ -1,0 +1,85 @@
+wandb_version: 1
+
+decay_ratio:
+  value: 0.9
+decay_step_size:
+  value: 200
+decayflag:
+  value: true
+device:
+  value: cpu
+entloss_coef:
+  value: 0.02
+eps_clip:
+  value: 0.1
+et_normalize_coef:
+  value: 1000
+feature_set:
+  value:
+  - LBs
+  - finished_mark
+  - normalized_weights
+gamma:
+  value: 1
+graph_pool_type:
+  value: average
+hidden_dim:
+  value: 128
+hidden_dim_actor:
+  value: 32
+hidden_dim_critic:
+  value: 32
+high:
+  value: 99
+init_quality_flag:
+  value: false
+input_dim:
+  value: 3
+k_epochs:
+  value: 10
+low:
+  value: 1
+lr:
+  value: 2.0e-05
+max_updates:
+  value: 100
+n_j:
+  value: 6
+n_m:
+  value: 6
+neighbor_pooling_type:
+  value: sum
+np_seed_train:
+  value: 200
+np_seed_validation:
+  value: 200
+num_envs:
+  value: 4
+num_layers:
+  value: 3
+num_mlp_layers_actor:
+  value: 2
+num_mlp_layers_critic:
+  value: 2
+num_mlp_layers_feature_extract:
+  value: 2
+output_dir:
+  value: results/variable_weights/environment_sweeps/20250328_185119
+ploss_coef:
+  value: 2
+reward_strategy:
+  value: default
+rewardscale:
+  value: 0.1714781782059811
+torch_seed:
+  value: 600
+validate_every:
+  value: 20
+vloss_coef:
+  value: 1
+weight_high:
+  value: 10
+weight_low:
+  value: 1
+wkr_normalize_coef:
+  value: 100

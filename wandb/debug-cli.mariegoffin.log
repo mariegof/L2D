@@ -6462,3 +6462,2853 @@ wandb.sdk.interface.router.MessageRouterClosedError
 2025-03-28 13:00:54 INFO Cleaning up finished run: x2yleulk
 2025-03-28 13:00:54 INFO Cleaning up finished run: iyvfzk4b
 2025-03-28 13:00:59 INFO Cleaning up finished run: sx58ggwu
+2025-03-28 15:49:18 INFO Running runs: []
+2025-03-28 15:49:18 INFO Running runs: []
+2025-03-28 15:49:18 INFO Running runs: []
+2025-03-28 15:49:18 INFO Running runs: []
+2025-03-28 15:49:18 INFO Running runs: []
+2025-03-28 15:49:18 INFO Agent received command: run
+2025-03-28 15:49:18 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_154909
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 15:49:18 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_154909 --ploss_coef=2 --reward_strategy=default --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 15:49:18 INFO Agent received command: run
+2025-03-28 15:49:18 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_154909
+	ploss_coef: 2
+	reward_strategy: wspt_guided
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 15:49:18 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_154909 --ploss_coef=2 --reward_strategy=wspt_guided --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 15:49:18 INFO Agent received command: run
+2025-03-28 15:49:18 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_154909
+	ploss_coef: 2
+	reward_strategy: potential_based
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 15:49:18 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_154909 --ploss_coef=2 --reward_strategy=potential_based --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 15:49:19 INFO Agent received command: run
+2025-03-28 15:49:19 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_154909
+	ploss_coef: 2
+	reward_strategy: critical_path
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 15:49:19 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_154909 --ploss_coef=2 --reward_strategy=critical_path --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 15:49:19 INFO Agent received command: run
+2025-03-28 15:49:19 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_154909
+	ploss_coef: 2
+	reward_strategy: wspt
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 15:49:19 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_154909 --ploss_coef=2 --reward_strategy=wspt --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 15:49:23 INFO Running runs: ['ra0ejytn']
+2025-03-28 15:49:23 INFO Running runs: ['hrc9d69e']
+2025-03-28 15:49:23 INFO Running runs: ['5xjtxgfg']
+2025-03-28 15:49:24 INFO Running runs: ['1l1ll70q']
+2025-03-28 15:49:24 INFO Running runs: ['4dv6q4q6']
+2025-03-28 15:56:38 INFO Cleaning up finished run: 1l1ll70q
+2025-03-28 15:56:38 INFO Cleaning up finished run: hrc9d69e
+2025-03-28 15:56:38 INFO Cleaning up finished run: ra0ejytn
+2025-03-28 15:56:38 INFO Cleaning up finished run: 5xjtxgfg
+2025-03-28 15:56:40 INFO Cleaning up finished run: 4dv6q4q6
+2025-03-28 16:01:45 INFO Running runs: []
+2025-03-28 16:01:45 INFO Running runs: []
+2025-03-28 16:01:45 INFO Running runs: []
+2025-03-28 16:01:45 INFO Running runs: []
+2025-03-28 16:01:45 INFO Running runs: []
+2025-03-28 16:01:45 INFO Agent received command: run
+2025-03-28 16:01:45 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/environment_sweeps/20250328_160136
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0.4770012143556693
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 16:01:45 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/environment_sweeps/20250328_160136 --ploss_coef=2 --reward_strategy=default --rewardscale=0.4770012143556693 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 16:01:46 INFO Agent received command: run
+2025-03-28 16:01:46 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 4
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/environment_sweeps/20250328_160136
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0.4780753001867116
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 16:01:46 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=4 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/environment_sweeps/20250328_160136 --ploss_coef=2 --reward_strategy=default --rewardscale=0.4780753001867116 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 16:01:46 INFO Agent received command: run
+2025-03-28 16:01:46 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/environment_sweeps/20250328_160136
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0.3792698614491859
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 16:01:46 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/environment_sweeps/20250328_160136 --ploss_coef=2 --reward_strategy=default --rewardscale=0.3792698614491859 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 16:01:50 INFO Agent received command: run
+2025-03-28 16:01:50 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 4
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/environment_sweeps/20250328_160136
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0.0946122130856275
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 16:01:50 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=4 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/environment_sweeps/20250328_160136 --ploss_coef=2 --reward_strategy=default --rewardscale=0.0946122130856275 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 16:01:50 INFO Running runs: ['gn41mqsz']
+2025-03-28 16:01:50 INFO Agent received command: run
+2025-03-28 16:01:50 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 4
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/environment_sweeps/20250328_160136
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0.4806727248981243
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 16:01:50 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=4 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/environment_sweeps/20250328_160136 --ploss_coef=2 --reward_strategy=default --rewardscale=0.4806727248981243 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 16:01:51 INFO Running runs: ['y0i31wom']
+2025-03-28 16:01:51 INFO Running runs: ['3txzg86l']
+2025-03-28 16:01:55 INFO Running runs: ['2ksb82bn']
+2025-03-28 16:01:55 INFO Running runs: ['wrgdmoxl']
+2025-03-28 16:07:06 INFO Cleaning up finished run: y0i31wom
+2025-03-28 16:07:10 INFO Cleaning up finished run: 2ksb82bn
+2025-03-28 16:07:11 INFO Cleaning up finished run: wrgdmoxl
+2025-03-28 16:08:44 INFO Cleaning up finished run: gn41mqsz
+2025-03-28 16:08:49 INFO Cleaning up finished run: 3txzg86l
+2025-03-28 16:25:44 INFO Running runs: []
+2025-03-28 16:25:44 INFO Running runs: []
+2025-03-28 16:25:44 INFO Running runs: []
+2025-03-28 16:25:44 INFO Running runs: []
+2025-03-28 16:25:44 INFO Running runs: []
+2025-03-28 16:25:44 INFO Agent received command: run
+2025-03-28 16:25:44 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/environment_sweeps/20250328_162535
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0.14864229010519692
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 16:25:44 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/environment_sweeps/20250328_162535 --ploss_coef=2 --reward_strategy=default --rewardscale=0.14864229010519692 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 16:25:45 INFO Agent received command: run
+2025-03-28 16:25:45 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/environment_sweeps/20250328_162535
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0.4223236072372923
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 16:25:45 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/environment_sweeps/20250328_162535 --ploss_coef=2 --reward_strategy=default --rewardscale=0.4223236072372923 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 16:25:45 INFO Agent received command: run
+2025-03-28 16:25:45 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 4
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/environment_sweeps/20250328_162535
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0.10969114369692728
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 16:25:45 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=4 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/environment_sweeps/20250328_162535 --ploss_coef=2 --reward_strategy=default --rewardscale=0.10969114369692728 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 16:25:45 INFO Agent received command: run
+2025-03-28 16:25:45 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 4
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/environment_sweeps/20250328_162535
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0.20594821743641828
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 16:25:45 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=4 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/environment_sweeps/20250328_162535 --ploss_coef=2 --reward_strategy=default --rewardscale=0.20594821743641828 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 16:25:45 INFO Agent received command: run
+2025-03-28 16:25:45 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 4
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/environment_sweeps/20250328_162535
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0.23297134786437973
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 16:25:45 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=4 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/environment_sweeps/20250328_162535 --ploss_coef=2 --reward_strategy=default --rewardscale=0.23297134786437973 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 16:25:49 INFO Running runs: ['4xaqfda1']
+2025-03-28 16:25:50 INFO Running runs: ['5swr7bjt']
+2025-03-28 16:25:50 INFO Running runs: ['ts602pg4']
+2025-03-28 16:25:50 INFO Running runs: ['5280k5zk']
+2025-03-28 16:25:50 INFO Running runs: ['yiyjlvqx']
+2025-03-28 16:31:26 INFO Cleaning up finished run: 5280k5zk
+2025-03-28 16:31:30 INFO Cleaning up finished run: ts602pg4
+2025-03-28 16:31:34 INFO Cleaning up finished run: yiyjlvqx
+2025-03-28 16:33:08 INFO Cleaning up finished run: 4xaqfda1
+2025-03-28 16:33:15 INFO Cleaning up finished run: 5swr7bjt
+2025-03-28 17:10:08 INFO Running runs: []
+2025-03-28 17:10:08 INFO Running runs: []
+2025-03-28 17:10:08 INFO Running runs: []
+2025-03-28 17:10:08 INFO Running runs: []
+2025-03-28 17:10:08 INFO Agent received command: run
+2025-03-28 17:10:08 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/environment_sweeps/20250328_170958
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0.12890821093300153
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 17:10:08 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/environment_sweeps/20250328_170958 --ploss_coef=2 --reward_strategy=default --rewardscale=0.12890821093300153 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 17:10:09 INFO Agent received command: run
+2025-03-28 17:10:09 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 16
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/environment_sweeps/20250328_170958
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0.4288745828950256
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 17:10:09 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=16 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/environment_sweeps/20250328_170958 --ploss_coef=2 --reward_strategy=default --rewardscale=0.4288745828950256 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 17:10:09 INFO Running runs: []
+2025-03-28 17:10:09 INFO Agent received command: run
+2025-03-28 17:10:09 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 16
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/environment_sweeps/20250328_170958
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0.4351791578968231
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 17:10:09 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=16 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/environment_sweeps/20250328_170958 --ploss_coef=2 --reward_strategy=default --rewardscale=0.4351791578968231 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 17:10:09 INFO Agent received command: run
+2025-03-28 17:10:09 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 4
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/environment_sweeps/20250328_170958
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0.03424749924294429
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 17:10:09 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=4 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/environment_sweeps/20250328_170958 --ploss_coef=2 --reward_strategy=default --rewardscale=0.03424749924294429 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 17:10:11 INFO Agent received command: run
+2025-03-28 17:10:11 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 16
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/environment_sweeps/20250328_170958
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0.404227625871318
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 17:10:11 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=16 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/environment_sweeps/20250328_170958 --ploss_coef=2 --reward_strategy=default --rewardscale=0.404227625871318 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 17:10:13 INFO Running runs: ['l849bimc']
+2025-03-28 17:10:14 INFO Running runs: ['mpvi8qqo']
+2025-03-28 17:10:14 INFO Running runs: ['pmlytjk1']
+2025-03-28 17:10:14 INFO Running runs: ['w16k5d39']
+2025-03-28 17:10:16 INFO Running runs: ['ak7kk723']
+2025-03-28 17:14:36 INFO Cleaning up finished run: w16k5d39
+2025-03-28 17:17:41 INFO Cleaning up finished run: l849bimc
+2025-03-28 17:22:01 INFO Cleaning up finished run: pmlytjk1
+2025-03-28 17:22:07 INFO Cleaning up finished run: ak7kk723
+2025-03-28 17:22:11 INFO Cleaning up finished run: mpvi8qqo
+2025-03-28 18:36:18 INFO Running runs: []
+2025-03-28 18:36:18 INFO Running runs: []
+2025-03-28 18:36:18 INFO Running runs: []
+2025-03-28 18:36:18 INFO Running runs: []
+2025-03-28 18:36:18 INFO Running runs: []
+2025-03-28 18:36:18 INFO Agent received command: run
+2025-03-28 18:36:18 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 4
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/environment_sweeps/20250328_172546
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0.3837534901816322
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 18:36:18 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=4 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/environment_sweeps/20250328_172546 --ploss_coef=2 --reward_strategy=default --rewardscale=0.3837534901816322 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 18:36:18 INFO Agent received command: run
+2025-03-28 18:36:18 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 4
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/environment_sweeps/20250328_172546
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0.01400217353116706
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 18:36:18 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=4 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/environment_sweeps/20250328_172546 --ploss_coef=2 --reward_strategy=default --rewardscale=0.01400217353116706 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 18:36:18 INFO Agent received command: run
+2025-03-28 18:36:18 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 16
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/environment_sweeps/20250328_172546
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0.3111025048237565
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 18:36:18 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=16 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/environment_sweeps/20250328_172546 --ploss_coef=2 --reward_strategy=default --rewardscale=0.3111025048237565 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 18:36:19 INFO Agent received command: run
+2025-03-28 18:36:19 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/environment_sweeps/20250328_172546
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0.4470997720000339
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 18:36:19 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/environment_sweeps/20250328_172546 --ploss_coef=2 --reward_strategy=default --rewardscale=0.4470997720000339 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 18:36:19 INFO Agent received command: run
+2025-03-28 18:36:19 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 4
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/environment_sweeps/20250328_172546
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0.1636225819603616
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 18:36:19 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=4 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/environment_sweeps/20250328_172546 --ploss_coef=2 --reward_strategy=default --rewardscale=0.1636225819603616 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 18:36:23 INFO Running runs: ['clwawin7']
+2025-03-28 18:36:23 INFO Running runs: ['sryaupa4']
+2025-03-28 18:36:23 INFO Running runs: ['4j3fseah']
+2025-03-28 18:36:24 INFO Running runs: ['2ttpq9xx']
+2025-03-28 18:36:24 INFO Running runs: ['h9ejc4xk']
+2025-03-28 18:41:12 INFO Cleaning up finished run: clwawin7
+2025-03-28 18:41:12 INFO Cleaning up finished run: sryaupa4
+2025-03-28 18:41:13 INFO Cleaning up finished run: h9ejc4xk
+2025-03-28 18:43:06 INFO Cleaning up finished run: 2ttpq9xx
+2025-03-28 18:45:35 INFO Cleaning up finished run: 4j3fseah
+2025-03-28 18:51:36 INFO Running runs: []
+2025-03-28 18:51:36 INFO Running runs: []
+2025-03-28 18:51:36 INFO Running runs: []
+2025-03-28 18:51:36 INFO Running runs: []
+2025-03-28 18:51:36 INFO Running runs: []
+2025-03-28 18:51:36 INFO Agent received command: run
+2025-03-28 18:51:36 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 16
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/environment_sweeps/20250328_185119
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0.05109499688397062
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 18:51:36 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=16 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/environment_sweeps/20250328_185119 --ploss_coef=2 --reward_strategy=default --rewardscale=0.05109499688397062 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 18:51:41 INFO Running runs: ['dt5fgkhv']
+2025-03-28 18:52:05 INFO Agent received command: run
+2025-03-28 18:52:05 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/environment_sweeps/20250328_185119
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0.04592042306234617
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 18:52:05 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/environment_sweeps/20250328_185119 --ploss_coef=2 --reward_strategy=default --rewardscale=0.04592042306234617 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 18:52:05 INFO Agent received command: run
+2025-03-28 18:52:05 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/environment_sweeps/20250328_185119
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0.4878022101340818
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 18:52:05 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/environment_sweeps/20250328_185119 --ploss_coef=2 --reward_strategy=default --rewardscale=0.4878022101340818 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 18:52:05 INFO Agent received command: run
+2025-03-28 18:52:05 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 4
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/environment_sweeps/20250328_185119
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0.06196031447286093
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 18:52:05 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=4 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/environment_sweeps/20250328_185119 --ploss_coef=2 --reward_strategy=default --rewardscale=0.06196031447286093 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 18:52:10 INFO Running runs: ['0g0fye2t']
+2025-03-28 18:52:10 INFO Running runs: ['61d5474t']
+2025-03-28 18:52:10 INFO Running runs: ['qployrvm']
+2025-03-28 18:52:15 INFO Agent received command: run
+2025-03-28 18:52:15 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 4
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/environment_sweeps/20250328_185119
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0.1714781782059811
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 18:52:15 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=4 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/environment_sweeps/20250328_185119 --ploss_coef=2 --reward_strategy=default --rewardscale=0.1714781782059811 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 18:52:20 INFO Running runs: ['33bwtolg']
+2025-03-28 18:58:02 INFO Cleaning up finished run: qployrvm
+2025-03-28 18:58:16 INFO Cleaning up finished run: 33bwtolg
+2025-03-28 19:00:36 INFO Cleaning up finished run: 0g0fye2t
+2025-03-28 19:00:38 INFO Cleaning up finished run: 61d5474t
+2025-03-28 19:02:43 INFO Cleaning up finished run: dt5fgkhv
+2025-03-28 19:15:11 INFO Running runs: []
+2025-03-28 19:15:11 INFO Running runs: []
+2025-03-28 19:15:11 INFO Running runs: []
+2025-03-28 19:15:11 INFO Running runs: []
+2025-03-28 19:15:11 INFO Running runs: []
+2025-03-28 19:15:11 INFO Agent received command: run
+2025-03-28 19:15:11 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_191501
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 19:15:11 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_191501 --ploss_coef=2 --reward_strategy=default --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 19:15:12 INFO Agent received command: run
+2025-03-28 19:15:12 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_191501
+	ploss_coef: 2
+	reward_strategy: wspt_guided
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 19:15:12 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_191501 --ploss_coef=2 --reward_strategy=wspt_guided --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 19:15:12 INFO Agent received command: run
+2025-03-28 19:15:12 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_191501
+	ploss_coef: 2
+	reward_strategy: potential_based
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 19:15:12 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_191501 --ploss_coef=2 --reward_strategy=potential_based --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 19:15:12 INFO Agent received command: run
+2025-03-28 19:15:12 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_191501
+	ploss_coef: 2
+	reward_strategy: critical_path
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 19:15:12 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_191501 --ploss_coef=2 --reward_strategy=critical_path --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 19:15:12 INFO Agent received command: run
+2025-03-28 19:15:12 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_191501
+	ploss_coef: 2
+	reward_strategy: wspt
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 19:15:12 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_191501 --ploss_coef=2 --reward_strategy=wspt --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 19:15:16 INFO Running runs: ['hl0t7bxs']
+2025-03-28 19:15:17 INFO Running runs: ['mk8ualho']
+2025-03-28 19:15:17 INFO Running runs: ['mw45fwhe']
+2025-03-28 19:15:17 INFO Running runs: ['8r83zlop']
+2025-03-28 19:15:17 INFO Running runs: ['ihbc5frn']
+2025-03-28 19:25:13 INFO Cleaning up finished run: ihbc5frn
+2025-03-28 19:25:17 INFO Cleaning up finished run: 8r83zlop
+2025-03-28 19:25:18 INFO Cleaning up finished run: mk8ualho
+2025-03-28 19:25:18 INFO Cleaning up finished run: mw45fwhe
+2025-03-28 19:25:22 INFO Cleaning up finished run: hl0t7bxs
+2025-03-28 19:53:35 INFO Running runs: []
+2025-03-28 19:53:35 INFO Running runs: []
+2025-03-28 19:53:35 INFO Running runs: []
+2025-03-28 19:53:35 INFO Running runs: []
+2025-03-28 19:53:35 INFO Running runs: []
+2025-03-28 19:53:35 INFO Agent received command: run
+2025-03-28 19:53:35 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_195326
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 19:53:35 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_195326 --ploss_coef=2 --reward_strategy=default --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 19:53:35 INFO Agent received command: run
+2025-03-28 19:53:35 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_195326
+	ploss_coef: 2
+	reward_strategy: wspt_guided
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 19:53:35 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_195326 --ploss_coef=2 --reward_strategy=wspt_guided --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 19:53:35 INFO Agent received command: run
+2025-03-28 19:53:35 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_195326
+	ploss_coef: 2
+	reward_strategy: potential_based
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 19:53:35 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_195326 --ploss_coef=2 --reward_strategy=potential_based --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 19:53:35 INFO Agent received command: run
+2025-03-28 19:53:35 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_195326
+	ploss_coef: 2
+	reward_strategy: critical_path
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 19:53:35 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_195326 --ploss_coef=2 --reward_strategy=critical_path --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 19:53:36 INFO Agent received command: run
+2025-03-28 19:53:36 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_195326
+	ploss_coef: 2
+	reward_strategy: wspt
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 19:53:36 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_195326 --ploss_coef=2 --reward_strategy=wspt --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 19:53:40 INFO Running runs: ['0kumhm4n']
+2025-03-28 19:53:40 INFO Running runs: ['ay9vec2u']
+2025-03-28 19:53:40 INFO Running runs: ['sh6alf2w']
+2025-03-28 19:53:40 INFO Running runs: ['mba7chgi']
+2025-03-28 19:53:41 INFO Running runs: ['n52ci54d']
+2025-03-28 20:02:00 INFO Cleaning up finished run: 0kumhm4n
+2025-03-28 20:02:01 INFO Cleaning up finished run: n52ci54d
+2025-03-28 20:02:05 INFO Cleaning up finished run: ay9vec2u
+2025-03-28 20:02:06 INFO Cleaning up finished run: sh6alf2w
+2025-03-28 20:02:06 INFO Cleaning up finished run: mba7chgi
+2025-03-28 20:18:58 INFO Running runs: []
+2025-03-28 20:18:58 INFO Running runs: []
+2025-03-28 20:18:58 INFO Running runs: []
+2025-03-28 20:18:59 INFO Running runs: []
+2025-03-28 20:18:59 INFO Running runs: []
+2025-03-28 20:18:59 INFO Agent received command: run
+2025-03-28 20:18:59 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_201849
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 20:18:59 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_201849 --ploss_coef=2 --reward_strategy=default --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 20:18:59 INFO Agent received command: run
+2025-03-28 20:18:59 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_201849
+	ploss_coef: 2
+	reward_strategy: wspt_guided
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 20:18:59 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_201849 --ploss_coef=2 --reward_strategy=wspt_guided --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 20:18:59 INFO Agent received command: run
+2025-03-28 20:18:59 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_201849
+	ploss_coef: 2
+	reward_strategy: potential_based
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 20:18:59 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_201849 --ploss_coef=2 --reward_strategy=potential_based --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 20:18:59 INFO Agent received command: run
+2025-03-28 20:18:59 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_201849
+	ploss_coef: 2
+	reward_strategy: critical_path
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 20:18:59 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_201849 --ploss_coef=2 --reward_strategy=critical_path --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 20:18:59 INFO Agent received command: run
+2025-03-28 20:18:59 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_201849
+	ploss_coef: 2
+	reward_strategy: wspt
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 20:18:59 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_201849 --ploss_coef=2 --reward_strategy=wspt --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 20:19:04 INFO Running runs: ['bbkdnqvj']
+2025-03-28 20:19:04 INFO Running runs: ['bwcbgrcj']
+2025-03-28 20:19:04 INFO Running runs: ['ent1lpax']
+2025-03-28 20:19:04 INFO Running runs: ['rluyqrdv']
+2025-03-28 20:19:04 INFO Running runs: ['txfe2d52']
+2025-03-28 20:27:48 INFO Cleaning up finished run: bbkdnqvj
+2025-03-28 20:27:48 INFO Cleaning up finished run: bwcbgrcj
+2025-03-28 20:27:49 INFO Cleaning up finished run: txfe2d52
+2025-03-28 20:27:54 INFO Cleaning up finished run: ent1lpax
+2025-03-28 20:27:54 INFO Cleaning up finished run: rluyqrdv
+2025-03-28 22:21:37 INFO Running runs: []
+2025-03-28 22:21:37 INFO Running runs: []
+2025-03-28 22:21:37 INFO Running runs: []
+2025-03-28 22:21:37 INFO Running runs: []
+2025-03-28 22:21:37 INFO Running runs: []
+2025-03-28 22:21:38 INFO Agent received command: run
+2025-03-28 22:21:38 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_222129
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 22:21:38 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_222129 --ploss_coef=2 --reward_strategy=default --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 22:21:38 INFO Agent received command: run
+2025-03-28 22:21:38 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_222129
+	ploss_coef: 2
+	reward_strategy: wspt_guided
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 22:21:38 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_222129 --ploss_coef=2 --reward_strategy=wspt_guided --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 22:21:38 INFO Agent received command: run
+2025-03-28 22:21:38 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_222129
+	ploss_coef: 2
+	reward_strategy: potential_based
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 22:21:38 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_222129 --ploss_coef=2 --reward_strategy=potential_based --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 22:21:38 INFO Agent received command: run
+2025-03-28 22:21:38 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_222129
+	ploss_coef: 2
+	reward_strategy: critical_path
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 22:21:38 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_222129 --ploss_coef=2 --reward_strategy=critical_path --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 22:21:38 INFO Agent received command: run
+2025-03-28 22:21:38 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_222129
+	ploss_coef: 2
+	reward_strategy: wspt
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 22:21:38 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_222129 --ploss_coef=2 --reward_strategy=wspt --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 22:21:43 INFO Running runs: ['pku7m0pd']
+2025-03-28 22:21:43 INFO Running runs: ['zit3go2v']
+2025-03-28 22:21:43 INFO Running runs: ['buv6tjv9']
+2025-03-28 22:21:43 INFO Running runs: ['8swsur46']
+2025-03-28 22:21:43 INFO Running runs: ['s4fxinag']
+2025-03-28 22:28:35 INFO Cleaning up finished run: pku7m0pd
+2025-03-28 22:28:36 INFO Cleaning up finished run: s4fxinag
+2025-03-28 22:28:36 INFO Cleaning up finished run: zit3go2v
+2025-03-28 22:28:40 INFO Cleaning up finished run: buv6tjv9
+2025-03-28 22:28:41 INFO Cleaning up finished run: 8swsur46
+2025-03-28 22:50:47 INFO Running runs: []
+2025-03-28 22:50:47 INFO Running runs: []
+2025-03-28 22:50:47 INFO Running runs: []
+2025-03-28 22:50:47 INFO Running runs: []
+2025-03-28 22:50:47 INFO Running runs: []
+2025-03-28 22:50:47 INFO Agent received command: run
+2025-03-28 22:50:47 INFO Agent received command: run
+2025-03-28 22:50:47 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_225037
+	ploss_coef: 2
+	reward_strategy: wspt_guided
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 22:50:47 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_225037
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 22:50:47 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_225037 --ploss_coef=2 --reward_strategy=wspt_guided --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 22:50:47 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_225037 --ploss_coef=2 --reward_strategy=default --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 22:50:47 INFO Agent received command: run
+2025-03-28 22:50:47 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_225037
+	ploss_coef: 2
+	reward_strategy: potential_based
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 22:50:47 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_225037 --ploss_coef=2 --reward_strategy=potential_based --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 22:50:47 INFO Agent received command: run
+2025-03-28 22:50:47 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_225037
+	ploss_coef: 2
+	reward_strategy: critical_path
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 22:50:47 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_225037 --ploss_coef=2 --reward_strategy=critical_path --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 22:50:48 INFO Agent received command: run
+2025-03-28 22:50:48 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_225037
+	ploss_coef: 2
+	reward_strategy: wspt
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 22:50:48 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_225037 --ploss_coef=2 --reward_strategy=wspt --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 22:50:52 INFO Running runs: ['t8xtkpil']
+2025-03-28 22:50:52 INFO Running runs: ['uu4og0hd']
+2025-03-28 22:50:52 INFO Running runs: ['105l6ip1']
+2025-03-28 22:50:52 INFO Running runs: ['eawd2cqs']
+2025-03-28 22:50:53 INFO Running runs: ['gde2mger']
+2025-03-28 22:54:48 WARNING message_loop has been closed
+Traceback (most recent call last):
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/interface/router_sock.py", line 27, in _read_message
+    return self._sock_client.read_server_response(timeout=1)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/lib/sock_client.py", line 235, in read_server_response
+    data = self._read_packet_bytes(timeout=timeout)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/lib/sock_client.py", line 220, in _read_packet_bytes
+    raise SockClientClosedError
+wandb.sdk.lib.sock_client.SockClientClosedError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/interface/router.py", line 56, in message_loop
+    msg = self._read_message()
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/interface/router_sock.py", line 29, in _read_message
+    raise MessageRouterClosedError from e
+wandb.sdk.interface.router.MessageRouterClosedError
+2025-03-28 22:54:48 WARNING message_loop has been closed
+Traceback (most recent call last):
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/interface/router_sock.py", line 27, in _read_message
+    return self._sock_client.read_server_response(timeout=1)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/lib/sock_client.py", line 235, in read_server_response
+    data = self._read_packet_bytes(timeout=timeout)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/lib/sock_client.py", line 220, in _read_packet_bytes
+    raise SockClientClosedError
+wandb.sdk.lib.sock_client.SockClientClosedError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/interface/router.py", line 56, in message_loop
+    msg = self._read_message()
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/interface/router_sock.py", line 29, in _read_message
+    raise MessageRouterClosedError from e
+wandb.sdk.interface.router.MessageRouterClosedError
+2025-03-28 22:54:48 INFO Closing mailbox, abandoning 0 handles.
+2025-03-28 22:54:48 WARNING message_loop has been closed
+Traceback (most recent call last):
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/interface/router_sock.py", line 27, in _read_message
+    return self._sock_client.read_server_response(timeout=1)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/lib/sock_client.py", line 235, in read_server_response
+    data = self._read_packet_bytes(timeout=timeout)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/lib/sock_client.py", line 220, in _read_packet_bytes
+    raise SockClientClosedError
+wandb.sdk.lib.sock_client.SockClientClosedError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/interface/router.py", line 56, in message_loop
+    msg = self._read_message()
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/interface/router_sock.py", line 29, in _read_message
+    raise MessageRouterClosedError from e
+wandb.sdk.interface.router.MessageRouterClosedError
+2025-03-28 22:54:48 INFO Closing mailbox, abandoning 0 handles.
+2025-03-28 22:54:48 WARNING message_loop has been closed
+Traceback (most recent call last):
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/interface/router_sock.py", line 27, in _read_message
+    return self._sock_client.read_server_response(timeout=1)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/lib/sock_client.py", line 235, in read_server_response
+    data = self._read_packet_bytes(timeout=timeout)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/lib/sock_client.py", line 220, in _read_packet_bytes
+    raise SockClientClosedError
+wandb.sdk.lib.sock_client.SockClientClosedError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/interface/router.py", line 56, in message_loop
+    msg = self._read_message()
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/interface/router_sock.py", line 29, in _read_message
+    raise MessageRouterClosedError from e
+wandb.sdk.interface.router.MessageRouterClosedError
+2025-03-28 22:54:48 WARNING message_loop has been closed
+Traceback (most recent call last):
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/interface/router_sock.py", line 27, in _read_message
+    return self._sock_client.read_server_response(timeout=1)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/lib/sock_client.py", line 235, in read_server_response
+    data = self._read_packet_bytes(timeout=timeout)
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/lib/sock_client.py", line 220, in _read_packet_bytes
+    raise SockClientClosedError
+wandb.sdk.lib.sock_client.SockClientClosedError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/interface/router.py", line 56, in message_loop
+    msg = self._read_message()
+  File "/Users/mariegoffin/miniconda3/envs/l2d/lib/python3.8/site-packages/wandb/sdk/interface/router_sock.py", line 29, in _read_message
+    raise MessageRouterClosedError from e
+wandb.sdk.interface.router.MessageRouterClosedError
+2025-03-28 22:54:48 INFO Closing mailbox, abandoning 0 handles.
+2025-03-28 22:54:48 INFO Closing mailbox, abandoning 0 handles.
+2025-03-28 22:54:48 INFO Closing mailbox, abandoning 0 handles.
+2025-03-28 23:42:14 INFO Running runs: []
+2025-03-28 23:42:14 INFO Running runs: []
+2025-03-28 23:42:14 INFO Running runs: []
+2025-03-28 23:42:14 INFO Running runs: []
+2025-03-28 23:42:14 INFO Running runs: []
+2025-03-28 23:42:14 INFO Agent received command: run
+2025-03-28 23:42:14 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_234205
+	ploss_coef: 2
+	reward_strategy: default
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 23:42:14 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_234205 --ploss_coef=2 --reward_strategy=default --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 23:42:14 INFO Agent received command: run
+2025-03-28 23:42:14 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_234205
+	ploss_coef: 2
+	reward_strategy: wspt_guided
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 23:42:14 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_234205 --ploss_coef=2 --reward_strategy=wspt_guided --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 23:42:14 INFO Agent received command: run
+2025-03-28 23:42:14 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_234205
+	ploss_coef: 2
+	reward_strategy: potential_based
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 23:42:14 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_234205 --ploss_coef=2 --reward_strategy=potential_based --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 23:42:15 INFO Agent received command: run
+2025-03-28 23:42:15 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_234205
+	ploss_coef: 2
+	reward_strategy: critical_path
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 23:42:15 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_234205 --ploss_coef=2 --reward_strategy=critical_path --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 23:42:15 INFO Agent received command: run
+2025-03-28 23:42:15 INFO Agent starting run with config:
+	decay_ratio: 0.9
+	decay_step_size: 200
+	decayflag: True
+	device: cpu
+	entloss_coef: 0.02
+	eps_clip: 0.1
+	et_normalize_coef: 1000
+	feature_set: ['LBs', 'finished_mark', 'normalized_weights']
+	gamma: 1
+	graph_pool_type: average
+	hidden_dim: 128
+	hidden_dim_actor: 32
+	hidden_dim_critic: 32
+	high: 99
+	init_quality_flag: False
+	input_dim: 3
+	k_epochs: 10
+	low: 1
+	lr: 2e-05
+	max_updates: 100
+	n_j: 6
+	n_m: 6
+	neighbor_pooling_type: sum
+	np_seed_train: 200
+	np_seed_validation: 200
+	num_envs: 8
+	num_layers: 3
+	num_mlp_layers_actor: 2
+	num_mlp_layers_critic: 2
+	num_mlp_layers_feature_extract: 2
+	output_dir: results/variable_weights/reward_sweeps/20250328_234205
+	ploss_coef: 2
+	reward_strategy: wspt
+	rewardscale: 0
+	torch_seed: 600
+	validate_every: 20
+	vloss_coef: 1
+	weight_high: 10
+	weight_low: 1
+	wkr_normalize_coef: 100
+2025-03-28 23:42:15 INFO About to run command: /usr/bin/env python scripts/train.py --decay_ratio=0.9 --decay_step_size=200 --decayflag=True --device=cpu --entloss_coef=0.02 --eps_clip=0.1 --et_normalize_coef=1000 "--feature_set=['LBs', 'finished_mark', 'normalized_weights']" --gamma=1 --graph_pool_type=average --hidden_dim=128 --hidden_dim_actor=32 --hidden_dim_critic=32 --high=99 --init_quality_flag=False --input_dim=3 --k_epochs=10 --low=1 --lr=2e-05 --max_updates=100 --n_j=6 --n_m=6 --neighbor_pooling_type=sum --np_seed_train=200 --np_seed_validation=200 --num_envs=8 --num_layers=3 --num_mlp_layers_actor=2 --num_mlp_layers_critic=2 --num_mlp_layers_feature_extract=2 --output_dir=results/variable_weights/reward_sweeps/20250328_234205 --ploss_coef=2 --reward_strategy=wspt --rewardscale=0 --torch_seed=600 --validate_every=20 --vloss_coef=1 --weight_high=10 --weight_low=1 --wkr_normalize_coef=100
+2025-03-28 23:42:19 INFO Running runs: ['eg8k7976']
+2025-03-28 23:42:19 INFO Running runs: ['bdyw0ji0']
+2025-03-28 23:42:20 INFO Running runs: ['q8p9qiv3']
+2025-03-28 23:42:20 INFO Running runs: ['7xxz0458']
+2025-03-28 23:42:20 INFO Running runs: ['69lhryxj']
+2025-03-28 23:50:44 INFO Cleaning up finished run: eg8k7976
+2025-03-28 23:50:46 INFO Cleaning up finished run: 69lhryxj
+2025-03-28 23:50:50 INFO Cleaning up finished run: 7xxz0458
+2025-03-28 23:50:50 INFO Cleaning up finished run: bdyw0ji0
+2025-03-28 23:50:50 INFO Cleaning up finished run: q8p9qiv3
