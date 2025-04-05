@@ -2,13 +2,13 @@
 # Master configuration for Job Shop Scheduling sweeps
 
 # Sweep parameters
-sweep_type: reward   # Options: environment, feature, model, reward
-weight_type: variable      # Options: uniform, variable
-count: 5                 # Number of runs
-workers: 5                # Number of parallel workers
+sweep_type: environment   # Options: environment, feature, model, reward
+weight_type: uniform      # Options: uniform, variable
+count: 15                 # Number of runs
+workers: 15                # Number of parallel workers
 max_updates: 100         # Number of training episodes
-validate_every: 20  # Validate every 20 episodes
-override_max_updates: true  # Whether to override max_updates in sweep file
+validate_every: 100  # Validate every 20 episodes
+override_max_updates: false  # Whether to override max_updates in sweep file
 
 # Project settings
 project: jssp-weighted-sum

@@ -1,0 +1,1691 @@
+WandB initialized. Will train for exactly 5000 episodes.
+Loading validation data from ./data/instances/uniform_weights/validation_data_6x6_seed200.npy...
+Successfully loaded 100 validation instances
+Starting training for 5000 episodes with 8 environments...
+wandb: 429 encountered (Filestream rate limit exceeded, retrying in 2.2 seconds.), retrying request
+wandb: 429 encountered (Filestream rate limit exceeded, retrying in 2.3 seconds.), retrying request
+wandb: 429 encountered (Filestream rate limit exceeded, retrying in 4.6 seconds.), retrying request
+wandb: 429 encountered (Filestream rate limit exceeded, retrying in 2.1 seconds.), retrying request
+wandb: 429 encountered (Filestream rate limit exceeded, retrying in 4.4 seconds.), retrying request
+Episode 100/5000 | Reward: -3258.37 | Weighted Sum: 3015.25 | Loss: 0.483027
+Avg(100): Reward=-2890.35, Weighted Sum=2756.20 | Episode time: 1.70s | Total time: 189.63s
+Validation weighted sum statistics:
+Mean: 2713.08
+Min: 1965.00
+Max: 3526.00
+Std: 283.90
+Validation value loss: 0.0661
+Validation policy entropy: 1.3200
+Validation Weighted Sum: 2713.08 | Reward-derived: -2817.07 | Improvement: -52.38%
+Validated 10/100 instances in 0.71s
+Validated 20/100 instances in 1.71s
+Validated 30/100 instances in 2.48s
+Validated 40/100 instances in 3.00s
+Validated 50/100 instances in 3.51s
+Validated 60/100 instances in 3.98s
+Validated 70/100 instances in 4.42s
+Validated 80/100 instances in 4.86s
+Validated 90/100 instances in 5.52s
+Validated 100/100 instances in 6.21s
+Validation weighted sum statistics:
+Mean: 2713.08
+Min: 1965.00
+Max: 3526.00
+Std: 283.90
+Validation value loss: 0.0661
+Validation policy entropy: 1.3200
+Validation Results:
+Average Weighted Sums:
+L2D: 2713.08
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 41/100 (41.00%)
+SPT: 23/100 (23.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 36/100 (36.00%)
+Updated learning curves plot at episode 100
+Successfully logged learning curves to WandB
+New best model saved! Weighted Sum: 2713.08, Win Rate: 41.00%
+Episode 200/5000 | Reward: -3002.87 | Weighted Sum: 2784.25 | Loss: 0.407060
+Avg(100): Reward=-2889.29, Weighted Sum=2753.79 | Episode time: 2.23s | Total time: 451.95s
+Validation weighted sum statistics:
+Mean: 2736.70
+Min: 1965.00
+Max: 3695.00
+Std: 285.58
+Validation value loss: 0.0759
+Validation policy entropy: 1.2999
+Validation Weighted Sum: 2736.70 | Reward-derived: -2844.86 | Improvement: -53.73%
+Validated 10/100 instances in 0.68s
+Validated 20/100 instances in 1.40s
+Validated 30/100 instances in 2.26s
+Validated 40/100 instances in 2.99s
+Validated 50/100 instances in 3.41s
+Validated 60/100 instances in 4.43s
+Validated 70/100 instances in 5.62s
+Validated 80/100 instances in 6.33s
+Validated 90/100 instances in 6.89s
+Validated 100/100 instances in 7.42s
+Validation weighted sum statistics:
+Mean: 2736.70
+Min: 1965.00
+Max: 3695.00
+Std: 285.58
+Validation value loss: 0.0759
+Validation policy entropy: 1.2999
+Validation Results:
+Average Weighted Sums:
+L2D: 2736.70
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 36/100 (36.00%)
+SPT: 28/100 (28.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 36/100 (36.00%)
+Updated learning curves plot at episode 200
+Successfully logged learning curves to WandB
+No improvement for 1 validation checks (best weighted sum: 2713.08)
+Episode 300/5000 | Reward: -2851.00 | Weighted Sum: 2761.25 | Loss: 0.038810
+Avg(100): Reward=-2893.86, Weighted Sum=2765.69 | Episode time: 1.87s | Total time: 717.65s
+Validation weighted sum statistics:
+Mean: 2755.33
+Min: 1941.00
+Max: 3526.00
+Std: 294.82
+Validation value loss: 0.0700
+Validation policy entropy: 1.3019
+Validation Weighted Sum: 2755.33 | Reward-derived: -2868.21 | Improvement: -54.71%
+Validated 10/100 instances in 0.57s
+Validated 20/100 instances in 1.37s
+Validated 30/100 instances in 2.02s
+Validated 40/100 instances in 2.72s
+Validated 50/100 instances in 3.19s
+Validated 60/100 instances in 3.91s
+Validated 70/100 instances in 4.66s
+Validated 80/100 instances in 5.38s
+Validated 90/100 instances in 6.03s
+Validated 100/100 instances in 6.78s
+Validation weighted sum statistics:
+Mean: 2755.33
+Min: 1941.00
+Max: 3526.00
+Std: 294.82
+Validation value loss: 0.0700
+Validation policy entropy: 1.3019
+Validation Results:
+Average Weighted Sums:
+L2D: 2755.33
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 32/100 (32.00%)
+SPT: 28/100 (28.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 40/100 (40.00%)
+Updated learning curves plot at episode 300
+Successfully logged learning curves to WandB
+No improvement for 2 validation checks (best weighted sum: 2713.08)
+Episode 400/5000 | Reward: -2654.00 | Weighted Sum: 2569.38 | Loss: 0.327598
+Avg(100): Reward=-2894.29, Weighted Sum=2760.61 | Episode time: 2.21s | Total time: 979.33s
+Validation weighted sum statistics:
+Mean: 2750.21
+Min: 1941.00
+Max: 3526.00
+Std: 300.29
+Validation value loss: 0.0592
+Validation policy entropy: 1.2917
+Validation Weighted Sum: 2750.21 | Reward-derived: -2861.84 | Improvement: -54.35%
+Validated 10/100 instances in 1.04s
+Validated 20/100 instances in 1.67s
+Validated 30/100 instances in 2.41s
+Validated 40/100 instances in 3.05s
+Validated 50/100 instances in 3.68s
+Validated 60/100 instances in 4.51s
+Validated 70/100 instances in 5.91s
+Validated 80/100 instances in 7.18s
+Validated 90/100 instances in 8.03s
+Validated 100/100 instances in 8.76s
+Validation weighted sum statistics:
+Mean: 2750.21
+Min: 1941.00
+Max: 3526.00
+Std: 300.29
+Validation value loss: 0.0592
+Validation policy entropy: 1.2917
+Validation Results:
+Average Weighted Sums:
+L2D: 2750.21
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 36/100 (36.00%)
+SPT: 27/100 (27.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 37/100 (37.00%)
+Updated learning curves plot at episode 400
+Successfully logged learning curves to WandB
+No improvement for 3 validation checks (best weighted sum: 2713.08)
+Episode 500/5000 | Reward: -3062.00 | Weighted Sum: 2880.50 | Loss: 0.041222
+Avg(100): Reward=-2879.98, Weighted Sum=2748.48 | Episode time: 1.81s | Total time: 1261.06s
+Validation weighted sum statistics:
+Mean: 2750.21
+Min: 2109.00
+Max: 3654.00
+Std: 308.42
+Validation value loss: 0.0502
+Validation policy entropy: 1.2703
+Validation Weighted Sum: 2750.21 | Reward-derived: -2860.27 | Improvement: -54.30%
+Validated 10/100 instances in 0.63s
+Validated 20/100 instances in 0.95s
+Validated 30/100 instances in 1.28s
+Validated 40/100 instances in 1.68s
+Validated 50/100 instances in 2.52s
+Validated 60/100 instances in 3.58s
+Validated 70/100 instances in 4.55s
+Validated 80/100 instances in 5.19s
+Validated 90/100 instances in 5.69s
+Validated 100/100 instances in 6.16s
+Validation weighted sum statistics:
+Mean: 2750.21
+Min: 2109.00
+Max: 3654.00
+Std: 308.42
+Validation value loss: 0.0502
+Validation policy entropy: 1.2703
+Validation Results:
+Average Weighted Sums:
+L2D: 2750.21
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 37/100 (37.00%)
+SPT: 30/100 (30.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 33/100 (33.00%)
+Updated learning curves plot at episode 500
+Successfully logged learning curves to WandB
+No improvement for 4 validation checks (best weighted sum: 2713.08)
+Episode 600/5000 | Reward: -3120.00 | Weighted Sum: 2998.62 | Loss: 0.174953
+Avg(100): Reward=-2888.85, Weighted Sum=2761.91 | Episode time: 1.82s | Total time: 1539.83s
+Validation weighted sum statistics:
+Mean: 2746.97
+Min: 2108.00
+Max: 3654.00
+Std: 308.77
+Validation value loss: 0.0479
+Validation policy entropy: 1.2471
+Validation Weighted Sum: 2746.97 | Reward-derived: -2846.34 | Improvement: -54.19%
+Validated 10/100 instances in 1.43s
+Validated 20/100 instances in 2.66s
+Validated 30/100 instances in 3.95s
+Validated 40/100 instances in 5.15s
+Validated 50/100 instances in 6.41s
+Validated 60/100 instances in 7.67s
+Validated 70/100 instances in 8.83s
+Validated 80/100 instances in 10.42s
+Validated 90/100 instances in 11.39s
+Validated 100/100 instances in 12.52s
+Validation weighted sum statistics:
+Mean: 2746.97
+Min: 2108.00
+Max: 3654.00
+Std: 308.77
+Validation value loss: 0.0479
+Validation policy entropy: 1.2471
+Validation Results:
+Average Weighted Sums:
+L2D: 2746.97
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 37/100 (37.00%)
+SPT: 27/100 (27.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 36/100 (36.00%)
+Updated learning curves plot at episode 600
+Successfully logged learning curves to WandB
+No improvement for 5 validation checks (best weighted sum: 2713.08)
+Episode 700/5000 | Reward: -2944.62 | Weighted Sum: 2827.00 | Loss: 0.411924
+Avg(100): Reward=-2869.56, Weighted Sum=2752.74 | Episode time: 1.28s | Total time: 1758.29s
+Validation weighted sum statistics:
+Mean: 2751.41
+Min: 2106.00
+Max: 3654.00
+Std: 317.61
+Validation value loss: 0.0387
+Validation policy entropy: 1.2401
+Validation Weighted Sum: 2751.41 | Reward-derived: -2857.06 | Improvement: -54.37%
+Validated 10/100 instances in 0.78s
+Validated 20/100 instances in 1.52s
+Validated 30/100 instances in 2.15s
+Validated 40/100 instances in 2.77s
+Validated 50/100 instances in 3.39s
+Validated 60/100 instances in 4.05s
+Validated 70/100 instances in 4.54s
+Validated 80/100 instances in 5.01s
+Validated 90/100 instances in 5.29s
+Validated 100/100 instances in 5.54s
+Validation weighted sum statistics:
+Mean: 2751.41
+Min: 2106.00
+Max: 3654.00
+Std: 317.61
+Validation value loss: 0.0387
+Validation policy entropy: 1.2401
+Validation Results:
+Average Weighted Sums:
+L2D: 2751.41
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 35/100 (35.00%)
+SPT: 25/100 (25.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 40/100 (40.00%)
+Updated learning curves plot at episode 700
+Successfully logged learning curves to WandB
+No improvement for 6 validation checks (best weighted sum: 2713.08)
+Episode 800/5000 | Reward: -2951.62 | Weighted Sum: 2834.12 | Loss: 0.111788
+Avg(100): Reward=-2895.47, Weighted Sum=2769.26 | Episode time: 1.24s | Total time: 1949.22s
+Validation weighted sum statistics:
+Mean: 2774.00
+Min: 2106.00
+Max: 3924.00
+Std: 323.57
+Validation value loss: 0.0284
+Validation policy entropy: 1.2480
+Validation Weighted Sum: 2774.00 | Reward-derived: -2882.14 | Improvement: -55.65%
+Validated 10/100 instances in 0.23s
+Validated 20/100 instances in 0.82s
+Validated 30/100 instances in 1.20s
+Validated 40/100 instances in 1.69s
+Validated 50/100 instances in 2.01s
+Validated 60/100 instances in 2.67s
+Validated 70/100 instances in 3.20s
+Validated 80/100 instances in 3.79s
+Validated 90/100 instances in 4.17s
+Validated 100/100 instances in 4.68s
+Validation weighted sum statistics:
+Mean: 2774.00
+Min: 2106.00
+Max: 3924.00
+Std: 323.57
+Validation value loss: 0.0284
+Validation policy entropy: 1.2480
+Validation Results:
+Average Weighted Sums:
+L2D: 2774.00
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 33/100 (33.00%)
+SPT: 28/100 (28.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 39/100 (39.00%)
+Updated learning curves plot at episode 800
+Successfully logged learning curves to WandB
+No improvement for 7 validation checks (best weighted sum: 2713.08)
+Episode 900/5000 | Reward: -3065.00 | Weighted Sum: 2932.88 | Loss: 0.155539
+Avg(100): Reward=-2900.65, Weighted Sum=2772.57 | Episode time: 0.98s | Total time: 2116.56s
+Validation weighted sum statistics:
+Mean: 2776.25
+Min: 2184.00
+Max: 3780.00
+Std: 309.52
+Validation value loss: 0.0216
+Validation policy entropy: 1.2327
+Validation Weighted Sum: 2776.25 | Reward-derived: -2880.99 | Improvement: -55.79%
+Validated 10/100 instances in 0.69s
+Validated 20/100 instances in 1.23s
+Validated 30/100 instances in 1.95s
+Validated 40/100 instances in 2.49s
+Validated 50/100 instances in 2.86s
+Validated 60/100 instances in 3.26s
+Validated 70/100 instances in 3.54s
+Validated 80/100 instances in 3.96s
+Validated 90/100 instances in 4.72s
+Validated 100/100 instances in 5.09s
+Validation weighted sum statistics:
+Mean: 2776.25
+Min: 2184.00
+Max: 3780.00
+Std: 309.52
+Validation value loss: 0.0216
+Validation policy entropy: 1.2327
+Validation Results:
+Average Weighted Sums:
+L2D: 2776.25
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 31/100 (31.00%)
+SPT: 29/100 (29.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 40/100 (40.00%)
+Updated learning curves plot at episode 900
+Successfully logged learning curves to WandB
+No improvement for 8 validation checks (best weighted sum: 2713.08)
+Episode 1000/5000 | Reward: -2737.87 | Weighted Sum: 2590.62 | Loss: 0.391477
+Avg(100): Reward=-2880.03, Weighted Sum=2761.37 | Episode time: 1.39s | Total time: 2301.52s
+Validation weighted sum statistics:
+Mean: 2782.90
+Min: 2031.00
+Max: 3924.00
+Std: 311.74
+Validation value loss: 0.0130
+Validation policy entropy: 1.2387
+Validation Weighted Sum: 2782.90 | Reward-derived: -2895.19 | Improvement: -56.18%
+Validated 10/100 instances in 0.35s
+Validated 20/100 instances in 0.73s
+Validated 30/100 instances in 0.92s
+Validated 40/100 instances in 1.21s
+Validated 50/100 instances in 1.46s
+Validated 60/100 instances in 1.64s
+Validated 70/100 instances in 1.90s
+Validated 80/100 instances in 2.22s
+Validated 90/100 instances in 2.60s
+Validated 100/100 instances in 3.09s
+Validation weighted sum statistics:
+Mean: 2782.90
+Min: 2031.00
+Max: 3924.00
+Std: 311.74
+Validation value loss: 0.0130
+Validation policy entropy: 1.2387
+Validation Results:
+Average Weighted Sums:
+L2D: 2782.90
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 33/100 (33.00%)
+SPT: 31/100 (31.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 36/100 (36.00%)
+Updated learning curves plot at episode 1000
+Successfully logged learning curves to WandB
+No improvement for 9 validation checks (best weighted sum: 2713.08)
+Episode 1100/5000 | Reward: -2779.12 | Weighted Sum: 2656.88 | Loss: 0.298091
+Avg(100): Reward=-2879.03, Weighted Sum=2760.99 | Episode time: 1.11s | Total time: 2461.26s
+Validation weighted sum statistics:
+Mean: 2769.04
+Min: 2160.00
+Max: 3780.00
+Std: 295.06
+Validation value loss: 0.0087
+Validation policy entropy: 1.2292
+Validation Weighted Sum: 2769.04 | Reward-derived: -2876.15 | Improvement: -55.49%
+Validated 10/100 instances in 0.58s
+Validated 20/100 instances in 0.93s
+Validated 30/100 instances in 1.17s
+Validated 40/100 instances in 1.65s
+Validated 50/100 instances in 2.01s
+Validated 60/100 instances in 2.39s
+Validated 70/100 instances in 2.90s
+Validated 80/100 instances in 3.51s
+Validated 90/100 instances in 4.13s
+Validated 100/100 instances in 4.54s
+Validation weighted sum statistics:
+Mean: 2769.04
+Min: 2160.00
+Max: 3780.00
+Std: 295.06
+Validation value loss: 0.0087
+Validation policy entropy: 1.2292
+Validation Results:
+Average Weighted Sums:
+L2D: 2769.04
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 34/100 (34.00%)
+SPT: 30/100 (30.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 36/100 (36.00%)
+Updated learning curves plot at episode 1100
+Successfully logged learning curves to WandB
+No improvement for 10 validation checks (best weighted sum: 2713.08)
+Episode 1200/5000 | Reward: -2863.87 | Weighted Sum: 2724.25 | Loss: 0.039640
+Avg(100): Reward=-2903.64, Weighted Sum=2778.16 | Episode time: 1.30s | Total time: 2616.95s
+Validation weighted sum statistics:
+Mean: 2783.16
+Min: 2056.00
+Max: 3924.00
+Std: 294.44
+Validation value loss: 0.0027
+Validation policy entropy: 1.2266
+Validation Weighted Sum: 2783.16 | Reward-derived: -2886.47 | Improvement: -56.31%
+Validated 10/100 instances in 0.28s
+Validated 20/100 instances in 0.75s
+Validated 30/100 instances in 1.26s
+Validated 40/100 instances in 1.77s
+Validated 50/100 instances in 2.42s
+Validated 60/100 instances in 2.84s
+Validated 70/100 instances in 3.19s
+Validated 80/100 instances in 3.35s
+Validated 90/100 instances in 3.77s
+Validated 100/100 instances in 4.31s
+Validation weighted sum statistics:
+Mean: 2783.16
+Min: 2056.00
+Max: 3924.00
+Std: 294.44
+Validation value loss: 0.0027
+Validation policy entropy: 1.2266
+Validation Results:
+Average Weighted Sums:
+L2D: 2783.16
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 31/100 (31.00%)
+SPT: 30/100 (30.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 39/100 (39.00%)
+Updated learning curves plot at episode 1200
+Successfully logged learning curves to WandB
+No improvement for 11 validation checks (best weighted sum: 2713.08)
+Episode 1300/5000 | Reward: -3094.00 | Weighted Sum: 3009.00 | Loss: 0.009554
+Avg(100): Reward=-2884.64, Weighted Sum=2758.73 | Episode time: 0.92s | Total time: 2769.95s
+Validation weighted sum statistics:
+Mean: 2786.50
+Min: 2056.00
+Max: 3924.00
+Std: 300.56
+Validation value loss: -0.0034
+Validation policy entropy: 1.2096
+Validation Weighted Sum: 2786.50 | Reward-derived: -2886.85 | Improvement: -56.44%
+Validated 10/100 instances in 0.40s
+Validated 20/100 instances in 0.77s
+Validated 30/100 instances in 1.26s
+Validated 40/100 instances in 1.64s
+Validated 50/100 instances in 2.17s
+Validated 60/100 instances in 2.51s
+Validated 70/100 instances in 2.90s
+Validated 80/100 instances in 3.39s
+Validated 90/100 instances in 4.02s
+Validated 100/100 instances in 4.44s
+Validation weighted sum statistics:
+Mean: 2786.50
+Min: 2056.00
+Max: 3924.00
+Std: 300.56
+Validation value loss: -0.0034
+Validation policy entropy: 1.2096
+Validation Results:
+Average Weighted Sums:
+L2D: 2786.50
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 29/100 (29.00%)
+SPT: 31/100 (31.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 40/100 (40.00%)
+Updated learning curves plot at episode 1300
+Successfully logged learning curves to WandB
+No improvement for 12 validation checks (best weighted sum: 2713.08)
+Episode 1400/5000 | Reward: -2580.37 | Weighted Sum: 2464.38 | Loss: 0.173868
+Avg(100): Reward=-2873.91, Weighted Sum=2758.23 | Episode time: 1.35s | Total time: 2931.49s
+Validation weighted sum statistics:
+Mean: 2784.51
+Min: 2024.00
+Max: 3844.00
+Std: 296.92
+Validation value loss: -0.0007
+Validation policy entropy: 1.2002
+Validation Weighted Sum: 2784.51 | Reward-derived: -2877.31 | Improvement: -56.35%
+Validated 10/100 instances in 0.32s
+Validated 20/100 instances in 0.49s
+Validated 30/100 instances in 0.93s
+Validated 40/100 instances in 1.18s
+Validated 50/100 instances in 1.38s
+Validated 60/100 instances in 1.54s
+Validated 70/100 instances in 1.88s
+Validated 80/100 instances in 2.12s
+Validated 90/100 instances in 2.42s
+Validated 100/100 instances in 2.54s
+Validation weighted sum statistics:
+Mean: 2784.51
+Min: 2024.00
+Max: 3844.00
+Std: 296.92
+Validation value loss: -0.0007
+Validation policy entropy: 1.2002
+Validation Results:
+Average Weighted Sums:
+L2D: 2784.51
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 32/100 (32.00%)
+SPT: 29/100 (29.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 39/100 (39.00%)
+Updated learning curves plot at episode 1400
+Successfully logged learning curves to WandB
+No improvement for 13 validation checks (best weighted sum: 2713.08)
+Episode 1500/5000 | Reward: -3079.12 | Weighted Sum: 2977.50 | Loss: -0.017425
+Avg(100): Reward=-2889.47, Weighted Sum=2765.68 | Episode time: 1.28s | Total time: 3082.98s
+Validation weighted sum statistics:
+Mean: 2795.53
+Min: 2024.00
+Max: 3844.00
+Std: 309.55
+Validation value loss: -0.0045
+Validation policy entropy: 1.1820
+Validation Weighted Sum: 2795.53 | Reward-derived: -2888.05 | Improvement: -56.90%
+Validated 10/100 instances in 0.61s
+Validated 20/100 instances in 0.94s
+Validated 30/100 instances in 1.63s
+Validated 40/100 instances in 2.25s
+Validated 50/100 instances in 2.90s
+Validated 60/100 instances in 3.64s
+Validated 70/100 instances in 4.29s
+Validated 80/100 instances in 4.99s
+Validated 90/100 instances in 5.63s
+Validated 100/100 instances in 6.36s
+Validation weighted sum statistics:
+Mean: 2795.53
+Min: 2024.00
+Max: 3844.00
+Std: 309.55
+Validation value loss: -0.0045
+Validation policy entropy: 1.1820
+Validation Results:
+Average Weighted Sums:
+L2D: 2795.53
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 32/100 (32.00%)
+SPT: 27/100 (27.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 41/100 (41.00%)
+Updated learning curves plot at episode 1500
+Successfully logged learning curves to WandB
+No improvement for 14 validation checks (best weighted sum: 2713.08)
+Episode 1600/5000 | Reward: -2934.87 | Weighted Sum: 2810.62 | Loss: -0.047634
+Avg(100): Reward=-2899.90, Weighted Sum=2780.62 | Episode time: 1.30s | Total time: 3244.48s
+Validation weighted sum statistics:
+Mean: 2793.97
+Min: 2024.00
+Max: 3844.00
+Std: 318.54
+Validation value loss: -0.0075
+Validation policy entropy: 1.1824
+Validation Weighted Sum: 2793.97 | Reward-derived: -2881.11 | Improvement: -56.76%
+Validated 10/100 instances in 0.62s
+Validated 20/100 instances in 1.14s
+Validated 30/100 instances in 1.74s
+Validated 40/100 instances in 2.15s
+Validated 50/100 instances in 2.42s
+Validated 60/100 instances in 2.92s
+Validated 70/100 instances in 3.40s
+Validated 80/100 instances in 3.62s
+Validated 90/100 instances in 4.11s
+Validated 100/100 instances in 4.61s
+Validation weighted sum statistics:
+Mean: 2793.97
+Min: 2024.00
+Max: 3844.00
+Std: 318.54
+Validation value loss: -0.0075
+Validation policy entropy: 1.1824
+Validation Results:
+Average Weighted Sums:
+L2D: 2793.97
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 32/100 (32.00%)
+SPT: 29/100 (29.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 39/100 (39.00%)
+Updated learning curves plot at episode 1600
+Successfully logged learning curves to WandB
+No improvement for 15 validation checks (best weighted sum: 2713.08)
+Episode 1700/5000 | Reward: -2760.25 | Weighted Sum: 2614.62 | Loss: 0.105153
+Avg(100): Reward=-2896.13, Weighted Sum=2777.30 | Episode time: 1.28s | Total time: 3407.76s
+Validation weighted sum statistics:
+Mean: 2787.54
+Min: 2211.00
+Max: 3844.00
+Std: 311.24
+Validation value loss: -0.0106
+Validation policy entropy: 1.1794
+Validation Weighted Sum: 2787.54 | Reward-derived: -2871.68 | Improvement: -56.47%
+Validated 10/100 instances in 0.59s
+Validated 20/100 instances in 1.04s
+Validated 30/100 instances in 1.54s
+Validated 40/100 instances in 2.19s
+Validated 50/100 instances in 2.76s
+Validated 60/100 instances in 3.46s
+Validated 70/100 instances in 3.97s
+Validated 80/100 instances in 4.70s
+Validated 90/100 instances in 5.45s
+Validated 100/100 instances in 6.21s
+Validation weighted sum statistics:
+Mean: 2787.54
+Min: 2211.00
+Max: 3844.00
+Std: 311.24
+Validation value loss: -0.0106
+Validation policy entropy: 1.1794
+Validation Results:
+Average Weighted Sums:
+L2D: 2787.54
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 32/100 (32.00%)
+SPT: 30/100 (30.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 38/100 (38.00%)
+Updated learning curves plot at episode 1700
+Successfully logged learning curves to WandB
+No improvement for 16 validation checks (best weighted sum: 2713.08)
+Episode 1800/5000 | Reward: -2931.50 | Weighted Sum: 2710.50 | Loss: 0.224857
+Avg(100): Reward=-2900.53, Weighted Sum=2780.49 | Episode time: 1.00s | Total time: 3564.82s
+Validation weighted sum statistics:
+Mean: 2786.71
+Min: 2211.00
+Max: 3844.00
+Std: 319.15
+Validation value loss: -0.0164
+Validation policy entropy: 1.1878
+Validation Weighted Sum: 2786.71 | Reward-derived: -2878.71 | Improvement: -56.35%
+Validated 10/100 instances in 0.34s
+Validated 20/100 instances in 0.54s
+Validated 30/100 instances in 0.69s
+Validated 40/100 instances in 1.04s
+Validated 50/100 instances in 1.27s
+Validated 60/100 instances in 1.78s
+Validated 70/100 instances in 2.01s
+Validated 80/100 instances in 2.41s
+Validated 90/100 instances in 2.72s
+Validated 100/100 instances in 3.19s
+Validation weighted sum statistics:
+Mean: 2786.71
+Min: 2211.00
+Max: 3844.00
+Std: 319.15
+Validation value loss: -0.0164
+Validation policy entropy: 1.1878
+Validation Results:
+Average Weighted Sums:
+L2D: 2786.71
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 29/100 (29.00%)
+SPT: 32/100 (32.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 39/100 (39.00%)
+Updated learning curves plot at episode 1800
+Successfully logged learning curves to WandB
+No improvement for 17 validation checks (best weighted sum: 2713.08)
+Episode 1900/5000 | Reward: -2789.12 | Weighted Sum: 2678.75 | Loss: 0.025028
+Avg(100): Reward=-2867.73, Weighted Sum=2749.95 | Episode time: 0.95s | Total time: 3693.12s
+Validation weighted sum statistics:
+Mean: 2779.27
+Min: 2211.00
+Max: 3844.00
+Std: 309.11
+Validation value loss: -0.0208
+Validation policy entropy: 1.1833
+Validation Weighted Sum: 2779.27 | Reward-derived: -2866.80 | Improvement: -55.98%
+Validated 10/100 instances in 0.34s
+Validated 20/100 instances in 0.45s
+Validated 30/100 instances in 0.80s
+Validated 40/100 instances in 1.35s
+Validated 50/100 instances in 1.84s
+Validated 60/100 instances in 2.01s
+Validated 70/100 instances in 2.23s
+Validated 80/100 instances in 2.37s
+Validated 90/100 instances in 2.53s
+Validated 100/100 instances in 2.65s
+Validation weighted sum statistics:
+Mean: 2779.27
+Min: 2211.00
+Max: 3844.00
+Std: 309.11
+Validation value loss: -0.0208
+Validation policy entropy: 1.1833
+Validation Results:
+Average Weighted Sums:
+L2D: 2779.27
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 29/100 (29.00%)
+SPT: 31/100 (31.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 40/100 (40.00%)
+Updated learning curves plot at episode 1900
+Successfully logged learning curves to WandB
+No improvement for 18 validation checks (best weighted sum: 2713.08)
+Episode 2000/5000 | Reward: -2998.87 | Weighted Sum: 2821.50 | Loss: 0.081425
+Avg(100): Reward=-2866.81, Weighted Sum=2750.84 | Episode time: 0.97s | Total time: 3804.21s
+Validation weighted sum statistics:
+Mean: 2765.58
+Min: 2151.00
+Max: 3844.00
+Std: 297.42
+Validation value loss: -0.0243
+Validation policy entropy: 1.2038
+Validation Weighted Sum: 2765.58 | Reward-derived: -2859.81 | Improvement: -55.25%
+Validated 10/100 instances in 0.11s
+Validated 20/100 instances in 0.24s
+Validated 30/100 instances in 0.36s
+Validated 40/100 instances in 0.49s
+Validated 50/100 instances in 0.59s
+Validated 60/100 instances in 0.70s
+Validated 70/100 instances in 0.80s
+Validated 80/100 instances in 0.91s
+Validated 90/100 instances in 1.02s
+Validated 100/100 instances in 1.13s
+Validation weighted sum statistics:
+Mean: 2765.58
+Min: 2151.00
+Max: 3844.00
+Std: 297.42
+Validation value loss: -0.0243
+Validation policy entropy: 1.2038
+Validation Results:
+Average Weighted Sums:
+L2D: 2765.58
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 33/100 (33.00%)
+SPT: 29/100 (29.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 38/100 (38.00%)
+Updated learning curves plot at episode 2000
+Successfully logged learning curves to WandB
+No improvement for 19 validation checks (best weighted sum: 2713.08)
+Episode 2100/5000 | Reward: -2860.00 | Weighted Sum: 2742.62 | Loss: -0.009810
+Avg(100): Reward=-2895.83, Weighted Sum=2775.45 | Episode time: 0.79s | Total time: 3911.97s
+Validation weighted sum statistics:
+Mean: 2772.60
+Min: 2150.00
+Max: 3844.00
+Std: 302.36
+Validation value loss: -0.0254
+Validation policy entropy: 1.2057
+Validation Weighted Sum: 2772.60 | Reward-derived: -2860.69 | Improvement: -55.60%
+Validated 10/100 instances in 0.21s
+Validated 20/100 instances in 0.32s
+Validated 30/100 instances in 0.47s
+Validated 40/100 instances in 0.64s
+Validated 50/100 instances in 0.78s
+Validated 60/100 instances in 0.93s
+Validated 70/100 instances in 1.04s
+Validated 80/100 instances in 1.22s
+Validated 90/100 instances in 1.33s
+Validated 100/100 instances in 1.45s
+Validation weighted sum statistics:
+Mean: 2772.60
+Min: 2150.00
+Max: 3844.00
+Std: 302.36
+Validation value loss: -0.0254
+Validation policy entropy: 1.2057
+Validation Results:
+Average Weighted Sums:
+L2D: 2772.60
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 30/100 (30.00%)
+SPT: 29/100 (29.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 41/100 (41.00%)
+Updated learning curves plot at episode 2100
+Successfully logged learning curves to WandB
+No improvement for 20 validation checks (best weighted sum: 2713.08)
+Episode 2200/5000 | Reward: -2767.75 | Weighted Sum: 2674.00 | Loss: 0.088401
+Avg(100): Reward=-2880.82, Weighted Sum=2763.28 | Episode time: 0.95s | Total time: 4026.47s
+Validation weighted sum statistics:
+Mean: 2777.38
+Min: 2151.00
+Max: 3844.00
+Std: 301.83
+Validation value loss: -0.0248
+Validation policy entropy: 1.2006
+Validation Weighted Sum: 2777.38 | Reward-derived: -2878.71 | Improvement: -55.89%
+Validated 10/100 instances in 0.26s
+Validated 20/100 instances in 0.59s
+Validated 30/100 instances in 0.84s
+Validated 40/100 instances in 1.15s
+Validated 50/100 instances in 1.43s
+Validated 60/100 instances in 1.71s
+Validated 70/100 instances in 2.03s
+Validated 80/100 instances in 2.40s
+Validated 90/100 instances in 2.96s
+Validated 100/100 instances in 3.21s
+Validation weighted sum statistics:
+Mean: 2777.38
+Min: 2151.00
+Max: 3844.00
+Std: 301.83
+Validation value loss: -0.0248
+Validation policy entropy: 1.2006
+Validation Results:
+Average Weighted Sums:
+L2D: 2777.38
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 28/100 (28.00%)
+SPT: 29/100 (29.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 43/100 (43.00%)
+Updated learning curves plot at episode 2200
+Successfully logged learning curves to WandB
+No improvement for 21 validation checks (best weighted sum: 2713.08)
+Episode 2300/5000 | Reward: -3104.75 | Weighted Sum: 2931.62 | Loss: -0.074461
+Avg(100): Reward=-2880.39, Weighted Sum=2762.36 | Episode time: 1.05s | Total time: 4171.22s
+Validation weighted sum statistics:
+Mean: 2779.84
+Min: 2151.00
+Max: 3844.00
+Std: 308.63
+Validation value loss: -0.0323
+Validation policy entropy: 1.2019
+Validation Weighted Sum: 2779.84 | Reward-derived: -2878.29 | Improvement: -56.05%
+Validated 10/100 instances in 0.34s
+Validated 20/100 instances in 0.60s
+Validated 30/100 instances in 0.78s
+Validated 40/100 instances in 1.12s
+Validated 50/100 instances in 1.50s
+Validated 60/100 instances in 1.73s
+Validated 70/100 instances in 2.16s
+Validated 80/100 instances in 2.50s
+Validated 90/100 instances in 2.84s
+Validated 100/100 instances in 2.98s
+Validation weighted sum statistics:
+Mean: 2779.84
+Min: 2151.00
+Max: 3844.00
+Std: 308.63
+Validation value loss: -0.0323
+Validation policy entropy: 1.2019
+Validation Results:
+Average Weighted Sums:
+L2D: 2779.84
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 27/100 (27.00%)
+SPT: 29/100 (29.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 44/100 (44.00%)
+Updated learning curves plot at episode 2300
+Successfully logged learning curves to WandB
+No improvement for 22 validation checks (best weighted sum: 2713.08)
+Episode 2400/5000 | Reward: -2822.12 | Weighted Sum: 2727.38 | Loss: 0.205593
+Avg(100): Reward=-2865.95, Weighted Sum=2745.76 | Episode time: 0.69s | Total time: 4296.70s
+Validation weighted sum statistics:
+Mean: 2772.21
+Min: 2066.00
+Max: 3924.00
+Std: 301.69
+Validation value loss: -0.0269
+Validation policy entropy: 1.2171
+Validation Weighted Sum: 2772.21 | Reward-derived: -2872.57 | Improvement: -55.66%
+Validated 10/100 instances in 0.12s
+Validated 20/100 instances in 0.34s
+Validated 30/100 instances in 0.50s
+Validated 40/100 instances in 0.72s
+Validated 50/100 instances in 0.95s
+Validated 60/100 instances in 1.10s
+Validated 70/100 instances in 1.44s
+Validated 80/100 instances in 1.63s
+Validated 90/100 instances in 1.81s
+Validated 100/100 instances in 1.92s
+Validation weighted sum statistics:
+Mean: 2772.21
+Min: 2066.00
+Max: 3924.00
+Std: 301.69
+Validation value loss: -0.0269
+Validation policy entropy: 1.2171
+Validation Results:
+Average Weighted Sums:
+L2D: 2772.21
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 29/100 (29.00%)
+SPT: 27/100 (27.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 44/100 (44.00%)
+Updated learning curves plot at episode 2400
+Successfully logged learning curves to WandB
+No improvement for 23 validation checks (best weighted sum: 2713.08)
+Episode 2500/5000 | Reward: -2876.12 | Weighted Sum: 2807.25 | Loss: 0.026511
+Avg(100): Reward=-2885.11, Weighted Sum=2764.22 | Episode time: 0.96s | Total time: 4412.85s
+Validation weighted sum statistics:
+Mean: 2761.46
+Min: 2066.00
+Max: 3924.00
+Std: 321.32
+Validation value loss: -0.0348
+Validation policy entropy: 1.2078
+Validation Weighted Sum: 2761.46 | Reward-derived: -2868.04 | Improvement: -54.94%
+Validated 10/100 instances in 0.40s
+Validated 20/100 instances in 0.72s
+Validated 30/100 instances in 1.07s
+Validated 40/100 instances in 1.43s
+Validated 50/100 instances in 1.79s
+Validated 60/100 instances in 2.07s
+Validated 70/100 instances in 2.46s
+Validated 80/100 instances in 2.69s
+Validated 90/100 instances in 2.95s
+Validated 100/100 instances in 3.28s
+Validation weighted sum statistics:
+Mean: 2761.46
+Min: 2066.00
+Max: 3924.00
+Std: 321.32
+Validation value loss: -0.0348
+Validation policy entropy: 1.2078
+Validation Results:
+Average Weighted Sums:
+L2D: 2761.46
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 31/100 (31.00%)
+SPT: 25/100 (25.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 44/100 (44.00%)
+Updated learning curves plot at episode 2500
+Successfully logged learning curves to WandB
+No improvement for 24 validation checks (best weighted sum: 2713.08)
+Episode 2600/5000 | Reward: -2750.87 | Weighted Sum: 2690.38 | Loss: -0.168680
+Avg(100): Reward=-2887.18, Weighted Sum=2769.04 | Episode time: 0.96s | Total time: 4532.49s
+Validation weighted sum statistics:
+Mean: 2765.40
+Min: 2100.00
+Max: 3924.00
+Std: 318.25
+Validation value loss: -0.0436
+Validation policy entropy: 1.2119
+Validation Weighted Sum: 2765.40 | Reward-derived: -2862.41 | Improvement: -55.16%
+Validated 10/100 instances in 0.45s
+Validated 20/100 instances in 0.82s
+Validated 30/100 instances in 1.20s
+Validated 40/100 instances in 1.59s
+Validated 50/100 instances in 1.91s
+Validated 60/100 instances in 2.23s
+Validated 70/100 instances in 2.52s
+Validated 80/100 instances in 2.82s
+Validated 90/100 instances in 3.29s
+Validated 100/100 instances in 3.70s
+Validation weighted sum statistics:
+Mean: 2765.40
+Min: 2100.00
+Max: 3924.00
+Std: 318.25
+Validation value loss: -0.0436
+Validation policy entropy: 1.2119
+Validation Results:
+Average Weighted Sums:
+L2D: 2765.40
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 32/100 (32.00%)
+SPT: 27/100 (27.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 41/100 (41.00%)
+Updated learning curves plot at episode 2600
+Successfully logged learning curves to WandB
+No improvement for 25 validation checks (best weighted sum: 2713.08)
+Episode 2700/5000 | Reward: -2779.62 | Weighted Sum: 2651.62 | Loss: 0.152927
+Avg(100): Reward=-2894.47, Weighted Sum=2774.74 | Episode time: 0.81s | Total time: 4648.02s
+Validation weighted sum statistics:
+Mean: 2753.01
+Min: 2039.00
+Max: 3788.00
+Std: 305.88
+Validation value loss: -0.0389
+Validation policy entropy: 1.2211
+Validation Weighted Sum: 2753.01 | Reward-derived: -2850.29 | Improvement: -54.53%
+Validated 10/100 instances in 0.30s
+Validated 20/100 instances in 0.46s
+Validated 30/100 instances in 0.58s
+Validated 40/100 instances in 0.79s
+Validated 50/100 instances in 0.94s
+Validated 60/100 instances in 1.07s
+Validated 70/100 instances in 1.19s
+Validated 80/100 instances in 1.31s
+Validated 90/100 instances in 1.43s
+Validated 100/100 instances in 1.62s
+Validation weighted sum statistics:
+Mean: 2753.01
+Min: 2039.00
+Max: 3788.00
+Std: 305.88
+Validation value loss: -0.0389
+Validation policy entropy: 1.2211
+Validation Results:
+Average Weighted Sums:
+L2D: 2753.01
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 33/100 (33.00%)
+SPT: 27/100 (27.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 40/100 (40.00%)
+Updated learning curves plot at episode 2700
+Successfully logged learning curves to WandB
+No improvement for 26 validation checks (best weighted sum: 2713.08)
+Episode 2800/5000 | Reward: -2864.87 | Weighted Sum: 2713.25 | Loss: 0.116079
+Avg(100): Reward=-2890.71, Weighted Sum=2772.76 | Episode time: 0.90s | Total time: 4767.74s
+Validation weighted sum statistics:
+Mean: 2738.79
+Min: 2066.00
+Max: 3602.00
+Std: 297.92
+Validation value loss: -0.0384
+Validation policy entropy: 1.2298
+Validation Weighted Sum: 2738.79 | Reward-derived: -2841.25 | Improvement: -53.78%
+Validated 10/100 instances in 0.19s
+Validated 20/100 instances in 0.46s
+Validated 30/100 instances in 0.67s
+Validated 40/100 instances in 0.78s
+Validated 50/100 instances in 1.10s
+Validated 60/100 instances in 1.26s
+Validated 70/100 instances in 1.48s
+Validated 80/100 instances in 1.82s
+Validated 90/100 instances in 2.00s
+Validated 100/100 instances in 2.40s
+Validation weighted sum statistics:
+Mean: 2738.79
+Min: 2066.00
+Max: 3602.00
+Std: 297.92
+Validation value loss: -0.0384
+Validation policy entropy: 1.2298
+Validation Results:
+Average Weighted Sums:
+L2D: 2738.79
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 35/100 (35.00%)
+SPT: 26/100 (26.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 39/100 (39.00%)
+Updated learning curves plot at episode 2800
+Successfully logged learning curves to WandB
+No improvement for 27 validation checks (best weighted sum: 2713.08)
+Episode 2900/5000 | Reward: -2962.62 | Weighted Sum: 2869.88 | Loss: -0.055463
+Avg(100): Reward=-2893.91, Weighted Sum=2772.53 | Episode time: 1.21s | Total time: 4882.42s
+Validation weighted sum statistics:
+Mean: 2753.55
+Min: 2039.00
+Max: 3757.00
+Std: 296.70
+Validation value loss: -0.0438
+Validation policy entropy: 1.1982
+Validation Weighted Sum: 2753.55 | Reward-derived: -2843.69 | Improvement: -54.60%
+Validated 10/100 instances in 0.22s
+Validated 20/100 instances in 0.66s
+Validated 30/100 instances in 0.84s
+Validated 40/100 instances in 1.14s
+Validated 50/100 instances in 1.75s
+Validated 60/100 instances in 2.08s
+Validated 70/100 instances in 2.39s
+Validated 80/100 instances in 2.57s
+Validated 90/100 instances in 2.82s
+Validated 100/100 instances in 3.13s
+Validation weighted sum statistics:
+Mean: 2753.55
+Min: 2039.00
+Max: 3757.00
+Std: 296.70
+Validation value loss: -0.0438
+Validation policy entropy: 1.1982
+Validation Results:
+Average Weighted Sums:
+L2D: 2753.55
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 34/100 (34.00%)
+SPT: 26/100 (26.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 40/100 (40.00%)
+Updated learning curves plot at episode 2900
+Successfully logged learning curves to WandB
+No improvement for 28 validation checks (best weighted sum: 2713.08)
+Episode 3000/5000 | Reward: -2935.87 | Weighted Sum: 2856.00 | Loss: 0.069576
+Avg(100): Reward=-2875.88, Weighted Sum=2754.41 | Episode time: 0.93s | Total time: 5006.34s
+Validation weighted sum statistics:
+Mean: 2740.88
+Min: 2039.00
+Max: 3757.00
+Std: 295.59
+Validation value loss: -0.0420
+Validation policy entropy: 1.2007
+Validation Weighted Sum: 2740.88 | Reward-derived: -2834.11 | Improvement: -53.83%
+Validated 10/100 instances in 0.40s
+Validated 20/100 instances in 0.83s
+Validated 30/100 instances in 1.23s
+Validated 40/100 instances in 1.56s
+Validated 50/100 instances in 1.74s
+Validated 60/100 instances in 1.94s
+Validated 70/100 instances in 2.15s
+Validated 80/100 instances in 2.27s
+Validated 90/100 instances in 2.42s
+Validated 100/100 instances in 2.71s
+Validation weighted sum statistics:
+Mean: 2740.88
+Min: 2039.00
+Max: 3757.00
+Std: 295.59
+Validation value loss: -0.0420
+Validation policy entropy: 1.2007
+Validation Results:
+Average Weighted Sums:
+L2D: 2740.88
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 34/100 (34.00%)
+SPT: 27/100 (27.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 39/100 (39.00%)
+Updated learning curves plot at episode 3000
+Successfully logged learning curves to WandB
+No improvement for 29 validation checks (best weighted sum: 2713.08)
+Episode 3100/5000 | Reward: -3018.50 | Weighted Sum: 2912.88 | Loss: -0.047681
+Avg(100): Reward=-2883.10, Weighted Sum=2756.22 | Episode time: 0.91s | Total time: 5131.71s
+Validation weighted sum statistics:
+Mean: 2738.98
+Min: 2039.00
+Max: 3698.00
+Std: 297.60
+Validation value loss: -0.0433
+Validation policy entropy: 1.2129
+Validation Weighted Sum: 2738.98 | Reward-derived: -2831.94 | Improvement: -53.70%
+Validated 10/100 instances in 0.19s
+Validated 20/100 instances in 0.49s
+Validated 30/100 instances in 0.68s
+Validated 40/100 instances in 0.82s
+Validated 50/100 instances in 0.93s
+Validated 60/100 instances in 1.05s
+Validated 70/100 instances in 1.34s
+Validated 80/100 instances in 1.45s
+Validated 90/100 instances in 1.65s
+Validated 100/100 instances in 1.85s
+Validation weighted sum statistics:
+Mean: 2738.98
+Min: 2039.00
+Max: 3698.00
+Std: 297.60
+Validation value loss: -0.0433
+Validation policy entropy: 1.2129
+Validation Results:
+Average Weighted Sums:
+L2D: 2738.98
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 37/100 (37.00%)
+SPT: 26/100 (26.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 37/100 (37.00%)
+Updated learning curves plot at episode 3100
+Successfully logged learning curves to WandB
+No improvement for 30 validation checks (best weighted sum: 2713.08)
+Episode 3200/5000 | Reward: -2799.00 | Weighted Sum: 2668.00 | Loss: 0.125953
+Avg(100): Reward=-2880.73, Weighted Sum=2762.22 | Episode time: 1.17s | Total time: 5251.54s
+Validation weighted sum statistics:
+Mean: 2757.25
+Min: 2039.00
+Max: 3698.00
+Std: 296.38
+Validation value loss: -0.0476
+Validation policy entropy: 1.2140
+Validation Weighted Sum: 2757.25 | Reward-derived: -2852.62 | Improvement: -54.73%
+Validated 10/100 instances in 0.47s
+Validated 20/100 instances in 0.94s
+Validated 30/100 instances in 1.40s
+Validated 40/100 instances in 1.78s
+Validated 50/100 instances in 2.18s
+Validated 60/100 instances in 2.47s
+Validated 70/100 instances in 2.68s
+Validated 80/100 instances in 2.79s
+Validated 90/100 instances in 2.92s
+Validated 100/100 instances in 3.12s
+Validation weighted sum statistics:
+Mean: 2757.25
+Min: 2039.00
+Max: 3698.00
+Std: 296.38
+Validation value loss: -0.0476
+Validation policy entropy: 1.2140
+Validation Results:
+Average Weighted Sums:
+L2D: 2757.25
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 32/100 (32.00%)
+SPT: 30/100 (30.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 38/100 (38.00%)
+Updated learning curves plot at episode 3200
+Successfully logged learning curves to WandB
+No improvement for 31 validation checks (best weighted sum: 2713.08)
+Episode 3300/5000 | Reward: -2814.87 | Weighted Sum: 2675.50 | Loss: 0.111691
+Avg(100): Reward=-2889.25, Weighted Sum=2766.71 | Episode time: 0.89s | Total time: 5370.72s
+Validation weighted sum statistics:
+Mean: 2754.70
+Min: 2039.00
+Max: 3757.00
+Std: 298.03
+Validation value loss: -0.0461
+Validation policy entropy: 1.1960
+Validation Weighted Sum: 2754.70 | Reward-derived: -2845.87 | Improvement: -54.60%
+Validated 10/100 instances in 0.26s
+Validated 20/100 instances in 0.54s
+Validated 30/100 instances in 0.92s
+Validated 40/100 instances in 1.21s
+Validated 50/100 instances in 1.31s
+Validated 60/100 instances in 1.68s
+Validated 70/100 instances in 1.92s
+Validated 80/100 instances in 2.06s
+Validated 90/100 instances in 2.18s
+Validated 100/100 instances in 2.39s
+Validation weighted sum statistics:
+Mean: 2754.70
+Min: 2039.00
+Max: 3757.00
+Std: 298.03
+Validation value loss: -0.0461
+Validation policy entropy: 1.1960
+Validation Results:
+Average Weighted Sums:
+L2D: 2754.70
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 32/100 (32.00%)
+SPT: 30/100 (30.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 38/100 (38.00%)
+Updated learning curves plot at episode 3300
+Successfully logged learning curves to WandB
+No improvement for 32 validation checks (best weighted sum: 2713.08)
+Episode 3400/5000 | Reward: -2779.37 | Weighted Sum: 2696.00 | Loss: 0.053777
+Avg(100): Reward=-2868.71, Weighted Sum=2759.69 | Episode time: 0.92s | Total time: 5494.30s
+Validation weighted sum statistics:
+Mean: 2757.71
+Min: 2039.00
+Max: 3757.00
+Std: 301.04
+Validation value loss: -0.0507
+Validation policy entropy: 1.1817
+Validation Weighted Sum: 2757.71 | Reward-derived: -2847.55 | Improvement: -54.73%
+Validated 10/100 instances in 0.20s
+Validated 20/100 instances in 0.46s
+Validated 30/100 instances in 0.76s
+Validated 40/100 instances in 1.14s
+Validated 50/100 instances in 1.39s
+Validated 60/100 instances in 1.70s
+Validated 70/100 instances in 1.90s
+Validated 80/100 instances in 2.01s
+Validated 90/100 instances in 2.14s
+Validated 100/100 instances in 2.28s
+Validation weighted sum statistics:
+Mean: 2757.71
+Min: 2039.00
+Max: 3757.00
+Std: 301.04
+Validation value loss: -0.0507
+Validation policy entropy: 1.1817
+Validation Results:
+Average Weighted Sums:
+L2D: 2757.71
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 33/100 (33.00%)
+SPT: 30/100 (30.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 37/100 (37.00%)
+Updated learning curves plot at episode 3400
+Successfully logged learning curves to WandB
+No improvement for 33 validation checks (best weighted sum: 2713.08)
+Episode 3500/5000 | Reward: -2840.87 | Weighted Sum: 2704.62 | Loss: 0.077262
+Avg(100): Reward=-2877.22, Weighted Sum=2756.71 | Episode time: 0.80s | Total time: 5608.75s
+Validation weighted sum statistics:
+Mean: 2760.12
+Min: 2039.00
+Max: 3757.00
+Std: 307.96
+Validation value loss: -0.0495
+Validation policy entropy: 1.1697
+Validation Weighted Sum: 2760.12 | Reward-derived: -2846.62 | Improvement: -54.82%
+Validated 10/100 instances in 0.11s
+Validated 20/100 instances in 0.29s
+Validated 30/100 instances in 0.42s
+Validated 40/100 instances in 0.62s
+Validated 50/100 instances in 0.76s
+Validated 60/100 instances in 0.92s
+Validated 70/100 instances in 1.03s
+Validated 80/100 instances in 1.27s
+Validated 90/100 instances in 1.41s
+Validated 100/100 instances in 1.63s
+Validation weighted sum statistics:
+Mean: 2760.12
+Min: 2039.00
+Max: 3757.00
+Std: 307.96
+Validation value loss: -0.0495
+Validation policy entropy: 1.1697
+Validation Results:
+Average Weighted Sums:
+L2D: 2760.12
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 31/100 (31.00%)
+SPT: 32/100 (32.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 37/100 (37.00%)
+Updated learning curves plot at episode 3500
+Successfully logged learning curves to WandB
+No improvement for 34 validation checks (best weighted sum: 2713.08)
+Episode 3600/5000 | Reward: -3060.50 | Weighted Sum: 2839.75 | Loss: 0.069415
+Avg(100): Reward=-2880.20, Weighted Sum=2756.64 | Episode time: 0.96s | Total time: 5766.79s
+Validation weighted sum statistics:
+Mean: 2751.54
+Min: 2039.00
+Max: 3757.00
+Std: 302.02
+Validation value loss: -0.0557
+Validation policy entropy: 1.1789
+Validation Weighted Sum: 2751.54 | Reward-derived: -2842.98 | Improvement: -54.37%
+Validated 10/100 instances in 0.20s
+Validated 20/100 instances in 0.33s
+Validated 30/100 instances in 0.67s
+Validated 40/100 instances in 0.79s
+Validated 50/100 instances in 1.08s
+Validated 60/100 instances in 1.34s
+Validated 70/100 instances in 1.48s
+Validated 80/100 instances in 1.58s
+Validated 90/100 instances in 1.78s
+Validated 100/100 instances in 2.01s
+Validation weighted sum statistics:
+Mean: 2751.54
+Min: 2039.00
+Max: 3757.00
+Std: 302.02
+Validation value loss: -0.0557
+Validation policy entropy: 1.1789
+Validation Results:
+Average Weighted Sums:
+L2D: 2751.54
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 32/100 (32.00%)
+SPT: 30/100 (30.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 38/100 (38.00%)
+Updated learning curves plot at episode 3600
+Successfully logged learning curves to WandB
+No improvement for 35 validation checks (best weighted sum: 2713.08)
+Episode 3700/5000 | Reward: -2918.25 | Weighted Sum: 2812.62 | Loss: 0.003858
+Avg(100): Reward=-2884.56, Weighted Sum=2770.53 | Episode time: 1.23s | Total time: 5902.55s
+Validation weighted sum statistics:
+Mean: 2747.40
+Min: 2039.00
+Max: 3757.00
+Std: 294.03
+Validation value loss: -0.0498
+Validation policy entropy: 1.1727
+Validation Weighted Sum: 2747.40 | Reward-derived: -2835.12 | Improvement: -54.21%
+Validated 10/100 instances in 0.11s
+Validated 20/100 instances in 0.24s
+Validated 30/100 instances in 0.35s
+Validated 40/100 instances in 0.54s
+Validated 50/100 instances in 0.67s
+Validated 60/100 instances in 0.87s
+Validated 70/100 instances in 1.26s
+Validated 80/100 instances in 1.45s
+Validated 90/100 instances in 1.76s
+Validated 100/100 instances in 2.02s
+Validation weighted sum statistics:
+Mean: 2747.40
+Min: 2039.00
+Max: 3757.00
+Std: 294.03
+Validation value loss: -0.0498
+Validation policy entropy: 1.1727
+Validation Results:
+Average Weighted Sums:
+L2D: 2747.40
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 32/100 (32.00%)
+SPT: 29/100 (29.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 39/100 (39.00%)
+Updated learning curves plot at episode 3700
+Successfully logged learning curves to WandB
+No improvement for 36 validation checks (best weighted sum: 2713.08)
+Episode 3800/5000 | Reward: -2784.50 | Weighted Sum: 2728.12 | Loss: 0.103152
+Avg(100): Reward=-2864.99, Weighted Sum=2745.07 | Episode time: 1.02s | Total time: 6039.77s
+Validation weighted sum statistics:
+Mean: 2760.04
+Min: 2039.00
+Max: 3670.00
+Std: 304.93
+Validation value loss: -0.0465
+Validation policy entropy: 1.1309
+Validation Weighted Sum: 2760.04 | Reward-derived: -2834.48 | Improvement: -54.92%
+Validated 10/100 instances in 0.26s
+Validated 20/100 instances in 0.37s
+Validated 30/100 instances in 0.49s
+Validated 40/100 instances in 0.86s
+Validated 50/100 instances in 1.11s
+Validated 60/100 instances in 1.22s
+Validated 70/100 instances in 1.33s
+Validated 80/100 instances in 1.45s
+Validated 90/100 instances in 1.68s
+Validated 100/100 instances in 1.83s
+Validation weighted sum statistics:
+Mean: 2760.04
+Min: 2039.00
+Max: 3670.00
+Std: 304.93
+Validation value loss: -0.0465
+Validation policy entropy: 1.1309
+Validation Results:
+Average Weighted Sums:
+L2D: 2760.04
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 31/100 (31.00%)
+SPT: 31/100 (31.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 38/100 (38.00%)
+Updated learning curves plot at episode 3800
+Successfully logged learning curves to WandB
+No improvement for 37 validation checks (best weighted sum: 2713.08)
+Episode 3900/5000 | Reward: -2881.87 | Weighted Sum: 2814.50 | Loss: -0.073430
+Avg(100): Reward=-2904.45, Weighted Sum=2779.28 | Episode time: 0.97s | Total time: 6161.99s
+Validation weighted sum statistics:
+Mean: 2753.48
+Min: 2039.00
+Max: 3757.00
+Std: 301.59
+Validation value loss: -0.0532
+Validation policy entropy: 1.1204
+Validation Weighted Sum: 2753.48 | Reward-derived: -2825.93 | Improvement: -54.58%
+Validated 10/100 instances in 0.47s
+Validated 20/100 instances in 0.76s
+Validated 30/100 instances in 1.09s
+Validated 40/100 instances in 1.47s
+Validated 50/100 instances in 1.72s
+Validated 60/100 instances in 1.84s
+Validated 70/100 instances in 1.95s
+Validated 80/100 instances in 2.15s
+Validated 90/100 instances in 2.40s
+Validated 100/100 instances in 2.55s
+Validation weighted sum statistics:
+Mean: 2753.48
+Min: 2039.00
+Max: 3757.00
+Std: 301.59
+Validation value loss: -0.0532
+Validation policy entropy: 1.1204
+Validation Results:
+Average Weighted Sums:
+L2D: 2753.48
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 34/100 (34.00%)
+SPT: 30/100 (30.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 36/100 (36.00%)
+Updated learning curves plot at episode 3900
+Successfully logged learning curves to WandB
+No improvement for 38 validation checks (best weighted sum: 2713.08)
+Episode 4000/5000 | Reward: -3029.37 | Weighted Sum: 2868.12 | Loss: -0.011971
+Avg(100): Reward=-2890.44, Weighted Sum=2771.88 | Episode time: 0.85s | Total time: 6287.86s
+Validation weighted sum statistics:
+Mean: 2765.87
+Min: 2039.00
+Max: 3670.00
+Std: 303.37
+Validation value loss: -0.0513
+Validation policy entropy: 1.1250
+Validation Weighted Sum: 2765.87 | Reward-derived: -2842.35 | Improvement: -55.26%
+Validated 10/100 instances in 0.13s
+Validated 20/100 instances in 0.35s
+Validated 30/100 instances in 0.64s
+Validated 40/100 instances in 0.84s
+Validated 50/100 instances in 1.16s
+Validated 60/100 instances in 1.33s
+Validated 70/100 instances in 1.46s
+Validated 80/100 instances in 1.57s
+Validated 90/100 instances in 1.70s
+Validated 100/100 instances in 2.06s
+Validation weighted sum statistics:
+Mean: 2765.87
+Min: 2039.00
+Max: 3670.00
+Std: 303.37
+Validation value loss: -0.0513
+Validation policy entropy: 1.1250
+Validation Results:
+Average Weighted Sums:
+L2D: 2765.87
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 33/100 (33.00%)
+SPT: 30/100 (30.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 37/100 (37.00%)
+Updated learning curves plot at episode 4000
+Successfully logged learning curves to WandB
+No improvement for 39 validation checks (best weighted sum: 2713.08)
+Episode 4100/5000 | Reward: -2866.75 | Weighted Sum: 2773.25 | Loss: -0.057025
+Avg(100): Reward=-2874.56, Weighted Sum=2763.17 | Episode time: 1.07s | Total time: 6416.63s
+Validation weighted sum statistics:
+Mean: 2753.70
+Min: 2039.00
+Max: 3670.00
+Std: 307.30
+Validation value loss: -0.0545
+Validation policy entropy: 1.1189
+Validation Weighted Sum: 2753.70 | Reward-derived: -2833.06 | Improvement: -54.54%
+Validated 10/100 instances in 0.31s
+Validated 20/100 instances in 0.47s
+Validated 30/100 instances in 0.59s
+Validated 40/100 instances in 0.81s
+Validated 50/100 instances in 0.98s
+Validated 60/100 instances in 1.09s
+Validated 70/100 instances in 1.19s
+Validated 80/100 instances in 1.33s
+Validated 90/100 instances in 1.47s
+Validated 100/100 instances in 1.58s
+Validation weighted sum statistics:
+Mean: 2753.70
+Min: 2039.00
+Max: 3670.00
+Std: 307.30
+Validation value loss: -0.0545
+Validation policy entropy: 1.1189
+Validation Results:
+Average Weighted Sums:
+L2D: 2753.70
+SPT: 2750.33
+WSPT: 2750.33
+SRPT: 2733.54
+Win Statistics:
+L2D: 35/100 (35.00%)
+SPT: 30/100 (30.00%)
+WSPT: 0/100 (0.00%)
+SRPT: 35/100 (35.00%)
+Updated learning curves plot at episode 4100
+Successfully logged learning curves to WandB
+No improvement for 40 validation checks (best weighted sum: 2713.08)
+Episode 4200/5000 | Reward: -2769.62 | Weighted Sum: 2673.75 | Loss: -0.092891

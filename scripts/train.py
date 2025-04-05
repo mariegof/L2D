@@ -13,6 +13,8 @@ import torch
 import numpy as np
 import sys
 import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.use('Agg')  # Use non-interactive backend to avoid Tkinter issues
 from tqdm import tqdm
 
 from src.environments.JSSP_Env import SJSSP
@@ -236,6 +238,7 @@ def plot_weighted_learning_curves(rewards, losses, weighted_sums, figures_dir=No
         log_every: Episodes between validation checks
         current_episode: Current episode number for consistent filenames
     """
+    fig = None  # Define fig outside try block for cleanup in finally
     try:
         # Get a unique run identifier from WandB
         run_id = "local"
@@ -422,8 +425,6 @@ def plot_weighted_learning_curves(rewards, losses, weighted_sums, figures_dir=No
             episode_filename = os.path.join(figures_dir, f"learning_curves_ep{episode_str}.png")
             plt.savefig(episode_filename, format='png', dpi=300, bbox_inches='tight')
         
-        plt.close(fig)
-        
         print(f"Updated learning curves plot at episode {current_episode or len(rewards)}")
         return True, standard_filename, standard_filename  # Return the same file twice for backward compatibility
         
@@ -432,6 +433,13 @@ def plot_weighted_learning_curves(rewards, losses, weighted_sums, figures_dir=No
         import traceback
         traceback.print_exc()
         return False, None, None
+    finally:
+        # Ensure figure is always closed, even on exceptions
+        if fig is not None:
+            try:
+                plt.close(fig)
+            except:
+                pass  # Ignore any errors during cleanup
     
 def safe_log_image_to_wandb(image_path, image_name="image"):
     """

@@ -2,9 +2,22 @@ import matplotlib.pyplot as plt
 import numpy as np
 from IPython.display import clear_output
 import os
+import atexit
 
 class LivePlotter:
     """Class for real-time visualization of training progress with best performance indicators"""
+    
+    # Keep track of instances for global cleanup
+    _instances = []
+    
+    @classmethod
+    def _cleanup_all(cls):
+        """Clean up all plotter instances"""
+        for instance in cls._instances[:]:
+            try:
+                instance.cleanup()
+            except:
+                pass  # Ignore errors during cleanup
     
     def __init__(self, use_ipython=False, save_dir=None):
         self.use_ipython = use_ipython
@@ -61,12 +74,26 @@ class LivePlotter:
         self.axs[2].legend()
         self.axs[2].grid(True, alpha=0.3)
         
+        # Flag to track if plotter has been closed
+        self.is_closed = False
+        
+        # Add this instance to the list for global cleanup
+        LivePlotter._instances.append(self)
+        
+        # Register global cleanup function if this is the first instance
+        if len(LivePlotter._instances) == 1:
+            atexit.register(LivePlotter._cleanup_all)
+        
         plt.ion()  # Enable interactive mode
-        self.fig.show()
+        self.fig.canvas.draw()
     
     def update(self, episode, reward, weighted_sum, loss, 
                validation_episode=None, validation_weighted_sum=None):
         """Update plots with new data"""
+        # Skip if already closed
+        if self.is_closed:
+            return
+            
         # Append data
         self.episodes.append(episode)
         self.rewards.append(reward)
@@ -132,36 +159,68 @@ class LivePlotter:
         if self.use_ipython:
             clear_output(wait=True)
         
-        self.fig.canvas.draw()
-        self.fig.canvas.flush_events()
+        try:
+            self.fig.canvas.draw()
+            self.fig.canvas.flush_events()
+        except Exception as e:
+            # If drawing fails (e.g., window closed), silently continue
+            pass
     
     def save_final_plots(self):
         """Save final plots"""
-        if not self.save_dir:
+        if not self.save_dir or self.is_closed:
             return
         
-        plt.ioff()  # Disable interactive mode for saving
+        # Temporarily disable interactive mode for saving
+        interactive_state = plt.isinteractive()
+        if interactive_state:
+            plt.ioff()
         
-        # Save combined plot
-        self.fig.savefig(os.path.join(self.save_dir, 'training_curves.png'))
-        
-        # Save individual plots
-        for i, (ax, name) in enumerate(zip(self.axs, ['reward', 'weighted_sum', 'loss'])):
-            fig, ax_new = plt.subplots(figsize=(10, 6))
-            lines = ax.get_lines()
-            for line in lines:
-                if line.get_visible():
-                    ax_new.plot(line.get_xdata(), line.get_ydata(), 
-                               label=line.get_label(), color=line.get_color(),
-                               marker=line.get_marker(), linestyle=line.get_linestyle())
+        try:
+            # Save combined plot
+            self.fig.savefig(os.path.join(self.save_dir, 'training_curves.png'))
             
-            ax_new.set_title(ax.get_title())
-            ax_new.set_xlabel(ax.get_xlabel())
-            ax_new.set_ylabel(ax.get_ylabel())
-            ax_new.legend()
-            ax_new.grid(True, alpha=0.3)
-            
-            fig.savefig(os.path.join(self.save_dir, f'{name}_curve.png'))
-            plt.close(fig)
-        
-        plt.ion()  # Re-enable interactive mode
+            # Save individual plots
+            for i, (ax, name) in enumerate(zip(self.axs, ['reward', 'weighted_sum', 'loss'])):
+                fig = None
+                try:
+                    fig, ax_new = plt.subplots(figsize=(10, 6))
+                    lines = ax.get_lines()
+                    for line in lines:
+                        if line.get_visible():
+                            ax_new.plot(line.get_xdata(), line.get_ydata(), 
+                                      label=line.get_label(), color=line.get_color(),
+                                      marker=line.get_marker(), linestyle=line.get_linestyle())
+                    
+                    ax_new.set_title(ax.get_title())
+                    ax_new.set_xlabel(ax.get_xlabel())
+                    ax_new.set_ylabel(ax.get_ylabel())
+                    ax_new.legend()
+                    ax_new.grid(True, alpha=0.3)
+                    
+                    fig.savefig(os.path.join(self.save_dir, f'{name}_curve.png'))
+                finally:
+                    # Close each individual figure
+                    if fig is not None:
+                        plt.close(fig)
+        except Exception as e:
+            print(f"Error saving plots: {e}")
+        finally:
+            # Restore previous interactive state
+            if interactive_state:
+                plt.ion()
+    
+    def cleanup(self):
+        """Explicitly close the figure and clean up resources"""
+        if not self.is_closed:
+            try:
+                plt.close(self.fig)
+                if self in LivePlotter._instances:
+                    LivePlotter._instances.remove(self)
+            except:
+                pass  # Ignore errors during cleanup
+            self.is_closed = True
+    
+    def __del__(self):
+        """Ensure cleanup when the object is garbage collected"""
+        self.cleanup()

@@ -18,7 +18,7 @@ max_updates: 2000              # Number of training episodes
 np_seed_train: 200             # Random seed for numpy during training
 np_seed_validation: 200        # Random seed for numpy during validation
 torch_seed: 600                # Random seed for PyTorch
-num_envs: 8                    # Number of parallel environments
+num_envs: 4                    # Number of parallel environments
 device: "cpu"                  # Device for training ("cpu" or "cuda")
 
 # Neural network parameters
@@ -26,7 +26,7 @@ num_layers: 3                  # Number of GNN layers
 neighbor_pooling_type: "sum"   # Neighbor pooling type
 graph_pool_type: "average"     # Graph pooling type
 input_dim: 3                   # Input dimension
-hidden_dim: 128                # Hidden dimension
+hidden_dim: 64                # Hidden dimension
 num_mlp_layers_feature_extract: 2  # Number of MLP layers for feature extraction
 num_mlp_layers_actor: 2        # Number of MLP layers for actor
 hidden_dim_actor: 32           # Hidden dimension for actor
@@ -35,15 +35,15 @@ hidden_dim_critic: 32          # Hidden dimension for critic
 
 # PPO parameters
 lr: 2.0e-5                     # Learning rate
-decayflag: true                # Learning rate decay flag
-decay_step_size: 200           # Learning rate decay step size
+decayflag: false                # Learning rate decay flag
+decay_step_size: 2000           # Learning rate decay step size
 decay_ratio: 0.9               # Learning rate decay ratio
 gamma: 1.0                     # Discount factor
-k_epochs: 10                   # Number of PPO epochs
-eps_clip: 0.1                  # PPO clipping parameter
+k_epochs: 1                   # Number of PPO epochs
+eps_clip: 0.2                  # PPO clipping parameter
 vloss_coef: 1.0                # Value loss coefficient
 ploss_coef: 2.0                # Policy loss coefficient
-entloss_coef: 0.02             # Entropy loss coefficient
+entloss_coef: 0.01             # Entropy loss coefficient
 
 # Feature and reward parameters
 feature_set:                   # Set of features to use
