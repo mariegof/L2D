@@ -444,15 +444,17 @@ def download_sweep_artifacts(project, sweep_id, entity, output_dir):
         
         # Find the best run based on validation_win_vs_wspt
         best_run = None
-        best_win_rate = -1
+        best_weighted_sum = float('inf') 
         
         for run in runs:
             if run.state == "finished":
                 summary = run.summary._json_dict
-                win_rate = summary.get("validation_win_vs_wspt", -1)
+                # First try to get the explicitly tracked best weighted sum
+                weighted_sum = summary.get("validation_weighted_sum", float('inf'))
                 
-                if win_rate > best_win_rate:
-                    best_win_rate = win_rate
+                # Lower is better for weighted sum
+                if weighted_sum < best_weighted_sum:
+                    best_weighted_sum = weighted_sum
                     best_run = run
         
         if not best_run:
@@ -466,8 +468,8 @@ def download_sweep_artifacts(project, sweep_id, entity, output_dir):
             "url": best_run.url,
             "created_at": best_run.created_at,
             "metrics": {
-                "win_vs_wspt": best_win_rate,
                 "weighted_sum": best_run.summary._json_dict.get("validation_weighted_sum", "N/A"),
+                "win_vs_wspt": best_run.summary._json_dict.get("validation_win_vs_wspt", "N/A"),
                 "win_vs_spt": best_run.summary._json_dict.get("validation_win_vs_spt", "N/A"),
                 "win_vs_srpt": best_run.summary._json_dict.get("validation_win_vs_srpt", "N/A"),
                 "win_rate": best_run.summary._json_dict.get("validation_win_rate", "N/A"),

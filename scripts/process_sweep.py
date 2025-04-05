@@ -51,7 +51,7 @@ def parse_args():
                       help='Type of sweep (environment, feature, reward, model)')
     parser.add_argument('--top_k', type=int, default=5, 
                       help='Number of top runs to include in summary')
-    parser.add_argument('--primary_metric', type=str, default='validation_win_vs_wspt', 
+    parser.add_argument('--primary_metric', type=str, default='validation_weighted_sum', 
                       help='Primary metric for determining best run')
     parser.add_argument('--weight_type', type=str, default='uniform', 
                       choices=['uniform', 'variable'],
