@@ -122,10 +122,9 @@ class SweepVisualizer:
         # Fall back to run name or index for unknown sweep types
         return run.get('name', f"Run {id(run) % 1000}")  # Use part of object id as a unique identifier
     
-    # Update the performance plot function to include win rates
     def create_performance_plot(self, runs: List[Dict[str, Any]], output_path: str, sweep_type: Optional[str] = None) -> bool:
         """
-        Create a performance plot visualization comparing run results.
+        Create a performance plot visualization comparing run results using best validation metrics.
         
         Args:
             runs: List of run dictionaries with config and summary data
@@ -141,13 +140,13 @@ class SweepVisualizer:
                 print("No runs to visualize")
                 return False
             
-            # Define metrics to compare
+            # Define metrics to compare - using best_ prefix
             metrics = [
-                ('validation_win_rate', 'Win (%)'),
-                ('validation_win_vs_spt', 'Win vs SPT (%)'),
-                ('validation_win_vs_wspt', 'Win vs WSPT (%)'),
-                ('validation_win_vs_srpt', 'Win vs SRPT (%)'),
-                ('validation_weighted_sum', 'Weighted Sum')
+                ('best_validation_win_rate', 'Win (%)'),
+                ('best_validation_win_vs_spt', 'Win vs SPT (%)'),
+                ('best_validation_win_vs_wspt', 'Win vs WSPT (%)'),
+                ('best_validation_win_vs_srpt', 'Win vs SRPT (%)'),
+                ('best_validation_weighted_sum', 'Weighted Sum')
             ]
             
             # Verify at least one metric exists in the runs
@@ -159,7 +158,7 @@ class SweepVisualizer:
                     valid_metrics.append((metric_key, metric_label))
             
             if not valid_metrics:
-                print("No valid metrics found in run data")
+                print("No valid best validation metrics found in run data")
                 return False
                     
             # We'll add an extra subplot for win rate comparison
@@ -175,7 +174,7 @@ class SweepVisualizer:
                 ax = axs[i]
                 
                 # Sort runs based on this specific metric
-                if 'weighted_sum' in metric_key:
+                if 'best_validation_weighted_sum' in metric_key:
                     # Lower is better for weighted sum
                     sorted_runs = sorted(
                         runs, 
@@ -243,7 +242,7 @@ class SweepVisualizer:
                     bars[best_idx].set_alpha(0.7)
                     
                     # Add text indicating the best value
-                    if 'weighted_sum' in metric_key:
+                    if 'best_validation_weighted_sum' in metric_key:
                         # Format as integer for weighted sum
                         ax.text(best_idx, best_val, f"Best: {int(best_val)}", 
                             ha='center', va='bottom', fontweight='bold')
@@ -255,7 +254,7 @@ class SweepVisualizer:
                     # Add value labels to all bars
                     for j, v in enumerate(values):
                         if j != best_idx:  # Skip the best one since we already labeled it
-                            if 'weighted_sum' in metric_key:
+                            if 'best_validation_weighted_sum' in metric_key:
                                 ax.text(j, v, f"{int(v)}", ha='center', va='bottom')
                             else:
                                 ax.text(j, v, f"{v:.1f}%", ha='center', va='bottom')
@@ -279,14 +278,14 @@ class SweepVisualizer:
                 'SRPT': None
             }
             
-            # First pass: Find best L2D run
+            # First pass: Find best L2D run based on best_validation_weighted_sum
             best_l2d_run = None
             best_weighted_sum = float('inf')
             
             for run in runs:
                 summary = run.get('summary', {})
-                if 'validation_weighted_sum' in summary:
-                    l2d_ws = summary['validation_weighted_sum']
+                if 'best_validation_weighted_sum' in summary:
+                    l2d_ws = summary['best_validation_weighted_sum']
                     if l2d_ws < best_weighted_sum:
                         best_weighted_sum = l2d_ws
                         best_l2d_run = run
@@ -297,40 +296,22 @@ class SweepVisualizer:
                 # Check if this run contains baseline data
                 summary = best_l2d_run.get('summary', {})
                 for baseline in ['spt', 'wspt', 'srpt']:
-                    baseline_key = f"baseline_{baseline}_weighted_sum"
+                    baseline_key = f"validation_baseline_{baseline}_weighted_sum"
                     if baseline_key in summary and summary[baseline_key] is not None:
                         methods[baseline.upper()] = summary[baseline_key]
                     
-                    # Also collect win rates if available
-                    win_rate_key = f"win_rate_{baseline}"
-                    if win_rate_key in summary:
-                        win_rates[baseline.upper()] = summary[win_rate_key]
-                
-                # Get L2D win rate
-                win_rates['L2D'] = summary.get('win_rate_l2d', summary.get('validation_win_rate'))
-                
-                # For backward compatibility - check old naming pattern 
-                if win_rates['SPT'] is None:
-                    # Use win count if available
-                    win_count_spt = summary.get('win_count_spt')
-                    win_count_l2d = summary.get('win_count_l2d')
-                    win_count_wspt = summary.get('win_count_wspt')
-                    win_count_srpt = summary.get('win_count_srpt')
-                    
-                    if None not in (win_count_spt, win_count_l2d, win_count_wspt, win_count_srpt):
-                        total = win_count_spt + win_count_l2d + win_count_wspt + win_count_srpt
-                        if total > 0:
-                            win_rates['SPT'] = (win_count_spt / total) * 100
-                            win_rates['WSPT'] = (win_count_wspt / total) * 100
-                            win_rates['SRPT'] = (win_count_srpt / total) * 100
-                            win_rates['L2D'] = (win_count_l2d / total) * 100
+                # Use the best_validation_ prefixed metrics that are already being logged
+                win_rates['L2D'] = summary.get('best_win_rate', 0)
+                win_rates['SPT'] = summary.get('best_validation_win_rate_spt', 0)
+                win_rates['WSPT'] = summary.get('best_validation_win_rate_wspt', 0)
+                win_rates['SRPT'] = summary.get('best_validation_win_rate_srpt', 0)
             
             # Second pass: If we're missing baseline data, check all runs
             if best_l2d_run and (methods['SPT'] is None or methods['WSPT'] is None or methods['SRPT'] is None):
                 for run in runs:
                     summary = run.get('summary', {})
                     for baseline in ['spt', 'wspt', 'srpt']:
-                        baseline_key = f"baseline_{baseline}_weighted_sum"
+                        baseline_key = f"validation_baseline_{baseline}_weighted_sum"
                         baseline_upper = baseline.upper()
                         
                         # Only fill in missing values
@@ -339,11 +320,11 @@ class SweepVisualizer:
                             
                         # Also check for comparison metrics which might contain this info
                         if methods[baseline_upper] is None:
-                            metric_name = f"validation_improvement_over_{baseline}"
-                            if metric_name in summary and 'validation_weighted_sum' in summary:
+                            metric_name = f"best_validation_improvement_over_{baseline}"
+                            if metric_name in summary and 'best_validation_weighted_sum' in summary:
                                 # Calculate baseline value from improvement percentage
                                 improvement = summary[metric_name] / 100  # Convert from percentage
-                                l2d_ws = summary['validation_weighted_sum']
+                                l2d_ws = summary['best_validation_weighted_sum']
                                 # Only if the improvement is valid (between 0 and 100%)
                                 if 0 <= improvement < 1:
                                     methods[baseline_upper] = l2d_ws / (1 - improvement)
@@ -402,8 +383,8 @@ class SweepVisualizer:
             # Create win rate comparison chart (last subplot)
             ax_win_rates = axs[-1]  # Last subplot
             
-            # Filter out methods with no win rate values
-            valid_win_rates = {k: v for k, v in win_rates.items() if v is not None}
+            # Filter out methods with no win rate values or zero values
+            valid_win_rates = {k: v for k, v in win_rates.items() if v is not None and v > 0}
             
             if len(valid_win_rates) > 1:  # Need at least two methods
                 method_names = list(valid_win_rates.keys())

@@ -1,0 +1,19 @@
+\begin{table}[htbp]%
+\centering%
+\begin{tabular}{lrrrrrr}%
+\toprule%
+\textbf{Reward Strategy}&\textbf{Win Rate (\%)}&\textbf{vs WSPT (\%)}&\textbf{vs SPT (\%)}&\textbf{vs SRPT (\%)}&\textbf{Weighted Sum}&\textbf{Improv. WSPT (\%)}\\%
+\midrule%
+weighted_delay&69.0&\textbf{100.0}&80.2&83.1&2562&6.8\\%
+direct_weighted_sum&69.0&100.0&82.1&81.2&2547&7.4\\%
+wspt&71.0&100.0&85.5&80.7&2538&7.7\\%
+look_ahead&68.0&100.0&80.0&81.9&2560&6.9\\%
+default&\textbf{78.0}&100.0&\textbf{85.7}&\textbf{89.7}&2531&\textbf{7.9}\\%
+potential_based&69.0&100.0&81.2&82.1&2575&6.4\\%
+critical_path&67.0&100.0&78.8&81.7&\textbf{2579}&6.2\\%
+wspt_guided&68.0&100.0&80.0&81.9&2568&6.6\\%
+\bottomrule%
+\end{tabular}%
+\caption{Comparison of Reward Strategies}%
+\label{tab:rewards}%
+\end{table}

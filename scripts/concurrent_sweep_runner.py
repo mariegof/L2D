@@ -450,7 +450,7 @@ def download_sweep_artifacts(project, sweep_id, entity, output_dir):
             if run.state == "finished":
                 summary = run.summary._json_dict
                 # First try to get the explicitly tracked best weighted sum
-                weighted_sum = summary.get("validation_weighted_sum", float('inf'))
+                weighted_sum = summary.get("best_validation_weighted_sum", float('inf'))
                 
                 # Lower is better for weighted sum
                 if weighted_sum < best_weighted_sum:
@@ -468,14 +468,14 @@ def download_sweep_artifacts(project, sweep_id, entity, output_dir):
             "url": best_run.url,
             "created_at": best_run.created_at,
             "metrics": {
-                "weighted_sum": best_run.summary._json_dict.get("validation_weighted_sum", "N/A"),
-                "win_vs_wspt": best_run.summary._json_dict.get("validation_win_vs_wspt", "N/A"),
-                "win_vs_spt": best_run.summary._json_dict.get("validation_win_vs_spt", "N/A"),
-                "win_vs_srpt": best_run.summary._json_dict.get("validation_win_vs_srpt", "N/A"),
-                "win_rate": best_run.summary._json_dict.get("validation_win_rate", "N/A"),
-                "improvement_over_wspt": best_run.summary._json_dict.get("validation_improvement_over_wspt", "N/A"),
-                "improvement_over_spt": best_run.summary._json_dict.get("validation_improvement_over_spt", "N/A"),
-                "improvement_over_srpt": best_run.summary._json_dict.get("validation_improvement_over_srpt", "N/A")
+                "best_validation_weighted_sum": best_run.summary._json_dict.get("best_validation_weighted_sum", "N/A"),
+                "best_validation_win_vs_wspt": best_run.summary._json_dict.get("best_validation_win_vs_wspt", "N/A"),
+                "best_validation_win_vs_spt": best_run.summary._json_dict.get("best_validation_win_vs_spt", "N/A"),
+                "best_validation_win_vs_srpt": best_run.summary._json_dict.get("best_validation_win_vs_srpt", "N/A"),
+                "best_validation_win_rate": best_run.summary._json_dict.get("best_validation_win_rate", "N/A"),
+                "best_validation_improvement_over_wspt": best_run.summary._json_dict.get("best_validation_improvement_over_wspt", "N/A"),
+                "best_validation_improvement_over_spt": best_run.summary._json_dict.get("best_validation_improvement_over_spt", "N/A"),
+                "best_validation_improvement_over_srpt": best_run.summary._json_dict.get("best_validation_improvement_over_srpt", "N/A")
             }
         }
         

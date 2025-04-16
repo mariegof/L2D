@@ -14,12 +14,12 @@ et_normalize_coef: 1000        # Normalizing coefficient for end times
 wkr_normalize_coef: 100        # Normalizing coefficient for work remaining
 
 # Training parameters
-max_updates: 2000              # Number of training episodes
+max_updates: 10000              # Number of training episodes
 np_seed_train: 200             # Random seed for numpy during training
 np_seed_validation: 200        # Random seed for numpy during validation
 torch_seed: 600                # Random seed for PyTorch
 num_envs: 4                    # Number of parallel environments
-device: "cpu"                  # Device for training ("cpu" or "cuda")
+device: "cuda"                  # Device for training ("cpu" or "cuda")
 
 # Neural network parameters
 num_layers: 3                  # Number of GNN layers

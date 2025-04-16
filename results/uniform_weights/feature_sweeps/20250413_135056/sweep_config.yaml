@@ -1,0 +1,103 @@
+method: grid
+metric:
+  goal: minimize
+  name: best_validation_weighted_sum
+parameters:
+  decay_ratio:
+    value: 0.8
+  decay_step_size:
+    value: 100
+  decayflag:
+    value: true
+  device:
+    value: cuda
+  entloss_coef:
+    value: 0.01
+  eps_clip:
+    value: 0.3
+  et_normalize_coef:
+    value: 1000
+  feature_set:
+    values:
+    - LBs,finished_mark
+    - LBs,finished_mark,normalized_weights
+    - LBs,finished_mark,weighted_priorities
+    - LBs,finished_mark,normalized_weights,weighted_priorities
+    - LBs,finished_mark,normalized_weights,machine_contention
+    - LBs,finished_mark,normalized_weights,weighted_priorities,remaining_weighted_work
+    - weighted_LBs,finished_mark
+    - LBs,finished_mark,weighted_priorities_normalized
+    - LBs,finished_mark,weighted_priorities,machine_contention
+    - LBs,finished_mark,weighted_priorities,critical_path_contribution
+    - LBs,finished_mark,weighted_priorities,time_elapsed
+    - LBs,finished_mark,normalized_weights,last_op_weighted
+    - weighted_LBs,finished_mark,normalized_weights,weighted_priorities
+    - LBs,finished_mark,normalized_weights,weighted_priorities,critical_path_contribution
+    - weighted_LBs,finished_mark,remaining_weighted_work,last_op_weighted
+    - LBs,finished_mark,normalized_weights,weighted_priorities,time_elapsed,machine_contention
+    - LBs,weighted_LBs,finished_mark,weighted_priorities,normalized_weights,remaining_weighted_work,
+      time_elapsed, machine_contention, weighted_priorities_normalized, last_op_weighted,
+      critical_path_contribution
+  gamma:
+    value: 1.0
+  graph_pool_type:
+    value: average
+  hidden_dim:
+    value: 64
+  hidden_dim_actor:
+    value: 64
+  hidden_dim_critic:
+    value: 64
+  high:
+    value: 99
+  init_quality_flag:
+    value: false
+  k_epochs:
+    value: 10
+  low:
+    value: 1
+  lr:
+    value: 7.0e-05
+  max_updates:
+    value: 1000
+  n_j:
+    value: 6
+  n_m:
+    value: 6
+  neighbor_pooling_type:
+    value: average
+  np_seed_train:
+    value: 200
+  np_seed_validation:
+    value: 200
+  num_envs:
+    value: 4
+  num_layers:
+    value: 3
+  num_mlp_layers_actor:
+    value: 3
+  num_mlp_layers_critic:
+    value: 1
+  num_mlp_layers_feature_extract:
+    value: 1
+  output_dir:
+    value: results/uniform_weights/feature_sweeps/20250413_135056
+  ploss_coef:
+    value: 4.0
+  reward_strategy:
+    value: default
+  rewardscale:
+    value: 0.2
+  torch_seed:
+    value: 600
+  validate_every:
+    value: 100
+  vloss_coef:
+    value: 2.0
+  weight_high:
+    value: 1
+  weight_low:
+    value: 1
+  wkr_normalize_coef:
+    value: 100
+program: scripts/train.py

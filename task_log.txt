@@ -1,0 +1,34 @@
+================================================ 
+Task started at 15-04-25 12:08:38,62 
+================================================ 
+Created logs directory 
+Changed to directory: C:\Users\sshuser\Desktop\L2D 
+Activating conda environment... 
+Conda environment activated, PATH=C:\Users\sshuser\anaconda3\envs\l2d;C:\Users\sshuser\anaconda3\envs\l2d\Library\mingw-w64\bin;C:\Users\sshuser\anaconda3\envs\l2d\Library\usr\bin;C:\Users\sshuser\anaconda3\envs\l2d\Library\bin;C:\Users\sshuser\anaconda3\envs\l2d\Scripts;C:\Users\sshuser\anaconda3\envs\l2d\bin;C:\Users\sshuser\anaconda3\condabin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\dotnet;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Tailscale;C:\Program Files\Git\cmd;C:\Users\sshuser\anaconda3;C:\Users\sshuser\anaconda3\Library\mingw-w64\bin;C:\Users\sshuser\anaconda3\Library\usr\bin;C:\Users\sshuser\anaconda3\Library\bin;C:\Users\sshuser\anaconda3\Scripts;C:\Users\sshuser\AppData\Local\Microsoft\WindowsApps;C:\Users\sshuser\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\sshuser\AppData\Local\GitHubDesktop\bin 
+Running Python script... 
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+message_loop has been closed
+Traceback (most recent call last):
+  File "C:\Users\sshuser\anaconda3\envs\l2d\lib\site-packages\wandb\sdk\lib\sock_client.py", line 208, in _read_packet_bytes
+    data = self._sock.recv(self._bufsize)
+ConnectionResetError: [WinError 10054] Une connexion existante a dû être fermée par l’hôte distant
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\sshuser\anaconda3\envs\l2d\lib\site-packages\wandb\sdk\interface\router_sock.py", line 27, in _read_message
+    return self._sock_client.read_server_response(timeout=1)
+  File "C:\Users\sshuser\anaconda3\envs\l2d\lib\site-packages\wandb\sdk\lib\sock_client.py", line 235, in read_server_response
+    data = self._read_packet_bytes(timeout=timeout)
+  File "C:\Users\sshuser\anaconda3\envs\l2d\lib\site-packages\wandb\sdk\lib\sock_client.py", line 212, in _read_packet_bytes
+    raise SockClientClosedError from e
+wandb.sdk.lib.sock_client.SockClientClosedError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\sshuser\anaconda3\envs\l2d\lib\site-packages\wandb\sdk\interface\router.py", line 56, in message_loop
+    msg = self._read_message()
+  File "C:\Users\sshuser\anaconda3\envs\l2d\lib\site-packages\wandb\sdk\interface\router_sock.py", line 29, in _read_message
+    raise MessageRouterClosedError from e
+wandb.sdk.interface.router.MessageRouterClosedError

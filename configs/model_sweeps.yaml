@@ -1,7 +1,7 @@
 program: scripts/train.py
 method: random
 metric:
-  name: validation_weighted_sum
+  name: best_validation_weighted_sum
   goal: minimize
 parameters:
   num_layers:

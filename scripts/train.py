@@ -574,8 +574,8 @@ def train(config):
             live_plotter = LivePlotter(save_dir=results_dir)
         
         # For saving best model - now prioritizing weighted sum (lower is better)
-        best_weighted_sum = float('inf')
-        best_win_rate = 0  # Still tracking for reference
+        best_validation_weighted_sum = float('inf')
+        best_validation_win_rate = 0  # Still tracking for reference
         no_improvement_counter = 0
         best_episode = 0
         model_dir = "./models"
@@ -635,8 +635,8 @@ def train(config):
                     # Run validation
                     validation_results = validate_weighted(validation_data, agent.policy, config.feature_set)
                     validation_results_history.append(validation_results)
-                    validation_weighted_sum_mean = validation_results['weighted_sum'].mean()
-                    validation_history.append(validation_weighted_sum_mean)
+                    current_validation_weighted_sum = validation_results['weighted_sum'].mean()
+                    validation_history.append(current_validation_weighted_sum)
                     validation_points.append(episode + 1)
                     
                     # Update live plotter with validation result
@@ -644,10 +644,10 @@ def train(config):
                         live_plotter.update(
                             episode, reward, weighted_sum, loss,
                             validation_episode=episode+1, 
-                            validation_weighted_sum=validation_weighted_sum_mean
+                            validation_weighted_sum=current_validation_weighted_sum
                         )
                     
-                    print(f"Validation Weighted Sum: {validation_weighted_sum_mean:.2f} | "
+                    print(f"Validation Weighted Sum: {current_validation_weighted_sum:.2f} | "
                         f"Reward-derived: {validation_results['reward_derived'].mean():.2f} | "
                         f"Improvement: {validation_results['improvement_pct'].mean():.2f}%")
                     
@@ -663,8 +663,8 @@ def train(config):
                     validation_losses = []
                     
                     for results in validation_results_history:
-                        # Validation reward is negative of weighted sum (since we're minimizing weighted sum)
-                        validation_rewards.append(-results.get('weighted_sum').mean())
+                        # Use the actual accumulated reward from validation
+                        validation_rewards.append(results.get('reward_derived', 0).mean())
                         
                         # Extract value loss if available
                         if 'value_loss' in results:
@@ -685,37 +685,38 @@ def train(config):
                     
                     # Create standardized metric dictionary for WandB
                     validation_metrics = {
-                        # Core validation metrics
-                        "validation_weighted_sum": validation_weighted_sum_mean,
-                        "validation_improvement_pct": validation_results['improvement_pct'].mean(),
+                        # Primary metric
+                        "current_validation_weighted_sum": current_validation_weighted_sum,
                         
-                        # Traditional win metrics (keep for backward compatibility)
+                        # Win rates
                         "validation_win_rate": comparison_metrics['win_rate'],
                         "validation_win_vs_spt": comparison_metrics['win_vs_spt'],
                         "validation_win_vs_wspt": comparison_metrics['win_vs_wspt'],
                         "validation_win_vs_srpt": comparison_metrics['win_vs_srpt'],
                         
-                        # Improvement percentages 
+                        # Individual method win rates for visualization
+                        "validation_win_rate_spt": comparison_metrics['win_rate_spt'],
+                        "validation_win_rate_wspt": comparison_metrics['win_rate_wspt'],
+                        "validation_win_rate_srpt": comparison_metrics['win_rate_srpt'],
+                        
+                        # Improvement percentages
                         "validation_improvement_over_spt": comparison_metrics['improvement_over_spt'],
                         "validation_improvement_over_wspt": comparison_metrics['improvement_over_wspt'],
                         "validation_improvement_over_srpt": comparison_metrics['improvement_over_srpt'],
                         
-                        # Baseline weighted sums
-                        "baseline_spt_weighted_sum": comparison_metrics.get('baseline_spt_weighted_sum', 0),
-                        "baseline_wspt_weighted_sum": comparison_metrics.get('baseline_wspt_weighted_sum', 0),
-                        "baseline_srpt_weighted_sum": comparison_metrics.get('baseline_srpt_weighted_sum', 0),
+                        # Baseline weighted sums (maintain consistency with validation_ prefix)
+                        "validation_baseline_spt_weighted_sum": comparison_metrics['baseline_spt_weighted_sum'],
+                        "validation_baseline_wspt_weighted_sum": comparison_metrics['baseline_wspt_weighted_sum'],
+                        "validation_baseline_srpt_weighted_sum": comparison_metrics['baseline_srpt_weighted_sum'],
                         
-                        # NEW: Win rates for all methods
-                        "win_rate_l2d": comparison_metrics.get('win_rate_l2d', comparison_metrics['win_rate']),
-                        "win_rate_spt": comparison_metrics.get('win_rate_spt', 0),
-                        "win_rate_wspt": comparison_metrics.get('win_rate_wspt', 0),
-                        "win_rate_srpt": comparison_metrics.get('win_rate_srpt', 0),
+                        # Win counts (with validation_ prefix for consistency)
+                        "validation_win_count_l2d": comparison_metrics['win_count_l2d'],
+                        "validation_win_count_spt": comparison_metrics['win_count_spt'],
+                        "validation_win_count_wspt": comparison_metrics['win_count_wspt'],
+                        "validation_win_count_srpt": comparison_metrics['win_count_srpt'],
                         
-                        # NEW: Raw win counts
-                        "win_count_l2d": comparison_metrics.get('win_count_l2d', 0),
-                        "win_count_spt": comparison_metrics.get('win_count_spt', 0),
-                        "win_count_wspt": comparison_metrics.get('win_count_wspt', 0),
-                        "win_count_srpt": comparison_metrics.get('win_count_srpt', 0)
+                        # Episode information for context
+                        "validation_episode": episode + 1
                     }
                     
                     # If value loss and policy entropy are available, add them too
@@ -742,9 +743,9 @@ def train(config):
                     
                     # CHANGED: Save model based on weighted sum instead of win rate
                     # Lower weighted sum is better, so we check if it's less than the best so far
-                    if validation_weighted_sum_mean < best_weighted_sum:
-                        best_weighted_sum = validation_weighted_sum_mean
-                        best_win_rate = comparison_metrics['win_rate']  # Still track win rate for reporting
+                    if current_validation_weighted_sum < best_validation_weighted_sum:
+                        best_validation_weighted_sum = current_validation_weighted_sum
+                        best_validation_win_rate = comparison_metrics['win_rate']  # Still track win rate for reporting
                         best_episode = episode + 1
                         no_improvement_counter = 0
                         
@@ -752,33 +753,47 @@ def train(config):
                         weight_type = "variable" if config.weight_high > config.weight_low else "uniform"
                         best_model_path = os.path.join(model_dir, f"l2d_{weight_type}_{config.n_j}x{config.n_m}_best.pth")
                         torch.save(agent.policy.state_dict(), best_model_path)
-                        print(f"New best model saved! Weighted Sum: {best_weighted_sum:.2f}, Win Rate: {best_win_rate:.2f}%")
+                        print(f"New best model saved! Weighted Sum: {best_validation_weighted_sum:.2f}, Win Rate: {best_validation_win_rate:.2f}%")
                         
                         if use_wandb:
-                            # For wandb 0.19.8, log best metrics found so far
+                            # Log the standard best metrics
                             wandb.log({
-                                "best_weighted_sum": best_weighted_sum,
-                                "best_win_rate": best_win_rate, 
-                                "best_episode": best_episode
+                                "best_validation_weighted_sum": current_validation_weighted_sum,
+                                "best_win_rate": comparison_metrics['win_rate'],
+                                "best_episode": episode + 1,
+                                
+                                # Add all individual win rates for the best episode
+                                "best_validation_win_rate_spt": comparison_metrics['win_rate_spt'],
+                                "best_validation_win_rate_wspt": comparison_metrics['win_rate_wspt'],
+                                "best_validation_win_rate_srpt": comparison_metrics['win_rate_srpt'],
+                                
+                                # Also save the win counts for reference
+                                "best_validation_win_count_l2d": comparison_metrics['win_count_l2d'],
+                                "best_validation_win_count_spt": comparison_metrics['win_count_spt'],
+                                "best_validation_win_count_wspt": comparison_metrics['win_count_wspt'],
+                                "best_validation_win_count_srpt": comparison_metrics['win_count_srpt']
                             })
                             
-                            # Also update the summary with these values
+                            # Update the summary with these values
                             if hasattr(wandb, 'summary'):
-                                wandb.summary['best_weighted_sum'] = best_weighted_sum
-                                wandb.summary['best_win_rate'] = best_win_rate
-                                wandb.summary['best_episode'] = best_episode
+                                wandb.summary['best_validation_weighted_sum'] = current_validation_weighted_sum
+                                wandb.summary['best_win_rate'] = comparison_metrics['win_rate']
+                                wandb.summary['best_episode'] = episode + 1
+                                wandb.summary['best_validation_win_rate_spt'] = comparison_metrics['win_rate_spt']
+                                wandb.summary['best_validation_win_rate_wspt'] = comparison_metrics['win_rate_wspt']
+                                wandb.summary['best_validation_win_rate_srpt'] = comparison_metrics['win_rate_srpt']
                             
                             # Save model as WandB artifact
                             model_artifact = wandb.Artifact(
-                                f"model_{config.n_j}x{config.n_m}", 
+                                f"model_{config.n_j}x{config.n_m}_best", 
                                 type="model",
-                                description=f"Best model for {config.n_j}x{config.n_m} with weighted sum {best_weighted_sum:.2f}"
+                                description=f"Best model for {config.n_j}x{config.n_m} with weighted sum {best_validation_weighted_sum:.2f}"
                             )
                             model_artifact.add_file(best_model_path)
                             wandb.log_artifact(model_artifact)
                     else:
                         no_improvement_counter += 1
-                        print(f"No improvement for {no_improvement_counter} validation checks (best weighted sum: {best_weighted_sum:.2f})")
+                        print(f"No improvement for {no_improvement_counter} validation checks (best weighted sum: {best_validation_weighted_sum:.2f})")
                     
                     # Save checkpoint every 5 validation checks
                     if (episode + 1) % (config.validate_every * 5) == 0:
@@ -810,7 +825,7 @@ def train(config):
         print(f"Reached exactly {config.max_updates} episodes as configured")
         
         # Save final model
-        final_model_path = os.path.join(model_dir, f"l2d_weighted_{config.n_j}x{config.n_m}_final.pth")
+        final_model_path = os.path.join(model_dir, f"l2d_{weight_type}_{config.n_j}x{config.n_m}_final.pth")
         torch.save(agent.policy.state_dict(), final_model_path)
         print(f"Final model saved to {final_model_path}")
         
@@ -828,16 +843,15 @@ def train(config):
                 
                 # Create standard final metrics dict using the best validation results
                 final_metrics = {
-                    "final_validation_weighted_sum": best_weighted_sum,
-                    "final_win_rate": best_win_rate,
-                    "final_win_vs_spt": best_comparison_metrics['win_vs_spt'] if best_comparison_metrics else 0,
-                    "final_win_vs_wspt": best_comparison_metrics['win_vs_wspt'] if best_comparison_metrics else 0,
-                    "final_win_vs_srpt": best_comparison_metrics['win_vs_srpt'] if best_comparison_metrics else 0,
-                    "final_improvement_over_spt": best_comparison_metrics['improvement_over_spt'] if best_comparison_metrics else 0,
-                    "final_improvement_over_wspt": best_comparison_metrics['improvement_over_wspt'] if best_comparison_metrics else 0,
-                    "final_improvement_over_srpt": best_comparison_metrics['improvement_over_srpt'] if best_comparison_metrics else 0,
-                    "best_weighted_sum": best_weighted_sum,
-                    "best_win_rate": best_win_rate,
+                    "current_validation_weighted_sum": current_validation_weighted_sum,
+                    "best_validation_win_rate": best_validation_win_rate,
+                    "best_validation_win_vs_spt": best_comparison_metrics['win_vs_spt'] if best_comparison_metrics else 0,
+                    "best_validation_win_vs_wspt": best_comparison_metrics['win_vs_wspt'] if best_comparison_metrics else 0,
+                    "best_validation_win_vs_srpt": best_comparison_metrics['win_vs_srpt'] if best_comparison_metrics else 0,
+                    "best_validation_improvement_over_spt": best_comparison_metrics['improvement_over_spt'] if best_comparison_metrics else 0,
+                    "best_validation_improvement_over_wspt": best_comparison_metrics['improvement_over_wspt'] if best_comparison_metrics else 0,
+                    "best_validation_improvement_over_srpt": best_comparison_metrics['improvement_over_srpt'] if best_comparison_metrics else 0,
+                    "best_validation_weighted_sum": best_validation_weighted_sum,
                     "best_episode": best_episode,
                     "training_duration_hours": hours + minutes/60 + seconds/3600,
                     "final_episode": config.max_updates
@@ -862,8 +876,8 @@ def train(config):
                     f"- Episodes: {config.max_updates}\n"
                     f"- Feature set: {config.feature_set}\n"
                     f"- Reward strategy: {config.reward_strategy}\n"
-                    f"- Best weighted sum: {best_weighted_sum:.2f} at episode {best_episode}\n"
-                    f"- Best win rate: {best_win_rate:.2f}%\n"
+                    f"- Best weighted sum: {best_validation_weighted_sum:.2f} at episode {best_episode}\n"
+                    f"- Best win rate: {best_validation_win_rate:.2f}%\n"
                     f"- Training duration: {int(hours)}h {int(minutes)}m {seconds:.2f}s"
                 )
                 
@@ -895,7 +909,7 @@ def train(config):
                         pass
         
         # Return best metrics for external use
-        return best_weighted_sum, best_episode, best_win_rate
+        return best_validation_weighted_sum, best_episode, best_validation_win_rate
         
     except Exception as e:
         print(f"Error during training: {e}")

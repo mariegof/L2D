@@ -121,9 +121,12 @@ class SweepDataProcessor:
                 
                 # Extract key metrics
                 metric_keys = [
-                    'validation_weighted_sum', 'validation_win_vs_wspt', 
-                    'validation_win_vs_spt', 'validation_win_rate',
-                    'validation_improvement_over_wspt', 'validation_improvement_over_spt'
+                    'best_validation_weighted_sum',
+                    'best_validation_win_vs_wspt', 
+                    'best_validation_win_vs_spt', 
+                    'best_validation_win_rate',
+                    'best_validation_improvement_over_wspt', 
+                    'best_validation_improvement_over_spt'
                 ]
                 
                 for metric in metric_keys:
@@ -141,7 +144,7 @@ class SweepDataProcessor:
                         run_data[metric] = value
                     else:
                         # Use appropriate default values based on metric
-                        if 'weighted_sum' in metric:
+                        if 'best_validation_weighted_sum' in metric:
                             run_data[metric] = float('inf')  # Lower is better
                         else:
                             run_data[metric] = 0  # Higher is better
@@ -173,9 +176,9 @@ class SweepDataProcessor:
             Dictionary mapping metrics to best run names
         """
         metrics = [
-            'validation_weighted_sum', 'validation_win_vs_wspt', 
-            'validation_win_vs_spt', 'validation_win_rate',
-            'validation_improvement_over_wspt', 'validation_improvement_over_spt'
+            'best_validation_weighted_sum', 'best_validation_win_vs_wspt', 
+            'best_validation_win_vs_spt', 'best_validation_win_rate',
+            'best_validation_improvement_over_wspt', 'best_validation_improvement_over_spt'
         ]
         
         best_runs = {}
@@ -205,7 +208,7 @@ class SweepDataProcessor:
                     continue
                     
                 # Find best run based on metric
-                if metric == 'validation_weighted_sum':
+                if metric == 'best_validation_weighted_sum':
                     # Lower is better for weighted sum
                     best_run = min(valid_runs, key=lambda x: x[1])
                 else:
@@ -230,9 +233,9 @@ class SweepDataProcessor:
             Dictionary mapping metrics to statistics
         """
         metrics = [
-            'validation_weighted_sum', 'validation_win_vs_wspt', 
-            'validation_win_vs_spt', 'validation_win_rate',
-            'validation_improvement_over_wspt', 'validation_improvement_over_spt'
+            'best_validation_weighted_sum', 'best_validation_win_vs_wspt', 
+            'best_validation_win_vs_spt', 'best_validation_win_rate',
+            'best_validation_improvement_over_wspt', 'best_validation_improvement_over_spt'
         ]
         
         metrics_data = {}
@@ -276,7 +279,7 @@ class SweepDataProcessor:
         return metrics_data
     
     def get_best_config(self, runs: List[Dict[str, Any]], 
-                      primary_metric: str = 'validation_win_vs_wspt') -> Dict[str, Any]:
+                      primary_metric: str = 'best_validation_weighted_sum') -> Dict[str, Any]:
         """
         Extract the configuration from the best performing run.
         
@@ -310,8 +313,8 @@ class SweepDataProcessor:
                 print(f"No runs found with metric {primary_metric}")
                 return {}
                 
-            # Sort runs by metric (higher is better, except for weighted_sum)
-            if 'weighted_sum' in primary_metric:
+            # Sort runs by metric (higher is better, except for best_validation_weighted_sum)
+            if 'best_validation_weighted_sum' in primary_metric:
                 sorted_runs = sorted(valid_runs, key=lambda x: x[1])  # Lower is better
             else:
                 sorted_runs = sorted(valid_runs, key=lambda x: x[1], reverse=True)  # Higher is better

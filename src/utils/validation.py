@@ -262,7 +262,7 @@ def compare_validation_methods(vali_set, model, feature_set=None):
         
         # Store baseline weighted sums for the return dictionary
         if method != "L2D":
-            baseline_weighted_sums[f"baseline_{method.lower()}_weighted_sum"] = averages[method]
+            baseline_weighted_sums[f"validation_baseline_{method.lower()}_weighted_sum"] = averages[method]
     
     # Track win statistics
     for i in range(len(vali_set)):
@@ -281,60 +281,48 @@ def compare_validation_methods(vali_set, model, feature_set=None):
     
     # Calculate performance metrics
     total_instances = len(vali_set) if len(vali_set) > 0 else 1
-    comparison_metrics = {
-        # Win rate metrics for L2D (renamed for clarity)
-        'l2d_win_rate': (win_counts["L2D"] / total_instances) * 100,
+    metrics = {
+        # Primary metric
+        "weighted_sum": averages["L2D"],
         
-        # Head-to-head win rates
-        'l2d_win_vs_spt': (win_counts["L2D"] / (win_counts["L2D"] + win_counts["SPT"])) * 100 
-                     if (win_counts["L2D"] + win_counts["SPT"]) > 0 else 0,
-        'l2d_win_vs_wspt': (win_counts["L2D"] / (win_counts["L2D"] + win_counts["WSPT"])) * 100 
-                      if (win_counts["L2D"] + win_counts["WSPT"]) > 0 else 0,
-        'l2d_win_vs_srpt': (win_counts["L2D"] / (win_counts["L2D"] + win_counts["SRPT"])) * 100 
-                     if (win_counts["L2D"] + win_counts["SRPT"]) > 0 else 0,
+        # Win rates
+        "win_rate": (win_counts["L2D"] / total_instances) * 100,  # Overall L2D win rate
+        "win_vs_spt": (win_counts["L2D"] / (win_counts["L2D"] + win_counts["SPT"])) * 100 if (win_counts["L2D"] + win_counts["SPT"]) > 0 else 0,
+        "win_vs_wspt": (win_counts["L2D"] / (win_counts["L2D"] + win_counts["WSPT"])) * 100 if (win_counts["L2D"] + win_counts["WSPT"]) > 0 else 0,
+        "win_vs_srpt": (win_counts["L2D"] / (win_counts["L2D"] + win_counts["SRPT"])) * 100 if (win_counts["L2D"] + win_counts["SRPT"]) > 0 else 0,
         
-        # Overall win rates for all methods (new)
-        'win_rate_l2d': (win_counts["L2D"] / total_instances) * 100,
-        'win_rate_spt': (win_counts["SPT"] / total_instances) * 100,
-        'win_rate_wspt': (win_counts["WSPT"] / total_instances) * 100,
-        'win_rate_srpt': (win_counts["SRPT"] / total_instances) * 100,
+        # Improvement percentages 
+        "improvement_over_spt": ((averages["SPT"] - averages["L2D"]) / averages["SPT"]) * 100 if averages["SPT"] != 0 else 0,
+        "improvement_over_wspt": ((averages["WSPT"] - averages["L2D"]) / averages["WSPT"]) * 100 if averages["WSPT"] != 0 else 0,
+        "improvement_over_srpt": ((averages["SRPT"] - averages["L2D"]) / averages["SRPT"]) * 100 if averages["SRPT"] != 0 else 0,
         
-        # Weighted sum average
-        'avg_weighted_sum': averages["L2D"],
+        # Baseline raw values (for reference)
+        "baseline_spt_weighted_sum": averages["SPT"],
+        "baseline_wspt_weighted_sum": averages["WSPT"],
+        "baseline_srpt_weighted_sum": averages["SRPT"],
         
-        # Improvement percentages
-        'improvement_over_spt': ((averages["SPT"] - averages["L2D"]) / averages["SPT"]) * 100 
-                               if averages["SPT"] != 0 else 0,
-        'improvement_over_wspt': ((averages["WSPT"] - averages["L2D"]) / averages["WSPT"]) * 100 
-                                if averages["WSPT"] != 0 else 0,
-        'improvement_over_srpt': ((averages["SRPT"] - averages["L2D"]) / averages["SRPT"]) * 100 
-                               if averages["SRPT"] != 0 else 0
+        # Win counts (useful for statistical analysis)
+        "win_count_l2d": win_counts["L2D"],
+        "win_count_spt": win_counts["SPT"],
+        "win_count_wspt": win_counts["WSPT"],
+        "win_count_srpt": win_counts["SRPT"],
+        
+        "win_rate_spt": (win_counts["SPT"] / total_instances) * 100,
+        "win_rate_wspt": (win_counts["WSPT"] / total_instances) * 100,
+        "win_rate_srpt": (win_counts["SRPT"] / total_instances) * 100
     }
     
-    # For backward compatibility (to be phased out)
-    comparison_metrics['win_rate'] = comparison_metrics['l2d_win_rate']
-    comparison_metrics['win_vs_spt'] = comparison_metrics['l2d_win_vs_spt'] 
-    comparison_metrics['win_vs_wspt'] = comparison_metrics['l2d_win_vs_wspt']
-    comparison_metrics['win_vs_srpt'] = comparison_metrics['l2d_win_vs_srpt']
-    
-    # Include value loss and policy entropy if available
+    # Include any additional information
     if 'value_loss' in validation_results:
-        comparison_metrics['value_loss'] = validation_results['value_loss']
+        metrics['value_loss'] = validation_results['value_loss']
     
     if 'policy_entropy' in validation_results:
-        comparison_metrics['policy_entropy'] = validation_results['policy_entropy']
+        metrics['policy_entropy'] = validation_results['policy_entropy']
     
-    # Merge baseline weighted sums into the metrics
-    comparison_metrics.update(baseline_weighted_sums)
-    
-    # Also include the actual results for detailed analysis
-    comparison_metrics['method_results'] = {
+    # Store raw method results for detailed analysis
+    metrics['method_results'] = {
         method: values.tolist() if isinstance(values, np.ndarray) else values 
         for method, values in results.items()
     }
     
-    # Add the win counts directly
-    for method in win_counts:
-        comparison_metrics[f'win_count_{method.lower()}'] = win_counts[method]
-    
-    return comparison_metrics
+    return metrics

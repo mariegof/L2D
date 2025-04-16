@@ -1,0 +1,28 @@
+\begin{table}[htbp]%
+\centering%
+\begin{tabular}{lrrrrrr}%
+\toprule%
+\textbf{Features}&\textbf{Count}&\textbf{Win Rate (\%)}&\textbf{vs WSPT (\%)}&\textbf{vs SPT (\%)}&\textbf{vs SRPT (\%)}&\textbf{Weighted Sum}\\%
+\midrule%
+LBs,finished_mark,weighted_priorities&1.00&78.0&100.0&85.7&89.7&2531\\%
+weighted_LBs,finished_mark&1.00&71.0&100.0&82.6&83.5&2536\\%
+LBs,finished_mark,normalized_weights&1.00&70.0&100.0&83.3&81.4&2578\\%
+LBs,finished_mark,weighted_priorities_normalized&1.00&68.0&100.0&80.0&81.9&2582\\%
+LBs,finished_mark,normalized_weights,weighted_priorities,time_elapsed,machine_contention&1.00&52.0&100.0&66.7&70.3&2707\\%
+LBs,finished_mark&1.00&51.0&100.0&69.9&65.4&\textbf{2663}\\%
+LBs,finished_mark,weighted_priorities,time_elapsed&1.00&34.0&100.0&54.8&47.2&2762\\%
+LBs,finished_mark,weighted_priorities,critical_path_contribution&1.00&33.0&100.0&54.1&45.8&2746\\%
+LBs,finished_mark,normalized_weights,weighted_priorities,remaining_weighted_work&1.00&29.0&100.0&46.0&43.9&2764\\%
+LBs,finished_mark,normalized_weights,weighted_priorities&1.00&27.0&100.0&47.4&38.6&2821\\%
+weighted_LBs,finished_mark,remaining_weighted_work,last_op_weighted&1.00&27.0&100.0&46.6&39.1&2783\\%
+LBs,weighted_LBs,finished_mark,weighted_priorities,normalized_weights,remaining_weighted_work, time_elapsed, machine_contention, weighted_priorities_normalized, last_op_weighted, critical_path_contribution&1.00&26.0&100.0&46.4&37.1&2765\\%
+weighted_LBs,finished_mark,normalized_weights,weighted_priorities&1.00&24.0&100.0&42.1&35.8&2793\\%
+LBs,finished_mark,normalized_weights,machine_contention&1.00&23.0&100.0&42.6&33.3&2799\\%
+LBs,finished_mark,weighted_priorities,machine_contention&1.00&22.0&100.0&40.7&32.4&2861\\%
+LBs,finished_mark,normalized_weights,last_op_weighted&\textbf{1.00}&\textbf{22.0}&\textbf{100.0}&\textbf{40.7}&\textbf{32.4}&2859\\%
+LBs,finished_mark,normalized_weights,weighted_priorities,critical_path_contribution&1.00&21.0&100.0&39.6&30.9&2842\\%
+\bottomrule%
+\end{tabular}%
+\caption{Comparison of Feature Sets}%
+\label{tab:features}%
+\end{table}

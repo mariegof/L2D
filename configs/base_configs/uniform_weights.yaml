@@ -8,48 +8,48 @@ low: 1                         # Lower bound of task duration
 high: 99                       # Upper bound of task duration
 weight_low: 1                  # Lower bound of job weights (always 1 for uniform)
 weight_high: 1                 # Upper bound of job weights (always 1 for uniform) 
-rewardscale: 0.0               # Reward scaling factor
+rewardscale: 0.4               # Reward scaling factor
 init_quality_flag: false       # Flag for initial state quality
 et_normalize_coef: 1000        # Normalizing coefficient for end times
 wkr_normalize_coef: 100        # Normalizing coefficient for work remaining
 
 # Training parameters
-max_updates: 2000              # Number of training episodes
+max_updates: 10000              # Number of training episodes
 np_seed_train: 200             # Random seed for numpy during training
 np_seed_validation: 200        # Random seed for numpy during validation
 torch_seed: 600                # Random seed for PyTorch
 num_envs: 4                    # Number of parallel environments
-device: "cpu"                  # Device for training ("cpu" or "cuda")
+device: "cuda"                  # Device for training ("cpu" or "cuda")
 
 # Neural network parameters
 num_layers: 3                  # Number of GNN layers
-neighbor_pooling_type: "sum"   # Neighbor pooling type
+neighbor_pooling_type: "average"   # Neighbor pooling type
 graph_pool_type: "average"     # Graph pooling type
 input_dim: 3                   # Input dimension
 hidden_dim: 64                # Hidden dimension
-num_mlp_layers_feature_extract: 2  # Number of MLP layers for feature extraction
-num_mlp_layers_actor: 2        # Number of MLP layers for actor
-hidden_dim_actor: 32           # Hidden dimension for actor
-num_mlp_layers_critic: 2       # Number of MLP layers for critic
-hidden_dim_critic: 32          # Hidden dimension for critic
+num_mlp_layers_feature_extract: 1  # Number of MLP layers for feature extraction
+num_mlp_layers_actor: 3        # Number of MLP layers for actor
+hidden_dim_actor: 64           # Hidden dimension for actor
+num_mlp_layers_critic: 1       # Number of MLP layers for critic
+hidden_dim_critic: 64          # Hidden dimension for critic
 
 # PPO parameters
-lr: 2.0e-5                     # Learning rate
-decayflag: false                # Learning rate decay flag
-decay_step_size: 2000           # Learning rate decay step size
-decay_ratio: 0.9               # Learning rate decay ratio
+lr: 7.0e-5                     # Learning rate
+decayflag: true                # Learning rate decay flag
+decay_step_size: 100           # Learning rate decay step size
+decay_ratio: 0.8               # Learning rate decay ratio
 gamma: 1.0                     # Discount factor
-k_epochs: 1                   # Number of PPO epochs
-eps_clip: 0.2                  # PPO clipping parameter
-vloss_coef: 1.0                # Value loss coefficient
-ploss_coef: 2.0                # Policy loss coefficient
+k_epochs: 10                   # Number of PPO epochs
+eps_clip: 0.3                  # PPO clipping parameter
+vloss_coef: 2.0                # Value loss coefficient
+ploss_coef: 4.0                # Policy loss coefficient
 entloss_coef: 0.01             # Entropy loss coefficient
 
 # Feature and reward parameters
 feature_set:                   # Set of features to use
   - "LBs"                      # Lower bounds on operation end times
   - "finished_mark"            # Binary indicators of completed operations
-  - "normalized_weights"       # Normalized job weights (all 1 in this case)
+  - "weighted_priorities"      # Weighted priorities
 reward_strategy: "default"     # Reward function to use
 
 # Evaluation parameters

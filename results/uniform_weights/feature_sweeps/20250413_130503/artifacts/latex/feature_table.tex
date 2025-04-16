@@ -1,0 +1,16 @@
+\begin{table}[htbp]%
+\centering%
+\begin{tabular}{lrrrrrr}%
+\toprule%
+\textbf{Features}&\textbf{Count}&\textbf{Win Rate (\%)}&\textbf{vs WSPT (\%)}&\textbf{vs SPT (\%)}&\textbf{vs SRPT (\%)}&\textbf{Weighted Sum}\\%
+\midrule%
+LBs,finished_mark&1.00&46.0&100.0&\textbf{63.9}&62.2&2683\\%
+LBs,finished_mark,weighted_priorities&1.00&44.0&100.0&63.8&58.7&2687\\%
+LBs,finished_mark,normalized_weights&1.00&41.0&100.0&64.1&53.2&2697\\%
+LBs,finished_mark,normalized_weights,machine_contention&1.00&31.0&100.0&52.5&43.1&\textbf{2767}\\%
+LBs,finished_mark,normalized_weights,weighted_priorities&\textbf{1.00}&\textbf{26.0}&\textbf{100.0}&46.4&\textbf{37.1}&2778\\%
+\bottomrule%
+\end{tabular}%
+\caption{Comparison of Feature Sets}%
+\label{tab:features}%
+\end{table}

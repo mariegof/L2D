@@ -1,0 +1,145 @@
+method: random
+metric:
+  goal: minimize
+  name: best_validation_weighted_sum
+parameters:
+  decay_ratio:
+    values:
+    - 0.8
+    - 0.9
+    - 0.95
+  decay_step_size:
+    values:
+    - 100
+    - 200
+    - 500
+    - 1000
+    - 2000
+  decayflag:
+    values:
+    - true
+    - false
+  device:
+    value: cuda
+  entloss_coef:
+    values:
+    - 0.01
+    - 0.02
+    - 0.05
+  eps_clip:
+    values:
+    - 0.1
+    - 0.2
+    - 0.3
+  et_normalize_coef:
+    value: 1000
+  feature_set:
+    value:
+    - LBs
+    - finished_mark
+    - weighted_priorities
+  gamma:
+    values:
+    - 0.99
+    - 0.999
+    - 1.0
+  graph_pool_type:
+    values:
+    - average
+    - sum
+  hidden_dim:
+    values:
+    - 64
+    - 128
+    - 256
+  hidden_dim_actor:
+    values:
+    - 16
+    - 32
+    - 64
+  hidden_dim_critic:
+    values:
+    - 16
+    - 32
+    - 64
+  high:
+    value: 99
+  init_quality_flag:
+    value: false
+  input_dim:
+    value: 3
+  k_epochs:
+    values:
+    - 1
+    - 5
+    - 10
+    - 15
+  low:
+    value: 1
+  lr:
+    distribution: log_uniform_values
+    max: 1e-3
+    min: 1e-6
+  max_updates:
+    value: 10000
+  n_j:
+    value: 6
+  n_m:
+    value: 6
+  neighbor_pooling_type:
+    values:
+    - sum
+    - average
+  np_seed_train:
+    value: 200
+  np_seed_validation:
+    value: 200
+  num_envs:
+    value: 4
+  num_layers:
+    values:
+    - 2
+    - 3
+    - 4
+  num_mlp_layers_actor:
+    values:
+    - 1
+    - 2
+    - 3
+  num_mlp_layers_critic:
+    values:
+    - 1
+    - 2
+    - 3
+  num_mlp_layers_feature_extract:
+    values:
+    - 1
+    - 2
+    - 3
+  output_dir:
+    value: results/uniform_weights/model_sweeps/20250415_120842
+  ploss_coef:
+    values:
+    - 1.0
+    - 2.0
+    - 4.0
+  reward_strategy:
+    value: default
+  rewardscale:
+    value: 0.4
+  torch_seed:
+    value: 600
+  validate_every:
+    value: 100
+  vloss_coef:
+    values:
+    - 0.5
+    - 1.0
+    - 2.0
+  weight_high:
+    value: 1
+  weight_low:
+    value: 1
+  wkr_normalize_coef:
+    value: 100
+program: scripts/train.py

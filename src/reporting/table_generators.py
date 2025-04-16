@@ -26,11 +26,11 @@ class TableGenerator:
                     
                     run_data = {
                         'Reward Scale': config.get('rewardscale', 'N/A'),
-                        'Win Rate (%)': summary.get('validation_win_rate', 0),
-                        'vs WSPT (%)': summary.get('validation_win_vs_wspt', 0),
-                        'vs SPT (%)': summary.get('validation_win_vs_spt', 0),
-                        'vs SRPT (%)': summary.get('validation_win_vs_srpt', 0),  # Added SRPT comparison
-                        'Weighted Sum': summary.get('validation_weighted_sum', 0)
+                        'Win Rate (%)': summary.get('best_validation_win_rate', 0),
+                        'vs WSPT (%)': summary.get('best_validation_win_vs_wspt', 0),
+                        'vs SPT (%)': summary.get('best_validation_win_vs_spt', 0),
+                        'vs SRPT (%)': summary.get('best_validation_win_vs_srpt', 0), 
+                        'Weighted Sum': summary.get('best_validation_weighted_sum', 0)
                     }
                     data.append(run_data)
                 except Exception as e:
@@ -85,12 +85,11 @@ class TableGenerator:
                     run_data = {
                         'Features': feature_set_str,
                         'Count': len(feature_set) if isinstance(feature_set, list) else 1,
-                        'Win Rate (%)': summary.get('validation_win_rate', 0),
-                        'vs WSPT (%)': summary.get('validation_win_vs_wspt', 0),
-                        'vs SPT (%)': summary.get('validation_win_vs_spt', 0),
-                        'vs SRPT (%)': summary.get('validation_win_vs_srpt', 0), 
-                        'Weighted Sum': summary.get('validation_weighted_sum', 0),
-                        'Impr. SRPT (%)': summary.get('validation_improvement_over_srpt', 0)
+                        'Win Rate (%)': summary.get('best_validation_win_rate', 0),
+                        'vs WSPT (%)': summary.get('best_validation_win_vs_wspt', 0),
+                        'vs SPT (%)': summary.get('best_validation_win_vs_spt', 0),
+                        'vs SRPT (%)': summary.get('best_validation_win_vs_srpt', 0), 
+                        'Weighted Sum': summary.get('best_validation_weighted_sum', 0),
                     }
                     data.append(run_data)
                 except Exception as e:
@@ -136,12 +135,12 @@ class TableGenerator:
                     
                     run_data = {
                         'Reward Strategy': config.get('reward_strategy', 'default'),
-                        'Win Rate (%)': summary.get('validation_win_rate', 0),
-                        'vs WSPT (%)': summary.get('validation_win_vs_wspt', 0),
-                        'vs SPT (%)': summary.get('validation_win_vs_spt', 0),
-                        'vs SRPT (%)': summary.get('validation_win_vs_srpt', 0), 
-                        'Weighted Sum': summary.get('validation_weighted_sum', 0),
-                        'Improv. WSPT (%)': summary.get('validation_improvement_over_wspt', 0),
+                        'Win Rate (%)': summary.get('best_validation_win_rate', 0),
+                        'vs WSPT (%)': summary.get('best_validation_win_vs_wspt', 0),
+                        'vs SPT (%)': summary.get('best_validation_win_vs_spt', 0),
+                        'vs SRPT (%)': summary.get('best_validation_win_vs_srpt', 0), 
+                        'Weighted Sum': summary.get('best_validation_weighted_sum', 0),
+                        'Improv. WSPT (%)': summary.get('best_validation_improvement_over_wspt', 0),
                     }
                     data.append(run_data)
                 except Exception as e:
@@ -207,9 +206,9 @@ class TableGenerator:
                         'Hidden Dim': config.get('hidden_dim', 'N/A'),
                         'Layers': config.get('num_layers', 'N/A'),
                         'Learning Rate': lr_str,
-                        'Win Rate (%)': summary.get('validation_win_rate', 0),
-                        'vs WSPT (%)': summary.get('validation_win_vs_wspt', 0),
-                        'Weighted Sum': summary.get('validation_weighted_sum', 0)
+                        'Win Rate (%)': summary.get('best_validation_win_rate', 0),
+                        'vs WSPT (%)': summary.get('best_validation_win_vs_wspt', 0),
+                        'Weighted Sum': summary.get('best_validation_weighted_sum', 0)
                     }
                     data.append(run_data)
                 except Exception as e:
@@ -252,17 +251,17 @@ class TableGenerator:
             # Get runs with validation metrics
             runs_with_metrics = [
                 run for run in runs 
-                if 'summary' in run and 'validation_win_rate' in run['summary']
+                if 'summary' in run and 'best_validation_win_rate' in run['summary']
             ]
             
             if not runs_with_metrics:
-                print("No runs with validation metrics found for summary table")
+                print("No runs with best validation metrics found for summary table")
                 return pd.DataFrame()
                 
             # Sort by win rate (descending)
             top_runs = sorted(
                 runs_with_metrics, 
-                key=lambda x: x['summary'].get('validation_win_rate', 0), 
+                key=lambda x: x['summary'].get('best_validation_win_rate', 0), 
                 reverse=True
             )[:top_k]
             
@@ -283,11 +282,11 @@ class TableGenerator:
                     data.append({
                         'Config': f"{n_j}×{n_m}",
                         'Weights': f"{weight_low}-{weight_high}",
-                        'Win (%)': summary.get('validation_win_rate', 0),
-                        'vs WSPT (%)': summary.get('validation_win_vs_wspt', 0),
-                        'vs SPT (%)': summary.get('validation_win_vs_spt', 0),
-                        'vs SRPT (%)': summary.get('validation_win_vs_srpt', 0),
-                        'W. Sum': summary.get('validation_weighted_sum', 0)
+                        'Win (%)': summary.get('best_validation_win_rate', 0),
+                        'vs WSPT (%)': summary.get('best_validation_win_vs_wspt', 0),
+                        'vs SPT (%)': summary.get('best_validation_win_vs_spt', 0),
+                        'vs SRPT (%)': summary.get('best_validation_win_vs_srpt', 0),
+                        'W. Sum': summary.get('best_validation_weighted_sum', 0)
                     })
                 
             elif sweep_type_lower in ['feature', 'features']:
@@ -305,9 +304,9 @@ class TableGenerator:
                     
                     data.append({
                         'Features': feature_str,
-                        'Win (%)': summary.get('validation_win_rate', 0),
-                        'vs WSPT (%)': summary.get('validation_win_vs_wspt', 0),
-                        'W. Sum': summary.get('validation_weighted_sum', 0)
+                        'Win (%)': summary.get('best_validation_win_rate', 0),
+                        'vs WSPT (%)': summary.get('best_validation_win_vs_wspt', 0),
+                        'W. Sum': summary.get('best_validation_weighted_sum', 0)
                     })
                 
             elif sweep_type_lower in ['reward', 'rewards']:
@@ -318,9 +317,9 @@ class TableGenerator:
                     
                     data.append({
                         'Reward': config.get('reward_strategy', 'default'),
-                        'Win (%)': summary.get('validation_win_rate', 0),
-                        'vs WSPT (%)': summary.get('validation_win_vs_wspt', 0),
-                        'W. Sum': summary.get('validation_weighted_sum', 0)
+                        'Win (%)': summary.get('best_validation_win_rate', 0),
+                        'vs WSPT (%)': summary.get('best_validation_win_vs_wspt', 0),
+                        'W. Sum': summary.get('best_validation_weighted_sum', 0)
                     })
                 
             elif sweep_type_lower in ['model', 'models']:
@@ -337,9 +336,9 @@ class TableGenerator:
                         'Hidden': config.get('hidden_dim', 'N/A'),
                         'Layers': config.get('num_layers', 'N/A'),
                         'LR': lr_str,
-                        'Win (%)': summary.get('validation_win_rate', 0),
-                        'vs WSPT (%)': summary.get('validation_win_vs_wspt', 0),
-                        'W. Sum': summary.get('validation_weighted_sum', 0)
+                        'Win (%)': summary.get('best_validation_win_rate', 0),
+                        'vs WSPT (%)': summary.get('best_validation_win_vs_wspt', 0),
+                        'W. Sum': summary.get('best_validation_weighted_sum', 0)
                     })
                 
             else:
@@ -350,9 +349,9 @@ class TableGenerator:
                     
                     data.append({
                         'Run': run.get('name', 'Unknown'),
-                        'Win (%)': summary.get('validation_win_rate', 0),
-                        'vs WSPT (%)': summary.get('validation_win_vs_wspt', 0),
-                        'W. Sum': summary.get('validation_weighted_sum', 0)
+                        'Win (%)': summary.get('best_validation_win_rate', 0),
+                        'vs WSPT (%)': summary.get('best_validation_win_vs_wspt', 0),
+                        'W. Sum': summary.get('best_validation_weighted_sum', 0)
                     })
             
             # Create DataFrame
@@ -364,8 +363,8 @@ class TableGenerator:
             return pd.DataFrame()
     
     def create_comparison_table(self, runs: List[Dict[str, Any]], 
-                              primary_param: str, 
-                              metrics: List[str] = None) -> pd.DataFrame:
+                          primary_param: str, 
+                          metrics: List[str] = None) -> pd.DataFrame:
         """
         Create a table comparing runs based on a primary parameter.
         
@@ -384,23 +383,23 @@ class TableGenerator:
             # Default metrics if not provided
             if metrics is None:
                 metrics = [
-                    'validation_win_rate', 
-                    'validation_win_vs_wspt', 
-                    'validation_win_vs_spt',
-                    'validation_win_vs_srpt',
-                    'validation_weighted_sum'
+                    'best_validation_win_rate', 
+                    'best_validation_win_vs_wspt', 
+                    'best_validation_win_vs_spt',
+                    'best_validation_win_vs_srpt',
+                    'best_validation_weighted_sum'
                 ]
                 
             # Display names for metrics
             metric_display = {
-                'validation_win_rate': 'Win Rate (%)',
-                'validation_win_vs_wspt': 'vs WSPT (%)',
-                'validation_win_vs_spt': 'vs SPT (%)',
-                'validation_win_vs_srpt': 'vs SRPT (%)',
-                'validation_weighted_sum': 'Weighted Sum',
-                'validation_improvement_over_wspt': 'Improv. WSPT (%)',
-                'validation_improvement_over_spt': 'Improv. SPT (%)',
-                'validation_improvement_over_srpt': 'Improv. SRPT (%)'
+                'best_validation_win_rate': 'Win Rate (%)',
+                'best_validation_win_vs_wspt': 'vs WSPT (%)',
+                'best_validation_win_vs_spt': 'vs SPT (%)',
+                'best_validation_win_vs_srpt': 'vs SRPT (%)',
+                'best_validation_weighted_sum': 'Weighted Sum',
+                'best_validation_improvement_over_wspt': 'Improv. WSPT (%)',
+                'best_validation_improvement_over_spt': 'Improv. SPT (%)',
+                'best_validation_improvement_over_srpt': 'Improv. SRPT (%)'
             }
             
             # Group runs by parameter value

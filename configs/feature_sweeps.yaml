@@ -1,7 +1,7 @@
 program: scripts/train.py
-method: random
+method: grid
 metric:
-  name: validation_weighted_sum
+  name: best_validation_weighted_sum
   goal: minimize
 parameters:
   feature_set:
@@ -17,3 +17,9 @@ parameters:
       - LBs,finished_mark,weighted_priorities,machine_contention
       - LBs,finished_mark,weighted_priorities,critical_path_contribution
       - LBs,finished_mark,weighted_priorities,time_elapsed
+      - LBs,finished_mark,normalized_weights,last_op_weighted
+      - weighted_LBs,finished_mark,normalized_weights,weighted_priorities
+      - LBs,finished_mark,normalized_weights,weighted_priorities,critical_path_contribution
+      - weighted_LBs,finished_mark,remaining_weighted_work,last_op_weighted
+      - LBs,finished_mark,normalized_weights,weighted_priorities,time_elapsed,machine_contention
+      - LBs,weighted_LBs,finished_mark,weighted_priorities,normalized_weights,remaining_weighted_work, time_elapsed, machine_contention, weighted_priorities_normalized, last_op_weighted, critical_path_contribution

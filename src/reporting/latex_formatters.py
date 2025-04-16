@@ -80,7 +80,7 @@ class PyLatexFormatter:
                                 continue
                                 
                             # Determine if higher or lower is better for this metric
-                            lower_is_better = ('weighted_sum' in col_name.lower() or 
+                            lower_is_better = ('best_validation_weighted_sum' in col_name.lower() or 
                                             'error' in col_name.lower())
                             
                             if lower_is_better:
@@ -183,22 +183,26 @@ class PyLatexFormatter:
                     
                     # Add formatted metric names
                     metric_names = {
-                        'validation_weighted_sum': 'Weighted Sum',
-                        'validation_win_vs_wspt': 'Win vs WSPT (\%)',
-                        'validation_win_vs_spt': 'Win vs SPT (\%)',
-                        'validation_win_vs_srpt': 'Win vs SRPT (\%)',
-                        'validation_win_rate': 'Overall Win Rate (\%)',
-                        'validation_improvement_over_wspt': 'Improv. WSPT (\%)',
-                        'validation_improvement_over_spt': 'Improv. SPT (\%)',
-                        'validation_improvement_over_srpt': 'Improv. SRPT (\%)'
+                        'best_validation_weighted_sum': 'Weighted Sum',
+                        'best_validation_win_vs_wspt': 'Win vs WSPT (\%)',
+                        'best_validation_win_vs_spt': 'Win vs SPT (\%)',
+                        'best_validation_win_vs_srpt': 'Win vs SRPT (\%)',
+                        'best_validation_win_rate': 'Overall Win Rate (\%)',
+                        'best_validation_improvement_over_wspt': 'Improvement vs WSPT (\%)',
+                        'best_validation_improvement_over_spt': 'Improvement vs SPT (\%)',
+                        'best_validation_improvement_over_srpt': 'Improvement vs SRPT (\%)'
                     }
                     
                     # Add rows for each metric
                     for metric, stats in metrics_data.items():
-                        display_name = metric_names.get(metric, metric.replace('validation_', '').replace('_', ' ').title())
+                        display_name = metric_names.get(metric, 
+                                                     metric.replace('best_validation_', '')
+                                                          .replace('validation_', '')
+                                                          .replace('_', ' ')
+                                                          .title())
                         
                         # Format values appropriately
-                        if 'weighted_sum' in metric.lower():
+                        if 'best_validation_weighted_sum' in metric.lower():
                             # For weighted sum, show integers
                             row = [
                                 NoEscape(display_name),
@@ -287,14 +291,14 @@ class PyLatexFormatter:
                     
                     # Format metric names
                     metric_names = {
-                        'validation_weighted_sum': 'Weighted Sum',
-                        'validation_win_vs_wspt': 'Win vs WSPT (\%)',
-                        'validation_win_vs_spt': 'Win vs SPT (\%)',
-                        'validation_win_vs_srpt': 'Win vs SRPT (\%)',
-                        'validation_win_rate': 'Overall Win Rate (\%)',
-                        'validation_improvement_over_wspt': 'Improv. over WSPT (\%)',
-                        'validation_improvement_over_spt': 'Improv. over SPT (\%)',
-                        'validation_improvement_over_srpt': 'Improv. over SRPT (\%)'
+                        'best_validation_weighted_sum': 'Weighted Sum',
+                        'best_validation_win_vs_wspt': 'Win vs WSPT (\%)',
+                        'best_validation_win_vs_spt': 'Win vs SPT (\%)',
+                        'best_validation_win_vs_srpt': 'Win vs SRPT (\%)',
+                        'best_validation_win_rate': 'Overall Win Rate (\%)',
+                        'best_validation_improvement_over_wspt': 'Improvement vs WSPT (\%)',
+                        'best_validation_improvement_over_spt': 'Improvement vs SPT (\%)',
+                        'best_validation_improvement_over_srpt': 'Improvement vs SRPT (\%)'
                     }
                     
                     # Add rows for each metric
@@ -312,7 +316,7 @@ class PyLatexFormatter:
                         
                         # Format value properly
                         if isinstance(value, (int, float)):
-                            if 'weighted_sum' in metric.lower():
+                            if 'best_validation_weighted_sum' in metric.lower():
                                 # For weighted sum, show integers
                                 value_str = f"{int(value)}"
                             elif 'win' in metric.lower() or 'rate' in metric.lower() or 'improv' in metric.lower():
@@ -324,7 +328,11 @@ class PyLatexFormatter:
                         else:
                             value_str = str(value)
                             
-                        display_metric = metric_names.get(metric, metric.replace('validation_', '').replace('_', ' ').title())
+                        display_metric = metric_names.get(metric, 
+                                                       metric.replace('best_validation_', '')
+                                                            .replace('validation_', '')
+                                                            .replace('_', ' ')
+                                                            .title())
                         
                         tabular.add_row([
                             NoEscape(display_metric),
@@ -423,7 +431,7 @@ class PyLatexFormatter:
                             continue
                             
                         # Determine if lower is better
-                        lower_is_better = 'weighted_sum' in col.lower() or 'error' in col.lower()
+                        lower_is_better = 'best_validation_weighted_sum' in col.lower() or 'error' in col.lower()
                         
                         if lower_is_better:
                             # Sort values and get indices of best (lowest) and second best
